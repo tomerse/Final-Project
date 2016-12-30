@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/tomer/NetBeansProjects/FinalProject/app/views/layouts/application.html.erb</file>
             <file>file:/home/tomer/NetBeansProjects/FinalProject/app/controllers/application_controller.rb</file>
             <file>file:/home/tomer/NetBeansProjects/FinalProject/config/routes.rb</file>
-            <file>file:/home/tomer/NetBeansProjects/FinalProject/app/controllers/welcome_controller.rb</file>
+            <file>file:/home/tomer/NetBeansProjects/FinalProject/app/views/welcome/index.html.erb</file>
         </group>
     </open-files>
 </project-private>
