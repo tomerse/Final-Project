@@ -59,7 +59,7 @@ module FinalProject
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
-    #config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = false
     
     # Enable Cors (cross-origin HTTP request) - see gem 'rack-cors'
     config.middleware.insert_before 0, "Rack::Cors" do
