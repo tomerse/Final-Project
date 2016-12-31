@@ -1,5 +1,7 @@
 FinalProject::Application.routes.draw do
-  #get "welcome/index"
+  get "connection_test/con_test"
+  #get 'welcome/index'
+
   root :to => "welcome#index"
 end
  
