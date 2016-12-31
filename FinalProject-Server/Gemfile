@@ -28,6 +28,8 @@ gem 'jquery-rails'
 
 gem 'warbler'
 
+gem 'rack-cors'
+
 
 
 
