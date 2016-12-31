@@ -26,6 +26,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'warbler'
+
 
 
 
