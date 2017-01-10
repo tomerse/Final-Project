@@ -1,0 +1,94 @@
+
+<md-sidenav-container [class.m2app-dark]="isDarkTheme">
+  <md-sidenav #sidenav mode="" class="app-sidenav">
+    <md-nav-list>
+      <md-list-item *ngFor="let link of links">
+        <a md-line href="...">{{ link }}</a>
+          <md-icon>code</md-icon>
+      </md-list-item>
+    </md-nav-list>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+
+   Python Racer
+
+    <span class="app-toolbar-filler"></span>
+    <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+  </md-toolbar>
+<!--
+<div style="float:left; width:20%;overflow : auto; max-height: 400px;">
+  <div>
+      <h2 align="center">Instructions</h2>
+      <p>{{writtenCode}}</p>
+  </div>
+
+  <h3>
+    {{writtenCode}}
+  </h3>
+</div>
+<div style="float:left;overflow: auto; width:80%;">
+  <label>כותרת </label>
+  <input type="text" [(ngModel)]="title"  (change)="changeEditorEdit()" placeholder="כותרת">
+-->
+
+
+
+
+
+  <div class="app-content">
+    <md-grid-list cols="9" rowHeight="85px">
+
+      <md-grid-tile [colspan]="2" [rowspan]="6" color="primary">
+        <md-card layout="column" layout-fill style="overflow-y: scroll; display: block;">
+          <div flex layout="column">
+            <h1>Introduction</h1>
+            <p>
+             {{currStage.introduction}}
+            </p>
+          </div> <br/><br/>
+          <div flex layout="column">
+          <h1>Instructions</h1>
+          <p>
+            {{currStage.instructions}}
+          </p> <br/><br/>
+        </div>
+          <div flex layout="column">
+            <h1>Instructions</h1>
+            <p>
+              {{currStage.instructions}}
+            </p> <br/><br/>
+          </div>
+
+        </md-card>
+
+
+      </md-grid-tile>
+      <md-grid-tile  [colspan]="4" [rowspan]="5" [style.background]="'black'">
+      <aceEditor  class="text-inside-grid" #editor (currStatus)="changeStatus($event)"></aceEditor>
+
+      </md-grid-tile >
+      <md-grid-tile [colspan]="3" [rowspan]="5" [style.background]="'black'">
+        <div class="chatbot-div">
+           <chatBot></chatBot>
+        </div>
+      </md-grid-tile >
+      <md-grid-tile [colspan]="7" [rowspan]="1">
+        <md-card layout="row" flex >
+          <button  md-raised-button md-tooltip="Click here to submit your code!" (click)="submit()" color="primary">SEND</button>
+        </md-card>
+      </md-grid-tile>
+    </md-grid-list>
+              <md-card [class.m2app-dark]="isDarkTheme">
+                  <h3>{{title}}</h3>
+                </md-card>
+
+  </div>
+
+</md-sidenav-container>
+<span class="app-action" [class.m2app-dark]="isDarkTheme">
+  <button md-fab><md-icon>check circle</md-icon></button>
+</span>
