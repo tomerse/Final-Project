@@ -1,4 +1,4 @@
-about=List versions of all Rails frameworks and the environment
+about=Connecting to database specified by database.yml\nList versions of all Rails frameworks and the environment
 assets\:clean=Remove compiled assets
 assets\:clean\:all=
 assets\:environment=
