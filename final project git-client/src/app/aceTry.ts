@@ -1,4 +1,3 @@
-import { AceEditorComponent } from 'ng2-ace-editor';
 import { Component , ViewChild , Output , EventEmitter } from '@angular/core';
 
 
@@ -17,31 +16,28 @@ import { Component , ViewChild , Output , EventEmitter } from '@angular/core';
   `
 })
 export class MyComponent {
-  text:string = "asdasdasdads";
-  options:any = {maxLines: 20, printMargin: false,fontSize:"13pt", autoScrollEditorIntoView: true};
-  readonly:any = false;
+  text: string = 'asdasdasdads';
+  options: any = {maxLines: 20, printMargin: false, fontSize: '13pt', autoScrollEditorIntoView: true};
+  readonly: any = false;
   @ViewChild('editor') editor;
 
   @Output()
   currStatus = new EventEmitter<string>();
 
-  changeReadOnlyModeToFalse()
-  {
+  changeReadOnlyModeToFalse() {
     this.readonly = false;
   }
 
-  changeText(newText:string)
-  {
+  changeText(newText: string) {
     this.text = newText;
   }
 
-  changeReadOnlyModeToTrue()
-  {
+  changeReadOnlyModeToTrue() {
     this.readonly = true;
   }
 
   onChange(code) {
-    console.log("new code", code);
+    console.log('new code', code);
     this.currStatus.emit(code);
   }
 }

@@ -15,29 +15,26 @@ export class AppComponent implements OnInit{
   title='s';
   //router: Router;
   currStage: stage = new stage();
-  writtenCode='';
+  writtenCode ='';
   @ViewChild('editor') editor;
   isDarkTheme: boolean = true;
   links = ['sdasd','asdaasadasdsadsdassdsad','sadasdsda'];
 
 
 
-  constructor(private stagePageService: StagePageService)
-  {
+  constructor(private stagePageService: StagePageService) {
   }
 
 
-  ngOnInit()
-  {
+  ngOnInit() {
     this.editor.changeText(this.currStage.inputCode);
   }
-  changeStatus(newStatus)
-  {
+
+  changeStatus(newStatus) {
     this.writtenCode = newStatus;
   }
 
-  submit()
-  {
+  submit() {
     this.stagePageService.getTryConnection().subscribe(
       response =>
       {
@@ -45,16 +42,14 @@ export class AppComponent implements OnInit{
       }
     );
   }
-  changeEditorEdit()
-  {
+
+  changeEditorEdit() {
     console.log('sdasdasdsa');
-    if (this.title == 'app works!')
-    {
+    if (this.title == 'app works!') {
       console.log('check2');
       this.editor.changeReadOnlyModeToTrue();
     }
-    else
-    {
+    else {
       console.log('check1');
       this.editor.changeReadOnlyModeToFalse();
     }

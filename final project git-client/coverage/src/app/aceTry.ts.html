@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src\app\aceTry.ts</title>
+    <title>Code coverage report for src/app/aceTry.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">84.62% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>11/13</span>
+        <span class='fraction'>20/20</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/2</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">83.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>10/12</span>
+        <span class='fraction'>19/19</span>
       </div>
     </div>
   </div>
@@ -75,8 +75,19 @@
 30
 31
 32
-33</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -94,48 +105,73 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">3×</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">3×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-import { Component , ViewChild , Output , EventEmitter } from '@angular/core';
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component , ViewChild , Output , EventEmitter } from '@angular/core';
 &nbsp;
 &nbsp;
 @Component({
   selector: 'aceEditor',
   template: `
-  &lt;div ace-editor #editor
+  &lt;div ace-editor #editor class="text-inside-grid"
        [text]="text"
        [mode]="'python'"
-       [theme]="'twilight'"
+       [theme]="'tomorrow_night'"
        [options]="options"
-       [readOnly]="false"
+       [readOnly]="readonly"
        [autoUpdateContent]="true"
        (textChanged)="onChange($event)"
-       style="min-height: 200px; width:150%; overflow: auto;"&gt;&lt;/div&gt;
+       style="min-height:400px; width:450px;background-color:black;overflow: auto;"&gt;&lt;/div&gt;
   `
 })
 export class MyComponent {
-  text:string = "";
-  options:any = {maxLines: 1000, printMargin: false};
+  text: string = 'asdasdasdads';
+  options: any = {maxLines: 20, printMargin: false, fontSize: '13pt', autoScrollEditorIntoView: true};
+  readonly: any = false;
   @ViewChild('editor') editor;
 &nbsp;
   @Output()
-   currStatus = new EventEmitter&lt;string&gt;();
+  currStatus = new EventEmitter&lt;string&gt;();
 &nbsp;
-<span class="fstat-no" title="function not covered" >  onChange(code)</span> {
-<span class="cstat-no" title="statement not covered" >    console.log("new code", code);</span>
-<span class="cstat-no" title="statement not covered" >    this.currStatus.emit(code);</span>
+  changeReadOnlyModeToFalse() {
+    this.readonly = false;
+  }
+&nbsp;
+  changeText(newText: string) {
+    this.text = newText;
+  }
+&nbsp;
+  changeReadOnlyModeToTrue() {
+    this.readonly = true;
+  }
+&nbsp;
+  onChange(code) {
+    console.log('new code', code);
+    this.currStatus.emit(code);
   }
 }
 &nbsp;
@@ -145,7 +181,7 @@ export class MyComponent {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Nov 06 2016 14:55:52 GMT+0200 (שעון רגיל ירושלים)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jan 19 2017 18:39:07 GMT+0200 (IST)
 </div>
 </div>
 <script src="../../prettify.js"></script>
