@@ -81,7 +81,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       #format.html # new.html.erb
-      format.json { render json: @course }
+      format.json { render json: "suisa is sharrrrr" }
     end
 
   end
