@@ -73,10 +73,13 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def compile
-    code = params[:code]
-    print code
+    require 'Compilers/compiler'
+    @language = params[:lan_name]
+    @code = params[:code]
+    #@core_result = Compiler.run_code(@language, @code)
+    print @code
 
-    render json: "suisa is sharrrrr"
+    render json: {'id'=>'test'}
 
   end
 
