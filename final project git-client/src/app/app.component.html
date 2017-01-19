@@ -1,6 +1,6 @@
 
 <md-sidenav-container [class.m2app-dark]="isDarkTheme">
-  <md-sidenav #sidenav mode="" class="app-sidenav">
+  <md-sidenav #sidenav mode="push" class="app-sidenav md-sidenav-push md-side-nav-opened">
     <md-nav-list>
       <md-list-item *ngFor="let link of links">
         <a md-line href="...">{{ link }}</a>
@@ -40,10 +40,10 @@
 
 
   <div class="app-content">
-    <md-grid-list cols="9" rowHeight="85px">
+    <md-grid-list cols="9" rowHeight="95px" layout-fill>
 
       <md-grid-tile [colspan]="2" [rowspan]="6" color="primary">
-        <md-card layout="column" layout-fill style="overflow-y: scroll; display: block;">
+        <md-card layout="column" layout-fill class="introClass">
           <div flex layout="column">
             <h1>Introduction</h1>
             <p>
@@ -63,7 +63,7 @@
             </p> <br/><br/>
           </div>
 
-        </md-card>
+       </md-card>
 
 
       </md-grid-tile>
@@ -77,15 +77,16 @@
         </div>
       </md-grid-tile >
       <md-grid-tile [colspan]="7" [rowspan]="1">
-        <md-card layout="row" flex >
+        <md-card class="card-accent md-card-flat" layout="row" flex >
           <button  md-raised-button md-tooltip="Click here to submit your code!" (click)="submit()" color="primary">SEND</button>
         </md-card>
       </md-grid-tile>
     </md-grid-list>
+    <!--
               <md-card [class.m2app-dark]="isDarkTheme">
                   <h3>{{title}}</h3>
                 </md-card>
-
+-->
   </div>
 
 </md-sidenav-container>

@@ -1,4 +1,4 @@
-import {NgModule, Component,ViewChild } from '@angular/core';
+import {NgModule, Component,ViewChild,OnInit } from '@angular/core';
 import {stage} from './stage'
 import {Router} from '@angular/router';
 import  {StagePageService} from './app.component.service';
@@ -11,19 +11,25 @@ import  {StagePageService} from './app.component.service';
   styleUrls: ['./app.component.css'],
 
 })
-export class AppComponent{
+export class AppComponent implements OnInit{
   title='s';
   //router: Router;
   currStage: stage = new stage();
   writtenCode='';
   @ViewChild('editor') editor;
   isDarkTheme: boolean = true;
-  links = ['sdasd','asdasdsad','sadasdsda'];
+  links = ['sdasd','asdaasadasdsadsdassdsad','sadasdsda'];
 
 
 
   constructor(private stagePageService: StagePageService)
   {
+  }
+
+
+  ngOnInit()
+  {
+    this.editor.changeText(this.currStage.inputCode);
   }
   changeStatus(newStatus)
   {

@@ -1,1 +1,5 @@
 @import "../node_modules/angular2-flex/layout.css";
+
+body{
+  overflow-y: hidden;
+}

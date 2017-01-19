@@ -6,7 +6,7 @@ md-sidenav-container.m2app-dark {
   padding: 20px;
 }
 .app-content {
-  padding: 20px;
+  /*padding: 20px;*/
 }
 .text-inside-grid {
   position: absolute;
@@ -91,20 +91,16 @@ md-card {
   margin: 20px;
 }
 
-md-chip {
-  width: 100px;
-  font-weight: bold;
-  text-align: center;
 
-}
 .chatbot-div{
   background: #424242;
-  min-height: 84%;
+  min-height: 95%;
   margin: 20px;
   padding: 20px;
   border-radius: 4px;
   font-family: Roboto,"Helvetica Neue",sans-serif;
   flex: 100;
+
 }
 
 .chatbot-footer
@@ -112,4 +108,19 @@ md-chip {
   margin: 20px;
   display: inline-block;
   background: rgba(0,0,0,0);
+}
+.introClass
+{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: block;
+  margin: 0px;
+  height: 100%;
+}
+
+.chatbotBody
+{
+  overflow-y: auto;
+  margin: 3px;
+  max-height: 300px;
 }

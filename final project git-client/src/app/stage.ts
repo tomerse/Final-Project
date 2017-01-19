@@ -24,7 +24,7 @@ export class stage {
     this.hints=' others want ' +
       'to collaborate with you, they can read your comments and easily figure out what your code does.';
 
-    this.inputCode= 'Enter your code here';
+    this.inputCode= '#Enter your code here: ' + '\n';
 
 
   }

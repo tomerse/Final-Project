@@ -2,12 +2,14 @@ import {NgModule, Component, ViewChild, ElementRef, OnInit,AfterContentInit} fro
 import {OneMessageInstance} from './message.component';
 import {Router} from '@angular/router';
 import { Observable }  from 'rxjs/Observable';
-
+import {ChatMessageComponent} from './message.component';
+import {chatBotService} from './chatbot.component.service';
 
 
 @Component({
   selector: 'chatBot',
   templateUrl: './chatbot.component.html',
+  providers: [ chatBotService ],
   styleUrls: ['../app.component.css']
 
 })
@@ -26,11 +28,11 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
   ngAfterContentInit() {
   }
 
-  constructor() {
+  constructor(private chatBotServiceObj: chatBotService) {
   }
 
   sendMessage(contant: string) {
-    this.messageList.push(new OneMessageInstance(contant));
+    this.messageList.push(new OneMessageInstance(contant,false,'t1.png'));
     this.messageInputObj["value"] = '';
     setTimeout(()=>
     {
@@ -38,6 +40,8 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
     });
 
   }
+
+
   scrollToBottom()
   {
     let out = this.chatbotBody.nativeElement;

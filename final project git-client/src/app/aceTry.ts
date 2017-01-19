@@ -30,6 +30,11 @@ export class MyComponent {
     this.readonly = false;
   }
 
+  changeText(newText:string)
+  {
+    this.text = newText;
+  }
+
   changeReadOnlyModeToTrue()
   {
     this.readonly = true;
