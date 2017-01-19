@@ -28,9 +28,9 @@ class Xml < ActiveRecord::Base
     
   end
   
-  def self.readxml(levelId)
-    
-    levelfilepath = Dir.pwd+ LEVEL_FILE_NAME_CONST + levelId.to_s + XML_EXT_CONST
+  def self.readxml(curpath, levelId)
+    #Dir.pwd
+    levelfilepath = curpath+ LEVEL_FILE_NAME_CONST + levelId.to_s + XML_EXT_CONST
     print levelfilepath
     File.open(levelfilepath, 'r') do |file|
       str = file.read

@@ -1,4 +1,10 @@
 class WelcomeController < ApplicationController
+  protect_from_forgery with: :exception
     #Xml.createxml
-    Xml.readxml(1)
+
+   def self.mer
+     2+2
+   end
+    
+    
 end
