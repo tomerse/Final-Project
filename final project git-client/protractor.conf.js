@@ -6,9 +6,20 @@ var SpecReporter = require('jasmine-spec-reporter');
 
 exports.config = {
   allScriptsTimeout: 11000,
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+
+  capabilities: {
+    'browserName': 'chrome'
+  },
+
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
+
+  jasmineNodeOpts: {
+    showColors: true
+  },
+
   capabilities: {
     'browserName': 'chrome'
   },
