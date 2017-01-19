@@ -1,4 +1,4 @@
-class PyChatExecParser < Exercise
+class PyChatExecParser #< Exercise
 
   def self.ParseParams(xmlfile)
     #print xmlfile.to_s

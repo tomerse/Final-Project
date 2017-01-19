@@ -1,5 +1,4 @@
 class Course < ActiveRecord::Base
-  attr_accessible :id, :name
 
   def self.find(courseid)
     case courseid
