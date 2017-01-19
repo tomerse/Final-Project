@@ -70,6 +70,22 @@ class CoursesController < ApplicationController
     end
   end
 
+  # POST /courses
+  # POST /courses.json
+  def compile
+    #@language = params[:lan_name]
+    #@course = params[:course_name]
+    #@exercise = ExerciseReader.build_exercise(@language, @course, params[:ex_id])
+    code = params[:code]
+    print code
+
+    respond_to do |format|
+      #format.html # new.html.erb
+      format.json { render json: @course }
+    end
+
+  end
+
   # DELETE /courses/1
   # DELETE /courses/1.json
   def destroy
