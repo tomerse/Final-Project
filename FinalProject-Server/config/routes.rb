@@ -1,4 +1,7 @@
 FinalProject::Application.routes.draw do
+  resources :courses
+
+
   get "connection_test/con_test"
   get "layouts/application"
   #get 'welcome/index'
