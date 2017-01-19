@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+
+  <exercise>
+
+    <id>1</id>
+
+    <topic>Printing</topic>
+
+    <instructions>To get information about our program variables studied them further or to display a message to the user on the screen we use the action "Print".
+      Using the above action will be using the phrase in quotes printed followed by an expression that wants to print.
+      For example, to print to the screen the phrase Hello World!. Write down the expression print "Hello World!".
+    </instructions>
+
+    <code>def printName(name):
+      print 'My name is '#enter your code here
+    return
+    </code>
+
+    <tasks>
+
+      <task>Print the value of variable "name"</task>
+
+      <task>Click the send button</task>
+
+    </tasks>
+
+    <hints>
+
+      <hint>The code should be: "print name"</hint>
+
+    </hints>
+
+    <chatbotinitmessage>Hello! What is your name?</chatbotinitmessage>
+
+  </exercise>
+
+</root>

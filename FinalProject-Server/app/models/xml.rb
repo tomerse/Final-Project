@@ -1,9 +1,7 @@
 class Xml < ActiveRecord::Base
   require 'nokogiri'
   
-  LEVEL_FILE_NAME_CONST = "/Levels/Level_"
-  XML_EXT_CONST = ".xml"
-  
+
   def self.createxml
     
     builder = Nokogiri::XML::Builder.new do |xml|
@@ -28,15 +26,23 @@ class Xml < ActiveRecord::Base
     
   end
   
-  def self.readxml(curpath, levelId)
-    #Dir.pwd
-    levelfilepath = curpath+ LEVEL_FILE_NAME_CONST + levelId.to_s + XML_EXT_CONST
-    print levelfilepath
-    File.open(levelfilepath, 'r') do |file|
-      str = file.read
-      print str
-    end
+  def self.readxml(filepath)
+    #File.open(filepath) { |f| Nokogiri::XML(f) }
+
+
+    doc = Nokogiri.parse open(filepath)
+    #doc = Nokogiri::XML(File.open(filepath))
+    #block = doc.css("Items Item").map { |node| node.children.text }
+
+    #File.open(filepath, 'r') do |file|
+      #str = file.read
+      #print str
+    #end
     
     
+  end
+
+  def self.get_element(xml,element)
+    xml.at(element).text
   end
 end

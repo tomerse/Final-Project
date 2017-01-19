@@ -4,7 +4,7 @@ FinalProject::Application.routes.draw do
 
   get "connection_test/con_test"
   get "layouts/application"
-  #get 'welcome/index'
+  get "courses/:lan_name/:course_name/:ex_id" => "courses#show"
   
   root :to => "welcome#index"
 end

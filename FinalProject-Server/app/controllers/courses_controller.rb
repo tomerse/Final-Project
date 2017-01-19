@@ -13,11 +13,12 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @course = Course.find(params[:id])
-
+    @language = params[:lan_name]
+    @course = params[:course_name]
+    @exercise = ExerciseReader.build_exercise(@language, @course, params[:ex_id])
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @course }
+      #format.html # show.html.erb
+      format.json { render json: @exercise }
     end
   end
 
