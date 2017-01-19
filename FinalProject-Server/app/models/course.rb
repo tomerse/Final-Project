@@ -1,4 +1,4 @@
-class Course < ActiveRecord::Base
+class Course
 
   def self.find(courseid)
     case courseid

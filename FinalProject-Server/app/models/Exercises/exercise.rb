@@ -1,4 +1,4 @@
-class Exercise < ActiveRecord::Base
+class Exercise
 
 
   require 'Exercises/Python/Chatbot/py_chat_exec_parser'
