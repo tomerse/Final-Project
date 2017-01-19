@@ -74,7 +74,7 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def compile
     require 'Compilers/compiler'
-    @language = params[:lan_name]
+ #   @language = params[:lan_name]
     @code = params[:code]
     #@core_result = Compiler.run_code(@language, @code)
     print @code

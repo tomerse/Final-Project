@@ -6,7 +6,7 @@ FinalProject::Application.routes.draw do
   get "layouts/application"
   get "courses/:lan_name/:course_name/:ex_id" => "courses#show"
   post "courses/:lan_name/:course_name/compile" =>"courses#compile"
-  
+
   root :to => "welcome#index"
 end
  
