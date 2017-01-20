@@ -79,7 +79,9 @@ class CoursesController < ApplicationController
     #@core_result = Compiler.run_code(@language, @code)
     print @code
 
-    render json: {'id'=>'test'}
+    #respond_to do |format|
+      render json: {'id'=>'test'}
+   # end
 
   end
 
