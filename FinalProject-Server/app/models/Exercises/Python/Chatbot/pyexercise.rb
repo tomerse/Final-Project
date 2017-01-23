@@ -7,6 +7,6 @@ class Pyexercise #< ActiveRecord::Base
       @tasks = params["tasks"]
       @hints = params["hints"]
       @code = params["code"]
-      @initchatbotmessage = params["initchatbotmessage"]
+      @chatbotinitmessage = params["chatbotinitmessage"]
     end
 end

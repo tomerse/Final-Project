@@ -12,13 +12,11 @@ class ExerciseReader
   def self.build_exercise(languagename, coursename, exerciseid)
     xml = read_exercise_xml(languagename, coursename, exerciseid)
     exec = parse_xml(languagename, coursename, xml)
-    #return exec
+    return exec
   end
 
   def self.parse_xml(languagename, coursename, xml)
-    print 'calling to getRelevantExercise'
     exec = Exercise.get_relevant_exercise(languagename, coursename, xml)
-    print 'returned from getRelevantExercise'
     return exec
   end
 

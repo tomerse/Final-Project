@@ -27,22 +27,20 @@ class Xml < ActiveRecord::Base
   end
   
   def self.readxml(filepath)
-    #File.open(filepath) { |f| Nokogiri::XML(f) }
-
-
     doc = Nokogiri.parse open(filepath)
-    #doc = Nokogiri::XML(File.open(filepath))
-    #block = doc.css("Items Item").map { |node| node.children.text }
-
-    #File.open(filepath, 'r') do |file|
-      #str = file.read
-      #print str
-    #end
-    
-    
   end
 
   def self.get_element(xml,element)
     xml.at(element).text
+  end
+
+
+  def self.get_elements(xml,node)
+  arr = Array.new
+  xml.xpath('//'+node).map do
+    |element|
+    arr.push(element.text)
+  end
+  return arr
   end
 end
