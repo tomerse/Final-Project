@@ -74,13 +74,16 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def compile
     require 'Compilers/compiler'
- #   @language = params[:lan_name]
+    @language = params[:lan_name]
     @code = params[:code]
-    #@core_result = Compiler.run_code(@language, @code)
-    print @code
+    @code_result = Compiler.run_code(@language, @code)
+    print "code_result = " + @code_result + "\n"
+    print "back from complier, rendering answer\n"
+    render :json => @code_result
 
+    #render html:@core_result, :layout => false
     #respond_to do |format|
-      render json: {'id'=>'test'}
+      #render json: {'id'=>'test'}
    # end
 
   end
