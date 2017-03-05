@@ -19,12 +19,16 @@ class Compiler
       #code_res = "#{python_output}"
       #print `The output from #{PYCODE} = #{python_output}\n`
 
-      File.open(PYNAME, 'w'){|f| f.write code}
-      python_output = `python #{PYNAME}`
       #puts "The output from #{PYNAME} is: #{python_output}\n"
-      code_res = "#{python_output}"
+      begin
+        File.open(PYNAME, 'w'){|f| f.write code}
+        # 2>&1 means redirecting stderr to stdout (to catch exceptions from Python code as well)
+        python_output = `python #{PYNAME} 2>&1`
+        code_res = "#{python_output}"
+      rescue => ex
+        print "\nException caught: " + ex.message
+      end
 
-      #Skulpt.run_code_html(code)
     end
     return code_res
   end
