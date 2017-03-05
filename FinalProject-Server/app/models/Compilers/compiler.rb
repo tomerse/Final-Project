@@ -1,6 +1,5 @@
 class Compiler
 
-  require 'Compilers/Python/skulpt/skulpt'
   PYNAME = "#{Rails.root}/lib/py_code.py"
   PYCODE = "print 1+2"
 
