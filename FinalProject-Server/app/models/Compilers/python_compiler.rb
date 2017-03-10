@@ -102,7 +102,7 @@ class PythonCompiler
     if (code_res <=> "") == 0
       success = true
     end
-    return success
+    return [success, code_res]
   end
 
 end

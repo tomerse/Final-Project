@@ -77,15 +77,10 @@ class CoursesController < ApplicationController
     @language = params[:lan_name]
     @code = params[:code]
     @args = params[:args]
+    @ex_id = params[:ex_id]
     @code_result = Compiler.run_code(@language, @code, @args)
     print "code_result = " + @code_result + "\n"
     render :json => @code_result
-
-    #render html:@core_result, :layout => false
-    #respond_to do |format|
-      #render json: {'id'=>'test'}
-   # end
-
   end
 
   # POST /courses
@@ -93,11 +88,15 @@ class CoursesController < ApplicationController
   def compile
     require 'Compilers/compiler'
     @language = params[:lan_name]
+    @ex_id = params[:ex_id]
     @code = params[:code]
-    @success = Compiler.compile_code(@language, @code)
-    render :json => @success
-
-
+    @ans = Compiler.compile_code(@language, @code)
+    @success = @ans[0]
+    @error = @ans[1]
+    respond_to do |format|
+      format.json {render :json => {:success => @success,
+                                    :error => @error}}
+    end
   end
 
   # DELETE /courses/1
