@@ -20,7 +20,37 @@ and open the template in the editor.
 
     <tasks>
 
-      <task></task>
+      <task>
+        <content></content>
+        <tests>
+          <test>
+            <input_value></input_value>
+            <output></output>
+            <failure></failure>
+          </test>
+          <test>
+            <input_value></input_value>
+            <output></output>
+            <failure></failure>
+          </test>
+        </tests>
+      </task>
+
+      <task>
+        <content></content>
+        <tests>
+          <test>
+            <input_value></input_value>
+            <output></output>
+            <failure></failure>
+          </test>
+          <test>
+            <input_value></input_value>
+            <output></output>
+            <failure></failure>
+          </test>
+        </tests>
+      </task>
 
       <task></task>
 

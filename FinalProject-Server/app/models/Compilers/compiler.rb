@@ -20,7 +20,7 @@ class Compiler
       if compilation_passed == false
         ans[0] = "compilation error"
       else
-        tests_passed = true#TestsRunner.run(language_name, course_name, ex_id)
+        tests_passed = TestsRunner.run(language_name, course_name, ex_id)
         if tests_passed == false
           ans[0] = "tests failed"
         else

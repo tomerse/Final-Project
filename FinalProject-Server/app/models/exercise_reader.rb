@@ -10,22 +10,33 @@ class ExerciseReader
 
 
   def self.build_exercise(languagename, coursename, exerciseid)
-    xml = read_exercise_xml(languagename, coursename, exerciseid)
-    exec = parse_xml(languagename, coursename, xml)
-    return exec
+    file = read_exercise_file(languagename, coursename, exerciseid)
+    exercise = parse_exercise(languagename, coursename, file)
+    return exercise
   end
 
-  def self.parse_xml(languagename, coursename, xml)
-    exec = Exercise.get_relevant_exercise(languagename, coursename, xml)
-    return exec
+  def self.build_tests(languagename, coursename, exerciseid)
+    file = read_exercise_file(languagename, coursename, exerciseid)
+    tests = parse_tests(file)
+    return tests
   end
 
-  def self.read_exercise_xml(languagename, coursename, exerciseid)
+  def self.parse_exercise(languagename, coursename, file)
+    exercise = Exercise.get_relevant_exercise(languagename, coursename, file)
+    return exercise
+  end
+
+  def self.parse_tests(file)
+    tests = TestsParser.parse_tests(file)
+    return tests
+  end
+
+  def self.read_exercise_file(languagename, coursename, exerciseid)
     path = ROOT + '/' + COURSESEFOLDER + '/' + languagename.to_s + '/' + coursename.to_s + '/' + EXERCISESFOLDER + '/'
     filename = FILENAME + exerciseid.to_s + EXTENSION
     fullpath = path+filename
-    xml = Xml.readxml(fullpath)
-    return xml
+    file = Xml.readxml(fullpath)
+    return file
   end
 
 end

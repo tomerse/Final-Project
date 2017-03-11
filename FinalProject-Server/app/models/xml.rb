@@ -36,11 +36,12 @@ class Xml < ActiveRecord::Base
 
 
   def self.get_elements(xml,node)
-  arr = Array.new
-  xml.xpath('//'+node).map do
-    |element|
-    arr.push(element.text)
+    arr = Array.new
+    xml.xpath('//'+node).map do
+      |element|
+      arr.push(element.text)
+    end
+    return arr
   end
-  return arr
-  end
+
 end

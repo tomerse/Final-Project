@@ -5,8 +5,13 @@ class PyChatExecParser #< Exercise
     topic = Xml.get_element(xmlfile,"topic")
     instructions = Xml.get_element(xmlfile,"instructions")
     code = Xml.get_element(xmlfile,"code")
-    tasks = Xml.get_elements(xmlfile, "task") #['task1','task2']
-    hints = Xml.get_elements(xmlfile, "hint") #['hint1','hint2']
+    tasks = Xml.get_elements(xmlfile, "tasks//task//content") #['task1','task2']
+    #tasks=[]
+    #tasks_elements.each do |task|
+    #  cur_task = Xml.get_text_element(task, "content")
+    #  tasks.push(cur_task)
+    #end
+    hints = Xml.get_elements(xmlfile, "hints//hint") #['hint1','hint2']
     chatbotinitmessage = Xml.get_element(xmlfile,"chatbotinitmessage")
     argstype = Xml.get_elements(xmlfile, "argtype") #['argtype1','argtype2']
     numofargs = argstype.length

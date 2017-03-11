@@ -14,8 +14,4 @@ class Exercise
     end
   end
 
-  def compile(id, code)
-
-  end
-
 end

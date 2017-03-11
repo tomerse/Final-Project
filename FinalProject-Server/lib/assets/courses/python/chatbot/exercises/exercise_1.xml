@@ -20,16 +20,34 @@ and open the template in the editor.
     </instructions>
 
     <code>def printName(name):
-    print 'My name is ' + #enter your code here
+    print #enter your code here
     return
     </code>
 
     <tasks>
-
-      <task>Print the value of variable "name"</task>
-
-      <task>Click the send button</task>
-
+      <task>
+        <content>Print the value of variable "name"</content>
+        <tests>
+          <test>
+            <input_value>shar</input_value>
+            <output>shar</output>
+            <failure>Check if print the variable name</failure>
+          </test>
+          <test>
+            <input_value>lil</input_value>
+            <output>lil</output>
+            <failure>Check if print the variable name</failure>
+          </test>
+          <test>
+            <input_value></input_value>
+            <output></output>
+            <failure>What happens if the input is empty string?</failure>
+          </test>
+        </tests>
+      </task>
+      <task>
+        <content>Click the send button</content>
+      </task>
     </tasks>
 
     <hints>
