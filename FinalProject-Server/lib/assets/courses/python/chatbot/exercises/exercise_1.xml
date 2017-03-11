@@ -20,8 +20,8 @@ and open the template in the editor.
     </instructions>
 
     <code>def printName(name):
-      print 'My name is ' + #enter your code here
-      return
+    print 'My name is ' + #enter your code here
+    return
     </code>
 
     <tasks>
