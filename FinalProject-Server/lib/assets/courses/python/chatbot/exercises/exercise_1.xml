@@ -19,10 +19,7 @@ and open the template in the editor.
       For example, to print to the screen the phrase Hello World!. Write down the expression print "Hello World!".
     </instructions>
 
-    <code>def printName(name):
-      print 'My name is '#enter your code here
-    return
-    </code>
+    <code>def printName(name):\n\tprint 'My name is '#enter your code here\n\treturn</code>
 
     <tasks>
 
