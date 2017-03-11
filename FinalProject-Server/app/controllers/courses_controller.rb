@@ -88,9 +88,10 @@ class CoursesController < ApplicationController
   def compile
     require 'Compilers/compiler'
     @language = params[:lan_name]
+    @course = params[:course_name]
     @ex_id = params[:ex_id]
     @code = params[:code]
-    @ans = Compiler.compile_code(@language, @code)
+    @ans = Compiler.compile_code(@language, @course, @code, @ex_id)
     @success = @ans[0]
     @error = @ans[1]
     respond_to do |format|
