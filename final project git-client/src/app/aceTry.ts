@@ -1,43 +1,51 @@
-import { Component , ViewChild , Output , EventEmitter } from '@angular/core';
+import { AceEditorComponent } from 'ng2-ace-editor';
+import { Component , ViewChild , Output , Input ,EventEmitter } from '@angular/core';
 
 
 @Component({
   selector: 'aceEditor',
   template: `
-  <div ace-editor #editor class="text-inside-grid"
+    <div ace-editor #editor class="text-inside-grid" color="primary"
        [text]="text"
        [mode]="'python'"
-       [theme]="'tomorrow_night'"
+       [theme]="theme"
        [options]="options"
        [readOnly]="readonly"
        [autoUpdateContent]="true"
        (textChanged)="onChange($event)"
-       style="min-height:400px; width:450px;background-color:black;overflow: auto;"></div>
+       style="min-height:400px; width:550px;overflow: auto;"></div>
   `
 })
 export class MyComponent {
-  text: string = 'asdasdasdads';
-  options: any = {maxLines: 20, printMargin: false, fontSize: '13pt', autoScrollEditorIntoView: true};
-  readonly: any = false;
+  theme = 'tomorrow_night';
+  options:any = {maxLines: 20, printMargin: false,fontSize:"13pt", autoScrollEditorIntoView: true};
+  readonly:any = false;
+
   @ViewChild('editor') editor;
+
+  @Input()
+  text:string;
 
   @Output()
   currStatus = new EventEmitter<string>();
 
-  changeReadOnlyModeToFalse() {
+  changeReadOnlyModeToFalse()
+  {
     this.readonly = false;
   }
 
-  changeText(newText: string) {
+  changeText(newText:string)
+  {
     this.text = newText;
   }
 
-  changeReadOnlyModeToTrue() {
+  changeReadOnlyModeToTrue()
+  {
     this.readonly = true;
   }
 
   onChange(code) {
-    console.log('new code', code);
+    console.log("new code", code);
     this.currStatus.emit(code);
   }
 }

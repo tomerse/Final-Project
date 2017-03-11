@@ -14,82 +14,82 @@
       <i class="material-icons app-toolbar-menu">menu</i>
     </button>
 
-   Python Racer
+   Python Bot
 
     <span class="app-toolbar-filler"></span>
-    <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+    <button md-button (click)="changeToDarkTheme()">TOGGLE DARK THEME</button>
+    <a md-icon-button routerLink="home"  md-tooltip="home">
+      <md-icon>home</md-icon>
+    </a>
+    <a md-icon-button
+       md-tooltip="help"
+       tooltip-position="below">
+      <md-icon>help</md-icon>
+    </a>
   </md-toolbar>
-<!--
-<div style="float:left; width:20%;overflow : auto; max-height: 400px;">
-  <div>
-      <h2 align="center">Instructions</h2>
-      <p>{{writtenCode}}</p>
-  </div>
-
-  <h3>
-    {{writtenCode}}
-  </h3>
-</div>
-<div style="float:left;overflow: auto; width:80%;">
-  <label>כותרת </label>
-  <input type="text" [(ngModel)]="title"  (change)="changeEditorEdit()" placeholder="כותרת">
--->
-
-
-
 
 
   <div class="app-content">
-    <md-grid-list cols="9" rowHeight="95px" layout-fill>
+    <md-grid-list cols="9" rowHeight="94.8px">
 
       <md-grid-tile [colspan]="2" [rowspan]="6" color="primary">
-        <md-card layout="column" layout-fill class="introClass">
-          <div flex layout="column">
-            <h1>Introduction</h1>
-            <p>
-             {{currStage.introduction}}
-            </p>
-          </div> <br/><br/>
-          <div flex layout="column">
-          <h1>Instructions</h1>
-          <p>
-            {{currStage.instructions}}
-          </p> <br/><br/>
-        </div>
-          <div flex layout="column">
+        <md-card #introObj layout="column" layout-fill class="introClass">
+          <div flex layout="column" >
+            <h1>{{currStage.topic}}</h1>
+            <h3>Exercise {{currStage.id}}</h3>
+            <br/>
             <h1>Instructions</h1>
             <p>
-              {{currStage.instructions}}
-            </p> <br/><br/>
+             {{currStage.instructions}}
+            </p>
+          </div>
+          <div flex layout="column">
+          <h1>Tasks</h1>
+            <md-list *ngFor="let item of currStage.tasks" class="hintsListElement">
+              <md-checkbox>{{item}}</md-checkbox>
+            </md-list>
+          </div>
+          <br/>
+          <div flex layout="column">
+            <button  md-raised-button color="primary" (click)="collapseHints()">
+              <span>Hints</span>
+                <md-icon *ngIf="_isCollapsedContent">expand_more</md-icon>
+                <md-icon *ngIf="!_isCollapsedContent">expand_less</md-icon>
+            </button>
+
+                <md-list [collapse]="_isCollapsedContent" *ngFor="let item of currStage.hints" class="hintsListElement">
+                  <md-list-item style="padding-left: 0px;">
+                        <md-icon style="margin-right: 2px">check_circle</md-icon>
+                        <span>{{item}}</span>
+                  </md-list-item>
+                </md-list>
+
           </div>
 
        </md-card>
 
 
       </md-grid-tile>
-      <md-grid-tile  [colspan]="4" [rowspan]="5" [style.background]="'black'">
-      <aceEditor  class="text-inside-grid" #editor (currStatus)="changeStatus($event)"></aceEditor>
-
+      <md-grid-tile  [colspan]="4" [rowspan]="5" color="primary">
+             <aceEditor  class="text-inside-grid" #editor [text]="currStage.code"
+                         (currStatus)="changeStatus($event)"></aceEditor>
       </md-grid-tile >
-      <md-grid-tile [colspan]="3" [rowspan]="5" [style.background]="'black'">
-        <div class="chatbot-div">
+      <md-grid-tile [colspan]="3" [rowspan]="5" >
+        <div *ngIf="complilationStatus" class="chatbot-div" color="primary">
            <chatBot></chatBot>
         </div>
       </md-grid-tile >
       <md-grid-tile [colspan]="7" [rowspan]="1">
         <md-card class="card-accent md-card-flat" layout="row" flex >
-          <button  md-raised-button md-tooltip="Click here to submit your code!" (click)="submit()" color="primary">SEND</button>
+          <button  md-raised-button md-tooltip="Click here to submit your code!" (click)="submit()" color="primary">
+            Submit your code!
+          </button>
         </md-card>
       </md-grid-tile>
     </md-grid-list>
-    <!--
-              <md-card [class.m2app-dark]="isDarkTheme">
-                  <h3>{{title}}</h3>
-                </md-card>
--->
   </div>
 
 </md-sidenav-container>
 <span class="app-action" [class.m2app-dark]="isDarkTheme">
-  <button md-fab><md-icon>check circle</md-icon></button>
+  <button md-fab (click)="chatbotIsOn = !chatbotIsOn"><md-icon>check circle</md-icon></button>
 </span>

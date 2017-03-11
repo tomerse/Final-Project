@@ -13,14 +13,16 @@ import {Angular2FlexModule} from 'angular2-flex';
 import { RouterModule } from '@angular/router';
 import {ChatBotComponent} from './ChatBot/chatbot.component';
 import {ChatMessageComponent} from './ChatBot/message.component';
+import {DialogCompilationComponent} from './Dialog/dialog.component';
+import 'hammerjs';
 @NgModule({
   declarations: [
     AppComponent,
     AceEditorDirective,
-  //  AceEditorComponent,
     MyComponent,
     ChatBotComponent,
-    ChatMessageComponent
+    ChatMessageComponent,
+    DialogCompilationComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import {ChatMessageComponent} from './ChatBot/message.component';
    // RouterModule.forRoot()
   ],
   providers: [],
+  entryComponents: [DialogCompilationComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

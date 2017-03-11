@@ -9,8 +9,8 @@ md-sidenav-container.m2app-dark {
   /*padding: 20px;*/
 }
 .text-inside-grid {
-  position: absolute;
-  left: 5px;
+  padding-right: 5%;
+  padding-bottom: 5%;
 }
 
 .text-inside-grid1 {
@@ -111,16 +111,48 @@ md-card {
 }
 .introClass
 {
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   display: block;
   margin: 0px;
   height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
 }
 
 .chatbotBody
 {
   overflow-y: auto;
-  margin: 3px;
-  max-height: 300px;
+  margin-top: 10px;
+  max-height: 350px;
+  
+}
+.buttonForIntroClass
+{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 36px;
+  margin-bottom: 10px;
+
+}
+
+md-list.hintsListElement md-list-item .md-list-item
+{
+  padding-left: 0px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+.md-checkbox-layout .md-checkbox-label
+{
+  font-weight: normal;
+}
+.chatbotButton
+{
+  margin-right: 7%;
+}
+
+.chatbot-footer h2
+{
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
 }

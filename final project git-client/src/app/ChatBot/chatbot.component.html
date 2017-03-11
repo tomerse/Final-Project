@@ -2,7 +2,7 @@
 
 
 <md-grid-tile-header class="chatbot-footer">
-  <h3>This is a header</h3>
+  <h2>ChatBot</h2>
 </md-grid-tile-header>
 <div #chatbotBody class="chatbotBody">
       <div *ngFor="let message of messageList">
@@ -10,7 +10,7 @@
       </div>
 </div>
 <md-grid-tile-footer class="chatbot-footer">
-  <md-input #angularcb1 placeholder="Type here" (keydown.enter)="sendMessage(angularcb1.value)"></md-input>
+  <md-input class="chatbotButton" #angularcb1 placeholder="Type here" (keydown.enter)="sendMessage(angularcb1.value)"></md-input>
   <button  md-raised-button md-tooltip="Click here to submit your code!" (click)="sendMessage(angularcb1.value)" color="primary">SEND</button>
 </md-grid-tile-footer>
 
