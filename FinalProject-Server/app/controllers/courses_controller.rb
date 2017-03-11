@@ -75,9 +75,9 @@ class CoursesController < ApplicationController
   def run
     require 'Compilers/compiler'
     @language = params[:lan_name]
+    @ex_id = params[:ex_id]
     @code = params[:code]
     @args = params[:args]
-    @ex_id = params[:ex_id]
     @code_result = Compiler.run_code(@language, @code, @args)
     print "code_result = " + @code_result + "\n"
     render :json => @code_result

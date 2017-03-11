@@ -9,20 +9,23 @@ class PythonCompiler
   def self.run_code(code, args)
     num_of_args = 0
     args_list = ""
+    args_types = []
     if !args.nil?
       num_of_args = args.length
-      # build arguments list
-      args_list = args[0].to_s()
+      # build arguments names as string & arguments types list
+      args_list = args[0][0].to_s()
+      args_types.push(args[0][1].to_s())
       if num_of_args > 1
         for i in 1..num_of_args-1
-          args_list += " " + args[i].to_s()
+          args_list += " " + args[i][0].to_s()
+          args_types.push(args[i][1].to_s())
         end
       end
     end
     func_name = get_func_name(code)
     generated_code = code
     if (func_name <=> "") != 0
-      generated_code = self.generate_python_code(code,func_name,num_of_args)
+      generated_code = self.generate_python_code(code,func_name,num_of_args,args_types)
     end
     # Running the code
     begin
@@ -47,35 +50,53 @@ class PythonCompiler
 
 
   #Generate the Python code with args parser
-  def self.generate_python_code(code, func_name, num_of_args)
+  def self.generate_python_code(input_code, func_name, num_of_args, args_types)
     # generate arguments list code
-    args_list_code = generate_args_list_code(num_of_args)
+    args_list_code = generate_args_list_code(num_of_args, args_types)
     # import libraries
     generated_code = "import sys\n\n"
     # client's code
-    generated_code += code + "\n\n"
+    generated_code += input_code + "\n\n"
+    generated_code += generate_main_func_code(func_name, num_of_args, args_list_code)
     # start of main function
-    generated_code += "def main():\n\tnum_of_args = len(sys.argv)\n\tif num_of_args==1:\n\t\t"
+    #generated_code += "def main():\n\tnum_of_args = len(sys.argv)\n\tif num_of_args==1:\n\t\t"
     # call to function without params
-    generated_code += func_name + "()\n\t\treturn\n\t"
+    #generated_code += func_name + "()\n\t\treturn\n\t"
     # main function
-    generated_code += "params = [None] * (num_of_args -1)\n\tfor i in range(1,num_of_args):\n\t\tparams[i-1]=sys.argv[i]\n"
+    #generated_code += "params = [None] * (num_of_args -1)\n\tfor i in range(1,num_of_args):\n\t\tparams[i-1]=sys.argv[i]\n"
     # call to function with params
-    generated_code += "\t" + func_name + "(" + args_list_code + ")\n"
+    #generated_code += "\t" + func_name + "(" + args_list_code + ")\n"
     # call to main
     generated_code += "\nif __name__ == \"__main__\":\n\tmain()"
     return generated_code
-
   end
 
-  #Generate list of arguments code to send
-  def self.generate_args_list_code(num_of_args)
+
+  def self.generate_main_func_code(func_name, num_of_args, args_list_code)
+    # start of main function
+    caller_func_code = "def main():\n\t"
+    if num_of_args == 0
+      # call to function without params
+      caller_func_code += func_name + "()\n"
+    else
+      # get input length
+      caller_func_code += "num_of_args = len(sys.argv)\n\t"
+      # preparing list of arguments
+      caller_func_code += "params = [None] * (num_of_args -1)\n\tfor i in range(1,num_of_args):\n\t\tparams[i-1]=sys.argv[i]\n"
+      # call to function with params
+      caller_func_code += "\t" + func_name + "(" + args_list_code + ")\n"
+    end
+    return caller_func_code
+  end
+
+  #Generate list of arguments code to send with casting to their expected types
+  def self.generate_args_list_code(num_of_args, args_types)
     params_list_str = ""
     if num_of_args > 0
-      params_list_str = "params[0]"
+      params_list_str = args_types[0] + "(params[0])"
       if num_of_args > 1
         for i in 1..num_of_args-1
-          params_list_str += ", params[" + i.to_s() + "]"
+          params_list_str += ", " + args_types[i] + "(params[" + i.to_s() + "])"
         end
       end
     end
