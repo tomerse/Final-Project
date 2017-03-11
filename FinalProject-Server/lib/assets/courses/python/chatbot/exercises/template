@@ -12,7 +12,7 @@ and open the template in the editor.
 
     <id></id>
 
-    <topic>Printing</topic>
+    <topic></topic>
 
     <instructions></instructions>
 
@@ -35,6 +35,14 @@ and open the template in the editor.
     </hints>
 
     <chatbotinitmessage></chatbotinitmessage>
+
+    <argstype>
+
+      <argtype></argtype>
+
+      <argtype></argtype>
+
+    </argstype>
 
   </exercise>
 

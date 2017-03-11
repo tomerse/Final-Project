@@ -40,6 +40,12 @@ and open the template in the editor.
 
     <chatbotinitmessage>Hello! What is your name?</chatbotinitmessage>
 
+    <argstype>
+
+      <argtype>str</argtype>
+
+    </argstype>
+
   </exercise>
 
 </root>
