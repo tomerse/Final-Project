@@ -8,8 +8,8 @@ class PyChatExecParser #< Exercise
     tasks = Xml.get_elements(xmlfile, "tasks//task//content") #['task1','task2']
     hints = Xml.get_elements(xmlfile, "hints//hint") #['hint1','hint2']
     chatbotinitmessage = Xml.get_element(xmlfile,"chatbotinitmessage")
-    argstype = Xml.get_elements(xmlfile, "argtype") #['argtype1','argtype2']
-    numofargs = argstype.length
+    args = Xml.get_elements(xmlfile, "argstypes//arg") #['argtype1','argtype2']
+    numofargs = args.length
     return Hash["id"=>id, "topic"=>topic, "instructions"=>instructions, "code"=>code,
               "tasks"=>tasks, "hints"=>hints, "chatbotinitmessage"=>chatbotinitmessage,
                 "numofargs"=>numofargs]
