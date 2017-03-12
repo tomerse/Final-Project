@@ -9,6 +9,5 @@ class Pyexercise #< ActiveRecord::Base
       @code = params["code"]
       @chatbotinitmessage = params["chatbotinitmessage"]
       @numofargs = params["numofargs"]
-      @argstype = params["argstype"]
     end
 end

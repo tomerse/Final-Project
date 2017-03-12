@@ -7,19 +7,12 @@ and open the template in the editor.
 
 
 <root>
-
   <exercise>
-
     <id></id>
-
     <topic></topic>
-
     <instructions></instructions>
-
     <code></code>
-
     <tasks>
-
       <task>
         <content></content>
         <tests>
@@ -35,7 +28,6 @@ and open the template in the editor.
           </test>
         </tests>
       </task>
-
       <task>
         <content></content>
         <tests>
@@ -51,29 +43,22 @@ and open the template in the editor.
           </test>
         </tests>
       </task>
-
       <task></task>
-
     </tasks>
-
     <hints>
-
       <hint></hint>
-
       <hint></hint>
-
     </hints>
-
     <chatbotinitmessage></chatbotinitmessage>
-
-    <argstype>
-
-      <argtype></argtype>
-
-      <argtype></argtype>
-
-    </argstype>
-
+    <argstypes>
+      <arg>
+        <type></type>
+        <type></type>
+      </arg>
+      <arg>
+        <type></type>
+        <type></type>
+      </arg>
+    </argstypes>
   </exercise>
-
 </root>

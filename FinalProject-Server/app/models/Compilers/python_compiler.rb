@@ -5,20 +5,18 @@ class PythonCompiler
   # @brief Get Python code of function and list of arguments, generate parser with relevant number of arguments and run it with args
   # @param code - Python code of function
   # @param args - list of arguments
+  # @args_types - list of arguments types
   # @return code output
-  def self.run_code(code, args)
+  def self.run_code(code, args, args_types)
     num_of_args = 0
     args_list = ""
-    args_types = []
     if !args.nil?
       num_of_args = args.length
       # build arguments names as string & arguments types list
-      args_list = args[0][0].to_s()
-      args_types.push(args[0][1].to_s())
+      args_list = args[0].to_s()
       if num_of_args > 1
         for i in 1..num_of_args-1
-          args_list += " " + args[i][0].to_s()
-          args_types.push(args[i][1].to_s())
+          args_list += " " + args[i].to_s()
         end
       end
     end

@@ -35,14 +35,17 @@ class Compiler
 
   #@brief compiling and running code per language with list of arguments
   #@param language_name - course programming language
+  #@param course_name - course name
+  #@param ex_id - exercise id
   #@param code - the code to compile
   #@param args - list of arguments
   #@return output of the code
-  def self.run_code(language_name, code, args)
+  def self.run_code(language_name, course_name, ex_id, code, args)
     code_res = ""
+    args_types = ExerciseReader.build_arg_types(language_name, course_name, ex_id)
     print "Compiler.run_code\n"
     if(language_name == 'python')
-      code_res = PythonCompiler.run_code(code, args)
+      code_res = PythonCompiler.run_code(code, args, args_types)
     end
     return code_res
   end
