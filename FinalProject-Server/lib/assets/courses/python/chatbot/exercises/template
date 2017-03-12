@@ -33,10 +33,12 @@ and open the template in the editor.
         <tests>
           <test>
             <input_value></input_value>
+            <input_value></input_value>
             <output></output>
             <failure></failure>
           </test>
           <test>
+            <input_value></input_value>
             <input_value></input_value>
             <output></output>
             <failure></failure>

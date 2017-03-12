@@ -24,18 +24,13 @@ and open the template in the editor.
         <tests>
           <test>
             <input_value>shar</input_value>
-            <output>shar</output>
+            <output>shar&#xA</output>
             <failure>Check if print the variable name</failure>
           </test>
           <test>
             <input_value>lil</input_value>
-            <output>lil</output>
+            <output>lil&#xA</output>
             <failure>Check if print the variable name</failure>
-          </test>
-          <test>
-            <input_value></input_value>
-            <output></output>
-            <failure>What happens if the input is empty string?</failure>
           </test>
         </tests>
       </task>

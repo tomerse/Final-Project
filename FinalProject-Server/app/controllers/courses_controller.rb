@@ -96,7 +96,7 @@ class CoursesController < ApplicationController
     @success = @ans[0]
     @error = @ans[1]
     respond_to do |format|
-      format.json {render :json => {:success => @success,
+      format.json {render :json => {:status => @success,
                                     :error => @error}}
     end
   end

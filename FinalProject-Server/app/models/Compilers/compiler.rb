@@ -11,8 +11,10 @@ class Compiler
   def self.compile_code(language_name, course_name, code, ex_id)
     ans = ""
     print "Compiler.compile_code\n"
+    #get arguments types from exercise config file
+    args_types = ExerciseReader.build_arg_types(language_name, course_name, ex_id)
     if(language_name == 'python')
-      ans = PythonCompiler.compile_code(code)
+      ans = PythonCompiler.compile_code(code, args_types)
     end
     #building compilation answer
     if !ans.nil?
@@ -20,9 +22,11 @@ class Compiler
       if compilation_passed == false
         ans[0] = "compilation error"
       else
-        tests_passed = TestsRunner.run(language_name, course_name, ex_id)
-        if tests_passed == false
+        file_to_run = ans[2]
+        tests_result = TestsRunner.run(language_name, course_name, ex_id, file_to_run)
+        if tests_result[0] == false
           ans[0] = "tests failed"
+          ans[1] = tests_result[1]
         else
           ans[0] = "success"
           ans[1] = []

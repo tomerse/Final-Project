@@ -8,10 +8,10 @@ class TestsParser
     num_of_tasks = inputs.length
     if (num_of_tasks == outputs.length) and (num_of_tasks  == failures.length)
       for i in 0..num_of_tasks-1
-        params = Hash["input"=>inputs[i], "output"=>outputs[i], "failure"=>failures[i]]
-        test = ChatBotTest.new(params)
+        params = Hash["input"=>[inputs[i]], "output"=>outputs[i], "failure"=>failures[i]]
+        test_data = ChatBotTest.new(params)
         #test.to_s()
-        tests.push(test)
+        tests.push(test_data)
       end
     end
     return tests
