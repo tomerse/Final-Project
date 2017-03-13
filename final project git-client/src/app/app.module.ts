@@ -13,6 +13,7 @@ import { MyComponent } from './aceTry';
 import { MaterialModule } from '@angular/material';
 import {Angular2FlexModule} from 'angular2-flex';
 import { RouterModule,Router,ActivatedRoute,Params } from '@angular/router';
+import {HashLocationStrategy,LocationStrategy} from '@angular/common';
 import {ChatBotComponent} from './ChatBot/chatbot.component';
 import {ChatMessageComponent} from './ChatBot/message.component';
 import {DialogCompilationComponent} from './Dialog/dialog.component';
@@ -42,7 +43,7 @@ import 'hammerjs';
     RouterModule.forRoot(appRootRoutingList),
    //RouterModule.forChild(appCourseRoutingList)
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass:HashLocationStrategy}],
   entryComponents: [DialogCompilationComponent],
   bootstrap: [AppComponent]
 })

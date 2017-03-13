@@ -1,6 +1,6 @@
 import {NgModule, Component,ViewChild,OnInit, ViewEncapsulation,AfterContentInit, ElementRef,QueryList } from '@angular/core';
 import {stage} from './stage'
-import {Router} from '@angular/router';
+import {Router,ActivatedRoute} from '@angular/router';
 import  {StagePageService} from './stage.component.service';
 import {MdDialog, MdDialogRef,MdDialogConfig} from '@angular/material';
 import {DialogCompilationComponent} from  './Dialog/dialog.component';
@@ -30,10 +30,13 @@ export class stageComponent implements OnInit,AfterContentInit{
   complilationCurrStatus:string;
   allCompilationStatus = new dialogStatus();
   chatbotinitmessage:string;
+  activeRoute: ActivatedRoute;
+  private sub:any;
+  stageIdfromRouting:string;
 
-
-  constructor(private stagePageService: StagePageService,public dialog: MdDialog)
+  constructor(private stagePageService: StagePageService,public dialog: MdDialog,route:ActivatedRoute)
   {
+    this.activeRoute = route;
   }
 
     openDialog(statuscode:number,error?:string) {
@@ -60,7 +63,12 @@ export class stageComponent implements OnInit,AfterContentInit{
 
   ngOnInit()
   {
-    this.stagePageService.getInitalDataForStage('1').subscribe(
+    this.sub = this.activeRoute.params.subscribe (params =>
+     {
+        this.stageIdfromRouting = params['id'];
+     }
+    );
+    this.stagePageService.getInitalDataForStage(this.stageIdfromRouting).subscribe(
       response =>
       {
           console.log(response);

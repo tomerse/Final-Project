@@ -9,7 +9,8 @@ export const appRootRoutingList = [
       { path: '', redirectTo: 'course', pathMatch: 'full' }, 
       { path: 'course', component: courseComponent,
       children: [
-        { path: '', component:stageComponent }
+        { path: '', redirectTo: 'stage/1', pathMatch: 'full' },
+        { path: 'stage/:id', component:stageComponent }
         ]
   }
    ]}
