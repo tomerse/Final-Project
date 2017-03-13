@@ -9,6 +9,7 @@ export class DialogCompilationComponent {
 
     title;
     content;
+    error;
 
   constructor(public dialogRef: MdDialogRef<DialogCompilationComponent>) {}
 }

@@ -18,35 +18,35 @@ export class OneMessageInstance
 
 
 @Component({
+  inputs: ['message'],
   selector: 'chat-message',
   styleUrls: ['./message.component.css'],
   template: `
       
-        <div class="media mediaCustom" *ngIf="message.incoming" >
-          <div class="media-left media-middle">
-            <img class="media-object" src="{{message.srcImg}}" alt="Smiley face" style="width: 35px;height: 35px;">
-            </div>
-          <div class="media-body" style="word-wrap:break-word;color:white;">
-         {{message.contant}}
-         </div>
-        </div>
-        
-          <div class="media incomingMessage" *ngIf="!message.incoming" style=" max-width: 270px; padding-top: 2px; padding-bottom: 2px;">
-          <div class="media-body" style="word-wrap:break-word;">
-         {{message.contant}}
-         </div>
-          <div class="media-right media-middle">
-            <img class="media-object" src="{{message.srcImg}}" alt="Smiley face" style="width: 35px;height: 35px;">
-            </div>
-        </div>
+ <div class="msg-container" 
+  [ngClass]="{'base-sent': !incoming, 'base-receive': incoming}">
+      <div class="avatar"
+         *ngIf="!message.incoming">
+      <img src="{{message.srcImg}}">
+    </div>
+
+
+    <div class="messages" [ngClass]="{'msg-sent': !incoming, 'msg-receive': incoming}">
+      <p>{{message.contant}}</p>
+    </div>
+    <div class="avatar" *ngIf="message.incoming">
+      <img src="{{message.srcImg}}">
+    </div>
+  </div>
   `
 })
 export class ChatMessageComponent implements OnInit {
 
 
+  /*
   @Input()
   message:OneMessageInstance;
-
+*/
   constructor() {
   }
 

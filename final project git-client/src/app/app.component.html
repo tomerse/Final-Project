@@ -75,11 +75,15 @@
                          (currStatus)="changeStatus($event)"></aceEditor>
       </md-grid-tile >
       <md-grid-tile [colspan]="3" [rowspan]="5" >
-        <div *ngIf="complilationStatus" class="chatbot-div" color="primary">
-           <chatBot></chatBot>
+        <div *ngIf="chatbotIsOn"  color="primary">
+           <chatBot #chatbotcomp [code]="writtenCode" [chatbotinitmessage]="chatbotinitmessage"
+           [numofargs] ="currStage.numofargs" [argstype]="currStage.argstype" 
+           [stageID]="currStage.id">
+
+           </chatBot>
         </div>
       </md-grid-tile >
-      <md-grid-tile [colspan]="7" [rowspan]="1">
+      <md-grid-tile [colspan]="4" [rowspan]="1">
         <md-card class="card-accent md-card-flat" layout="row" flex >
           <button  md-raised-button md-tooltip="Click here to submit your code!" (click)="submit()" color="primary">
             Submit your code!

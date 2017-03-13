@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import  {StagePageService} from './app.component.service';
 import {MdDialog, MdDialogRef,MdDialogConfig} from '@angular/material';
 import {DialogCompilationComponent} from  './Dialog/dialog.component';
+import {dialogStatus} from './Dialog/dialogStatus';
 //import 'ace-builds/src-min/ace';
 
 @Component({
@@ -17,27 +18,31 @@ import {DialogCompilationComponent} from  './Dialog/dialog.component';
 export class AppComponent implements OnInit,AfterContentInit{
   title='s';
   chatbotIsOn:boolean = false;
-  //router: Router;
+  //router: Router;   
   currStage: stage = new stage();
   writtenCode='';
   @ViewChild('editor') editor;
   @ViewChild('introObj', {read: ElementRef}) introObj;
   isDarkTheme: boolean = true;
+  @ViewChild('chatbotcomp') chatbotcomponent;
   links = ['sdasd','asdaasadasdsadsdassdsad','sadasdsda'];
   _isCollapsedContent = true;
-  complilationStatus=false;
-
+  complilationCurrStatus:string;
+  allCompilationStatus = new dialogStatus();
+  chatbotinitmessage:string;
 
 
   constructor(private stagePageService: StagePageService,public dialog: MdDialog)
   {
   }
 
-    openDialog() {
+    openDialog(statuscode:number,error?:string) {
     let config = new MdDialogConfig();
     let dialogRef = this.dialog.open(DialogCompilationComponent,config);
-    dialogRef.componentInstance.title = "Ham and Pineapple";
-    dialogRef.componentInstance.content = "Large";
+    dialogRef.componentInstance.title = this.allCompilationStatus.allStatus[statuscode].title;
+    error = error || "\n";
+    dialogRef.componentInstance.content = this.allCompilationStatus.allStatus[statuscode].content;
+     dialogRef.componentInstance.error=error;
     }
 
   changeToDarkTheme()
@@ -58,14 +63,19 @@ export class AppComponent implements OnInit,AfterContentInit{
     this.stagePageService.getInitalDataForStage('1').subscribe(
       response =>
       {
-        console.log(response["code"].toString());
+          console.log(response);
           this.currStage.id = response["id"];
           this.currStage.topic= response["topic"];
           this.currStage.instructions = response["instructions"];
           this.currStage.code= response["code"] ;
           this.currStage.tasks =response["tasks"] ;
           this.currStage.hints= response["hints"];
-        console.log("Success Response " + response)
+          this.currStage.argstype=response["argstype"];
+          this.currStage.numofargs=parseInt(response["numofargs"]);
+          this.chatbotinitmessage=response["chatbotinitmessage"];
+
+       
+        console.log(JSON.stringify(this.currStage));
       }
     );
     setTimeout(()=> {
@@ -88,12 +98,24 @@ export class AppComponent implements OnInit,AfterContentInit{
     this.stagePageService.submitYourCode(this.currStage.id,this.writtenCode).subscribe(
       response =>
       {
-        if (response)
+          //// add enable edit
+        if (response["status"]=='compilation error')
         {
-          this.complilationStatus = true;
-          this.openDialog();
+          this.complilationCurrStatus = 'compilation error';
+          this.openDialog(2,response["error"]);
+          
         }
-        console.log("Success Response " + response)
+         else if (response["status"]=='success')
+        {
+          this.complilationCurrStatus = 'success';
+          this.openDialog(0);
+          this.chatbotIsOn =true;
+        }
+        else{ //unit tests failed
+               this.openDialog(1,response["error"]);
+               this.chatbotIsOn =true;
+        }
+        console.log("Success Response " + JSON.stringify(response));
       }
     );
   }

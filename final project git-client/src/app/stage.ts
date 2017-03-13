@@ -12,6 +12,10 @@ export class stage {
 
   code:string;
 
+  numofargs:number;
+
+  argstype:string[];
+
 
   constructor(){
     this.id ='1';
@@ -20,7 +24,8 @@ export class stage {
     this.hints=[];
 
     this.code= ' '
-
+    this.argstype=[];
+    this.numofargs=0;
 
   }
 

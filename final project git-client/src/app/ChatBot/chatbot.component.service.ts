@@ -1,6 +1,6 @@
 import { Observable }  from 'rxjs/Observable';
 import { Injectable }     from '@angular/core';
-import { Http, Response } from '@angular/http';
+import {Http, Response,Headers,RequestOptions } from '@angular/http';
 import {Configuration} from '../configuration';
 import 'rxjs/add/observable/throw';
 
@@ -24,12 +24,13 @@ export class chatBotService {
     this.serverURL = this.conf.serverURL;
   }
 
-  getInitalData(): Observable<any> {
-    return this.http.get(this.serverURL+ 'connection_test/con_test')
-      .map((res: Response) =>
-        res['_body']
-      );
-    // .catch(this.handleError);
+  runCode(code:string,id:string,args:any[]): Observable<any> {
+    let headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8',
+     'Accept': '*/*'});
+         let options = new RequestOptions({ headers: headers });
+    return this.http.post(this.serverURL+ 'courses/' + this.conf.currLang+'/'+ this.conf.courseName+ 
+    '/' +id +'/run'
+      ,{"code":code,"args":args},options).map((res: Response) => res.json());
   }
 
 }
