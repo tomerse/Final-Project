@@ -2,6 +2,9 @@ import {stageComponent} from '../app.stage.component';
 import {StagePageService} from '../stage.component.service'
 import {Configuration} from '../configuration';
 import {Response, RequestOptions, Headers} from "@angular/http";
+import {MdDialog, Overlay} from "@angular/material";
+import {ActivatedRoute} from "@angular/router";
+import {Observable} from "rxjs";
 
 describe('Stage Component', () => {
   let headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8',
@@ -10,7 +13,9 @@ describe('Stage Component', () => {
   let stage_id: string = '1';
   let conf: Configuration = new Configuration();
   let stage_service: StagePageService = new StagePageService(conf.serverURL);
-  let stage:  stageComponent = new stageComponent(stage_service, null, null);
+  let router: ActivatedRoute = new ActivatedRoute();
+  router.params = new Observable();
+  let stage:  stageComponent = new stageComponent(stage_service, null, router);
 
    it('Chatbot is hidden by default', function() {
      expect(stage.chatbotIsOn).toBe(false);
@@ -26,25 +31,29 @@ describe('Stage Component', () => {
     expect(stage._isCollapsedContent).toBe(false);
   });
 
-  // it('Ace editor permission after successful compilation', function() {
-  //   stage.title = 'app works!';
+   it('Ace editor permission after successful compilation', function() {
+     stage.title = 'app works!';
   //   stage.changeEditorEdit();
   //   expect(stage.editor.readonly).toBe(true);
-  // });
+   });
   //
-  // it('Ace editor permission after failed compilation', function() {
-  //   stage.title = 'failed compilation';
+   it('Ace editor permission after failed compilation', function() {
+     stage.title = 'failed compilation';
   //   stage.changeEditorEdit();
   //   expect(stage.editor.readonly).toBe(false);
-  // });
+   });
 
   it('Page Theme is dark by default', function() {
     expect(stage.isDarkTheme).toBe(true);
   });
 
-  // it('Change Theme', function() {
+  it('Page Theme is dark by default', function() {
+   // expect(stage.ngOnInit()).toBe(true);
+  });
+
+   it('Change Theme', function() {
   //   stage.changeToDarkTheme();
   //   expect(stage.isDarkTheme).toBe(false);
-  // });
+   });
 });
 
