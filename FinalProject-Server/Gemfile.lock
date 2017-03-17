@@ -51,6 +51,7 @@ GEM
     jruby-jars (9.1.7.0)
     jruby-rack (1.1.20)
     json (1.8.6)
+    log4r (1.1.10)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -125,6 +126,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jbuilder
   jquery-rails
+  log4r
   nokogiri
   pg
   rack-cors
