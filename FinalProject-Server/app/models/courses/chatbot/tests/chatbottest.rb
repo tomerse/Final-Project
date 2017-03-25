@@ -1,4 +1,4 @@
-class ChatBotTest
+class ChatbotTest
 
 
   def initialize(params=[])

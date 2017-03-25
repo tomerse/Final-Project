@@ -19,7 +19,7 @@ class ActiveSupport::TestCase
   COURSEFOLDER = 'chatbot'
   FILENAME = 'exercise_1'
   EXTENSION = '.xml'
-  FILEPATH = File.join(COURSESESFOLDER,PROGLANGUAGE,COURSEFOLDER,EXERCISESFOLDER,FILENAME+EXTENSION)
+  FILEPATH = File.join(COURSESESFOLDER,COURSEFOLDER,EXERCISESFOLDER,PROGLANGUAGE,FILENAME+EXTENSION)
   EXML = File.absolute_path(FILEPATH)
   COMP_SUCC_INPUT = File.absolute_path('test/unit/compilers_tests_inputs/ex_1/comp_success.py')
   COMP_ERR_INPUT = File.absolute_path('test/unit/compilers_tests_inputs/ex_1/comp_error.py')

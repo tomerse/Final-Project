@@ -12,12 +12,13 @@ class ExerciseTest < ActiveSupport::TestCase
   end
 
 
-  test "Exercise.get_relevant_exercise valid inputs" do
-     Tlog.execUt('Exercise.get_relevant_exercise valid inputs')
+  test "ChatbotExerciseReader.build_exercise valid inputs" do
+     Tlog.execUt('ChatbotExerciseReader.build_exercise  valid inputs')
      begin
-       exXml = Xml.readxml(EXML)
-       exerc = Exercise.get_relevant_exercise(PROGLANGUAGE,COURSEFOLDER,exXml)
-       ans = assert_not_nil(exerc)
+       exercise_reader = CourseFactory.get_exercise_reader(COURSEFOLDER)
+       exercise_file = CourseFactory.get_exercise_file(COURSEFOLDER, PROGLANGUAGE, 1)
+       exercise = exercise_reader.build_exercise(exercise_file)
+       ans = assert_not_nil(exercise)
        if ans
          Tlog.pass
          Tsummary.passInc
@@ -32,59 +33,45 @@ class ExerciseTest < ActiveSupport::TestCase
    end
 
 
-   test "Exercise.get_relevant_exercise inValid xmlFile" do
-     Tlog.execUt('Exercise.get_relevant_exercise inValid xmlFile')
+   test "ChatbotExerciseReader.build_exercise  inValid xmlFile" do
+     Tlog.execUt('ChatbotExerciseReader.build_exercise  inValid xmlFile')
      begin
-       exerc = Exercise.get_relevant_exercise(PROGLANGUAGE,COURSEFOLDER,nil)
-       ans = assert_nil(exerc)
-       if ans
-         Tlog.pass
-         Tsummary.passInc
-       else
-         Tlog.fail
-         Tsummary.addFailure
-       end
-     rescue => ex
-       Tlog.errorFail("Exception: #{ex.message}")
+       exercise_reader = CourseFactory.get_exercise_reader(COURSEFOLDER)
+       exercise_file = CourseFactory.get_exercise_file(COURSEFOLDER, PROGLANGUAGE, nil)
+       exercise = exercise_reader.build_exercise(exercise_file)
+       Tlog.fail
        Tsummary.addFailure
+     rescue => ex
+       Tlog.pass
+       Tsummary.passInc
      end
    end
 
-   test "Exercise.get_relevant_exercise inValid progLang" do
-     Tlog.execUt('Exercise.get_relevant_exercise inValid progLang')
+   test "ChatbotExerciseReader.build_exercise inValid progLang" do
+     Tlog.execUt('ChatbotExerciseReader.build_exercise  inValid progLang')
      begin
-       exXml = Xml.readxml(EXML)
-       exerc = Exercise.get_relevant_exercise(nil,COURSEFOLDER,exXml)
-       ans = assert_nil(exerc)
-       if ans
-         Tlog.pass
-         Tsummary.passInc
-       else
-         Tlog.fail
-         Tsummary.addFailure
-       end
-     rescue => ex
-       Tlog.errorFail("Exception: #{ex.message}")
+       exercise_reader = CourseFactory.get_exercise_reader(COURSEFOLDER)
+       exercise_file = CourseFactory.get_exercise_file(COURSEFOLDER, nil, 1)
+       exercise = exercise_reader.build_exercise(exercise_file)
+       Tlog.fail
        Tsummary.addFailure
+     rescue => ex
+       Tlog.pass
+       Tsummary.passInc
      end
    end
 
-   test "Exercise.get_relevant_exercise inValid courseName" do
-     Tlog.execUt('Exercise.get_relevant_exercise inValid courseName')
+   test "ChatbotExerciseReader.build_exercise inValid courseName" do
+     Tlog.execUt('ChatbotExerciseReader.build_exercise inValid courseName')
      begin
-       exXml = Xml.readxml(EXML)
-       exerc = Exercise.get_relevant_exercise(PROGLANGUAGE,nil,exXml)
-       ans = assert_nil(exerc)
-       if ans
-         Tlog.pass
-         Tsummary.passInc
-       else
-         Tlog.fail
-         Tsummary.addFailure
-       end
-     rescue => ex
-       Tlog.errorFail("Exception: #{ex.message}")
+       exercise_reader = CourseFactory.get_exercise_reader(COURSEFOLDER)
+       exercise_file = CourseFactory.get_exercise_file(nil, PROGLANGUAGE, 1)
+       exercise = exercise_reader.build_exercise(exercise_file)
+       Tlog.fail
        Tsummary.addFailure
+     rescue => ex
+       Tlog.pass
+       Tsummary.passInc
      end
    end
 

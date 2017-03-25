@@ -12,10 +12,10 @@ class PythonCompilerTest < ActiveSupport::TestCase
 
   def test_run_file_run_success
     Tlog.execUt 'PythonCompiler.run_file run success'
-    args = ['suisa']
+    args = 'suisa'
     begin
       exp = "suisa\n"
-      act = PythonCompiler.run_file(PYCOMP_SUCC_INPUT,args)
+      act = PythonCompiler.run_file(PYCOMP_SUCC_INPUT, args)
       ans = act == exp
       if ans
         Tlog.pass
@@ -32,7 +32,7 @@ class PythonCompilerTest < ActiveSupport::TestCase
 
   def test_run_file_runtime_err
     Tlog.execUt 'PythonCompiler.run_file runtime error'
-    args = ['suisa']
+    args = 'suisa'
     begin
       exp ="#{args[0]}
 Traceback (most recent call last):
@@ -44,7 +44,7 @@ Traceback (most recent call last):
     print 1/0
 ZeroDivisionError: integer division or modulo by zero
 "
-      act = PythonCompiler.run_file(PYCOMP_RUNTIME_ERR_INPUT,args)
+      act = PythonCompiler.run_file(PYCOMP_RUNTIME_ERR_INPUT, args)
       ans = act == exp
       if ans
         Tlog.pass
@@ -69,7 +69,7 @@ ZeroDivisionError: integer division or modulo by zero
     printName(str(params[0]))
 IndexError: list index out of range
 "
-      act = PythonCompiler.run_file(PYCOMP_SUCC_INPUT,nil)
+      act = PythonCompiler.run_file(PYCOMP_SUCC_INPUT, nil)
       ans = act == exp
       if ans
         Tlog.pass

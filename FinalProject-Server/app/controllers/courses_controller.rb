@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @courses = CourseFactory.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,19 +13,18 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @language = params[:lan_name]
-    @course = params[:course_name]
-    @exercise = ExerciseReader.build_exercise(@language, @course, params[:ex_id])
+    exercise_reader = CourseFactory.get_exercise_reader(params[:course_name])
+    exercise_file = CourseFactory.get_exercise_file(params[:course_name], params[:lan_name], params[:ex_id])
+    exercise = exercise_reader.build_exercise(exercise_file)
     respond_to do |format|
-      #format.html # show.html.erb
-      format.json { render json: @exercise }
+      format.json { render json: exercise }
     end
   end
 
   # GET /courses/new
   # GET /courses/new.json
   def new
-    @course = Course.new
+    @course = CourseFactory.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,13 +34,13 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
-    @course = Course.find(params[:id])
+    @course = CourseFactory.get_exercise_file(params[:course_name], params[:lan_name], params[:ex_id])
   end
 
   # POST /courses
   # POST /courses.json
   def create
-    @course = Course.new(params[:course])
+    @course = CourseFactory.new(params[:course])
 
     respond_to do |format|
       if @course.save
@@ -57,7 +56,7 @@ class CoursesController < ApplicationController
   # PUT /courses/1
   # PUT /courses/1.json
   def update
-    @course = Course.find(params[:id])
+    @course = CourseFactory.get_exercise_file(params[:course_name], params[:lan_name], params[:ex_id])
 
     respond_to do |format|
       if @course.update_attributes(params[:course])
@@ -73,28 +72,18 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def run
-    require 'Compilers/compiler'
-    @language = params[:lan_name]
-    @course = params[:course_name]
-    @ex_id = params[:ex_id]
-    @code = params[:code]
-    @args = params[:args]
-    @code_result = Compiler.run_code(@language, @course, @ex_id, @code, @args)
-    print "code_result = " + @code_result + "\n"
+    code_handler = CourseFactory.get_code_handler(params[:course_name], params[:lan_name])
+    exercise_file = CourseFactory.get_exercise_file(params[:course_name], params[:lan_name], params[:ex_id])
+    @code_result = code_handler.run_exercise_code(params[:code], params[:args], exercise_file)
     render :json => {:result => @code_result}
   end
 
   # POST /courses
   # POST /courses.json
   def compile
-    require 'Compilers/compiler'
-    @language = params[:lan_name]
-    @course = params[:course_name]
-    @ex_id = params[:ex_id]
-    @code = params[:code]
-    @ans = Compiler.compile_code(@language, @course, @code, @ex_id)
-    @success = @ans[0]
-    @error = @ans[1]
+    code_handler = CourseFactory.get_code_handler(params[:course_name], params[:lan_name])
+    exercise_file = CourseFactory.get_exercise_file(params[:course_name], params[:lan_name], params[:ex_id])
+    (@success, @error) = code_handler.check_exercise_code(params[:code], exercise_file)
     respond_to do |format|
       format.json {render :json => {:status => @success,
                                     :error => @error}}
@@ -104,7 +93,7 @@ class CoursesController < ApplicationController
   # DELETE /courses/1
   # DELETE /courses/1.json
   def destroy
-    @course = Course.find(params[:id])
+    @course = CourseFactory.get_exercise_file(params[:course_name], params[:lan_name], params[:ex_id])
     @course.destroy
 
     respond_to do |format|

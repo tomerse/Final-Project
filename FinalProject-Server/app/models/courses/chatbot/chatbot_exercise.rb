@@ -1,4 +1,4 @@
-class Pyexercise #< ActiveRecord::Base
+class ChatbotExercise
 
     def initialize(params=[])
       @id = params["id"]
@@ -10,4 +10,5 @@ class Pyexercise #< ActiveRecord::Base
       @chatbotinitmessage = params["chatbotinitmessage"]
       @numofargs = params["numofargs"]
     end
+
 end
