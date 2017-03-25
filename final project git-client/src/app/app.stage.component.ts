@@ -1,4 +1,4 @@
-import {NgModule, Component,ViewChild,OnInit, ViewEncapsulation,AfterContentInit, ElementRef,QueryList } from '@angular/core';
+import {Input,NgModule, Component,ViewChild,OnInit, ViewEncapsulation,AfterContentInit, ElementRef,QueryList } from '@angular/core';
 import {stage} from './stage'
 import {Router,ActivatedRoute} from '@angular/router';
 import  {StagePageService} from './stage.component.service';
@@ -16,6 +16,9 @@ import {dialogStatus} from './Dialog/dialogStatus';
 
 })
 export class stageComponent implements OnInit,AfterContentInit{
+currLang;
+courseApp;
+
   title='s';
   chatbotIsOn:boolean = false;
   //router: Router;   
@@ -66,9 +69,15 @@ export class stageComponent implements OnInit,AfterContentInit{
     this.sub = this.activeRoute.params.subscribe (params =>
      {
         this.stageIdfromRouting = params['id'];
+        
+     }  );
+    this.sub = this.activeRoute.parent.params.subscribe (params =>
+     {
+       this.currLang = params['currLang'];
+        this.courseApp =params['courseApp']; 
      }
     );
-    this.stagePageService.getInitalDataForStage(this.stageIdfromRouting).subscribe(
+    this.stagePageService.getInitalDataForStage(this.stageIdfromRouting,this.currLang, this.courseApp).subscribe(
       response =>
       {
           console.log(response);
@@ -103,7 +112,7 @@ export class stageComponent implements OnInit,AfterContentInit{
 
   submit()
   {
-    this.stagePageService.submitYourCode(this.currStage.id,this.writtenCode).subscribe(
+    this.stagePageService.submitYourCode(this.currStage.id,this.writtenCode,this.currLang,this.courseApp).subscribe(
       response =>
       {
           //// add enable edit

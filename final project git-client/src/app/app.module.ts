@@ -7,7 +7,7 @@ import { AceEditorDirective } from 'ng2-ace-editor';
 import { AppComponent } from './app.component';
 import {stageComponent} from './app.stage.component';
 import {courseComponent} from './app.course.component';
-
+import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
 //import { AceEditorComponent } from 'ng2-ace-editor';
 import { MyComponent } from './aceTry';
 import { MaterialModule } from '@angular/material';
@@ -18,6 +18,7 @@ import {ChatBotComponent} from './ChatBot/chatbot.component';
 import {ChatMessageComponent} from './ChatBot/message.component';
 import {DialogCompilationComponent} from './Dialog/dialog.component';
 import {appRootRoutingList} from './routing.moudle';
+import {HomePageComponent} from './homePage/app.home.page';
 //import {appCourseRoutingList} from './routing.moudle';
 
 import 'hammerjs';
@@ -30,7 +31,8 @@ import 'hammerjs';
     ChatMessageComponent,
     DialogCompilationComponent,
     stageComponent,
-    courseComponent
+    courseComponent,
+   HomePageComponent
   ],
   imports: [
     BrowserModule,

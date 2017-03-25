@@ -31,6 +31,13 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
   @Input()
   stageID;
 
+  @Input()
+  currLang;
+
+  @Input()
+  courseApp;
+
+
   messageList: OneMessageInstance[] = [];
   draftMessage: OneMessageInstance;
   CurrArgsValue:any[]=new Array<any>();
@@ -64,7 +71,8 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
    this.argsCounter++; 
     if (this.argsCounter == this.numofargs)
     {
-      this.chatBotServiceObj.runCode(this.code,this.stageID,this.CurrArgsValue).subscribe(
+      this.chatBotServiceObj.runCode(this.code,this.stageID,this.CurrArgsValue,this.currLang,this.courseApp)
+      .subscribe(
       response =>
       {
       this.messageList.push(new OneMessageInstance('The output is:  '+response["result"],false,

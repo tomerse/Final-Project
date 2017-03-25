@@ -2,6 +2,10 @@ md-sidenav-container.m2app-dark {
   background: black;
 }
 
+.md-grid-list{
+  height: 100%;
+}
+
 .md-grid-tile{
   padding: 20px;
 }
@@ -11,8 +15,12 @@ md-sidenav-container.m2app-dark {
 .text-inside-grid {
   padding-right: 5%;
   padding-bottom: 5%;
+ 
 }
 
+html {
+  height: 100%;
+}
 .text-inside-grid1 {
   position: absolute;
   display: inline-block;

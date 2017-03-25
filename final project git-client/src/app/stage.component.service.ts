@@ -15,32 +15,32 @@ import {Configuration} from './configuration';
 
 @Injectable()
 export class StagePageService {
-  conf = new Configuration();
   serverURL;
+  conf = new Configuration();
 
   constructor(private http: Http) {
     this.serverURL = this.conf.serverURL;
   }
 
 
-  submitYourCode(id:string,code:string): Observable<any> {
+  submitYourCode(id:string,code:string,currLang,courseApp): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8',
      'Accept': '*/*'});
          let options = new RequestOptions({ headers: headers });
-    return this.http.post(this.serverURL+ 'courses/' + this.conf.currLang+'/'+ this.conf.courseName+ 
+    return this.http.post(this.serverURL+ 'courses/' + currLang+'/'+ courseApp+ 
     '/' +id +'/compile'
       ,{"id":id,"code":code},options).map((res: Response) => res.json());
     // .catch(this.handleError);
   }
 
-  getInitalDataForStage(stageId:string): Observable<any> {
+  getInitalDataForStage(stageId:string,currLang,courseApp): Observable<any> {
     //let params: URLSearchParams = new URLSearchParams();
     //params.set('id', stageId.toString());
     let headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8',
      'Accept': '*/*'});
     let options = new RequestOptions({ headers: headers });
-    return this.http.get(this.serverURL+ 'courses/' + this.conf.currLang+'/'+ 
-    this.conf.courseName+ '/' + stageId.toString(),options)
+    return this.http.get(this.serverURL+ 'courses/' + currLang +'/'+ 
+    courseApp + '/' + stageId.toString(),options)
       .map((res: Response) => res.json());
     // .catch(this.handleError);
   }

@@ -1,0 +1,152 @@
+
+<body class="index-page" style="overflow-y: scroll;">	
+
+<!-- Navbar will come here -->
+<nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
+	<div class="container">
+
+	</div>
+</nav>
+<!-- end navbar -->
+
+<div class="wrapper">
+	<div class="header header-filter" style="background-image: url('/assets/images/bg2.jpeg');">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="brand">
+						<h1>Monkey-Bot academy</h1>
+						<h3>Learn to program using chatbot and improve your skills</h3>
+					</div>
+				</div>
+			</div>
+			<div class="logo-container" style="position: absolute;top:10px">
+	                <div class="logo">
+	                    <img src="/assets/images/monkey.png" alt="Creative Tim Logo" data-placement="bottom" 
+						rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>" 
+						data-html="true">
+	                </div>
+	                <div class="brand">
+	                   Powered by Code academy
+	                </div>
+
+
+			</div>
+		</div>
+	</div>
+
+	<div class="main main-raised">
+		<div class="section section-basic">
+	    	<div class="container">
+	            <div class="title">
+	                <h2>Our courses</h2>
+	            </div>
+
+							
+		<md-card class="card-accent md-card-main-page " *ngFor="let course of allCourses">
+		<h4 style="text-align: center;">Python</h4>	
+				<md-tab-group style="height: 180px; overflow-y: auto;">
+  				<md-tab label="General">{{course.general}}</md-tab>
+  				<md-tab label="Syllabus">
+						{{course.syllabus}}
+			  </md-tab>
+				</md-tab-group>
+			<md-card-actions style="margin-left: auto;">
+     <button #submitButton  md-raised-button (click)="enterCourse(course.currLang,course.courseApp)" color="primary">
+            Start here!
+          </button>
+		  	<br>
+			</md-card-actions>
+			</md-card>
+			
+		</div>
+	</div>
+		
+
+
+    <div class="section section-download">
+	        <div class="container">
+	            <div class="row text-center">
+	                <div class="col-md-8 col-md-offset-2">
+	                    <h2>Do you love this UI Kit?</h2>
+	                    <h4>Cause if you do, it can be yours for FREE. Hit the button below to navigate to Creative Tim where you can find the kit. Start a new project or give an old Bootstrap project a new look!</h4>
+	                </div>
+	                <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
+	                    <a href="http://www.creative-tim.com/product/material-kit" class="btn btn-primary btn-lg">
+							<i class="material-icons">cloud_download</i> Free Download
+						</a>
+	                </div>
+				</div>
+
+				<br><br>
+
+				<div class="row text-center">
+					<div class="col-md-8 col-md-offset-2">
+	                    <h2>Want more?</h2>
+	                    <h4>We've just launched <a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" target="_blank">Material Kit PRO</a>. It has a huge number of components, sections and example pages. Start Your Development With A Badass Bootstrap UI Kit inspired by Material Design.</h4>
+	                </div>
+					<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
+						<a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" class="btn btn-upgrade btn-lg" target="_blank">
+							<i class="material-icons">unarchive</i> Upgrade to PRO
+						</a>
+					</div>
+	            </div>
+
+	            <div class="row sharing-area text-center">
+	                    <h3>Thank you for supporting us!</h3>
+	                    <a href="#" class="btn btn-twitter">
+	                        <i class="fa fa-twitter"></i>
+	                        Tweet
+	                    </a>
+	                    <a href="#" class="btn btn-facebook">
+	                        <i class="fa fa-facebook-square"></i>
+	                        Share
+	                    </a>
+						<a href="#" class="btn btn-google-plus">
+	                        <i class="fa fa-google-plus"></i>
+	                        Share
+	                    </a>
+						<a href="#" class="btn btn-github">
+	                        <i class="fa fa-github"></i>
+	                    	Star
+	                    </a>
+	            </div>
+	        </div>
+	    </div>
+
+
+</div>
+    <footer class="footer">
+	    <div class="container">
+	        <nav class="pull-left">
+	            <ul>
+					<li>
+						<a href="http://www.creative-tim.com">
+							Creative Tim
+						</a>
+					</li>
+					<li>
+						<a href="http://presentation.creative-tim.com">
+						   About Us
+						</a>
+					</li>
+					<li>
+						<a href="http://blog.creative-tim.com">
+						   Blog
+						</a>
+					</li>
+					<li>
+						<a href="http://www.creative-tim.com/license">
+							Licenses
+						</a>
+					</li>
+	            </ul>
+	        </nav>
+	        <div class="copyright pull-right">
+	            &copy; 2016, made with <i class="material-icons">favorite</i> by Creative Tim for a better web.
+	        </div>
+	    </div>
+	</footer>
+
+</div>
+</body>

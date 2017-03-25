@@ -24,11 +24,11 @@ export class chatBotService {
     this.serverURL = this.conf.serverURL;
   }
 
-  runCode(code:string,id:string,args:any[]): Observable<any> {
+  runCode(code:string,id:string,args:any[],currLang:string,courseApp:string): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8',
      'Accept': '*/*'});
          let options = new RequestOptions({ headers: headers });
-    return this.http.post(this.serverURL+ 'courses/' + this.conf.currLang+'/'+ this.conf.courseName+ 
+    return this.http.post(this.serverURL+ 'courses/' + currLang+'/'+ courseApp + 
     '/' +id +'/run'
       ,{"code":code,"args":args},options).map((res: Response) => res.json());
   }

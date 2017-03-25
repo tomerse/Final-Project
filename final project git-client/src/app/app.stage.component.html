@@ -1,7 +1,6 @@
- <md-grid-list cols="9" rowHeight="94.8px">
-
-      <md-grid-tile [colspan]="2" [rowspan]="6" color="primary">
-        <md-card #introObj layout="column" layout-fill class="introClass">
+ <div layout="row" layout-fill style="min-height: 100%;">
+      <div flex="25" style="overflow-y:auto;margin-top:3%">
+        <md-card #introObj layout="column" class="introClass">
           <div flex layout="column" >
             <h1>{{currStage.topic}}</h1>
             <h3>Exercise {{currStage.id}}</h3>
@@ -37,25 +36,33 @@
        </md-card>
 
 
-      </md-grid-tile>
-      <md-grid-tile  [colspan]="4" [rowspan]="5" color="primary">
+      </div>
+        <div flex="50" >
+          <div layout="column">
+            <div flex="75" style="position: absolute;top: 70px;" >
              <aceEditor  class="text-inside-grid" #editor [text]="currStage.code"
                          (currStatus)="changeStatus($event)"></aceEditor>
-      </md-grid-tile >
-      <md-grid-tile [colspan]="3" [rowspan]="5" >
-        <div *ngIf="chatbotIsOn"  color="primary">
-           <chatBot #chatbotcomp [code]="writtenCode" [chatbotinitmessage]="chatbotinitmessage"
-           [numofargs] ="currStage.numofargs" [argstype]="currStage.argstype" 
-           [stageID]="currStage.id">
+    
+              </div>
 
-           </chatBot>
-        </div>
-      </md-grid-tile >
-      <md-grid-tile [colspan]="4" [rowspan]="1">
-        <md-card class="card-accent md-card-flat" layout="row" flex >
-          <button  md-raised-button md-tooltip="Click here to submit your code!" (click)="submit()" color="primary">
+  
+    <div flex="25" style="position: absolute;bottom: 0;">
+        <md-card class="card-accent md-card-flat" >
+          <button style="margin-right: inherit;" #submitButton  
+          md-raised-button md-tooltip="Click here to submit your code!" (click)="submit()" color="primary">
             Submit your code!
           </button>
         </md-card>
-      </md-grid-tile>
-    </md-grid-list>
+        </div>
+      </div>
+      <div flex="25">
+        <div *ngIf="chatbotIsOn"  color="primary" >
+           <chatBot #chatbotcomp [code]="writtenCode" [chatbotinitmessage]="chatbotinitmessage"
+           [numofargs] ="currStage.numofargs" [argstype]="currStage.argstype" 
+           [stageID]="currStage.id" [currLang]="currLang" [courseApp]="courseApp">
+
+           </chatBot>
+        </div>
+      </div>
+    </div>
+</div>

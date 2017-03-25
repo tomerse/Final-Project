@@ -1,13 +1,14 @@
 import {AppComponent} from './app.component';
 import {stageComponent} from './app.stage.component';
 import {courseComponent} from './app.course.component';
-
+import {HomePageComponent} from './homePage/app.home.page';
 
 export const appRootRoutingList = [
    { path: '', component: AppComponent,
     children: [
-      { path: '', redirectTo: 'course', pathMatch: 'full' }, 
-      { path: 'course', component: courseComponent,
+      {path : '' , component: HomePageComponent, pathMatch: 'full' }, 
+      {path : 'home' , component: HomePageComponent, pathMatch: 'full' },
+      { path: 'course/:currLang/:courseApp', component: courseComponent,
       children: [
         { path: '', redirectTo: 'stage/1', pathMatch: 'full' },
         { path: 'stage/:id', component:stageComponent }
