@@ -29,9 +29,12 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
   end
 
 
-  def get_func_name(code)
+  def get_func_name(exercise_file)
     func_name = ""
-    parsed_code = code.split(/\W+/)
+    initial_exercise_code = @exercise_reader.get_initial_code(exercise_file)
+    #split the code to words
+    parsed_code = initial_exercise_code.split(/\W+/)
+    #find the function name (second word)
     if (parsed_code[0] <=> "def") == 0
       func_name = parsed_code[1]
     end

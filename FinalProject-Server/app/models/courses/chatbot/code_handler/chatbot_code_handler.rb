@@ -17,9 +17,9 @@ module ChatbotCodeGenerator
   end
 
   #@brief get_func_name - get the required main function name for the input code
-  #@param code - "raw" code to wrap
+  #@param exercise_file - path to the exercise configutation file
   #@return - the function name
-  def get_func_name(code)
+  def get_func_name(exercise_file)
     raise NotImplementedError, NOT_IMPLEMENTED_MESSAGE
   end
 
@@ -164,7 +164,7 @@ class ChatbotCodeHandler
   def run_exercise_code(code, args, exercise_file)
     args_types = build_arg_types(exercise_file)
     (args_list, num_of_args) = build_string_args_list(args)
-    func_name = get_func_name(code)
+    func_name = get_func_name(exercise_file)
     generated_code = code
     if (func_name <=> "") != 0
       generated_code = generate_code(code, func_name, num_of_args, args_types)
@@ -201,7 +201,7 @@ class ChatbotCodeHandler
     success = false
     code_res = ""
     num_of_args = args_types.length
-    func_name = get_func_name(code)
+    func_name = get_func_name(exercise_file)
     generated_code = code
     if (func_name <=> "") != 0
       generated_code = generate_code(code, func_name, num_of_args, args_types)

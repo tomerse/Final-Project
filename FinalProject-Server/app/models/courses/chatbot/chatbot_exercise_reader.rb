@@ -39,6 +39,13 @@ class ChatbotExerciseReader < ExerciseReader
   end
 
 
+  def get_initial_code(filepath)
+    exercise_file = read_exercise_file(filepath)
+    code = Xml.get_element(exercise_file,"code")
+    return code
+  end
+
+
   def parse_tests(exercise_file)
     tests = TestsParser.parse_tests(exercise_file)
     return tests
