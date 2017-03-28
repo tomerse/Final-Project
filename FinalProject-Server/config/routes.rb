@@ -4,7 +4,7 @@ FinalProject::Application.routes.draw do
 
   get "connection_test/con_test"
   get "layouts/application"
-  get "courses/:lan_name/:course_name/:ex_id" => "courses#show"
+  get "courses/:lan_name/:course_name/:ex_id" => "courses#get_exercise"
   post "courses/:lan_name/:course_name/:ex_id/compile" =>"courses#compile"
   post "courses/:lan_name/:course_name/:ex_id/run" =>"courses#run"
 

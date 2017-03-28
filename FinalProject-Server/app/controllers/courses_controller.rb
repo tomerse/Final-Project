@@ -10,9 +10,10 @@ class CoursesController < ApplicationController
     end
   end
 
+
   # GET /courses/1
   # GET /courses/1.json
-  def show
+  def get_exercise
     exercise_reader = CourseFactory.get_exercise_reader(params[:course_name])
     exercise_file = CourseFactory.get_exercise_file(params[:course_name], params[:lan_name], params[:ex_id])
     exercise = exercise_reader.build_exercise(exercise_file)
@@ -20,6 +21,22 @@ class CoursesController < ApplicationController
       format.json { render json: exercise }
     end
   end
+
+  # GET /courses/1
+  # GET /courses/1.json
+  def show
+    #should be read from xml
+    title = "Python Chatbot"
+    general = "Learn Python programming by building your own chatbot!"
+    syllabus = "Introduction, variables, logic expressions, conditions, loops"
+    currLang = "python"
+    courseApp = "suis"
+    respond_to do |format|
+      format.json {render :json => {:title => title, :general => general, :syllabus => syllabus,
+                                    :currLang => currLang, :courseApp => courseApp}}
+    end
+  end
+
 
   # GET /courses/new
   # GET /courses/new.json
