@@ -19,6 +19,11 @@ class PythonCompiler
 
   def self.run_file(filepath, arg_list)
     begin
+#      if arg_list[0].length==1
+#        args = arg_list
+#      else
+#        args = arg_list[0]
+#      end
       # 2>&1 means redirecting stderr to stdout (to catch exceptions from Python code as well)
       code_res = `python #{filepath} #{arg_list} 2>&1`
     rescue => ex

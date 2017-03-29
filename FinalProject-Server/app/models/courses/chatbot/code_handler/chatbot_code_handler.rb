@@ -17,9 +17,9 @@ module ChatbotCodeGenerator
   end
 
   #@brief get_func_name - get the required main function name for the input code
-  #@param exercise_file - path to the exercise configutation file
+  #@param code - "raw" code to wrap
   #@return - the function name
-  def get_func_name(exercise_file)
+  def get_func_name(code)
     raise NotImplementedError, NOT_IMPLEMENTED_MESSAGE
   end
 
@@ -164,7 +164,7 @@ class ChatbotCodeHandler
   def run_exercise_code(code, args, exercise_file)
     args_types = build_arg_types(exercise_file)
     (args_list, num_of_args) = build_string_args_list(args)
-    func_name = get_func_name(exercise_file)
+    func_name = get_func_name(code)
     generated_code = code
     if (func_name <=> "") != 0
       generated_code = generate_code(code, func_name, num_of_args, args_types)
@@ -201,7 +201,7 @@ class ChatbotCodeHandler
     success = false
     code_res = ""
     num_of_args = args_types.length
-    func_name = get_func_name(exercise_file)
+    func_name = get_func_name(code)
     generated_code = code
     if (func_name <=> "") != 0
       generated_code = generate_code(code, func_name, num_of_args, args_types)
@@ -219,15 +219,17 @@ class ChatbotCodeHandler
     tests_success = true
     failure = ''
     tests.each{ |test|
-      (args_list, num_of_args) = build_string_args_list(test.get_input())
+      input = test.get_input
+      (args_list, num_of_args) = build_string_args_list(input)
       output = execute_file(file_to_test, args_list)
-      if (test.get_expected_output() <=> output) != 0
+      expected_output = test.get_expected_output
+      if (expected_output[0] <=> output) != 0
         tests_success = false
-        failure = test.get_failure()
-        return [tests_success, failure]
+        failure = test.get_failure
+        return [tests_success, failure[0]]
       end
     }
-    return [tests_success, failure]
+    return [tests_success, failure[0]]
   end
 
 

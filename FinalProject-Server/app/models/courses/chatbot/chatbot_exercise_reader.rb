@@ -26,23 +26,16 @@ class ChatbotExerciseReader < ExerciseReader
     topic = Xml.get_element(exercise_file,"topic")
     instructions = Xml.get_element(exercise_file,"instructions")
     code = Xml.get_element(exercise_file,"code")
-    tasks = Xml.get_elements(exercise_file, "tasks//task//content") #['task1','task2']
-    hints = Xml.get_elements(exercise_file, "hints//hint") #['hint1','hint2']
+    tasks = Xml.get_elements(exercise_file, 'tasks//task','content') #['task1','task2']
+    hints = Xml.get_elements(exercise_file,'hints','hint') #['hint1','hint2']
     chatbotinitmessage = Xml.get_element(exercise_file,"chatbotinitmessage")
-    args = Xml.get_elements(exercise_file, "argstypes//arg") #['argtype1','argtype2']
+    args = Xml.get_elements(exercise_file, 'argstypes//arg','argtypes') #['argtype1','argtype2']
     numofargs = args.length
     params = Hash["id"=>id, "topic"=>topic, "instructions"=>instructions, "code"=>code,
-                "tasks"=>tasks, "hints"=>hints, "chatbotinitmessage"=>chatbotinitmessage,
+                "tasks"=>tasks.flatten, "hints"=>hints.flatten, "chatbotinitmessage"=>chatbotinitmessage,
                 "numofargs"=>numofargs]
     exercise = ChatbotExercise.new(params)
     return exercise
-  end
-
-
-  def get_initial_code(filepath)
-    exercise_file = read_exercise_file(filepath)
-    code = Xml.get_element(exercise_file,"code")
-    return code
   end
 
 

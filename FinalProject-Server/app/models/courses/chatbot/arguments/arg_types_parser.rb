@@ -1,7 +1,7 @@
 class ArgTypesParser
 
   def self.parse_arg_types(file)
-    args_types = Xml.get_elements(file, "argstypes//arg//type")
+    args_types = Xml.get_elements(file, 'argstypes//arg','argtypes')
     #a = args[0].children[0]
     #types = a.children.map
 

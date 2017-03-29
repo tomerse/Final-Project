@@ -29,12 +29,9 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
   end
 
 
-  def get_func_name(exercise_file)
+  def get_func_name(code)
     func_name = ""
-    initial_exercise_code = @exercise_reader.get_initial_code(exercise_file)
-    #split the code to words
-    parsed_code = initial_exercise_code.split(/\W+/)
-    #find the function name (second word)
+    parsed_code = code.split(/\W+/)
     if (parsed_code[0] <=> "def") == 0
       func_name = parsed_code[1]
     end
@@ -75,15 +72,14 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
   end
 
   #Creating the args list - in Python, every argument should be casted to the required type
+  #TODO: concatenate the remaining types in arg_types_list!
   def generate_args_list_code(num_of_args, args_types)
-    params_list_str = ""
-    if num_of_args > 0
-      params_list_str = args_types[0] + "(params[0])"
-      if num_of_args > 1
-        for i in 1..num_of_args-1
-          params_list_str += ", " + args_types[i] + "(params[" + i.to_s() + "])"
-        end
-      end
+    arg_types_list = args_types[0]
+    params_list_str = arg_types_list[0] + "(params[0])"
+    for i in 1..num_of_args-1
+      arg_types_list = args_types[i]
+      length = arg_types_list.length
+      params_list_str += ", " + arg_types_list[0] + "(params[" + i.to_s + "])"
     end
     return params_list_str
   end

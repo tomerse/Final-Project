@@ -23,12 +23,16 @@ and open the template in the editor.
         <content>Print the value of variable "name"</content>
         <tests>
           <test>
-            <input_value>shar</input_value>
+            <inputs>
+              <input_value>shar</input_value>
+            </inputs>
             <output>shar&#xA</output>
             <failure>Check if print the variable name</failure>
           </test>
           <test>
-            <input_value>lil</input_value>
+            <inputs>
+              <input_value>lil</input_value>
+            </inputs>
             <output>lil&#xA</output>
             <failure>Check if print the variable name</failure>
           </test>
@@ -44,7 +48,9 @@ and open the template in the editor.
     <chatbotinitmessage>Hello! What is your name?</chatbotinitmessage>
     <argstypes>
       <arg>
-        <type>str</type>
+        <argtypes>
+          <type>str</type>
+        </argtypes>
       </arg>
     </argstypes>
   </exercise>

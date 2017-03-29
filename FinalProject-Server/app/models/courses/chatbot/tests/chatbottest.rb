@@ -24,19 +24,19 @@ class ChatbotTest
     if !@input.nil?
       input=@input
     end
-    print "input = " + input + "\n"
+    print "inputs = " + input.to_s + "\n"
 
     output = ""
     if !@expected_output.nil?
       output=@expected_output
     end
-    print "output = " + output + "\n"
+    print "outputs = " + output.to_s + "\n"
 
     failure = ""
     if !@failure.nil?
       failure=@failure
     end
-    print "failure = " + failure + "\n"
+    print "failures = " + failure.to_s + "\n"
   end
 
 end

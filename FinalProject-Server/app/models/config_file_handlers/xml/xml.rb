@@ -35,11 +35,23 @@ class Xml < ActiveRecord::Base
   end
 
 
-  def self.get_elements(xml,node)
+  def self.get_elements(xml,parent_node,elements)
     arr = Array.new
-    xml.xpath('//'+node).map do
-      |element|
-      arr.push(element.text)
+    nodes = xml.xpath('//'+parent_node).select(&:element?)
+    nodes.each do
+      |node|
+      ans = Array.new
+      children = node.xpath(elements).children.select(&:element?)
+      if not children.empty?
+        children.each do
+        |c|
+          ans.push c.text
+        end
+      else
+        child = node.at(elements)
+        ans.push child.text
+      end
+      arr.push ans
     end
     return arr
   end
