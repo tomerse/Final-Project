@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <exercise>
+    <id>2</id>
+    <topic>Multi Line comments</topic>
+    <instructions>In the previous exercise we learned how to use single line comments.
+      So what if we want to comment out multiple lines?
+      One way is to start every line with a '#'.
+      In addition, Python allows us to comment out a section of multiple lines by putting ' """ '
+      at the beginning and the end of the section.
+    </instructions>
+    <code>def printName(name):
+      print #enter your code here
+      """
+      enter
+      your
+      comments
+      here
+      """
+      return
+    </code>
+    <tasks>
+      <task>
+        <content>Add comments between the '"""' '"""'</content>
+        <tests>
+          <test>
+            <inputs>
+              <input_value>none</input_value>
+            </inputs>
+            <output>none</output>
+            <failure>none</failure>
+          </test>
+        </tests>
+      </task>
+      <task>
+        <content>Click the submit button</content>
+        <tests>
+          <test>
+            <inputs>
+              <input_value>none</input_value>
+            </inputs>
+            <output>none</output>
+            <failure>none</failure>
+          </test>
+        </tests>
+      </task>
+    </tasks>
+    <hints>
+      <hint>Use ' """ ' at the beginning and the end of the section you want to comment out</hint>
+    </hints>
+    <chatbotinitmessage>Great! now you know how to use all sort of comments!</chatbotinitmessage>
+    <argstypes>
+      <arg>
+        <argtypes>
+          <type>str</type>
+        </argtypes>
+      </arg>
+    </argstypes>
+  </exercise>
+</root>

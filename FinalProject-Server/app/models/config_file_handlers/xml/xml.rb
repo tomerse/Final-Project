@@ -31,7 +31,10 @@ class Xml < ActiveRecord::Base
   end
 
   def self.get_element(xml,element)
-    xml.at(element).text
+    elem = xml.at(element).text
+    if not elem == 'none'
+      elem
+    end
   end
 
 
@@ -45,11 +48,15 @@ class Xml < ActiveRecord::Base
       if not children.empty?
         children.each do
         |c|
-          ans.push c.text
+          if not c.text == 'none'
+            ans.push c.text
+          end
         end
       else
         child = node.at(elements)
-        ans.push child.text
+        if not child.text == 'none'
+          ans.push child.text
+        end
       end
       arr.push ans
     end

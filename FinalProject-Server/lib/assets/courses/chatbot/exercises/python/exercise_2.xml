@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-
 
 <root>
   <exercise>
-    <id>1</id>
-    <topic>Printing</topic>
-    <instructions>To get information about our program variables study them further or to display a message to the user on the screen we use the action "Print".
-      Using the above action will be using the phrase in quotes printed followed by an expression that wants to print.
-      For example, to print to the screen the phrase Hello World!. Write down the expression print "Hello World!".
+    <id>2</id>
+    <topic>Single line comments</topic>
+    <instructions>Another important element in a programming language is the use of comments.
+      A comment helps the developer to document his implementation.
+      A commented code should be clear and maintainable.
+      In Python we use '#' at the beginning of a line, in order to comment out a single line of code.
     </instructions>
     <code>def printName(name):
-    print #enter your code here
-    return
+      #enter your comment here
+      print #enter your code here
+      return
     </code>
     <tasks>
+      <task>
+        <content>Add a comment which explains your code</content>
+      </task>
       <task>
         <content>Print the variable "name"</content>
         <tests>
@@ -43,6 +42,7 @@ and open the template in the editor.
       </task>
     </tasks>
     <hints>
+      <hint>Replace "enter your comment here" with your comment</hint>
       <hint>You should print the variable "name", using the "print" command</hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! What is your name?</chatbotinitmessage>

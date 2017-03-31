@@ -25,7 +25,7 @@ class CourseFactory
 
   def self.get_exercise_reader(course_name)
     if course_name == CHATBOT
-      chatbot_exercise_reader = ChatbotExerciseReader.new
+      chatbot_exercise_reader = ChatbotExerciseReader.instance
       return chatbot_exercise_reader
     end
     print "course name not found: " + course_name + " \n"

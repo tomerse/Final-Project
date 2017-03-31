@@ -186,10 +186,12 @@ class ChatbotCodeHandler
       failure_reason = comp_res
     else
       tests = build_tests(exercise_file)
-      (tests_success, failure_test) = run_tests(tests, compiled_file)
-      if tests_success == false
-        status = "tests failed"
-        failure_reason = failure_test
+      if not tests.empty?
+        (tests_success, failure_test) = run_tests(tests, compiled_file)
+        if tests_success == false
+          status = "tests failed"
+          failure_reason = failure_test
+        end
       end
     end
     return [status, failure_reason]
