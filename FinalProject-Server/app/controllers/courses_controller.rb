@@ -26,14 +26,9 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     #should be read from xml
-    title = "Python Chatbot"
-    general = "Learn Python programming by building your own chatbot!"
-    syllabus = "Introduction, variables, logic expressions, conditions, loops"
-    currLang = "python"
-    courseApp = "suis"
+    courses = CourseFactory.get_all_courses()
     respond_to do |format|
-      format.json {render :json => {:title => title, :general => general, :syllabus => syllabus,
-                                    :currLang => currLang, :courseApp => courseApp}}
+      format.json {render :json => courses }
     end
   end
 

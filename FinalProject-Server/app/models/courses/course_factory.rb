@@ -45,6 +45,37 @@ class CourseFactory
     raise ArgumentError, 'Undefined course_name = ' + course_name
   end
 
+  def self.get_all_courses()
+    courses = []
+    title = "Python Chatbot"
+    general = "Learn Python programming by building your own chatbot!"
+    syllabus = "Introduction, variables, logic expressions, conditions, loops"
+    currLang = "python"
+    courseApp = "chatbot"
+    exercises = ["Printing", "Single line comments", "Multi Line comments"]
+    params = Hash["title"=>title, "general"=>general, "syllabus"=>syllabus, "currLang"=>currLang,
+                  "courseApp"=>courseApp, "courseApp"=>courseApp, "exercises"=>exercises]
+    chatbot_py = Course.new(params)
+    courses.push(chatbot_py)
+    currLang = "java"
+    title = "Java Chatbot"
+    general = "Learn Java programming by building your own chatbot!"
+    exercises = []
+    params = Hash["title"=>title, "general"=>general, "syllabus"=>syllabus, "currLang"=>currLang,
+                  "courseApp"=>courseApp, "courseApp"=>courseApp, "exercises"=>exercises]
+    chatbot_jav = Course.new(params)
+    courses.push(chatbot_jav)
+    return courses
+  end
+
+
+  def self.get_all_exercises(course_name, language_name)
+    path = get_exercise_folder(course_name, language_name)
+    files = Dir[path]   #all exercises files
+
+
+  end
+
 
 end
 
