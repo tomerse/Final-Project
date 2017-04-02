@@ -41,20 +41,20 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
 
   def generate_code(input_code, func_name, num_of_args, args_types)
     # generate arguments list code
-    args_list_code = generate_args_list_code(num_of_args, args_types)
+    args_list_code = generate_args_list_code(num_of_args)
     # import libraries
     generated_code = "import sys\n\n"
     # client's code
     generated_code += input_code + "\n\n"
     # main function - parse arguments and call the user function
-    generated_code += generate_main_func_code(func_name, num_of_args, args_list_code)
+    generated_code += generate_main_func_code(func_name, num_of_args, args_list_code, args_types)
     # call to main
     generated_code += "\nif __name__ == \"__main__\":\n\tmain()"
     return generated_code
   end
 
 
-  def generate_main_func_code(func_name, num_of_args, args_list_code)
+  def generate_main_func_code(func_name, num_of_args, args_list_code, args_types)
     # start of main function
     caller_func_code = "def main():\n\t"
     if num_of_args == 0
@@ -64,22 +64,50 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
       # get input length
       caller_func_code += "num_of_args = len(sys.argv)\n\t"
       # preparing list of arguments
-      caller_func_code += "params = [None] * (num_of_args -1)\n\tfor i in range(1,num_of_args):\n\t\tparams[i-1]=sys.argv[i]\n"
+      caller_func_code += "params = [None] * (num_of_args - 1)"
+      # parse all arguments
+      args_parsing_code = parse_args(args_types)
+      caller_func_code += args_parsing_code
       # call to function with params
       caller_func_code += "\t" + func_name + "(" + args_list_code + ")\n"
     end
     return caller_func_code
   end
 
-  #Creating the args list - in Python, every argument should be casted to the required type
-  #TODO: concatenate the remaining types in arg_types_list!
-  def generate_args_list_code(num_of_args, args_types)
-    arg_types_list = args_types[0]
-    params_list_str = arg_types_list[0] + "(params[0])"
+  def parse_args(args_types)
+    num_of_args = args_types.length
+    parsing_code = ""
+    # for every argument
+    for i in 0..num_of_args-1
+      arg = args_types[i]
+      # for every possible type of the argument
+      num_of_possible_types = arg.length
+      for j in 0..num_of_possible_types-2
+        if j==0
+          parsing_code += "\n\ttry:"
+        end
+        parsing_code += "\n\t\tparams[" + i.to_s() + "] = " + arg[j] + "(sys.argv[" + (i+1).to_s() +"])\n\t"
+        if j<num_of_possible_types-1
+          parsing_code += "except:"
+        else
+          parsing_code += "try:"
+        end
+      end
+      if num_of_possible_types>1
+        parsing_code += "\n\t\t"
+      else
+        parsing_code += "\n\t"
+      end
+      parsing_code += "params[" + i.to_s() + "] = " + arg[num_of_possible_types-1] + "(sys.argv[" + (i+1).to_s() +"])\n"
+    end
+    return parsing_code
+  end
+
+
+  def generate_args_list_code(num_of_args)
+    params_list_str = "params[0]"
     for i in 1..num_of_args-1
-      arg_types_list = args_types[i]
-      length = arg_types_list.length
-      params_list_str += ", " + arg_types_list[0] + "(params[" + i.to_s + "])"
+      params_list_str += ", " "params[" + i.to_s + "]"
     end
     return params_list_str
   end

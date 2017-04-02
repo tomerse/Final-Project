@@ -25,12 +25,18 @@ module ChatbotCodeGenerator
 
 
   #@brief generate_args_list_code
-  #   parse arguments to required types
   #   generate args list code to call the required function
   #@param num_of_args - number of arguments for func_name
-  #@param args_types - possible types for every argument
   #@return - string of arguments in correct types
-  def generate_args_list_code(num_of_args, args_types)
+  def generate_args_list_code(num_of_args)
+    raise NotImplementedError, NOT_IMPLEMENTED_MESSAGE
+  end
+
+  #@brief parse_args
+  #   parse arguments to required types
+  #@param args_types - list of lists - first level contains every argument, second level contains all possible types for this argument
+  #@return - parsing code for each argument
+  def parse_args(args_types)
     raise NotImplementedError, NOT_IMPLEMENTED_MESSAGE
   end
 
@@ -39,8 +45,9 @@ module ChatbotCodeGenerator
   #@param func_name - the required function name in the code
   #@param num_of_args - number of arguments for func_name
   #@param args_list_code - arguments with corret types  to call the reqruied function
+  #@param args_types - possible types for every argument
   #@return - code of main function
-  def generate_main_func_code(func_name, num_of_args, args_list_code)
+  def generate_main_func_code(func_name, num_of_args, args_list_code, args_types)
     raise NotImplementedError, NOT_IMPLEMENTED_MESSAGE
   end
 
