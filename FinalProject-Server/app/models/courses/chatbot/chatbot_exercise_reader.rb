@@ -24,6 +24,12 @@ class ChatbotExerciseReader < ExerciseReader
     @args_types
   end
 
+
+  def get_initial_code()
+    return @exercise.code
+  end
+
+
   def build_tests(filepath)
     if @exercise_file.nil?
       @exercise_file=read_exercise_file(filepath)
