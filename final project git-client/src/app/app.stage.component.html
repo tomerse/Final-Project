@@ -1,7 +1,7 @@
- <div layout="row" layout-fill style="min-height: 100%;">
-      <div flex="25" style="overflow-y:auto;margin-top:3%">
-        <md-card #introObj layout="column" class="introClass">
-          <div flex layout="column" >
+ <div fxLayout="row" fxFlexFill style="min-height: 100%;">
+      <div fxFlex="25" style="overflow-y:auto;margin-top:3%">
+        <md-card #introObj  class="introClass">
+          <div >
             <h1>{{currStage.topic}}</h1>
             <h3>Exercise {{currStage.id}}</h3>
             <br/>
@@ -10,14 +10,16 @@
              {{currStage.instructions}}
             </p>
           </div>
-          <div flex layout="column">
+          <div >
           <h1>Tasks</h1>
-            <md-list *ngFor="let item of currStage.tasks" class="hintsListElement">
-              <md-checkbox>{{item}}</md-checkbox>
+            <md-list *ngFor="let item of currStage.tasks;let i=index" class="hintsListElement">
+              <div>
+                   {{i+1}}. <span>{{item}}</span>
+              </div>
             </md-list>
           </div>
           <br/>
-          <div flex layout="column">
+          <div>
             <button  md-raised-button color="primary" (click)="collapseHints()">
               <span>Hints</span>
                 <md-icon *ngIf="_isCollapsedContent">expand_more</md-icon>
@@ -37,25 +39,30 @@
 
 
       </div>
-        <div flex="50" >
-          <div layout="column">
-            <div flex="75" style="position: absolute;top: 70px;" >
+        <div fxFlex="50" >
+          <div fxLayout="column">
+            <div fxFlex="75" style="position: absolute;top: 70px;" >
              <aceEditor  class="text-inside-grid" #editor [text]="currStage.code"
                          (currStatus)="changeStatus($event)"></aceEditor>
     
               </div>
 
   
-    <div flex="25" style="position: absolute;bottom: 0;">
+    <div fxFlex="25" style="position: absolute;bottom: 0;">
         <md-card class="card-accent md-card-flat" >
           <button style="margin-right: inherit;" #submitButton  
           md-raised-button md-tooltip="Click here to submit your code!" (click)="submit()" color="primary">
             Submit your code!
           </button>
+          <button style="margin-right: inherit;" #nextStageButton
+          md-raised-button md-tooltip="Click here to move next level!" (click)="moveNextLevel(currStage.id)" 
+          color="primary" [disabled]="!successLevel">
+           Start next lesson
+          </button>
         </md-card>
         </div>
       </div>
-      <div flex="25">
+      <div fxFlex="25">
         <div *ngIf="chatbotIsOn"  color="primary" >
            <chatBot #chatbotcomp [code]="writtenCode" [chatbotinitmessage]="chatbotinitmessage"
            [numofargs] ="currStage.numofargs" [argstype]="currStage.argstype" 

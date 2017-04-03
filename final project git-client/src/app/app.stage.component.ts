@@ -35,11 +35,14 @@ courseApp;
   chatbotinitmessage:string;
   activeRoute: ActivatedRoute;
   private sub:any;
+  currRouter:Router;
   stageIdfromRouting:string;
+  successLevel:boolean =false; //if the level complete succesfully
 
-  constructor(private stagePageService: StagePageService,public dialog: MdDialog,route:ActivatedRoute)
+  constructor(private stagePageService: StagePageService,public dialog: MdDialog,route:ActivatedRoute,router:Router)
   {
     this.activeRoute = route;
+    this.currRouter = router;
   }
 
     openDialog(statuscode:number,error?:string) {
@@ -90,9 +93,9 @@ courseApp;
           this.currStage.argstype=response["argstype"];
           this.currStage.numofargs=parseInt(response["numofargs"]);
           this.chatbotinitmessage=response["chatbotinitmessage"];
-
+          this.chatbotIsOn=false;
+          this.successLevel=false;
        
-        console.log(JSON.stringify(this.currStage));
       }
     );
     setTimeout(()=> {
@@ -120,13 +123,16 @@ courseApp;
         {
           this.complilationCurrStatus = 'compilation error';
           this.openDialog(2,response["error"]);
+          this.chatbotIsOn =false;
           
         }
-         else if (response["status"]=='success')
-        {
+         else 
+         if (response["status"]=='success')
+         {
           this.complilationCurrStatus = 'success';
           this.openDialog(0);
           this.chatbotIsOn =true;
+          this.successLevel = true;
         }
         else{ //unit tests failed
                this.openDialog(1,response["error"]);
@@ -136,6 +142,41 @@ courseApp;
       }
     );
   }
+
+  moveNextLevel(id:number)
+  {
+    console.log('sadasdsdsadsad');
+    console.log((parseInt(this.currStage.id)+1).toString());
+    console.log('asdsad');
+    this.stagePageService.getInitalDataForStage((parseInt(this.currStage.id)+1).toString(),
+    this.currLang, this.courseApp).subscribe(
+      response =>
+      {
+          console.log(response);
+          this.currStage.id = response["id"];
+          this.currStage.topic= response["topic"];
+          this.currStage.instructions = response["instructions"];
+          this.currStage.code= response["code"] ;
+          this.currStage.tasks =response["tasks"] ;
+          this.currStage.hints= response["hints"];
+          this.currStage.argstype=response["argstype"];
+          this.currStage.numofargs=parseInt(response["numofargs"]);
+          this.chatbotinitmessage=response["chatbotinitmessage"];
+          this.chatbotIsOn=false;
+           this.successLevel=false;
+            this.currRouter.navigateByUrl("course/"+this.currLang+"/"+this.courseApp+"/stage/"+this.currStage.id );
+       
+      });
+         setTimeout(()=> {
+      this.editor.text =this.currStage.code ;
+    });
+
+  
+
+  }
+
+
+
   changeEditorEdit()
   {
     console.log('sdasdasdsa');

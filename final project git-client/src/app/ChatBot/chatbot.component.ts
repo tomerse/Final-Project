@@ -56,8 +56,20 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
       this.messageList.push(new OneMessageInstance(this.chatbotinitmessage,false, "/assets/images/monkey.png"));
       this.messageList.push(new OneMessageInstance("Check your code by insert arguments",false, 
       "/assets/images/monkey.png"));
+       this.messageList.push(new OneMessageInstance('Please enter argument number '+(this.argsCounter+1),false,
+      "/assets/images/monkey.png"));
+      /*
+      if (this.numofargs ==1)
+      {
+        this.messageList.push(new OneMessageInstance('Please enter '+this.numofargs+ ' argument',false,
+      "/assets/images/monkey.png"));
+      }
+      else
+      {
       this.messageList.push(new OneMessageInstance('Please enter '+this.numofargs+ ' arguments',false,
       "/assets/images/monkey.png"));
+    }
+    */
   }
 
   constructor(private chatBotServiceObj: chatBotService,public el: ElementRef) {

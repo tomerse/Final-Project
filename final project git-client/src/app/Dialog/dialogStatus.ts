@@ -6,10 +6,9 @@ export class dialogStatus
     constructor()
     {
         this.allStatus.push(new status('Good work!','Your code is correct.'+ '\n'+ 'Please check it using the ChatBot.'));
-        this.allStatus.push(new status('Someting is wrong','Your code has correct syntax but not follow the instructions.'
-         + '\n'+ 'Please check it using the ChatBot.'
+        this.allStatus.push(new status('Something went wrong','Please verify you followed the instructions using the chatbot'
             + '\n'+ 'The reasons are:'+ '\n'));
-        this.allStatus.push(new status('Someting is wrong','Your code has syntax error.The following error was appear :'));
+        this.allStatus.push(new status('Something went wrong.','A syntax error has occurred: '));
     }
 
 

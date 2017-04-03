@@ -27,7 +27,7 @@
 						data-html="true">
 	                </div>
 	                <div class="brand">
-	                   Powered by Code academy
+	                   Powered by Code monkey
 	                </div>
 
 
@@ -44,7 +44,7 @@
 
 							
 		<md-card class="card-accent md-card-main-page " *ngFor="let course of allCourses">
-		<h4 style="text-align: center;">Python</h4>	
+		<h4 style="text-align: center;">{{course.title}}</h4>	
 				<md-tab-group style="height: 180px; overflow-y: auto;">
   				<md-tab label="General">{{course.general}}</md-tab>
   				<md-tab label="Syllabus">

@@ -11,7 +11,7 @@ export class Course
   title:string;
   general:string;
   syllabus:any;
-  allStages:any[];
+  exercises:any[];
 
   courseApp:string;
   currLang:string;
@@ -21,7 +21,7 @@ export class Course
       this.title =currTitle;
       this.general = currGeneral;
       this.syllabus = currsyllabus;
-      this.allStages = new Array<any>();
+      this.exercises = new Array<any>();
       this.currLang=currLang;
       this.courseApp=courseApp;
   }
