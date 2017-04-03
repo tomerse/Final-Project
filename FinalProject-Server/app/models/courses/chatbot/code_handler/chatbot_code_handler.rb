@@ -171,7 +171,7 @@ class ChatbotCodeHandler
   def run_exercise_code(code, args, exercise_file)
     args_types = build_arg_types(exercise_file)
     (args_list, num_of_args) = build_string_args_list(args)
-    func_name = get_func_name(@exercise_reader.get_initial_code())
+    func_name = get_func_name(@exercise_reader.get_initial_code)
     generated_code = code
     if (func_name <=> "") != 0
       generated_code = generate_code(code, func_name, num_of_args, args_types)
@@ -210,7 +210,7 @@ class ChatbotCodeHandler
     success = false
     code_res = ""
     num_of_args = args_types.length
-    func_name = get_func_name(@exercise_reader.get_initial_code())
+    func_name = get_func_name(@exercise_reader.get_initial_code)
     generated_code = code
     if (func_name <=> "") != 0
       generated_code = generate_code(code, func_name, num_of_args, args_types)
