@@ -2,7 +2,7 @@
 
 <root>
   <exercise>
-    <id>2</id>
+    <id>3</id>
     <topic>Multi Line comments</topic>
     <instructions>In the previous exercise we learned how to use single line comments.
       So what if we want to comment out multiple lines?
