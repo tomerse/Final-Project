@@ -12,6 +12,7 @@ and open the template in the editor.
     <topic>Printing</topic>
     <instructions>To get information about our program variables study them further or to display a message to the user on the screen we use the action &lt;u>"Print"&lt;/u>.
       Using the above action will be using the phrase in quotes printed followed by an expression that wants to print.
+	  &lt;img src="/assets/images/monkey.png">
       For example, to print to the screen the phrase Hello World!. Write down the expression print &lt;b>"Hello World!"&lt;/b>.
     </instructions>
     <code>def printName(name):
