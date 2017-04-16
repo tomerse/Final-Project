@@ -28,4 +28,10 @@ class ExerciseReader
   def build_arg_types(filepath)
     raise NotImplementedError, "Implement this method in a child class"
   end
+
+  #@return exercise topic as string
+  def get_exercise_topic()
+    raise NotImplementedError, "Implement this method in a child class"
+  end
+
 end

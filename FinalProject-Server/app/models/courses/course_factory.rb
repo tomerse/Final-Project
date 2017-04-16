@@ -52,28 +52,29 @@ class CourseFactory
     syllabus = "Introduction, variables, logic expressions, conditions, loops"
     currLang = "python"
     courseApp = "chatbot"
-    exercises = ["Printing", "Single line comments", "Multi Line comments"]
     params = Hash["title"=>title, "general"=>general, "syllabus"=>syllabus, "currLang"=>currLang,
-                  "courseApp"=>courseApp, "courseApp"=>courseApp, "exercises"=>exercises]
+                  "courseApp"=>courseApp, "courseApp"=>courseApp]
     chatbot_py = Course.new(params)
     courses.push(chatbot_py)
     currLang = "java"
     title = "Java Chatbot"
     general = "Learn Java programming by building your own chatbot!"
-    exercises = []
     params = Hash["title"=>title, "general"=>general, "syllabus"=>syllabus, "currLang"=>currLang,
-                  "courseApp"=>courseApp, "courseApp"=>courseApp, "exercises"=>exercises]
+                  "courseApp"=>courseApp, "courseApp"=>courseApp]
     chatbot_jav = Course.new(params)
     courses.push(chatbot_jav)
     return courses
   end
 
 
-  def self.get_all_exercises(course_name, language_name)
-    path = get_exercise_folder(course_name, language_name)
-    files = Dir[path]   #all exercises files
-
-
+  def self.get_all_exercises(course_exercise_reader, exercises_folder_path)
+    exercises_topics = []
+    Dir.glob(exercises_folder_path+"/*.xml") do |exercise_file_path|
+      course_exercise_reader.build_exercise(exercise_file_path)
+      cur_exercise_topic = course_exercise_reader.get_exercise_topic()
+      exercises_topics.push(cur_exercise_topic)
+    end
+    return exercises_topics
   end
 
 

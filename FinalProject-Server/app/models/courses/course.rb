@@ -8,7 +8,6 @@ class Course
     @syllabus = params["syllabus"]
     @currLang = params["currLang"]
     @courseApp = params["courseApp"]
-    @exercises = params["exercises"]
 
   end
 

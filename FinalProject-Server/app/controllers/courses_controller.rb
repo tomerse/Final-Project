@@ -22,6 +22,15 @@ class CoursesController < ApplicationController
     end
   end
 
+  def get_all_course_exercises
+    exercises_folder_path = CourseFactory.get_exercise_folder(params[:course_name], params[:lan_name])
+    exercise_reader = CourseFactory.get_exercise_reader(params[:course_name])
+    exercises_topics = CourseFactory.get_all_exercises(exercise_reader, exercises_folder_path)
+    respond_to do |format|
+      format.json { render json: exercises_topics }
+    end
+  end
+
   # GET /courses/1
   # GET /courses/1.json
   def show

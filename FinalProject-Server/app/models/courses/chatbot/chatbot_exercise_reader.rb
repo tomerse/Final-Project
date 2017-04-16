@@ -29,6 +29,10 @@ class ChatbotExerciseReader < ExerciseReader
     return @exercise.code
   end
 
+  def get_exercise_topic()
+    return @exercise.topic
+  end
+
 
   def build_tests(filepath)
     if @exercise_file.nil?
