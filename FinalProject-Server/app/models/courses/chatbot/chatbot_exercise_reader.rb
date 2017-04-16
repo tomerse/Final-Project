@@ -25,7 +25,7 @@ class ChatbotExerciseReader < ExerciseReader
   end
 
 
-  def get_initial_code()
+  def get_initial_code
     return @exercise.code
   end
 
@@ -38,10 +38,7 @@ class ChatbotExerciseReader < ExerciseReader
     if @exercise_file.nil?
       @exercise_file=read_exercise_file(filepath)
     end
-    if @tests.nil?
-      @tests = parse_tests(@exercise_file)
-    end
-    @tests
+    @tests = parse_tests(@exercise_file)
   end
 
 
