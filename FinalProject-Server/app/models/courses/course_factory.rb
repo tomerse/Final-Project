@@ -70,9 +70,8 @@ class CourseFactory
   def self.get_all_exercises(course_exercise_reader, exercises_folder_path)
     exercises_topics = []
     Dir.glob(exercises_folder_path+"/*.xml") do |exercise_file_path|
-      course_exercise_reader.build_exercise(exercise_file_path)
-      cur_exercise_topic = course_exercise_reader.get_exercise_topic()
-      exercises_topics.push(cur_exercise_topic)
+      ex = course_exercise_reader.build_exercise(exercise_file_path)
+      exercises_topics.push(ex.topic)
     end
     return exercises_topics
   end

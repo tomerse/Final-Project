@@ -35,7 +35,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     #should be read from xml
-    courses = CourseFactory.get_all_courses()
+    courses = CourseFactory.get_all_courses
     respond_to do |format|
       format.json {render :json => courses }
     end
