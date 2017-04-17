@@ -39,6 +39,8 @@ gem 'nokogiri'
 
 gem 'log4r'
 
+gem 'puma'
+
 
 
 # To use ActiveModel has_secure_password
