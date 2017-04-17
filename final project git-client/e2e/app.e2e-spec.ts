@@ -1,29 +1,13 @@
-/*import { FinalProV1Page } from './app.po';
+import { MainPage } from './app.po';
 
-describe('final-pro-v-1 App', function() {
-  let page: FinalProV1Page;
+describe('CodeMonkey App', function() {
+  let page: MainPage;
 
   beforeEach(() => {
-    page = new FinalProV1Page();
+    page = new MainPage();
   });
-
-  it('should display message saying app works', () => {
+  it('should display heading', () => {
     page.navigateTo();
-    //expect(page.getParagraphText()).toEqual('app works!');
-  });
-});
-*/
-
-// example-spec.js
-import {browser, element, by} from "protractor";
-describe('angularjs homepage', function() {
-  it('should greet the named user', function() {
-    browser.get('http://localhost:4200');
-
-    element(by.binding('MyComponent'));
-
-    var greeting = element(by.binding('yourName'));
-
-    expect(greeting.getText()).toEqual('Hello Julie!');
+    expect(page.getHeadingText()).toEqual('Monkey-Bot academy');
   });
 });
