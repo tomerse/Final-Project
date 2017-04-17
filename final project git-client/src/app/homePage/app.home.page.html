@@ -1,5 +1,5 @@
 
-<body class="index-page" style="overflow-y: scroll;">	
+<body class="index-page" style="overflow-y: scroll;">
 
 <!-- Navbar will come here -->
 <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
@@ -22,8 +22,8 @@
 			</div>
 			<div class="logo-container" style="position: absolute;top:10px">
 	                <div class="logo">
-	                    <img src="/assets/images/monkey.png" alt="Creative Tim Logo" data-placement="bottom" 
-						rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>" 
+	                    <img src="/assets/images/monkey.png" alt="Creative Tim Logo" data-placement="bottom"
+						rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>"
 						data-html="true">
 	                </div>
 	                <div class="brand">
@@ -42,9 +42,9 @@
 	                <h2>Our courses</h2>
 	            </div>
 
-							
+
 		<md-card class="card-accent md-card-main-page " *ngFor="let course of allCourses">
-		<h4 style="text-align: center;">{{course.title}}</h4>	
+		<h4 style="text-align: center;">{{course.title}}</h4>
 				<md-tab-group style="height: 180px; overflow-y: auto;">
   				<md-tab label="General">{{course.general}}</md-tab>
   				<md-tab label="Syllabus">
@@ -52,16 +52,16 @@
 			  </md-tab>
 				</md-tab-group>
 			<md-card-actions style="margin-left: auto;">
-     <button #submitButton  md-raised-button (click)="enterCourse(course.currLang,course.courseApp)" color="primary">
+     <button id="goToPythonCourse"  md-raised-button (click)="enterCourse(course.currLang,course.courseApp)" color="primary">
             Start here!
           </button>
 		  	<br>
 			</md-card-actions>
 			</md-card>
-			
+
 		</div>
 	</div>
-		
+
 
 
     <div class="section section-download">
