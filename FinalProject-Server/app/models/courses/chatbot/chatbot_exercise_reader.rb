@@ -17,28 +17,14 @@ class ChatbotExerciseReader < ExerciseReader
     parse_exercise(@exercise_file)
   end
 
-  def build_arg_types(exercise_file)
-    if @exercise.nil?
-      build_exercise(exercise_file)
-    end
-    @args_types
+  def build_arg_types(filepath)
+    @exercise_file = read_exercise_file(filepath)
+    ArgTypesParser.parse_arg_types(@exercise_file)
   end
-
-
-  def get_initial_code
-    return @exercise.code
-  end
-
-  def get_exercise_topic()
-    return @exercise.topic
-  end
-
 
   def build_tests(filepath)
-    if @exercise_file.nil?
-      @exercise_file=read_exercise_file(filepath)
-    end
-    @tests = parse_tests(@exercise_file)
+    @exercise_file=read_exercise_file(filepath)
+    TestsParser.parse_tests(@exercise_file)
   end
 
 
@@ -50,29 +36,18 @@ class ChatbotExerciseReader < ExerciseReader
     tasks = Xml.get_elements(exercise_file, 'tasks//task','content') #['task1','task2']
     hints = Xml.get_elements(exercise_file,'exercise','hints') #['hint1','hint2']
     chatbotinitmessage = Xml.get_element(exercise_file,'chatbotinitmessage')
-    @args_types = Xml.get_elements(exercise_file, 'argstypes//arg','argtypes') #['argtype1','argtype2']
-    numofargs = @args_types.length
+    args_types = Xml.get_elements(exercise_file, 'argstypes//arg','argtypes') #['argtype1','argtype2']
+    numofargs = args_types.length
     params = Hash["id"=>id, "topic"=>topic, "instructions"=>instructions, "code"=>code,
                 "tasks"=>tasks.flatten, "hints"=>hints.flatten, "chatbotinitmessage"=>chatbotinitmessage,
                   "numofargs"=>numofargs]
-    @exercise = ChatbotExercise.new(params)
-  end
-
-
-  def parse_tests(exercise_file)
-    TestsParser.parse_tests(exercise_file)
+    ChatbotExercise.new(params)
   end
 
   def initialize
     @exercise_file = nil
-    @exercise = nil
-    @tests = nil
-    @args_types = nil
   end
 
   private :initialize
-
-
-
 
 end
