@@ -5,8 +5,23 @@ export class MainPage {
     return browser.get('');
   }
 
+  ignoreSynch() {
+    browser.ignoreSynchronization = true;
+  }
+
+  enableSynch() {
+    browser.ignoreSynchronization = false;
+  }
   getHeadingText() {
     return element(by.css('h1')).getText();
+  }
+
+  getCoursesContainer() {
+   return element(by.css('.card-accent md-card-main-page'));
+  }
+
+  getCourseTitle() {
+    return element.all(by.css('h4'));
   }
 
   getTitle() {
@@ -14,6 +29,6 @@ export class MainPage {
   }
 
   getCourseButton() {
-    return element(by.id('goToPythonCourse'));
+    return element.all(by.id('goToPythonCourse'));
   }
 }
