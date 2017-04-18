@@ -3,7 +3,7 @@ require 'test_helper'
 class ChatbotCodeHandlerTest < ActiveSupport::TestCase
 
   TESTSUITE = 'ChatbotCodeHandler Unit Tests'
-  NUMOFTESTS = 13
+  NUMOFTESTS = 14
   Tsummary = TestsSummary.new NUMOFTESTS
 
   test "" do
@@ -154,6 +154,29 @@ class ChatbotCodeHandlerTest < ActiveSupport::TestCase
       exercise_file = CourseFactory.get_exercise_file(COURSEFOLDER, PROGLANGUAGE, 1)
       act = code_handler.run_exercise_code(code, args, exercise_file)
       exp = "suisa\n"
+      ans = act == exp
+      if ans
+        Tlog.pass
+        Tsummary.passInc
+      else
+        Tlog.fail
+        Tsummary.addFailure
+      end
+    rescue => ex
+      Tlog.errorFail "Exception: #{ex.message}"
+      Tsummary.addFailure
+    end
+  end
+
+  def test_run_exercise_code_string_with_space
+    Tlog.execUt('ChatbotCodeHandler.run_exercise_code string with space')
+    begin
+      code = ActiveSupport::TestCase.read_test_input COMP_SUCC_INPUT
+      args = ['suisa fiz gabi segal']
+      code_handler = CourseFactory.get_code_handler(COURSEFOLDER, PROGLANGUAGE)
+      exercise_file = CourseFactory.get_exercise_file(COURSEFOLDER, PROGLANGUAGE, 1)
+      act = code_handler.run_exercise_code(code, args, exercise_file)
+      exp = "suisa fiz gabi segal\n"
       ans = act == exp
       if ans
         Tlog.pass

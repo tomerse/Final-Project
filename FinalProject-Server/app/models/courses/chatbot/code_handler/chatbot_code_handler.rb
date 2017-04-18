@@ -264,10 +264,10 @@ class ChatbotCodeHandler
     if !args.nil?
       num_of_args = args.length
       # build arguments names as string & arguments types list
-      args_list = args[0]
+      args_list = "\"" + args[0] + "\""
       if num_of_args > 1
         for i in 1..num_of_args-1
-          args_list += " " + args[i]
+          args_list += " \"" + args[i] + "\""
         end
       end
     end
