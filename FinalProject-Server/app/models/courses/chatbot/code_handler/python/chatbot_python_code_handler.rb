@@ -42,10 +42,10 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
   def generate_code(input_code, func_name, num_of_args, args_types)
     # generate arguments list code
     args_list_code = generate_args_list_code(num_of_args)
-    # import libraries
-    generated_code = "import sys\n\n"
     # client's code
-    generated_code += input_code + "\n\n"
+    generated_code = input_code + "\n\n"
+    # import libraries
+    generated_code += "import sys\n\n"
     # main function - parse arguments and call the user function
     generated_code += generate_main_func_code(func_name, num_of_args, args_list_code, args_types)
     # call to main

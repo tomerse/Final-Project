@@ -210,7 +210,7 @@ class ChatbotCodeHandler
     exercise = @exercise_reader.build_exercise(exercise_file)
     args_types = build_arg_types(exercise_file)
     success = false
-    code_res = ""
+    code_res = ''
     num_of_args = args_types.length
     func_name = get_func_name(exercise.code)
     generated_code = code
