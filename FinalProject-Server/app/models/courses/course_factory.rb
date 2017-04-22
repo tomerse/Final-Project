@@ -6,6 +6,9 @@ class CourseFactory
   COURSESEFOLDER = 'lib/assets/courses'
   COURSES_CONFIGURATION_FILE = 'courses.xml'
 
+  #Programming Languages
+  PYTHON = 'python'
+
   # Exercise configuration files path
   EXERCISESFOLDER = 'exercises'
   FILENAME = 'exercise_'
@@ -36,7 +39,11 @@ class CourseFactory
     #check course name
     if course_name == CHATBOT
         exercise_reader = CourseFactory.get_exercise_reader(course_name)
-        return ChatbotPythonCodeHandler.new(language_name, exercise_reader)
+        #check programming language for chatbot course
+        if language_name == PYTHON
+          return ChatbotPythonCodeHandler.new(language_name, exercise_reader)
+        end
+        raise ArgumentError, 'Undefined language_name = ' + language_name
     end
     raise ArgumentError, 'Undefined course_name = ' + course_name
   end
