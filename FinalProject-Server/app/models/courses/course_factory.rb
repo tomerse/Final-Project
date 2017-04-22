@@ -2,11 +2,14 @@ class CourseFactory
 
   ROOT = "#{Rails.root}"
 
+  # Courses configuration file
+  COURSESEFOLDER = 'lib/assets/courses'
+  COURSES_CONFIGURATION_FILE = 'courses.xml'
+
   #Programming Languages
   PYTHON = 'python'
 
   # Exercise configuration files path
-  COURSESEFOLDER = 'lib/assets/courses'
   EXERCISESFOLDER = 'exercises'
   FILENAME = 'exercise_'
   EXTENSION = '.xml'
@@ -47,22 +50,24 @@ class CourseFactory
 
   def self.get_all_courses()
     courses = []
-    title = "Python Chatbot"
-    general = "Learn Python programming by building your own chatbot!"
-    syllabus = "Introduction, variables, logic expressions, conditions, loops"
-    currLang = "python"
-    courseApp = "chatbot"
-    params = Hash["title"=>title, "general"=>general, "syllabus"=>syllabus, "currLang"=>currLang,
-                  "courseApp"=>courseApp, "courseApp"=>courseApp]
-    chatbot_py = Course.new(params)
-    courses.push(chatbot_py)
-    currLang = "java"
-    title = "Java Chatbot"
-    general = "Learn Java programming by building your own chatbot!"
-    params = Hash["title"=>title, "general"=>general, "syllabus"=>syllabus, "currLang"=>currLang,
-                  "courseApp"=>courseApp, "courseApp"=>courseApp]
-    chatbot_jav = Course.new(params)
-    courses.push(chatbot_jav)
+    file_path = ROOT + '/' + COURSESEFOLDER + '/' + COURSES_CONFIGURATION_FILE
+    file = Xml.readxml(file_path)
+    #read all course properties
+    titles  = Xml.get_elements(file,'courses//course','title')
+    generals  = Xml.get_elements(file,'courses//course','general')
+    syllabuses  = Xml.get_elements(file,'courses//course','syllabus')
+    currLangs  = Xml.get_elements(file,'courses//course','currlang')
+    courseApps  = Xml.get_elements(file,'courses//course','courseapp')
+    #build every course as object
+    num_of_courses = titles.length
+    if (not titles.flatten.empty?) and (num_of_courses == generals.length) and (num_of_courses  == syllabuses.length) and (num_of_courses == currLangs.length) and (num_of_courses == courseApps.length)
+      for i in 0..num_of_courses-1
+        params = Hash["title"=>titles[i][0], "general"=>generals[i][0], "syllabus"=>syllabuses[i][0], "currLang"=>currLangs[i][0],
+                      "courseApp"=>courseApps[i][0]]
+        course = Course.new(params)
+        courses.push(course)
+      end
+    end
     return courses
   end
 
