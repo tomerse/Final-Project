@@ -162,3 +162,12 @@ md-list.hintsListElement md-list-item .md-list-item
   font-family: 'Ubuntu', sans-serif;
   text-align: center;
 }
+
+.selected {
+     /* background-color: #CFD8DC;*/
+       border-radius: 6px;
+       border-style: solid;
+       border-color: black;
+
+       
+    }

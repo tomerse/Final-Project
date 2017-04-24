@@ -15,7 +15,7 @@ import {dialogStatus} from './Dialog/dialogStatus';
 })
 export class AppComponent implements OnInit,AfterContentInit{
 
-  constructor(public dialog: MdDialog)
+  constructor()
   {
   }
 

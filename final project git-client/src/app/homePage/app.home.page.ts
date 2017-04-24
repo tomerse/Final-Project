@@ -4,6 +4,7 @@ import {Course} from '../app.course.component';
 import {Router,ActivatedRoute} from '@angular/router';
 import {HomePageService} from './app.home.component.service';
 
+
 @Component({
   selector: 'home-page',
   templateUrl: './app.home.page.html',
@@ -34,8 +35,6 @@ export class HomePageComponent implements OnInit {
 
   enterCourse(courseApp:string,currLang:string)
   {
-    console.log('sdad '+ courseApp);
-    console.log('sdad '+ currLang);
       this.currRouter.navigateByUrl("course/"+courseApp+"/"+currLang);
   }
 }

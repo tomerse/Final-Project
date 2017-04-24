@@ -1,25 +1,29 @@
-import { MainPage } from './app.po';
+/*import { FinalProV1Page } from './app.po';
 
-describe('CodeMonkey App', function() {
-  let page: MainPage;
+describe('final-pro-v-1 App', function() {
+  let page: FinalProV1Page;
 
   beforeEach(() => {
-    page = new MainPage();
+    page = new FinalProV1Page();
   });
 
-  it('should display correct title', function () {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getTitle()).toEqual('Monkey');
+    //expect(page.getParagraphText()).toEqual('app works!');
   });
+});
+*/
 
-  it('should display heading', () => {
-    page.navigateTo();
-    expect(page.getHeadingText()).toEqual('Monkey-Bot academy');
+// example-spec.js
+import {browser, element, by} from "protractor";
+describe('angularjs homepage', function() {
+  it('should greet the named user', function() {
+    browser.get('http://localhost:4200');
+
+    element(by.binding('MyComponent'));
+
+    var greeting = element(by.binding('yourName'));
+
+    expect(greeting.getText()).toEqual('Hello Julie!');
   });
-
-  it('navigate to course page', () => {
-    page.navigateTo();
-    page.getCourseButton().click();
-  });
-
 });

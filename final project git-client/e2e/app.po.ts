@@ -1,19 +1,11 @@
 import { browser, element, by } from 'protractor';
 
-export class MainPage {
+export class FinalProV1Page {
   navigateTo() {
-    return browser.get('');
+    return browser.get('/');
   }
 
-  getHeadingText() {
-    return element(by.css('h1')).getText();
-  }
-
-  getTitle() {
-    return browser.getTitle();
-  }
-
-  getCourseButton() {
-    return element(by.id('goToPythonCourse'));
+  getParagraphText() {
+    return element(by.css('app-root h1')).getText();
   }
 }

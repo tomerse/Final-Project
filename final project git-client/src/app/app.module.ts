@@ -19,6 +19,8 @@ import {DialogCompilationComponent} from './Dialog/dialog.component';
 import {appRootRoutingList} from './routing.moudle';
 import {HomePageComponent} from './homePage/app.home.page';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouteReuseStrategy } from '@angular/router';
+import { CookieModule } from 'ngx-cookie';
 import 'hammerjs';
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import 'hammerjs';
     JsonpModule,
     FlexLayoutModule,
     MaterialModule.forRoot(),
+    CookieModule.forRoot(),
     //Angular2FlexModule.forRoot(),
     Md2Module.forRoot(),
     RouterModule.forRoot(appRootRoutingList),

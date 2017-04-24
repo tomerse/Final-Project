@@ -7,7 +7,7 @@ import { Component , ViewChild , Output , Input ,EventEmitter } from '@angular/c
   template: `
     <div ace-editor #editor class="text-inside-grid" color="primary"
        [text]="text"
-       [mode]="'python'"
+       [mode]="mode"
        [theme]="theme"
        [options]="options"
        [readOnly]="readonly"
@@ -29,6 +29,9 @@ export class MyComponent {
   @Output()
   currStatus = new EventEmitter<string>();
 
+  @Input()
+  mode;
+
   changeReadOnlyModeToFalse()
   {
     this.readonly = false;
@@ -45,6 +48,7 @@ export class MyComponent {
   }
 
   onChange(code) {
+    console.log("tryyyy");
     console.log("new code", code);
     this.currStatus.emit(code);
   }

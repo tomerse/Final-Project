@@ -3,9 +3,14 @@ import {stage} from './stage'
 import {MdDialog, MdDialogRef,MdDialogConfig} from '@angular/material';
 import {Router,ActivatedRoute} from '@angular/router';
 import {DialogCompilationComponent} from  './Dialog/dialog.component';
+
 import {dialogStatus} from './Dialog/dialogStatus';
 //import 'ace-builds/src-min/ace';
 import {Configuration} from './configuration';
+ import {CourseStageSevice} from  './app.course-stage-service';
+ import { Subscription } from 'rxjs/Subscription';
+ import {CoursePageService} from './course.component.service';
+
 export class Course
 {
   title:string;
@@ -15,6 +20,8 @@ export class Course
 
   courseApp:string;
   currLang:string;
+
+
 
   constructor(currTitle:string,currGeneral:string,currsyllabus:any,courseApp:string,currLang:string )
   {
@@ -33,6 +40,7 @@ export class Course
 @Component({
   selector: 'app-course-selector',
   templateUrl: './app.course.component.html',
+  providers:[CourseStageSevice,CoursePageService ],
   styleUrls: ['./app.component.css'],
  encapsulation: ViewEncapsulation.None
 
@@ -45,11 +53,20 @@ export class courseComponent implements OnInit,AfterContentInit{
     sub:any;
     activeRoute: ActivatedRoute;
     conf:Configuration;
+     @ViewChild('stage') stage;
+      @ViewChild('sidenav') sidenav;
+      selectedIndex:number = 0;
+    subscription: Subscription;
 
-
- constructor(route:ActivatedRoute)
+ constructor(route:ActivatedRoute,private courseStageSevice:CourseStageSevice
+              ,private coursePageService:CoursePageService)
   {
     this.activeRoute = route;
+     courseStageSevice.missionConfirmed$.subscribe(
+      indexid => {
+        console.log('subbbbbbb');
+        this.selectedIndex =indexid ;
+      });
   }
     
  ngOnInit(){
@@ -60,6 +77,15 @@ export class courseComponent implements OnInit,AfterContentInit{
         this.currCourse.courseApp =params['courseApp']; 
        // this.conf = new Configuration(this.currCourse.currLang,this.currCourse.courseApp);
        console.log("kkkkkkkkkkkkkkkkkkkk");
+        this.coursePageService.getAllExcrsisesData(this.currCourse.currLang,this.currCourse.courseApp).subscribe(
+          response =>
+          {
+            console.log(response);
+            this.links = response;
+          }
+
+        );
+
      });
 
  }
@@ -68,7 +94,10 @@ export class courseComponent implements OnInit,AfterContentInit{
 
  onActivate(event){
     this.editor = event['editor'];
-
+    this.stage = event;
+        console.log('sdsadsadads');
+    console.log(event);
+    this.stage.lastLevelId = this.links.length;
  }
 changeToDarkTheme()
   {
@@ -81,6 +110,22 @@ changeToDarkTheme()
       this.editor.theme = 'tomorrow_night';
     }
     this.isDarkTheme = !this.isDarkTheme;
+  }
+
+
+  moveStage(i:number)
+  {
+      console.log(i);
+     this.stage.moveNextLevel(i.toString());
+           console.log("dddssssddddsss");
+     console.log(this.selectedIndex);
+           console.log("ddddssssdddsss");
+               this.selectedIndex = i;
+        setTimeout(()=>
+    {
+       this.sidenav.close();
+    },100);
+
   }
 
 }
