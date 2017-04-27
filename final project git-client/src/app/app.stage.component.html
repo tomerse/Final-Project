@@ -12,7 +12,7 @@
           <h1>Tasks</h1>
             <md-list *ngFor="let item of currStage.tasks;let i=index" class="hintsListElement" style="display: flex;">
               <div>
-                   {{i+1}}.  
+                   {{i+1}}.
               </div>&nbsp;
               <div>
                 <span> {{item}}</span>
@@ -45,18 +45,18 @@
             <div fxFlex="75" style="position: absolute;top: 70px;" >
              <aceEditor  class="text-inside-grid" #editor [text]="currStage.code" [mode]="currLang"
                          (currStatus)="changeStatus($event)"></aceEditor>
-    
+
               </div>
 
-  
+
     <div fxFlex="25" style="position: absolute;bottom: 0;">
         <md-card class="card-accent md-card-flat" >
-          <button style="margin-right: inherit;" #submitButton  
+          <button style="margin-right: inherit;" id="submitCodeButton"
           md-raised-button md-tooltip="Click here to submit your code!" (click)="submit()" color="primary">
             Submit your code!
           </button>
-          <button style="margin-right: inherit;" #nextStageButton
-          md-raised-button md-tooltip="Click here to move next level!" (click)="moveNextLevel(currStage.id)" 
+          <button style="margin-right: inherit;" id="nextStageButton"
+          md-raised-button md-tooltip="Click here to move next level!" (click)="moveNextLevel(currStage.id)"
           color="primary" [disabled]="!successLevel  || isLastLevel">
            Start next lesson
           </button>
@@ -66,7 +66,7 @@
       <div fxFlex="25">
         <div *ngIf="chatbotIsOn"  color="primary" >
            <chatBot #chatbotcomp [code]="writtenCode" [chatbotinitmessage]="chatbotinitmessage"
-           [numofargs] ="currStage.numofargs" [argstype]="currStage.argstype" 
+           [numofargs] ="currStage.numofargs" [argstype]="currStage.argstype"
            [stageID]="currStage.id" [currLang]="currLang" [courseApp]="courseApp">
 
            </chatBot>
