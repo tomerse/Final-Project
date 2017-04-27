@@ -48,7 +48,7 @@ class CourseFactory
     raise ArgumentError, 'Undefined course_name = ' + course_name
   end
 
-  def self.get_all_courses()
+  def self.get_all_courses
     courses = []
     file_path = ROOT + '/' + COURSESEFOLDER + '/' + COURSES_CONFIGURATION_FILE
     file = Xml.readxml(file_path)
