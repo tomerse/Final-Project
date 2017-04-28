@@ -1,0 +1,3 @@
+
+class StatisticsWorker
+end
