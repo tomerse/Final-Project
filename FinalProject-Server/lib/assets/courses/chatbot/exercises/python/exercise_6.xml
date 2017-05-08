@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <exercise>
+    <id>6</id>
+    <topic>Operators</topic>
+    <instructions>After defining variables in the previous exercise, let see how we can use them. We can add, subtract, multiply and divide numbers with math operators like '+', '-', '*' and '/'.
+    </instructions>
+    <code>def calcNumbers(var):
+      #enter you code here
+      return
+    </code>
+    <tasks>
+      <task>
+        <content>Set the variable my_number equal to the value 7.</content>
+      </task>
+      <task>
+        <content>Multiply the given argument 'var' with created variable 'my_number'</content>
+      </task>
+      <task>
+        <content>Print the result</content>
+      <tests>
+          <test>
+            <inputs>
+              <input_value>3</input_value>
+            </inputs>
+            <output>21&#xA</output>
+            <failure>Store the result in a variable: result=var*my_number and print the result</failure>
+          </test>
+          <test>
+            <inputs>
+              <input_value>10</input_value>
+            </inputs>
+            <output>70&#xA</output>
+            <failure>Store the result in a variable: result=var*my_number and print the result</failure>
+          </test>
+        </tests>
+      </task>
+      <task>
+        <content>Click the submit button</content>
+      </task>
+    </tasks>
+    <hints>
+      <hint>Store the result in a variable: result=var*my_number</hint>
+    </hints>
+    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Choose a number to multiply</chatbotinitmessage>
+    <argstypes>
+      <arg>
+        <argtypes>
+          <type>int</type>
+        </argtypes>
+      </arg>
+    </argstypes>
+  </exercise>
+</root>

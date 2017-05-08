@@ -37,6 +37,20 @@ and open the template in the editor.
             <output>World&#xA</output>
             <failure>What would be the output for "World"?</failure>
           </test>
+          <test>
+            <inputs>
+              <input_value>a b</input_value>
+            </inputs>
+            <output>a b&#xA</output>
+            <failure>What would be the output for "a b"?</failure>
+          </test>
+          <test>
+            <inputs>
+              <input_value>123</input_value>
+            </inputs>
+            <output>123&#xA</output>
+            <failure>What would be the output for "123"?</failure>
+          </test>
         </tests>
       </task>
       <task>

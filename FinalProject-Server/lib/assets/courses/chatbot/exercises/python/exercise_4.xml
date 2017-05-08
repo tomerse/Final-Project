@@ -15,10 +15,10 @@ and open the template in the editor.
       var = 5
       The variable 'var' now stores the number 5.
     </instructions>
-    <code>def defineVars():
-    #enter you code here1
+    <code>def defineVars(var1, var2):
+    my_number = #enter you code here1
     #enter you code here2
-    #enter you code here3
+    my_string = #enter you code here3
     #enter you code here4
     return
     </code>
@@ -31,9 +31,10 @@ and open the template in the editor.
         <tests>
           <test>
             <inputs>
-              <input_value>none</input_value>
+              <input_value>3</input_value>
+              <input_value>a</input_value>
             </inputs>
-            <output>3&#xAHelloWorld&#xA</output>
+            <output>1&#xAa&#xA</output>
             <failure>Your code should be: "my_number = 3"</failure>
           </test>
         </tests>
@@ -46,7 +47,8 @@ and open the template in the editor.
         <tests>
           <test>
             <inputs>
-              <input_value>none</input_value>
+              <input_value>3</input_value>
+              <input_value>HelloWorld</input_value>
             </inputs>
             <output>3&#xAHelloWorld&#xA</output>
             <failure>Your code should be: "print my_number"</failure>
@@ -61,5 +63,18 @@ and open the template in the editor.
       <hint>Put my_number on the left side of the =, and 3 on the right.</hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Ready to go?</chatbotinitmessage>
+    <argstypes>
+      <arg>
+        <argtypes>
+          <type>float</type>
+          <type>int</type>
+        </argtypes>
+      </arg>
+      <arg>
+        <argtypes>
+          <type>str</type>
+        </argtypes>
+      </arg>
+    </argstypes>
   </exercise>
 </root>
