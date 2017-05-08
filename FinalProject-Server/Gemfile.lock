@@ -37,6 +37,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    concurrent-ruby (1.0.4)
     erubis (2.7.0)
     execjs (2.7.0)
     hike (1.2.3)
@@ -125,6 +126,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  concurrent-ruby
   jbuilder
   jquery-rails
   log4r

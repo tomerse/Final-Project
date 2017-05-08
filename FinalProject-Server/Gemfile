@@ -41,6 +41,8 @@ gem 'log4r'
 
 gem 'puma'
 
+gem 'concurrent-ruby'
+
 
 
 # To use ActiveModel has_secure_password

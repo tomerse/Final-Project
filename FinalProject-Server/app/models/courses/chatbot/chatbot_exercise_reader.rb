@@ -3,13 +3,13 @@ require 'courses/exercise_reader'
 
 class ChatbotExerciseReader < ExerciseReader
 
-  @instance = nil
+  @@instance = nil
 
   def self.instance
-    if @instance.nil?
-      @instance = ChatbotExerciseReader.new
+    if @@instance.nil?
+      @@instance = ChatbotExerciseReader.new
     end
-    @instance
+    @@instance
   end
 
   def build_exercise(filepath)
