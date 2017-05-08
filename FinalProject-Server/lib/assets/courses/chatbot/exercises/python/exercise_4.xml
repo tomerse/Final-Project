@@ -18,8 +18,8 @@ and open the template in the editor.
     <code>def defineVars(var1, var2):
       my_number = #enter you code here1
       print #enter you code here2
-      my_string = #enter you code here3
-      print #enter you code here4
+      my_string = #enter you code here3
+      print #enter you code here4
       return
     </code>
     <tasks>
@@ -66,8 +66,8 @@ and open the template in the editor.
     <argstypes>
       <arg>
         <argtypes>
-          <type>float</type>
           <type>int</type>
+          <type>float</type>
         </argtypes>
       </arg>
       <arg>
