@@ -3,7 +3,7 @@ require 'test_helper'
 class PythonCompilerTest < ActiveSupport::TestCase
 
   TESTSUITE = 'PythonCompiler Unit Tests'
-  NUMOFTESTS = 3
+  NUMOFTESTS = 4
   Tsummary = TestsSummary.new NUMOFTESTS
 
   test "" do
@@ -70,6 +70,26 @@ ZeroDivisionError: integer division or modulo by zero
 IndexError: list index out of range
 "
       act = PythonCompiler.run_file(PYCOMP_SUCC_INPUT, nil)
+      ans = act == exp
+      if ans
+        Tlog.pass
+        Tsummary.passInc
+      else
+        Tlog.fail
+        Tsummary.addFailure
+      end
+    rescue => ex
+      Tlog.errorFail "Exception: #{ex.message}"
+      Tsummary.addFailure
+    end
+  end
+
+  def test_run_file_infinite_loop
+    Tlog.execUt 'PythonCompiler.run_file infinite loop'
+    args = 'suisa'
+    begin
+      exp = "process timeout error"
+      act = PythonCompiler.run_file(PYCOMP_INFINITE_LOOP, args)
       ans = act == exp
       if ans
         Tlog.pass
