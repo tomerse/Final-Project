@@ -187,7 +187,6 @@ class ChatbotCodeHandler
 
 
   def check_exercise_code(code, ex_id,exercise_file)
-    @statistics_collector.incTotalSubmits ex_id
     status = 'success'
     failure_reason = ''
     (compilation_success, comp_res, compiled_file) = compile_exercise_code(code, exercise_file)
@@ -201,8 +200,6 @@ class ChatbotCodeHandler
         if tests_success == false
           status = "tests failed"
           failure_reason = failure_test
-        else
-          @statistics_collector.incSuccSubmits ex_id
         end
       end
     end

@@ -3,13 +3,8 @@ require 'courses/exercise_reader'
 
 class ChatbotExerciseReader < ExerciseReader
 
-  @@instance = nil
-
-  def self.instance
-    if @@instance.nil?
-      @@instance = ChatbotExerciseReader.new
-    end
-    @@instance
+  def initialize
+    @exercise_file = nil
   end
 
   def build_exercise(filepath)
@@ -43,11 +38,5 @@ class ChatbotExerciseReader < ExerciseReader
                   "numofargs"=>numofargs]
     ChatbotExercise.new(params)
   end
-
-  def initialize
-    @exercise_file = nil
-  end
-
-  private :initialize
 
 end
