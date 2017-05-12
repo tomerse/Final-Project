@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <exercise>
+    <id>5</id>
+    <topic>Booleans</topic>
+    <instructions>In addition to numbers and strings, there are another types of data we use in programming. One if them is called a boolean. A boolean have two values - True or False. You can use variables to store booleans like this:
+    	a = True
+    	b = False
+    </instructions>
+    <code>def defineVars():
+    #enter you code here1
+    #enter you code here2
+    return
+    </code>
+        <tasks>
+      <task>
+        <content>Set the variable my_bool equal to the value True.</content>
+      </task>
+      <task>
+        <content>Print the variable my_bool</content>
+        <tests>
+          <test>
+            <inputs>
+              <input_value>True</input_value>
+            </inputs>
+            <output>True&#xA</output>
+            <failure>Your code should be: "my_bool = True"</failure>
+          </test>
+        </tests>
+      </task>
+      <task>
+        <content>Click the submit button</content>
+      </task>
+    </tasks>
+   <hints>
+      <hint>Remember to capitalize True</hint>
+    </hints>
+    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Ready to go?</chatbotinitmessage>
+  </exercise>
+</root>

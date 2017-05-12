@@ -15,12 +15,12 @@ and open the template in the editor.
       var = 5
       The variable 'var' now stores the number 5.
     </instructions>
-    <code>def defineVars():
-    #enter you code here1
-    #enter you code here2
-    #enter you code here3
-    #enter you code here4
-    return
+    <code>def defineVars(var1, var2):
+      my_number = #enter you code here1
+      print #enter you code here2
+      my_string = #enter you code here3
+      print #enter you code here4
+      return
     </code>
     <tasks>
       <task>
@@ -28,15 +28,6 @@ and open the template in the editor.
       </task>
       <task>
         <content>Print the variable my_number</content>
-        <tests>
-          <test>
-            <inputs>
-              <input_value>none</input_value>
-            </inputs>
-            <output>3&#xAHelloWorld&#xA</output>
-            <failure>Your code should be: "my_number = 3"</failure>
-          </test>
-        </tests>
       </task>
       <task>
         <content>Set the variable my_string equal to the value 'HelloWorld'.</content>
@@ -46,10 +37,11 @@ and open the template in the editor.
         <tests>
           <test>
             <inputs>
-              <input_value>none</input_value>
+              <input_value>3</input_value>
+              <input_value>HelloWorld</input_value>
             </inputs>
             <output>3&#xAHelloWorld&#xA</output>
-            <failure>Your code should be: "print my_number"</failure>
+            <failure>check my_number == 3 and my_string == HelloWorld</failure>
           </test>
         </tests>
       </task>
@@ -58,8 +50,23 @@ and open the template in the editor.
       </task>
     </tasks>
     <hints>
-      <hint>Put my_number on the left side of the =, and 3 on the right.</hint>
+      <hint>Write the variable name on the left side of operator =, and the value on the right</hint>
+      <hint>First option: explicitly set the value to the variable (example: my_number = 3)</hint>
+      <hint>Second option: set the value of another variable (example: my_number = var1)</hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Ready to go?</chatbotinitmessage>
+    <argstypes>
+      <arg>
+        <argtypes>
+          <type>int</type>
+          <type>float</type>
+        </argtypes>
+      </arg>
+      <arg>
+        <argtypes>
+          <type>str</type>
+        </argtypes>
+      </arg>
+    </argstypes>
   </exercise>
 </root>

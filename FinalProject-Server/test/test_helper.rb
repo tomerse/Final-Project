@@ -27,6 +27,7 @@ class ActiveSupport::TestCase
   COMP_RUNTIME_ERR_INPUT = File.absolute_path('test/unit/compilers_tests_inputs/ex_1/comp_run_time_err.py')
   PYCOMP_SUCC_INPUT = File.absolute_path('test/unit/compilers_tests_inputs/ex_1/pycomp_success.py')
   PYCOMP_RUNTIME_ERR_INPUT = File.absolute_path('test/unit/compilers_tests_inputs/ex_1/pycomp_runtime_err.py')
+  PYCOMP_INFINITE_LOOP = File.absolute_path('test/unit/compilers_tests_inputs/ex_1/comp_infinite.py')
   Tlog = TestLog.new 'test/unit/unit_tests_resutls.log'
 
   def self.read_test_input(path)

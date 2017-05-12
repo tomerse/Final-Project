@@ -1,6 +1,8 @@
 class PythonCompiler
   include Compiler
 
+  require 'timeout'
+
 
 
 
@@ -18,14 +20,14 @@ class PythonCompiler
 
 
   def self.run_file(filepath, arg_list)
+    code_res = 'process timeout error'
     begin
-#      if arg_list[0].length==1
-#        args = arg_list
-#      else
-#        args = arg_list[0]
-#      end
+      start_time = Time.now
+      Timeout.timeout(RUNNING_TIMEOUT) do
       # 2>&1 means redirecting stderr to stdout (to catch exceptions from Python code as well)
       code_res = `python #{filepath} #{arg_list} 2>&1`
+        break if Time.now < start_time + RUNNING_TIMEOUT
+      end
     rescue => ex
       print "\nException caught in file running: " + filepath + ". Error: " + ex.message + "/n"
     end
