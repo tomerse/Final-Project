@@ -14,8 +14,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def get_exercise
-    statsCollector = CoursesStatsFactory.getStatsCollector params[:course_name], params[:lan_name]
-    statsCollector.incNumOfUsers params[:ex_id]
+    StatsHandler.inc_num_of_users params[:course_name], params[:lan_name], params[:ex_id]
     exercise_reader = CourseFactory.get_exercise_reader(params[:course_name])
     exercise_file = CourseFactory.get_exercise_file(params[:course_name], params[:lan_name], params[:ex_id])
     exercise = exercise_reader.build_exercise(exercise_file)
@@ -104,13 +103,13 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def compile
-    statsCollector = CoursesStatsFactory.getStatsCollector params[:course_name], params[:lan_name]
-    statsCollector.incTotalSubmits(params[:ex_id])
+    StatsHandler.inc_total_submits params[:course_name], params[:lan_name], params[:ex_id]
     code_handler = CourseFactory.get_code_handler(params[:course_name], params[:lan_name])
     exercise_file = CourseFactory.get_exercise_file(params[:course_name], params[:lan_name], params[:ex_id])
     (@success, @error) = code_handler.check_exercise_code(params[:code], params[:ex_id] ,exercise_file)
     if @success == 'success'
-      statsCollector.incSuccSubmits(params[:ex_id])
+       StatsHandler.inc_succ_submits params[:course_name], params[:lan_name], params[:ex_id]
+       StatsHandler.dec_num_of_users params[:course_name], params[:lan_name], params[:ex_id]
     end
     respond_to do |format|
       format.json {render :json => {:status => @success,

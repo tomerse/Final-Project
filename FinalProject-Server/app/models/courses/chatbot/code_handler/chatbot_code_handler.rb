@@ -164,7 +164,6 @@ class ChatbotCodeHandler
     @course_name = CHATBOT
     @language_name = language_name
     @exercise_reader= exercise_reader
-    @statistics_collector = CoursesStatsFactory.getStatsCollector @course_name, @language_name
   end
 
 

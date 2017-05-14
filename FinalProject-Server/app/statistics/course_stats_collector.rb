@@ -1,17 +1,16 @@
 require_relative 'stats_constants'
+
 class CourseStatsCollector
   include StatsConstants
-
-
 
   def initialize(course, lang)
     @course = course
     @lang = lang
-    @exercises_stats = Hash.new
     @lock = Mutex.new
+    @exercises_stats = Hash.new
   end
 
-  def incNumOfUsers(ex_id)
+  def inc_num_of_users(ex_id)
     @lock.synchronize {
       if not @exercises_stats.has_key? ex_id
         @exercises_stats[ex_id] = Hash.new
@@ -23,19 +22,21 @@ class CourseStatsCollector
     }
   end
 
-  def decNumOfUsers(ex_id)
+  def dec_num_of_users(ex_id)
     @lock.synchronize {
-      @exercises_stats[ex_id][CURR_NUM_USERS]-=1
+      if (@exercises_stats[ex_id][CURR_NUM_USERS]).nonzero?
+        @exercises_stats[ex_id][CURR_NUM_USERS]-=1
+      end
     }
   end
 
-  def incTotalSubmits(ex_id)
+  def inc_total_submits(ex_id)
     @lock.synchronize {
       @exercises_stats[ex_id][TOTAL_SUBMITS]+=1
     }
   end
 
-  def incSuccSubmits(ex_id)
+  def inc_succ_submits(ex_id)
     @lock.synchronize {
       @exercises_stats[ex_id][SUCC_SUBMITS]+=1
     }
