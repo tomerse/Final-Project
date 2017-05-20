@@ -10,6 +10,7 @@ class ChatbotExercise
       @code = params["code"]
       @chatbotinitmessage = params["chatbotinitmessage"]
       @chatbotoutputmessage = params["chatbotoutputmessage"]
+      @argsmesssages = params["argsmesssages"]
       @numofargs = params["numofargs"]
     end
 

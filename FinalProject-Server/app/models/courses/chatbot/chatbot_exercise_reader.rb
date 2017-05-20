@@ -34,9 +34,11 @@ class ChatbotExerciseReader < ExerciseReader
     chatbotoutputmessage = Xml.get_element(exercise_file, 'chatbotoutputmessage')
     args_types = Xml.get_elements(exercise_file, 'argstypes//arg','argtypes') #['argtype1','argtype2']
     numofargs = args_types.length
+    args_messages = Xml.get_elements(exercise_file, 'argstypes//arg','argmessage') #['argmessage1','argmessage2']
     params = Hash["id"=>id, "topic"=>topic, "instructions"=>instructions, "code"=>code,
                 "tasks"=>tasks.flatten, "hints"=>hints.flatten, "chatbotinitmessage"=>chatbotinitmessage,
-                  "chatbotoutputmessage"=>chatbotoutputmessage, "numofargs"=>numofargs]
+                  "chatbotoutputmessage"=>chatbotoutputmessage, "argsmesssages" => args_messages.flatten,
+                  "numofargs"=>numofargs]
     ChatbotExercise.new(params)
   end
 

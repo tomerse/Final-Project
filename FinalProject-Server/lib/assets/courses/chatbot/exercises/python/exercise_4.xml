@@ -58,12 +58,14 @@ and open the template in the editor.
     <chatbotoutputmessage>Your two variables are:  </chatbotoutputmessage>
     <argstypes>
       <arg>
+        <argmessage>Insert your first variable</argmessage>
         <argtypes>
           <type>int</type>
           <type>float</type>
         </argtypes>
       </arg>
       <arg>
+        <argmessage>Insert your second variable</argmessage>
         <argtypes>
           <type>str</type>
         </argtypes>

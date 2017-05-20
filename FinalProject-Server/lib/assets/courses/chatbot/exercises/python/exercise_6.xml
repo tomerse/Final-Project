@@ -47,6 +47,7 @@
     <chatbotoutputmessage>Your two variables are:  </chatbotoutputmessage>
     <argstypes>
       <arg>
+        <argmessage></argmessage>
         <argtypes>
           <type>int</type>
         </argtypes>

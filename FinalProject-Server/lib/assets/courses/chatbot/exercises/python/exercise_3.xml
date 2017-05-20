@@ -65,6 +65,7 @@
     <chatbotoutputmessage>Your name is: </chatbotoutputmessage>
     <argstypes>
       <arg>
+        <argmessage></argmessage>
         <argtypes>
           <type>str</type>
         </argtypes>
