@@ -44,6 +44,7 @@
       <hint>Store the result in a variable: result=var*my_number</hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Choose a number to multiply</chatbotinitmessage>
+    <chatbotoutputmessage>Your two variables are:  </chatbotoutputmessage>
     <argstypes>
       <arg>
         <argtypes>

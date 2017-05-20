@@ -37,5 +37,6 @@
       <hint>Remember to capitalize True</hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Ready to go?</chatbotinitmessage>
+    <chatbotoutputmessage>Your two variables are:  </chatbotoutputmessage>
   </exercise>
 </root>
