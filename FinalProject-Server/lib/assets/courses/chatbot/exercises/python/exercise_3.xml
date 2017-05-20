@@ -56,15 +56,6 @@
       </task>
       <task>
         <content>Click the submit button</content>
-        <tests>
-          <test>
-            <inputs>
-              <input_value>none</input_value>
-            </inputs>
-            <output>none</output>
-            <failure>none</failure>
-          </test>
-        </tests>
       </task>
     </tasks>
     <hints>
