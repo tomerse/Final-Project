@@ -60,7 +60,7 @@
       <hint>You should print the variable "name", using the "print" command</hint>
     </hints>
     <chatbotinitmessage>Hi! Let's see if your single line comment affects your code!&#xAWhat is your name?</chatbotinitmessage>
-    <chatbotoutputmessage>Your name is: </chatbotoutputmessage>
+    <chatbotoutputmessage>Your name is: %s</chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage></argmessage>

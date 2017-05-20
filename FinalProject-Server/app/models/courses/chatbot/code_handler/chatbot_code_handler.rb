@@ -179,7 +179,9 @@ class ChatbotCodeHandler
     end
     # Running the code
     code_res = execute_code(generated_code, args_list)
-    return code_res
+    out_message = exercise.chatbotoutputmessage
+    out_message = out_message % code_res
+    return out_message
   end
 
 

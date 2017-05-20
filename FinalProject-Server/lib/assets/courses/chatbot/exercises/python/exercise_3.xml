@@ -62,7 +62,7 @@
       <hint>Use ' """ ' at the beginning and the end of the section you want to comment out</hint>
     </hints>
     <chatbotinitmessage>Hi! Let's see if your multi lines comment affects your code!&#xAWhat is your name?</chatbotinitmessage>
-    <chatbotoutputmessage>Your name is: </chatbotoutputmessage>
+    <chatbotoutputmessage>Your name is: %s</chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage></argmessage>

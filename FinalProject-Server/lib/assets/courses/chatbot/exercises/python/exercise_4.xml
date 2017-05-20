@@ -55,7 +55,7 @@ and open the template in the editor.
       <hint>Second option: set the value of another variable (example: my_number = var1)</hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Ready to go?</chatbotinitmessage>
-    <chatbotoutputmessage>Your two variables are:  </chatbotoutputmessage>
+    <chatbotoutputmessage>Your two variables are: %s</chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage>Insert your first variable</argmessage>
