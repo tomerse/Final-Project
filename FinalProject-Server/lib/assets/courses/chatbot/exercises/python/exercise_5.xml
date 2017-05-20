@@ -3,29 +3,44 @@
 <root>
   <exercise>
     <id>5</id>
-    <topic>Booleans</topic>
-    <instructions>In addition to numbers and strings, there are another types of data we use in programming. One if them is called a boolean. A boolean have two values - True or False. You can use variables to store booleans like this:
-    	a = True
-    	b = False
+    <topic>Operators</topic>
+    <instructions>After defining variables in the previous exercise, let see how we can use them. We can add, subtract, multiply and divide numbers with math operators like '+', '-', '*' and '/'.
     </instructions>
-    <code>def defineVars():
-    #enter you code here1
-    #enter you code here2
-    return
+    <code>def defineVars(var1, var2):
+      my_number = #enter you code here1
+      print #enter you code here2
+      result = #enter you code here3
+      print #enter you code here4
+      return
     </code>
-        <tasks>
+    <tasks>
       <task>
-        <content>Set the variable my_bool equal to the value True.</content>
+        <content>Set the variable 'my_number' equal to sum of 'var1' and 'var2'.</content>
       </task>
       <task>
-        <content>Print the variable my_bool</content>
-        <tests>
+        <content>Print the variable 'my_number'</content>
+      </task>
+      <task>
+        <content>Set 'result' to be multiply between 'var1' and 'my_number'</content>
+      </task>
+      <task>
+        <content>Print the result</content>
+      <tests>
           <test>
             <inputs>
-              <input_value>True</input_value>
+              <input_value>3</input_value>
+              <input_value>3</input_value>
             </inputs>
-            <output>True&#xA</output>
-            <failure>Your code should be: "my_bool = True"</failure>
+            <output>6&#xA18</output>
+            <failure>check my_number == var1+var2</failure>
+          </test>
+          <test>
+            <inputs>
+              <input_value>10</input_value>
+              <input_value>2</input_value>
+            </inputs>
+            <output>12&#xA120</output>
+            <failure>check result == var1*my_number</failure>
           </test>
         </tests>
       </task>
@@ -33,10 +48,26 @@
         <content>Click the submit button</content>
       </task>
     </tasks>
-   <hints>
-      <hint>Remember to capitalize True</hint>
+    <hints>
+      <hint>Store the result in a variable: result=var*my_number</hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Ready to go?</chatbotinitmessage>
-    <chatbotoutputmessage>Your two variables are:  </chatbotoutputmessage>
+    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Insert 2 numbers</chatbotinitmessage>
+    <chatbotoutputmessage>Your two variables are: %s</chatbotoutputmessage>
+   <argstypes>
+      <arg>
+        <argmessage>Insert your first variable</argmessage>
+        <argtypes>
+          <type>int</type>
+          <type>float</type>
+        </argtypes>
+      </arg>
+      <arg>
+        <argmessage>Insert your second variable</argmessage>
+        <argtypes>
+          <type>int</type>
+          <type>float</type>
+        </argtypes>
+      </arg>
+    </argstypes>
   </exercise>
 </root>

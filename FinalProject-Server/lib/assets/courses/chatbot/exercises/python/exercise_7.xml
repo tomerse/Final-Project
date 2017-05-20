@@ -2,16 +2,15 @@
 
 <root>
   <exercise>
-    <id>6</id>
-    <topic>Booleans</topic>
-    <instructions>In addition to numbers and strings, there are another types of data we use in programming. One if them is called a boolean. A boolean have two values - True or False. You can use variables to store booleans like this:
-    	a = True
-    	b = False
+    <id>7</id>
+    <topic>Logical Operators</topic>
+    <instructions>Two or more relations can be logically joined using the logical operators AND and OR. Logical operators combine relations according to the following rules - The ampersand ( & ) symbol is a valid substitute for the logical operator AND. The vertical bar ( | ) is a valid substitute for the logical operator OR. For 'AND' - both relations must be true for the complex expression to be true. For 'OR' - if either relation is true, the complex expression is true.
     </instructions>
     <code>def defineVars(var):
       my_bool = #enter you code here1
-      print #enter you code here2
-      result = #enter you code here3
+      OR = #enter you code here2
+      print #enter you code here4
+      AND = #enter you code here3
       print #enter you code here4
       return
     </code>
@@ -20,27 +19,30 @@
         <content>Set the variable my_bool equal to the value True.</content>
       </task>
       <task>
-        <content>Print the variable my_bool.</content>
+        <content>Combine the given argument 'var' with 'my_bool' by OR operator</content>
       </task>
       <task>
-        <content>Set the variable result equal to the value of 'var'.</content>
+        <content>Print the result of OR</content>
+      <tests>
+      <task>
+        <content>Combine the given argument 'var' with 'my_bool' by AND operator</content>
       </task>
       <task>
-        <content>Print the variable result.</content>
-        <tests>
+        <content>Print the result of AND</content>
+      <tests>
           <test>
             <inputs>
               <input_value>False</input_value>
             </inputs>
             <output>True&#xAFalse</output>
-            <failure>Your code should be: "my_bool = True"</failure>
+            <failure>OR = var | my_bool</failure>
           </test>
-            <test>
+          <test>
             <inputs>
               <input_value>True</input_value>
             </inputs>
             <output>True&#xATrue</output>
-            <failure>Your code should be: "result = var"</failure>
+            <failure>AND = var & my_bool</failure>
           </test>
         </tests>
       </task>
@@ -48,7 +50,7 @@
         <content>Click the submit button</content>
       </task>
     </tasks>
-   <hints>
+    <hints>
       <hint>Remember to capitalize True</hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Choose - True or False</chatbotinitmessage>
