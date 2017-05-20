@@ -3,7 +3,7 @@
 <root>
   <exercise>
     <id>3</id>
-    <topic>Multi Line comments</topic>
+    <topic>Multi Lines comments</topic>
     <instructions>In the previous exercise we learned how to use single line comments.
       So what if we want to comment out multiple lines?
       One way is to start every line with a '#'.
@@ -61,7 +61,8 @@
     <hints>
       <hint>Use ' """ ' at the beginning and the end of the section you want to comment out</hint>
     </hints>
-    <chatbotinitmessage>Great! now you know how to use all sort of comments!</chatbotinitmessage>
+    <chatbotinitmessage>Hi! Let's see if your multi lines comment affects your code!&#xAWhat is your name?</chatbotinitmessage>
+    <chatbotoutputmessage>Your name is: </chatbotoutputmessage>
     <argstypes>
       <arg>
         <argtypes>

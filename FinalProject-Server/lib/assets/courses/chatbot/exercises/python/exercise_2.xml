@@ -59,7 +59,8 @@
       <hint>Replace "enter your comment here" with your comment</hint>
       <hint>You should print the variable "name", using the "print" command</hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! What is your name?</chatbotinitmessage>
+    <chatbotinitmessage>Hi! Let's see if your single line comment affects your code!&#xAWhat is your name?</chatbotinitmessage>
+    <chatbotoutputmessage>Your name is: </chatbotoutputmessage>
     <argstypes>
       <arg>
         <argtypes>
