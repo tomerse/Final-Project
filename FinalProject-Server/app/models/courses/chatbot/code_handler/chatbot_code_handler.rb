@@ -1,5 +1,6 @@
 
 NOT_IMPLEMENTED_MESSAGE = 'Implement this method in a child class'
+RUNNING_TIMEOUT = 1
 
 # Module includes methods to implement for every programming language.
 # Responsible for code generation

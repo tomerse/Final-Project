@@ -6,7 +6,7 @@ class PythonCompiler
 
 
 
-  def self.compile_file(filepath)
+  def compile_file(filepath)
     begin
       # 2>&1 means redirecting stderr to stdout (to catch exceptions from Python code as well)
       code_res = `python -m py_compile #{filepath} 2>&1`
@@ -19,7 +19,7 @@ class PythonCompiler
 
 
 
-  def self.run_file(filepath, arg_list)
+  def run_file(filepath, arg_list)
     code_res = 'process timeout error'
     begin
       start_time = Time.now

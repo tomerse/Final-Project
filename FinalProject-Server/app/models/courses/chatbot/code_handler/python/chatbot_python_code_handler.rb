@@ -12,7 +12,8 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
   end
 
   def execute_file(file_to_run, args_list)
-    output = PythonCompiler.run_file(file_to_run, args_list)
+    compiler = PythonCompiler.new
+    output = compiler.run_file(file_to_run, args_list)
     return output
   end
 
@@ -23,7 +24,8 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
   end
 
   def compile_file(file_to_run)
-    comp_res = PythonCompiler.compile_file(file_to_run)
+    compiler = PythonCompiler.new
+    comp_res = compiler.compile_file(file_to_run)
     retval = [comp_res, file_to_run]
     return retval
   end

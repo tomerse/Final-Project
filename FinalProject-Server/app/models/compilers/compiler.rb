@@ -1,7 +1,5 @@
 module Compiler
 
-  RUNNING_TIMEOUT = 5
-
   #@brief compile_file
   #@param filepath - path to file
   #@return compilation result
