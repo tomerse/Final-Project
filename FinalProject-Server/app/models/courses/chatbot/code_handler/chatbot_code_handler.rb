@@ -188,23 +188,32 @@ class ChatbotCodeHandler
 
 
   def check_exercise_code(code, ex_id,exercise_file)
-    status = 'success'
-    failure_reason = ''
+    status = "success"
+    caption = "Good Work!"
+    generic_message = "Your code seems to be correct!\nReady to run it with Monkey Chatbot?!"
+    failure_reason = ""
+    more_info = ""
     (compilation_success, comp_res, compiled_file) = compile_exercise_code(code, exercise_file)
     if compilation_success == false
       status = "compilation error"
-      failure_reason = comp_res
+      caption = "Compilation Error"
+      generic_message = "Compilation error has occurred, your code cannot be submitted."
+      specific_message = "The specific error is:\n"
+      failure_reason = specific_message + comp_res
+      more_info = "Read more about compilation errors: https://en.wikipedia.org/wiki/Compilation_error"
     else
       tests = build_tests(exercise_file)
       if not tests.empty?
         (tests_success, failure_test) = run_tests(tests, compiled_file)
         if tests_success == false
           status = "tests failed"
-          failure_reason = failure_test
+          caption = "Task Not Completed"
+          specific_message = "Your code is almost correct! Let me help you with a little clue,\nWhat would be the output for "
+          failure_reason = specific_message + "\"" + failure_test + "\"?"
         end
       end
     end
-    return [status, failure_reason]
+    return [status, caption, generic_message, failure_reason, more_info]
   end
 
 

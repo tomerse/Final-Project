@@ -106,14 +106,17 @@ class CoursesController < ApplicationController
     StatsHandler.inc_total_submits params[:course_name], params[:lan_name], params[:ex_id]
     code_handler = CourseFactory.get_code_handler(params[:course_name], params[:lan_name])
     exercise_file = CourseFactory.get_exercise_file(params[:course_name], params[:lan_name], params[:ex_id])
-    (@success, @error) = code_handler.check_exercise_code(params[:code], params[:ex_id] ,exercise_file)
+    (@success, @caption, @generic_message, @error, @more_info) = code_handler.check_exercise_code(params[:code], params[:ex_id] ,exercise_file)
     if @success == 'success'
        StatsHandler.inc_succ_submits params[:course_name], params[:lan_name], params[:ex_id]
        StatsHandler.dec_num_of_users params[:course_name], params[:lan_name], params[:ex_id]
     end
     respond_to do |format|
       format.json {render :json => {:status => @success,
-                                    :error => @error}}
+                                    :caption => @caption,
+                                    :generic_message => @generic_message,
+                                    :error => @error,
+                                    :more_info => @more_info}}
     end
   end
 
