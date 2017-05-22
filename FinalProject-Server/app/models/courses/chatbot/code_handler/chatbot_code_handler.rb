@@ -1,6 +1,6 @@
 
 NOT_IMPLEMENTED_MESSAGE = 'Implement this method in a child class'
-RUNNING_TIMEOUT = 1
+CHATBOT_RUNNING_TIMEOUT = 1
 
 # Module includes methods to implement for every programming language.
 # Responsible for code generation
@@ -55,7 +55,7 @@ module ChatbotCodeGenerator
 end
 
 
-# Module includes methods to implement for every programming language.
+# Module includes methods to implement for every programming language separately.
 # Responsible for creation of code running commands
 module ChatbotCodeRunner
 
@@ -86,6 +86,13 @@ module ChatbotCodeRunner
   #@param file_to_run - path to file with generated code
   #@return code compilation result and path to compiled file
   def compile_file(file_to_run)
+    raise NotImplementedError, NOT_IMPLEMENTED_MESSAGE
+  end
+
+  #@brief parse_compilation_error
+  #@param error - compilation error, string
+  #return compilation error as string without unnecessary data
+  def parse_compilation_error(error)
     raise NotImplementedError, NOT_IMPLEMENTED_MESSAGE
   end
 

@@ -13,21 +13,41 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
 
   def execute_file(file_to_run, args_list)
     compiler = PythonCompiler.new
-    output = compiler.run_file(file_to_run, args_list)
+    output = compiler.run_file(file_to_run, args_list, CHATBOT_RUNNING_TIMEOUT)
     return output
   end
 
   def compile_code(generated_code)
     File.open(PYNAME, 'w'){|f| f.write generated_code}
-    retval = compile_file(PYNAME)
-    return retval
+    (comp_res, file_to_run) = compile_file(PYNAME)
+    comp_res = parse_compilation_error(comp_res)
+    return [comp_res, file_to_run]
   end
 
   def compile_file(file_to_run)
     compiler = PythonCompiler.new
     comp_res = compiler.compile_file(file_to_run)
-    retval = [comp_res, file_to_run]
-    return retval
+    return [comp_res, file_to_run]
+  end
+
+  def parse_compilation_error(error)
+    parsed_error = error
+    if (error <=> "") != 0
+      #Syntax Error - remove the file name
+      if (error.split(" ")[0] <=> "File" ) == 0
+        parsed_error = error.split(",")[1,]
+      else
+        #Indentation Error - remove the file name
+        if (error.split("(")[1] <=> "" ) != 0
+          parsed_error = error.split("(")[0] + "("
+          parenthesis = error.split("(")[1]
+          parenthesis_no_file_name = parenthesis.split(", ")[1]
+          parsed_error += parenthesis_no_file_name
+        end
+      end
+
+    end
+    return parsed_error
   end
 
 

@@ -19,14 +19,14 @@ class PythonCompiler
 
 
 
-  def run_file(filepath, arg_list)
+  def run_file(filepath, arg_list, timeout)
     code_res = 'process timeout error'
     begin
       start_time = Time.now
-      Timeout.timeout(RUNNING_TIMEOUT) do
+      Timeout.timeout(timeout) do
       # 2>&1 means redirecting stderr to stdout (to catch exceptions from Python code as well)
       code_res = `python #{filepath} #{arg_list} 2>&1`
-        break if Time.now < start_time + RUNNING_TIMEOUT
+        break if Time.now < start_time + timeout
       end
     rescue => ex
       print "\nException caught in file running: " + filepath + ". Error: " + ex.message + "/n"
