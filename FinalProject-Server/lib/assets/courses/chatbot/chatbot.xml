@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<root>
+  <check_exercise>
+    <success>
+      <caption>Good Work!</caption>
+      <generic_message>Your code seems to be correct!\nReady to run it with Monkey Chatbot?!</generic_message>
+      <specific_message></specific_message>
+      <more_info></more_info>
+    </success>
+    <comp_error>
+      <caption>Compilation Error</caption>
+      <generic_message>Compilation error has occurred, your code cannot be submitted.</generic_message>
+      <specific_message>The specific error is:</specific_message>
+      <more_info>Read more about compilation errors: <a href="https://en.wikipedia.org/wiki/Compilation_error"></a></more_info>
+    </comp_error>
+    <test_failed>
+      <caption>Task Not Completed</caption>
+      <generic_message>Your code is almost correct! Let me help you with a little clue,</generic_message>
+      <specific_message></specific_message>
+      <more_info></more_info>
+    </test_failed>
+  </check_exercise>
+</root>

@@ -3,19 +3,19 @@ class CourseFactory
   ROOT = "#{Rails.root}"
 
   # Courses configuration file
-  COURSESEFOLDER = 'lib/assets/courses'
+  COURSES_FOLDER = 'lib/assets/courses'
   COURSES_CONFIGURATION_FILE = 'courses.xml'
 
   #Programming Languages
   PYTHON = 'python'
 
   # Exercise configuration files path
-  EXERCISESFOLDER = 'exercises'
+  EXERCISES_FOLDER = 'exercises'
   FILENAME = 'exercise_'
   EXTENSION = '.xml'
 
   def self.get_exercise_folder(course_name, language_name)
-    folder_path = ROOT + '/' + COURSESEFOLDER + '/' + course_name.to_s + '/' + EXERCISESFOLDER + '/' + language_name.to_s
+    folder_path = ROOT + '/' + COURSES_FOLDER + '/' + course_name.to_s + '/' + EXERCISES_FOLDER + '/' + language_name.to_s
     return folder_path
   end
 
@@ -50,7 +50,7 @@ class CourseFactory
 
   def self.get_all_courses
     courses = []
-    file_path = ROOT + '/' + COURSESEFOLDER + '/' + COURSES_CONFIGURATION_FILE
+    file_path = ROOT + '/' + COURSES_FOLDER + '/' + COURSES_CONFIGURATION_FILE
     file = Xml.readxml(file_path)
     #read all course properties
     titles  = Xml.get_elements(file,'courses//course','title')

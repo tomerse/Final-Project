@@ -164,14 +164,14 @@ end
 
 
 
-
 class ChatbotCodeHandler
   include ChatbotCodeGenerator, ChatbotCodeChecker, ChatbotCodeRunner
 
   def initialize(language_name, exercise_reader)
     @course_name = CHATBOT
     @language_name = language_name
-    @exercise_reader= exercise_reader
+    @exercise_reader = exercise_reader
+    @chatbot_reader = ChatbotReader.new
   end
 
 
@@ -216,8 +216,8 @@ class ChatbotCodeHandler
         if tests_success == false
           status = "tests failed"
           caption = "Task Not Completed"
-          specific_message = "Your code is almost correct! Let me help you with a little clue,\nWhat would be the output for "
-          failure_reason = specific_message + "\"" + failure_test + "\"?"
+          generic_message = "Your code is almost correct! Let me help you with a little clue,"
+          failure_reason = failure_test
         end
       end
     end
