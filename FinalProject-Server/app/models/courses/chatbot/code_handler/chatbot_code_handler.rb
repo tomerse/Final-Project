@@ -70,7 +70,7 @@ module ChatbotCodeRunner
   #@brief execute_file - run file with code of specific programming language with list of arguments
   #@param file_to_run - path to file with generated code
   #@param args_list - string contains list of arguments for execution command
-  #@return output of the code
+  #return tuple: is_err - boolean indicates if runtime error detected, output - the output as string
   def execute_file(file_to_run, args_list)
     raise NotImplementedError, NOT_IMPLEMENTED_MESSAGE
   end
@@ -93,6 +93,13 @@ module ChatbotCodeRunner
   #@param error - compilation error, string
   #return compilation error as string without unnecessary data
   def parse_compilation_error(error)
+    raise NotImplementedError, NOT_IMPLEMENTED_MESSAGE
+  end
+
+  #@brief parse_runtime_error
+  #@param output - output, string
+  #return tuple: is_err - boolean indicates if runtime error detected, output - the output as string (if no error - the original output, if error -  the edited error)
+  def parse_runtime_error(output)
     raise NotImplementedError, NOT_IMPLEMENTED_MESSAGE
   end
 
@@ -186,9 +193,14 @@ class ChatbotCodeHandler
       generated_code = generate_code(code, func_name, num_of_args, args_types)
     end
     # Running the code
-    code_res = execute_code(generated_code, args_list)
-    out_message = exercise.chatbotoutputmessage
-    out_message = out_message % code_res
+    (is_err, code_res) = execute_code(generated_code, args_list)
+    if is_err == true
+      out_message = @chatbot_reader.get_runtime_error_message
+      out_message += code_res
+    else
+      out_message = exercise.chatbotoutputmessage
+      out_message = out_message % code_res
+    end
     return out_message
   end
 
@@ -245,7 +257,7 @@ class ChatbotCodeHandler
     tests.each{ |test|
       input = test.get_input
       (args_list, num_of_args) = build_string_args_list(input)
-      output = execute_file(file_to_test, args_list)
+      is_err, output = execute_file(file_to_test, args_list)
       expected_output = test.get_expected_output
       if (expected_output[0] <=> output) != 0
         tests_success = false

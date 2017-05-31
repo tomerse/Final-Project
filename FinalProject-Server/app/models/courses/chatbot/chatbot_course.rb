@@ -50,6 +50,7 @@ class ChatbotReader
   def initialize()
     @file_path = "#{Rails.root}" + '/' + CHATBOT_FOLDER + '/' + CHATBOT_CONFIGURATION_FILE
     @file = Xml.readxml(@file_path)
+    @runtime_error_message = ''
     @success_messages = ChatbotCheckExercisesMessages.new
     @comp_error_messages = ChatbotCheckExercisesMessages.new
     @test_failed_messages = ChatbotCheckExercisesMessages.new
@@ -60,6 +61,7 @@ class ChatbotReader
     @success_messages.read_values(@file, 'check_exercise//success')
     @comp_error_messages.read_values(@file, 'check_exercise//comp_error')
     @test_failed_messages.read_values(@file, 'check_exercise//test_failed')
+    @runtime_error_message = Xml.get_element(@file, 'runtime_error')
   end
 
   def get_success_messages
@@ -72,6 +74,10 @@ class ChatbotReader
 
   def get_test_failed_messages
     return @test_failed_messages
+  end
+
+  def get_runtime_error_message
+    return @runtime_error_message
   end
 
 end

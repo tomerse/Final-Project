@@ -14,7 +14,8 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
   def execute_file(file_to_run, args_list)
     compiler = PythonCompiler.new
     output = compiler.run_file(file_to_run, args_list, CHATBOT_RUNNING_TIMEOUT)
-    return output
+    (is_err, output) = parse_runtime_error(output)
+    return is_err, output
   end
 
   def compile_code(generated_code)
@@ -48,6 +49,18 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
 
     end
     return parsed_error
+  end
+
+  def parse_runtime_error(output)
+    is_err = false
+    final_out = output
+    #NameError
+    name_error = output.split("NameError:")[1]
+    if name_error != nil and (name_error <=> "") != 0
+      is_err = true
+      final_out = name_error
+    end
+    return is_err, final_out
   end
 
 
