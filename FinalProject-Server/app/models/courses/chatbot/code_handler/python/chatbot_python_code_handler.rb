@@ -104,23 +104,27 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
       arg = args_types[i]
       # for every possible type of the argument
       num_of_possible_types = arg.length
+      indentation_str = "\n"
       for j in 0..num_of_possible_types-2
-        if j==0
-          parsing_code += "\n\ttry:"
+        for k in 0..j
+          indentation_str += "\t"
         end
-        parsing_code += "\n\t\tparams[" + i.to_s() + "] = " + arg[j] + "(sys.argv[" + (i+1).to_s() +"])\n\t"
+        parsing_code += indentation_str + "try:"
+        parsing_code += indentation_str + "\t" + "params[" + i.to_s() + "] = " + arg[j] + "(sys.argv[" + (i+1).to_s() +"])"
+        parsing_code += indentation_str
         if j<num_of_possible_types-1
           parsing_code += "except:"
         else
           parsing_code += "try:"
         end
       end
-      if num_of_possible_types>1
-        parsing_code += "\n\t\t"
-      else
-        parsing_code += "\n\t"
-      end
-      parsing_code += "params[" + i.to_s() + "] = " + arg[num_of_possible_types-1] + "(sys.argv[" + (i+1).to_s() +"])\n"
+      indentation_str += "\t"
+      parsing_code += indentation_str
+
+      parsing_code += "try:"
+      parsing_code += indentation_str + "\t" + "params[" + i.to_s() + "] = " + arg[num_of_possible_types-1] + "(sys.argv[" + (i+1).to_s() +"])"
+      parsing_code += indentation_str + "except:"
+      parsing_code += indentation_str + "\t" + "params[" + i.to_s() + "] = " + "str"+ "(sys.argv[" + (i+1).to_s() +"])\n"
     end
     return parsing_code
   end
