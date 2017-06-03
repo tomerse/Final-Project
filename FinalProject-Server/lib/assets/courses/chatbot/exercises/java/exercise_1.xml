@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+  <exercise>
+    <id>1</id>
+    <topic>Printing</topic>
+    <instructions>To get information about our program variables study them further or to display a message to the user on the screen we use the action &lt;u>"Print"&lt;/u>.
+      Using the above action will be using the phrase in quotes printed followed by an expression that wants to print.
+      For example, to print to the screen the phrase Hello World!.&lt;font color="red"> Write &lt;/font> down the expression print &lt;b>"Hello World!"&lt;/b>.
+	    &lt;p>&lt;img src="/assets/images/monkey.png">&lt;/p>
+    </instructions>
+    <code>def printName(name):
+    print #enter your code here
+    return
+    </code>
+    <tasks>
+      <task>
+        <content>Print the variable "name"</content>
+        <tests>
+          <test>
+            <inputs>
+              <input_value>Hello</input_value>
+            </inputs>
+            <output>Hello&#xA</output>
+            <failure>What would be the output for "Hello"?</failure>
+          </test>
+          <test>
+            <inputs>
+              <input_value>World</input_value>
+            </inputs>
+            <output>World&#xA</output>
+            <failure>What would be the output for "World"?</failure>
+          </test>
+          <test>
+            <inputs>
+              <input_value>a b</input_value>
+            </inputs>
+            <output>a b&#xA</output>
+            <failure>What would be the output for "a b"?</failure>
+          </test>
+          <test>
+            <inputs>
+              <input_value>123</input_value>
+            </inputs>
+            <output>123&#xA</output>
+            <failure>What would be the output for "123"?</failure>
+          </test>
+        </tests>
+      </task>
+      <task>
+        <content>Click the submit button</content>
+      </task>
+    </tasks>
+    <hints>
+      <hint>You should print the variable "name", using the "print" command</hint>
+    </hints>
+    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! What is your name?</chatbotinitmessage>
+    <chatbotoutputmessage>Your name is: %s</chatbotoutputmessage>
+    <argstypes>
+      <arg>
+        <argmessage></argmessage>
+        <argtypes>
+          <type>str</type>
+        </argtypes>
+      </arg>
+    </argstypes>
+  </exercise>
+</root>
