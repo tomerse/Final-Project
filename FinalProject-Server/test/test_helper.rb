@@ -3,6 +3,8 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'test_log'
 require 'tests_summary'
+require 'net/http'
+
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
@@ -11,6 +13,8 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   #fixtures :all
   # Add more helper methods to be used by all tests here...
+
+
 
   # ***** UT Section *****
   COURSESESFOLDER = 'lib/assets/courses'
@@ -28,16 +32,28 @@ class ActiveSupport::TestCase
   PYCOMP_SUCC_INPUT = File.absolute_path('test/unit/compilers_tests_inputs/ex_1/pycomp_success.py')
   PYCOMP_RUNTIME_ERR_INPUT = File.absolute_path('test/unit/compilers_tests_inputs/ex_1/pycomp_runtime_err.py')
   PYCOMP_INFINITE_LOOP = File.absolute_path('test/unit/compilers_tests_inputs/ex_1/comp_infinite.py')
-  Tlog = TestLog.new 'test/unit/unit_tests_resutls.log'
+  UTlog = TestLog.new 'test/unit/unit_tests_resutls.log'
 
-  def self.read_test_input(path)
+  def read_test_input(path)
     if File.readable? path
       text = File.read path
       return text
       else return nil
     end
   end
-
   # ***** UT Section *****
+
+  # ***** PerformanceTests Section *****
+    APP_URL = 'http://finalprojectcm.herokuapp.com'
+    COURSE_REQ_URL = "#{APP_URL}/#/course/${prog_lang}/${course_name}/stage/${stage_id}"
+    COMP_REQ_URL = "#{APP_URL}/courses/${prog_lang}/${course_name}/${stage_id}/compile"
+    RUN_REQ_URL = "#{APP_URL}/courses/${prog_lang}/${course_name}/${stage_id}/run"
+    NUM_OF_USERS = 50
+
+  def print_test_name test_case
+    print "\n"
+    print "Test case: #{test_case}\n"
+  end
+  # ***** PerformanceTests Section *****
 
 end

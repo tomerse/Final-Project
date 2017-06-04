@@ -10,7 +10,7 @@ class ZutSummaryTest < ActiveSupport::TestCase
   test "" do
     Tsummary.generateUnitTestsSummary
     summary = Tsummary.summary
-    Tlog.execTestSuiteSummary TESTSUITE, summary
+    UTlog.execTestSuiteSummary TESTSUITE, summary
   end
 
 end
