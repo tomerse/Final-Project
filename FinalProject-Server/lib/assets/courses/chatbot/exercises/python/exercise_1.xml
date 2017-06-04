@@ -60,7 +60,7 @@ and open the template in the editor.
     <hints>
       <hint>You should print the variable "name", using the "print" command</hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! What is your name?</chatbotinitmessage>
+    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! &lt;font color="blue">What is your name?&lt;/font></chatbotinitmessage>
     <chatbotoutputmessage>Your name is: %s</chatbotoutputmessage>
     <argstypes>
       <arg>
