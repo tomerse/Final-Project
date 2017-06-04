@@ -26,5 +26,5 @@ and open the template in the editor.
       <more_info></more_info>
     </test_failed>
   </check_exercise>
-  <runtime_error>Runtime error has occurred: </runtime_error>
+  <runtime_error><font color="red">Runtime error has occurred: </font></runtime_error>
 </root>

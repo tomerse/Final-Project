@@ -65,7 +65,7 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
     if type_error != nil and (type_error <=> "") != 0
       is_err = true
       type_error_str = output.rpartition('line').last
-      final_out = type_error_str
+      final_out = 'line ' + type_error_str
     end
     return is_err, final_out
   end
