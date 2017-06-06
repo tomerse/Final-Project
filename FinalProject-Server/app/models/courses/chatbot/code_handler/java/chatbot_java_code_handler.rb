@@ -9,8 +9,8 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   #@param args_list - string contains list of arguments for execution command
   #@return output of the code
   def execute_code(generated_code, args_list)
-    File.open(PYNAME, 'w'){|f| f.write generated_code}
-    output = execute_file(PYNAME, args_list)
+    File.open(JAVANAME, 'w'){|f| f.write generated_code}
+    output = execute_file(JAVANAME, args_list)
     return output
   end
 
@@ -19,7 +19,7 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   #@param args_list - string contains list of arguments for execution command
   #return tuple: is_err - boolean indicates if runtime error detected, output - the output as string
   def execute_file(file_to_run, args_list)
-    compiler = PythonCompiler.new
+    compiler = JavaCompiler.new
     output = compiler.run_file(file_to_run, args_list, CHATBOT_RUNNING_TIMEOUT)
     (is_err, output) = parse_runtime_error(output)
     return is_err, output
@@ -29,8 +29,8 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   #@param generated_code - code ready for compilation
   #@return code compilation result and path to compiled file
   def compile_code(generated_code)
-    File.open(PYNAME, 'w'){|f| f.write generated_code}
-    (comp_res, file_to_run) = compile_file(PYNAME)
+    File.open(JAVANAME, 'w'){|f| f.write generated_code}
+    (comp_res, file_to_run) = compile_file(JAVANAME)
     comp_res = parse_compilation_error(comp_res)
     return [comp_res, file_to_run]
   end
@@ -39,7 +39,7 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   #@param file_to_run - path to file with generated code
   #@return code compilation result and path to compiled file
   def compile_file(file_to_run)
-    compiler = PythonCompiler.new
+    compiler = JavaCompiler.new
     comp_res = compiler.compile_file(file_to_run)
     return [comp_res, file_to_run]
   end
@@ -91,7 +91,7 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   def get_func_name(code)
     func_name = ""
     parsed_code = code.split(/\W+/)
-    if (parsed_code[0] <=> "def") == 0
+    if (parsed_code[0] <=> "static") == 0
       func_name = parsed_code[1]
     end
     return func_name

@@ -15,9 +15,13 @@ and open the template in the editor.
       For example, to print to the screen the phrase Hello World!.&lt;font color="red"> Write &lt;/font> down the expression print &lt;b>"Hello World!"&lt;/b>.
 	    &lt;p>&lt;img src="/assets/images/monkey.png">&lt;/p>
     </instructions>
-    <code>def printName(name):
-    print #enter your code here
-    return
+    <code>class test
+      {
+        public static void printName(String name)
+        {
+            System.out.println(#enter your code here);
+        }
+      }
     </code>
     <tasks>
       <task>
@@ -66,7 +70,7 @@ and open the template in the editor.
       <arg>
         <argmessage></argmessage>
         <argtypes>
-          <type>str</type>
+          <type>String</type>
         </argtypes>
       </arg>
     </argstypes>
