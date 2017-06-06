@@ -208,14 +208,17 @@ class ChatbotCodeHandler
 
 
   def check_exercise_code(code, ex_id,exercise_file)
+    exercise = @exercise_reader.build_exercise(exercise_file)
     status = "success"
     failure_reason = ""
     check_exercise_messages = @chatbot_reader.get_success_messages
+    more_info = exercise.get_success_info
     (compilation_success, comp_res, compiled_file) = compile_exercise_code(code, exercise_file)
     if compilation_success == false
       status = "compilation error"
       check_exercise_messages = @chatbot_reader.get_comp_error_messages
       failure_reason = check_exercise_messages.get_specific_message + comp_res
+      more_info = exercise.get_comp_error_info
     else
       tests = build_tests(exercise_file)
       if not tests.empty?
@@ -224,10 +227,11 @@ class ChatbotCodeHandler
           status = "tests failed"
           check_exercise_messages = @chatbot_reader.get_test_failed_messages
           failure_reason = failure_test
+          more_info = exercise.get_test_failed_info
         end
       end
     end
-    return [status, check_exercise_messages.get_caption, check_exercise_messages.get_generic_message, failure_reason, check_exercise_messages.get_more_info]
+    return [status, check_exercise_messages.get_caption, check_exercise_messages.get_generic_message, failure_reason, more_info]
   end
 
 

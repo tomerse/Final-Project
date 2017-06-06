@@ -9,21 +9,18 @@ class ChatbotCheckExercisesMessages
     @caption = ''
     @generic_message = ''
     @specific_message = ''
-    @more_info = ''
   end
 
   def read_values(config_file, node)
     @caption = Xml.get_element(config_file, node + '//caption')
     @generic_message = Xml.get_element(config_file, node + '//generic_message')
     @specific_message = Xml.get_element(config_file, node + '//specific_message')
-    @more_info = Xml.get_element(config_file, node + '//more_info')
   end
 
   def set_values(caption, generic_message, specific_message, more_info)
     @caption = caption
     @generic_message = generic_message
     @specific_message = specific_message
-    @more_info = more_info
   end
 
   def get_caption
@@ -36,10 +33,6 @@ class ChatbotCheckExercisesMessages
 
   def get_specific_message
     return @specific_message
-  end
-
-  def get_more_info
-    return @more_info
   end
 
 end

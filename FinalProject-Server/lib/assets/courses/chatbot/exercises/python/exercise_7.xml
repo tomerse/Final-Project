@@ -63,5 +63,8 @@
         </argtypes>
       </arg>
     </argstypes>
+    <comp_error_info>Read more about compilation errors: &lt;a href="https://en.wikipedia.org/wiki/Compilation_error" target="_blank">Click here&lt;/a></comp_error_info>
+    <test_failed_info>test failed </test_failed_info>
+    <success_info>success </success_info>
   </exercise>
 </root>
