@@ -55,17 +55,23 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
     is_err = false
     final_out = output
     #NameError
-    name_error = output.split("NameError:")[1]
+    name_error_str = "NameError"
+    name_error = output.split(name_error_str + ":")[1]
     if name_error != nil and (name_error <=> "") != 0
       is_err = true
       final_out = name_error
+      info = Xml.get_element(@errors_file, name_error_str.downcase)
+      final_out += info
     end
     #TypeError
-    type_error = output.split("TypeError:")[1]
+    type_error_str = "TypeError"
+    type_error = output.split(type_error_str + ":")[1]
     if type_error != nil and (type_error <=> "") != 0
       is_err = true
       type_error_str = output.rpartition('line').last
       final_out = 'line ' + type_error_str
+      info = Xml.get_element(@errors_file, type_error_str.downcase)
+      final_out += info
     end
     return is_err, final_out
   end

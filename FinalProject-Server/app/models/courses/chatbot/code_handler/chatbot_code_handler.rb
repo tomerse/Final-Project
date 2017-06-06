@@ -2,6 +2,11 @@
 NOT_IMPLEMENTED_MESSAGE = 'Implement this method in a child class'
 CHATBOT_RUNNING_TIMEOUT = 1
 
+#errors file
+ERRORS_FILE_PATH = 'lib/assets/courses/chatbot/errors'
+ERRORS_FILE_PREFIX = 'errors_'
+ERRORS_FILE_SUFFIX = '.xml'
+
 # Module includes methods to implement for every programming language.
 # Responsible for code generation
 module ChatbotCodeGenerator
@@ -179,6 +184,8 @@ class ChatbotCodeHandler
     @language_name = language_name
     @exercise_reader = exercise_reader
     @chatbot_reader = ChatbotReader.new
+    @errors_file_path = ERRORS_FILE_PATH + '/' + @language_name + '/' + ERRORS_FILE_PREFIX + @language_name + ERRORS_FILE_SUFFIX
+    @errors_file = Xml.readxml(@errors_file_path)
   end
 
 
