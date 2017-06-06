@@ -34,14 +34,14 @@
             <inputs>
               <input_value>False</input_value>
             </inputs>
-            <output>True&#xA;False</output>
+            <output>True&#xA;False&#xA;</output>
             <failure>OR = var | my_bool</failure>
           </test>
           <test>
             <inputs>
               <input_value>True</input_value>
             </inputs>
-            <output>True&#xA;True</output>
+            <output>True&#xA;True&#xA;</output>
             <failure>AND = var & my_bool</failure>
           </test>
         </tests>
