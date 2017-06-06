@@ -4,10 +4,10 @@
   <exercise>
     <id>5</id>
     <topic>Operators</topic>
-    <instructions>After defining variables in the previous exercise, let see how we can use them. We can add, subtract, multiply and divide numbers with math operators like '+', '-', '*' and '/'.
+    <instructions>After defining variables in the previous exercise, we will learn how to use them in the aplication. We can add, subtract, multiply and divide numbers with math operators like '+', '-', '*' and '/'. In example, to multiply variable 'a' with 'b': result = a * b.
     </instructions>
-    <code>def defineVars(var1, var2):
-      my_number = #enter you code here1
+    <code>def defineVars(a, b):
+      sum = #enter you code here1
       print #enter you code here2
       result = #enter you code here3
       print #enter you code here4
@@ -15,13 +15,13 @@
     </code>
     <tasks>
       <task>
-        <content>Set the variable 'my_number' equal to sum of 'var1' and 'var2'.</content>
+        <content>Set the variable 'sum' equal to sum of 'a' and 'b'.</content>
       </task>
       <task>
-        <content>Print the variable 'my_number'</content>
+        <content>Print the variable 'sum'</content>
       </task>
       <task>
-        <content>Set 'result' to be multiply between 'var1' and 'my_number'</content>
+        <content>Set 'result' to be multiply between 'a' and 'sum'</content>
       </task>
       <task>
         <content>Print the result</content>
@@ -29,18 +29,26 @@
           <test>
             <inputs>
               <input_value>3</input_value>
-              <input_value>3</input_value>
+              <input_value>1</input_value>
             </inputs>
-            <output>6&#xA18&#xA</output>
-            <failure>check my_number == var1+var2</failure>
+            <output>4 4&#xA</output>
+            <failure>Sum of 'a' and 'b' is incorrect.</failure>
           </test>
           <test>
             <inputs>
               <input_value>10</input_value>
-              <input_value>2</input_value>
+              <input_value>0</input_value>
             </inputs>
-            <output>12&#xA120&#xA</output>
-            <failure>check result == var1*my_number</failure>
+            <output>10 0&#xA</output>
+            <failure>Multiply between 'a' and 'sum' is incorrect.</failure>
+          </test>
+          <test>
+            <inputs>
+              <input_value>7</input_value>
+              <input_value>5</input_value>
+            </inputs>
+            <output>12 84&#xA</output>
+            <failure>Multiply between 'a' and 'sum' is incorrect.</failure>
           </test>
         </tests>
       </task>
@@ -49,7 +57,8 @@
       </task>
     </tasks>
     <hints>
-      <hint>Store the result in a variable: result=var*my_number</hint>
+      <hint>Sum of two variables is: 'var1' + 'var2'</hint>
+      <hint>Multiply between two variables is: 'var1' * 'var2'</hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Insert 2 numbers</chatbotinitmessage>
     <chatbotoutputmessage>Your two variables are: %s</chatbotoutputmessage>

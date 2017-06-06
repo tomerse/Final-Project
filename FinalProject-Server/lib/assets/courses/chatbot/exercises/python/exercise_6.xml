@@ -32,14 +32,14 @@
             <inputs>
               <input_value>False</input_value>
             </inputs>
-            <output>True&#xAFalse</output>
+            <output>True False&#xA</output>
             <failure>Your code should be: "my_bool = True"</failure>
           </test>
             <test>
             <inputs>
               <input_value>True</input_value>
             </inputs>
-            <output>True&#xATrue</output>
+            <output>True True&#xA</output>
             <failure>Your code should be: "result = var"</failure>
           </test>
         </tests>
