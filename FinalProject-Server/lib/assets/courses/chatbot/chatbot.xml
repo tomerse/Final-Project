@@ -17,7 +17,7 @@ and open the template in the editor.
       <caption>Compilation Error</caption>
       <generic_message>Compilation error has occurred, your code cannot be submitted.</generic_message>
       <specific_message>The specific error is:</specific_message>
-      <more_info>Read more about compilation errors: &lt;a href="https://en.wikipedia.org/wiki/Compilation_error">Click here&lt;/a></more_info>
+      <more_info>Read more about compilation errors: &lt;a href="https://en.wikipedia.org/wiki/Compilation_error" target="_blank">Click here&lt;/a></more_info>
     </comp_error>
     <test_failed>
       <caption>Task Not Completed</caption>
