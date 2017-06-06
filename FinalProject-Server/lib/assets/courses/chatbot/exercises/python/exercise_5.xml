@@ -31,7 +31,7 @@
               <input_value>3</input_value>
               <input_value>3</input_value>
             </inputs>
-            <output>6&#xA18&#xA</output>
+            <output>6&#xA;18&#xA;</output>
             <failure>check my_number == var1+var2</failure>
           </test>
           <test>
@@ -39,7 +39,7 @@
               <input_value>10</input_value>
               <input_value>2</input_value>
             </inputs>
-            <output>12&#xA120&#xA</output>
+            <output>12&#xA;120&#xA;</output>
             <failure>check result == var1*my_number</failure>
           </test>
         </tests>

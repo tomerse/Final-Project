@@ -40,7 +40,7 @@ and open the template in the editor.
               <input_value>3</input_value>
               <input_value>HelloWorld</input_value>
             </inputs>
-            <output>3&#xAHelloWorld&#xA</output>
+            <output>3&#xA;HelloWorld&#xA;</output>
             <failure>check my_number == 3 and my_string == HelloWorld</failure>
           </test>
         </tests>
