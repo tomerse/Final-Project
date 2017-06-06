@@ -17,7 +17,7 @@ and open the template in the editor.
       <caption>Compilation Error</caption>
       <generic_message>Compilation error has occurred, your code cannot be submitted.</generic_message>
       <specific_message>The specific error is:</specific_message>
-      <more_info>Read more about compilation errors: <href>https://en.wikipedia.org/wiki/Compilation_error</href></more_info>
+      <more_info>Read more about compilation errors: &lt;a href="https://en.wikipedia.org/wiki/Compilation_error">Click here&lt;/a></more_info>
     </comp_error>
     <test_failed>
       <caption>Task Not Completed</caption>
@@ -26,5 +26,5 @@ and open the template in the editor.
       <more_info></more_info>
     </test_failed>
   </check_exercise>
-  <runtime_error><font color="red">Runtime error has occurred: </font></runtime_error>
+  <runtime_error>&lt;font color="red">Runtime error has occurred: &lt;/font></runtime_error>
 </root>
