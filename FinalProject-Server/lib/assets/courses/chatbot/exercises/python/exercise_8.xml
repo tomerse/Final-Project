@@ -4,9 +4,10 @@
   <exercise>
     <id>8</id>
     <topic>Conditions</topic>
-    <instructions>Conditions are either True or False. These are the only possible Boolean values. "if weight > 50:" - this is an if statement, simple arithmetic comparison. If it is true that the weight is greater than 50, the result of the comparison will be True. Otherwise it will be False. The general syntax for a simple if statement is 
-      "if condition : 
+    <instructions>The general syntax for a simple if statement is
+      "if condition :
           code if condition == True"
+    Condition is either True or False. The next line is performed if the condition is true.
     </instructions>
     <code>def examResult(grade):
       #enter your code here1
@@ -18,13 +19,13 @@
     </code>
     <tasks>
       <task>
-        <content>Print the variable 'grade'.</content>
+        <content>Print the variable 'grade' in first line.</content>
       </task>
       <task>
-        <content>Check if the grade is bigger or equal to 56.</content>
+        <content>Print 'Passed. Exelent!' only if the grade is bigger or equal to 56.</content>
       </task>
       <task>
-        <content>Check if the grade is smaller than 56.</content>
+        <content>Print 'Fail. You need to improve' only if if the grade is smaller than 56.</content>
       <tests>
           <test>
             <inputs>
