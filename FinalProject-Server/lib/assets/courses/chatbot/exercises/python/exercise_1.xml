@@ -76,6 +76,6 @@ and open the template in the editor.
     </argstypes>
     <comp_error_info>Read more about compilation errors: &lt;a href="https://en.wikipedia.org/wiki/Compilation_error" target="_blank">Click here&lt;/a></comp_error_info>
     <test_failed_info>test failed </test_failed_info>
-    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/l4q7TIW8nEZYOJUf6/giphy.gif" height="200" width="200">&lt;/p></success_info>
+    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/l4q7TIW8nEZYOJUf6/giphy.gif" height="200" width="250">&lt;/p></success_info>
   </exercise>
 </root>
