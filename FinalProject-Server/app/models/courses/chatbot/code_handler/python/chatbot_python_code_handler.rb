@@ -43,9 +43,6 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
 
     #Syntax Error - remove the file name
     syntax_err_str = "SyntaxError"
-
-    #if (error.split(" ")[0] <=> "File" ) == 0
-    #  parsed_error = error.split(",")[1,]
     syntax_error = error.split(syntax_err_str + ":")[1]
     if syntax_error != nil and (syntax_error <=> "") != 0
       parsed_error = error.split(",")[1,]
@@ -75,6 +72,7 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
   def parse_runtime_error(output)
     is_err = false
     final_out = output
+
     #NameError
     name_error_str = "NameError"
     name_error = output.split(name_error_str + ":")[1]
@@ -89,22 +87,47 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
       type_error = output.split(type_error_str + ":")[1]
       if type_error != nil and (type_error <=> "") != 0
         is_err = true
-        type_error_str = output.rpartition('line').last
+        type_error = output.rpartition('line').last
         final_out = 'line ' + type_error_str
         info = Xml.get_element(@errors_file, type_error_str.downcase)
         final_out +=  "\n" + info
       else
-        #ArithmeticError
-        arithmetic_error_str = "ArithmeticError"
-        arithmetic_error = output.split(arithmetic_error_str + ":")[1]
-        if arithmetic_error != nil and (arithmetic_error <=> "") != 0
+        #ZeroDivisionError
+        zero_error_str = "ZeroDivisionError"
+        zero_error = output.split(zero_error_str + ":")[1]
+        if zero_error != nil and (zero_error <=> "") != 0
           is_err = true
-          final_out = arithmetic_error
-          info = Xml.get_element(@errors_file, arithmetic_error_str.downcase)
-          final_out += "\n" + info
-        end
+          zero_error = output.rpartition('line').last
+          final_out = 'line ' + zero_error_str
+          info = Xml.get_element(@errors_file, zero_error_str.downcase)
+          final_out +=  "\n" + info
+        else
+          #ArithmeticError
+          arithmetic_error_str = "ArithmeticError"
+          arithmetic_error = output.split(arithmetic_error_str + ":")[1]
+          if arithmetic_error != nil and (arithmetic_error <=> "") != 0
+            is_err = true
+            final_out = arithmetic_error
+            info = Xml.get_element(@errors_file, arithmetic_error_str.downcase)
+            final_out += "\n" + info
+          end
+         end
       end
     end
+
+    #general info for runtime error
+    if is_err == false
+      general_error_str = "Traceback (most recent call last):"
+      general_error = output.split(general_error_str)[1]
+      if general_error != nil and (general_error <=> "") != 0
+        is_err = true
+        general_error = output.rpartition('line').last
+        info = Xml.get_element(@errors_file, 'runtime_errors/general')
+        final_out =  'line' + general_error + "\n" + info
+      end
+    end
+
+
     return is_err, final_out
   end
 
