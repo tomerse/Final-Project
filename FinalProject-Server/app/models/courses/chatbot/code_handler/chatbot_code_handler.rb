@@ -225,7 +225,7 @@ class ChatbotCodeHandler
       status = "compilation error"
       check_exercise_messages = @chatbot_reader.get_comp_error_messages
       failure_reason = check_exercise_messages.get_specific_message + comp_res
-      more_info = exercise.get_comp_error_info
+      more_info = ""
     else
       tests = build_tests(exercise_file)
       if not tests.empty?

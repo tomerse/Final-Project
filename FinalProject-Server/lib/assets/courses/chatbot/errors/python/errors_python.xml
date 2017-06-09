@@ -7,7 +7,13 @@ and open the template in the editor.
 
 <root>
   <runtime_errors>
-    <nameerror>name not found</nameerror>
-    <typerror>operation on different types cannot be performed</typerror>
+    <nameerror>Read more about &lt;a href="https://teamtreehouse.com/community/nameerror-name-is-not-defined" target="_blank">NameError&lt;/a></nameerror>
+    <typeerror>Read more about &lt;a href="https://teamtreehouse.com/community/python-typeerror" target="_blank">TypeError&lt;/a></typeerror>
+    <arithmeticerror>Read more about &lt;a href="http://www.pythonforbeginners.com/error-handling/pythons-built-in-exceptions" target="_blank">ArithmeticError&lt;/a></arithmeticerror>
   </runtime_errors>
+  <comp_errors>
+    <general>Read more about compilation errors in &lt;a href="https://www.tutorialspoint.com/python/python_basic_syntax.htm" target="_blank">Python tutorial&lt;/a></general>
+    <syntaxerror>Read more about &lt;a href="https://www.dotnetperls.com/syntaxerror-python" target="_blank">SyntaxError&lt;/a></syntaxerror>
+    <indentationerror>Read more about &lt;a href="https://askubuntu.com/questions/469458/python-error-indentationerror-expected-an-indented-block" target="_blank">IndentationError&lt;/a></indentationerror>
+  </comp_errors>
 </root>

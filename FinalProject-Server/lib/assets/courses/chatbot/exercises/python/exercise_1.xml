@@ -74,7 +74,6 @@ and open the template in the editor.
         </argtypes>
       </arg>
     </argstypes>
-    <comp_error_info>Try to use this Python tutorial : &lt;a href="https://www.tutorialspoint.com/python/python_basic_syntax.htm" target="_blank">Click here&lt;/a></comp_error_info>
     <test_failed_info>test failed - Use the chatbot on the lower right corner </test_failed_info>
     <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/l4q7TIW8nEZYOJUf6/giphy.gif" height="200" width="250">&lt;/p></success_info>
   </exercise>

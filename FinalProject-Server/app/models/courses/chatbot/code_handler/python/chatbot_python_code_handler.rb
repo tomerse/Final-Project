@@ -32,22 +32,43 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
   end
 
   def parse_compilation_error(error)
-    parsed_error = error
-    if (error <=> "") != 0
-      #Syntax Error - remove the file name
-      if (error.split(" ")[0] <=> "File" ) == 0
-        parsed_error = error.split(",")[1,]
-      else
-        #Indentation Error - remove the file name
-        if (error.split("(")[1] <=> "" ) != 0
-          parsed_error = error.split("(")[0] + "("
-          parenthesis = error.split("(")[1]
-          parenthesis_no_file_name = parenthesis.split(", ")[1]
-          parsed_error += parenthesis_no_file_name
-        end
-      end
-
+    if error == nil or (error <=> "") == 0
+      return error
     end
+
+    #error found, parsing it
+    parsed_error = error
+    #general info for compilation error
+    info = Xml.get_element(@errors_file, 'comp_errors/general')
+
+    #Syntax Error - remove the file name
+    syntax_err_str = "SyntaxError"
+
+    #if (error.split(" ")[0] <=> "File" ) == 0
+    #  parsed_error = error.split(",")[1,]
+    syntax_error = error.split(syntax_err_str + ":")[1]
+    if syntax_error != nil and (syntax_error <=> "") != 0
+      parsed_error = error.split(",")[1,]
+      info = Xml.get_element(@errors_file, syntax_err_str.downcase)
+      parsed_error +=  info
+    else
+      #Indentation Error - remove the file name
+      indentation_err_str = "IndentationError"
+      indentation_err = error.split(indentation_err_str + ":")[1]
+      #if (error.split("(")[1] <=> "" ) != 0
+      if indentation_err != nil and (indentation_err <=> "") != 0
+        parsed_error = error.split("(")[0] + "("
+        parenthesis = error.split("(")[1]
+        parenthesis_no_file_name = parenthesis.split(", ")[1]
+        parsed_error += parenthesis_no_file_name
+        info = Xml.get_element(@errors_file, indentation_err_str.downcase)
+        parsed_error +=  info
+      else  #default message
+        parsed_error +=  info
+      end
+    end
+
+
     return parsed_error
   end
 
@@ -61,17 +82,28 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
       is_err = true
       final_out = name_error
       info = Xml.get_element(@errors_file, name_error_str.downcase)
-      final_out += info
-    end
-    #TypeError
-    type_error_str = "TypeError"
-    type_error = output.split(type_error_str + ":")[1]
-    if type_error != nil and (type_error <=> "") != 0
-      is_err = true
-      type_error_str = output.rpartition('line').last
-      final_out = 'line ' + type_error_str
-      info = Xml.get_element(@errors_file, type_error_str.downcase)
-      final_out += info
+      final_out += "\n" + info
+    else
+      #TypeError
+      type_error_str = "TypeError"
+      type_error = output.split(type_error_str + ":")[1]
+      if type_error != nil and (type_error <=> "") != 0
+        is_err = true
+        type_error_str = output.rpartition('line').last
+        final_out = 'line ' + type_error_str
+        info = Xml.get_element(@errors_file, type_error_str.downcase)
+        final_out +=  "\n" + info
+      else
+        #ArithmeticError
+        arithmetic_error_str = "ArithmeticError"
+        arithmetic_error = output.split(arithmetic_error_str + ":")[1]
+        if arithmetic_error != nil and (arithmetic_error <=> "") != 0
+          is_err = true
+          final_out = arithmetic_error
+          info = Xml.get_element(@errors_file, arithmetic_error_str.downcase)
+          final_out += "\n" + info
+        end
+      end
     end
     return is_err, final_out
   end
