@@ -88,7 +88,7 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
       if type_error != nil and (type_error <=> "") != 0
         is_err = true
         type_error = output.rpartition('line').last
-        final_out = 'line ' + type_error_str
+        final_out = 'line ' + type_error
         info = Xml.get_element(@errors_file, type_error_str.downcase)
         final_out +=  "\n" + info
       else
@@ -98,7 +98,7 @@ class ChatbotPythonCodeHandler < ChatbotCodeHandler
         if zero_error != nil and (zero_error <=> "") != 0
           is_err = true
           zero_error = output.rpartition('line').last
-          final_out = 'line ' + zero_error_str
+          final_out = 'line ' + zero_error
           info = Xml.get_element(@errors_file, zero_error_str.downcase)
           final_out +=  "\n" + info
         else
