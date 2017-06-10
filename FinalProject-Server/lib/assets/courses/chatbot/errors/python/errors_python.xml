@@ -15,7 +15,7 @@ and open the template in the editor.
   </runtime_errors>
   <comp_errors>
     <general>Read more about compilation errors in &lt;a href="https://www.tutorialspoint.com/python/python_basic_syntax.htm" target="_blank">Python tutorial&lt;/a></general>
-    <syntaxerror>Read more about &lt;a href="https://www.dotnetperls.com/syntaxerror-python" target="_blank">SyntaxError&lt;/a></syntaxerror>
-    <indentationerror>Read more about &lt;a href="https://askubuntu.com/questions/469458/python-error-indentationerror-expected-an-indented-block" target="_blank">IndentationError&lt;/a></indentationerror>
+    <syntaxerror>\nRead more about &lt;a href="https://www.dotnetperls.com/syntaxerror-python" target="_blank">SyntaxError&lt;/a></syntaxerror>
+    <indentationerror>\nRead more about &lt;a href="https://askubuntu.com/questions/469458/python-error-indentationerror-expected-an-indented-block" target="_blank">IndentationError&lt;/a></indentationerror>
   </comp_errors>
 </root>
