@@ -6,9 +6,9 @@
     <topic>Conditions</topic>
     <instructions>The general syntax for a simple if statement is \n
       if (condition) :\n  		
-		&nbsp &nbsp &nbsp &nbsp	code &lt;font color="yellow">&lt;b>(==>will execute only if condition is true)&lt;/b> &lt;/font>  \n
-	  else:      
-		&nbsp &nbsp &nbsp &nbsp	code &lt;font color="yellow">&lt;b>(==>will execute only if condition is true)&lt;/b> &lt;/font>
+		&nbsp &nbsp &nbsp &nbsp	code &lt;font color="yellow">(==>will execute only if condition is true) &lt;/font>  \n
+	  else: \n 
+		&nbsp &nbsp &nbsp &nbsp	code &lt;font color="yellow">(==>will execute only if condition is true) &lt;/font>
     </instructions>
     <code>def examResult(grade):
     #enter your code here1
