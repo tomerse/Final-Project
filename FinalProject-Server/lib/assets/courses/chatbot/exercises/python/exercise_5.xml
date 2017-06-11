@@ -83,6 +83,8 @@
     </argstypes>
     <test_failed_info>Learn more about python arithmetic operators: &lt;a href="https://www.tutorialspoint.com/python/arithmetic_operators_example.htm" target="_blank">Click here&lt;/a>. 
 	\n Use the chatbot on the lower right corner of the screen to check your code.</test_failed_info>
-    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/Hc8PMCBjo9BXa/giphy.gif" height="200" width="250">&lt;/p></success_info>
+    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/Hc8PMCBjo9BXa/giphy.gif" height="200" width="250">&lt;/p>
+	\n Use the chatbot on the lower right corner of the screen to check your code.
+	</success_info>
   </exercise>
 </root>
