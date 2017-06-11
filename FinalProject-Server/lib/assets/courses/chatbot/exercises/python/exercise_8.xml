@@ -46,7 +46,7 @@
               <input_value>20</input_value>
             </inputs>
             <output>20&#xA;Fail. You need to improve&#xA;</output>
-            <failure>If the grade is smaller(<) than 56, you failed the exam.</failure>
+            <failure>If the grade is smaller(&lt;) than 56, you failed the exam.</failure>
           </test>
         </tests>
       </task>
@@ -56,14 +56,12 @@
     </tasks>
     <hints>
       <failure>The grade should be bigger(>) than 56 to pass the exam.</failure>
-      <failure>If the grade is smaller(<) than 56, you failed the exam.</failure>
+      <failure>If the grade is smaller(&lt;) than 56, you failed the exam.</failure>
       <failure>The grade can be equal(=) to 56 in order to pass the exam.</failure>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Insert the grade of the exam</chatbotinitmessage>
     <chatbotoutputmessage>Your result is: %s
-	&lt;div *ngIf="false">
-	&lt;p >&lt;img src="https://media.giphy.com/media/Hc8PMCBjo9BXa/giphy.gif" height="200" width="250">&lt;/p>
-	&lt;/div>
+	&lt;p >&lt;img src="https://media.giphy.com/media/yDP4kcs5USS40/giphy.gif" height="200" width="220">&lt;/p>
 	</chatbotoutputmessage>
     <argstypes>
       <arg>
