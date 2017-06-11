@@ -4,10 +4,10 @@
   <exercise>
     <id>8</id>
     <topic>Conditions</topic>
-    <instructions>The general syntax for a simple if statement is
-      "if (condition) :/n  
-			code  /n
-	   else:/n        ==>(will execute only if condtion is false)
+    <instructions>The general syntax for a simple if statement is \n
+      "if (condition) :\n  
+			code  \n
+	   else:       ==>(will execute only if condtion is false)\n
 			code 
     </instructions>
     <code>def examResult(grade):
