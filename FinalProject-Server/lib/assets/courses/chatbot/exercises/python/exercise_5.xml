@@ -4,7 +4,10 @@
   <exercise>
     <id>5</id>
     <topic>Operators</topic>
-    <instructions>After defining variables in the previous exercise, we will learn how to use them in the aplication. We can add, subtract, multiply and divide numbers with math operators like '+', '-', '*' and '/'. In example, to multiply variable 'a' with 'b': result = a * b.
+    <instructions>After defining variables in the previous exercise, we will learn how to use them in the aplication. We can add, subtract, multiply and divide numbers with math operators like '+', '-', '*' and '/'.
+	 &lt;p>&lt;img src="https://media.giphy.com/media/h12hzyHiCNGRG/giphy.gif" height="200" width="250">&lt;/p>
+	 &lt;br/>
+	In example, to multiply variable 'a' with 'b': result = a * b.
     </instructions>
     <code>def defineVars(a, b):
       sum = #enter you code here1
@@ -57,28 +60,29 @@
       </task>
     </tasks>
     <hints>
-      <hint>Sum of two variables is: 'var1' + 'var2'</hint>
-      <hint>Multiply between two variables is: 'var1' * 'var2'</hint>
+      <hint>To culc sum of two variables use the expression: a + b</hint>
+      <hint>o culc multiply between two variables use the expression: a * b</hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Insert 2 numbers</chatbotinitmessage>
-    <chatbotoutputmessage>Your two variables are: %s</chatbotoutputmessage>
+    <chatbotoutputmessage>Your sum and multiply results are: %s</chatbotoutputmessage>
    <argstypes>
       <arg>
-        <argmessage>Insert your first variable</argmessage>
+        <argmessage>Insert value for a (first variable)</argmessage>
         <argtypes>
           <type>int</type>
           <type>float</type>
         </argtypes>
       </arg>
       <arg>
-        <argmessage>Insert your second variable</argmessage>
+        <argmessage>Insert value for b (second variable)</argmessage>
         <argtypes>
           <type>int</type>
           <type>float</type>
         </argtypes>
       </arg>
     </argstypes>
-    <test_failed_info>test failed </test_failed_info>
-    <success_info>success </success_info>
+    <test_failed_info>Learn more about python arithmetic operators: &lt;a href="https://www.tutorialspoint.com/python/arithmetic_operators_example.htm" target="_blank">Click here&lt;/a>. 
+	\n Use the chatbot on the lower right corner of the screen to check your code.</test_failed_info>
+    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/Hc8PMCBjo9BXa/giphy.gif" height="200" width="250">&lt;/p></success_info>
   </exercise>
 </root>
