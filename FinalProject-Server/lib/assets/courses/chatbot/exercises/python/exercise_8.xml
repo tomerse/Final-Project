@@ -5,9 +5,10 @@
     <id>8</id>
     <topic>Conditions</topic>
     <instructions>The general syntax for a simple if statement is
-      "if condition :
-          code if condition == True"
-    Condition is either True or False. The next line is performed if the condition is true.
+      "if (condition) :/n  
+			code  /n
+	   else:/n        ==>(will execute only if condtion is false)
+			code 
     </instructions>
     <code>def examResult(grade):
     #enter your code here1
@@ -61,7 +62,7 @@
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Insert the grade of the exam</chatbotinitmessage>
     <chatbotoutputmessage>Your result is: %s
-	&lt;p >&lt;img src="https://media.giphy.com/media/yDP4kcs5USS40/giphy.gif" height="200" width="220">&lt;/p>
+	&lt;p >&lt;img src="https://media.giphy.com/media/yDP4kcs5USS40/giphy.gif" height="150" width="220">&lt;/p>
 	</chatbotoutputmessage>
     <argstypes>
       <arg>
