@@ -61,7 +61,9 @@
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Insert the grade of the exam</chatbotinitmessage>
     <chatbotoutputmessage>Your result is: %s
-	&lt;p *ngIf="message.contant.search('Exelent')!= -1">&lt;img src="https://media.giphy.com/media/Hc8PMCBjo9BXa/giphy.gif" height="200" width="250">&lt;/p>
+	&lt;div *ngIf="message.contant.search('Exelent')!= -1">
+	&lt;p >&lt;img src="https://media.giphy.com/media/Hc8PMCBjo9BXa/giphy.gif" height="200" width="250">&lt;/p>
+	&lt;/div>
 	</chatbotoutputmessage>
     <argstypes>
       <arg>
