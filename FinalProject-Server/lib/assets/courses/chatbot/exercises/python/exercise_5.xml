@@ -21,13 +21,13 @@
         <content>Set the variable 'sum' equal to sum of 'a' and 'b'.</content>
       </task>
       <task>
-        <content>Print the variable 'sum'</content>
+        <content>Print the value of the variable 'sum'.</content>
       </task>
       <task>
-        <content>Set 'result' to be multiply between 'a' and 'sum'</content>
+        <content>Set 'result' to be multiply between 'a' and 'sum'.</content>
       </task>
       <task>
-        <content>Print the result</content>
+        <content>Print the value of the variable 'result'.</content>
       <tests>
           <test>
             <inputs>
@@ -61,7 +61,7 @@
     </tasks>
     <hints>
       <hint>To culc sum of two variables use the expression: a + b</hint>
-      <hint>o culc multiply between two variables use the expression: a * b</hint>
+      <hint>To culc multiply between two variables use the expression: a * b</hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Insert 2 numbers</chatbotinitmessage>
     <chatbotoutputmessage>Your sum and multiply results are: %s</chatbotoutputmessage>

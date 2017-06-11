@@ -31,21 +31,21 @@
             <inputs>
               <input_value>80</input_value>
             </inputs>
-            <output>80&#xA;'Passed. Exelent!'&#xA;</output>
+            <output>80&#xA;Passed. Exelent!&#xA;</output>
             <failure>The grade should be bigger(>) than 56 to pass the exam.</failure>
           </test>
           <test>
             <inputs>
               <input_value>56</input_value>
             </inputs>
-            <output>56&#xA;'Passed. Exelent!'&#xA;</output>
+            <output>56&#xA;Passed. Exelent!&#xA;</output>
             <failure>The grade can be equal(=) to 56 in order to pass the exam.</failure>
           </test>
           <test>
             <inputs>
               <input_value>20</input_value>
             </inputs>
-            <output>20&#xA;'Fail. You need to improve'&#xA;</output>
+            <output>20&#xA;Fail. You need to improve&#xA;</output>
             <failure>If the grade is smaller(<) than 56, you failed the exam.</failure>
           </test>
         </tests>
