@@ -56,9 +56,8 @@
       </task>
     </tasks>
     <hints>
-      <failure>The grade should be bigger(>) than 56 to pass the exam.</failure>
-      <failure>If the grade is smaller(&lt;) than 56, you failed the exam.</failure>
-      <failure>The grade can be equal(=) to 56 in order to pass the exam.</failure>
+      <hint>The grade should be bigger(>)or equal(=) than 56 to pass the exam.</hint>
+      <hint>If the grade is smaller(&lt;) than 56, you failed the exam.</hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Insert the grade of the exam</chatbotinitmessage>
     <chatbotoutputmessage>Your result is: %s
