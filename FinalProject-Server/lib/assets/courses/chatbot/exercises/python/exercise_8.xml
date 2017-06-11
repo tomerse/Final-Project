@@ -6,7 +6,7 @@
     <topic>Conditions</topic>
     <instructions>The general syntax for a simple if statement is \n
       "if (condition) :\n  
-			code  \n
+		&nbsp &nbsp	code  \n
 	   else:       ==>(will execute only if condtion is false)\n
 			code 
     </instructions>
