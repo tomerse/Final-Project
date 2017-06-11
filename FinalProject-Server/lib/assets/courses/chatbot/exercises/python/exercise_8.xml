@@ -72,9 +72,9 @@
         </argtypes>
       </arg>
     </argstypes>
-    <test_failed_info>Learn more about python arithmetic operators: &lt;a href="https://www.tutorialspoint.com/python/python_if_else.htm" target="_blank">Click here&lt;/a>. 
+    <test_failed_info>Learn more about python arithmetic operators: &lt;a href="https://www.tutorialspoint.com/python/python_if_else.htm" target="_blank" align="middle">Click here&lt;/a>. 
 	\n Use the chatbot on the lower right corner of the screen to check your code.</test_failed_info>
-    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/l41lUjUgLLwWrz20w/giphy.gif" height="200" width="250">&lt;/p> 
+    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/l41lUjUgLLwWrz20w/giphy.gif" height="200" width="250" align="middle">&lt;/p> 
 	\n Use the chatbot on the lower right corner of the screen to check your code.
 	</success_info>
   </exercise>
