@@ -10,12 +10,12 @@
     Condition is either True or False. The next line is performed if the condition is true.
     </instructions>
     <code>def examResult(grade):
-      #enter your code here1
-      #enter your code here2
-        print 'Passed. Exelent!'
-      #enter your code here3
-        print 'Fail. You need to improve'
-      return
+    #enter your code here1
+    #enter your code here2
+       print 'Passed. Exelent!'
+    #enter your code here3
+       print 'Fail. You need to improve'
+    return
     </code>
     <tasks>
       <task>
@@ -51,7 +51,7 @@
         </tests>
       </task>
       <task>
-        <content>Click the submit button</content>
+        <content>Click the submit button.</content>
       </task>
     </tasks>
     <hints>
@@ -60,7 +60,9 @@
       <failure>The grade can be equal(=) to 56 in order to pass the exam.</failure>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Insert the grade of the exam</chatbotinitmessage>
-    <chatbotoutputmessage>Your result is: %s</chatbotoutputmessage>
+    <chatbotoutputmessage>Your result is: %s
+	&lt;p *ngIf="message.contant.search('Exelent')!= -1">&lt;img src="https://media.giphy.com/media/Hc8PMCBjo9BXa/giphy.gif" height="200" width="250">&lt;/p>
+	</chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage></argmessage>
