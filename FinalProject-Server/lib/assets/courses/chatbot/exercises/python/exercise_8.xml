@@ -6,9 +6,9 @@
     <topic>Conditions</topic>
     <instructions>The general syntax for a simple if statement is \n
       if (condition) :\n  		
-		&nbsp &nbsp &nbsp &nbsp	code &lt;font color="yellow">(==>will execute only if condition is true) &lt;/font>  \n
+		&nbsp &nbsp &nbsp &nbsp	code &lt;font color="blue">(==>will execute only if condition is true) &lt;/font>  \n
 	  else: \n 
-		&nbsp &nbsp &nbsp &nbsp	code &lt;font color="yellow">(==>will execute only if condition is false) &lt;/font>
+		&nbsp &nbsp &nbsp &nbsp	code &lt;font color="blue">(==>will execute only if condition is false) &lt;/font>
     </instructions>
     <code>def examResult(grade):
     #enter your code here1
@@ -74,7 +74,7 @@
     </argstypes>
     <test_failed_info>Learn more about python arithmetic operators: &lt;a href="https://www.tutorialspoint.com/python/python_if_else.htm" target="_blank" align="middle">Click here&lt;/a>. 
 	\n Use the chatbot on the lower right corner of the screen to check your code.</test_failed_info>
-    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/l41lUjUgLLwWrz20w/giphy.gif" height="200" width="250" align="middle">&lt;/p> 
+    <success_info>&lt;div>&lt;img src="https://media.giphy.com/media/l41lUjUgLLwWrz20w/giphy.gif" height="200" width="250" align="middle">&lt;/div> 
 	\n Use the chatbot on the lower right corner of the screen to check your code.
 	</success_info>
   </exercise>
