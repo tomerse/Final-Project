@@ -171,3 +171,10 @@ md-list.hintsListElement md-list-item .md-list-item
 
        
     }
+
+.hint-list
+    {
+      padding-left: 0px;
+      padding-bottom:10px;
+      margin-top:10px;
+    }

@@ -37,6 +37,8 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
   @Input()
   courseApp;
 
+  @Input()
+  argsmesssages;
 
   messageList: OneMessageInstance[] = [];
   draftMessage: OneMessageInstance;
@@ -54,10 +56,10 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
   ngAfterContentInit() {
       this.enableEdit=false;
       this.messageList.push(new OneMessageInstance(this.chatbotinitmessage,false, "/assets/images/monkey.png"));
-      this.messageList.push(new OneMessageInstance("Check your code by insert arguments",false, 
-      "/assets/images/monkey.png"));
-       this.messageList.push(new OneMessageInstance('Please enter argument number '+(this.argsCounter+1),false,
-      "/assets/images/monkey.png"));
+       if (this.numofargs !=1)
+       {
+          this.messageList.push(new OneMessageInstance(this.argsmesssages[0],false, "/assets/images/monkey.png"));
+       }
       /*
       if (this.numofargs ==1)
       {
@@ -74,7 +76,7 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
 
   constructor(private chatBotServiceObj: chatBotService,public el: ElementRef) {
   }
-
+ 
   sendMessage(event: any) {
  
     this.messageList.push(new OneMessageInstance(this.draftMessage.contant,true, "/assets/images/male-avatar-1.png"));                            
@@ -87,12 +89,18 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
       .subscribe(
       response =>
       {
-      this.messageList.push(new OneMessageInstance('The output is:  '+response["result"],false,
+      this.messageList.push(new OneMessageInstance(response["result"],false,
       "/assets/images/monkey.png"));
       this.CurrArgsValue=new Array<any>();
       this.argsCounter=0;
-      this.messageList.push(new OneMessageInstance('Please enter argument number '+(this.argsCounter+1),false,
-      "/assets/images/monkey.png"));
+      if (this.numofargs !=1)
+            {
+              this.messageList.push(new OneMessageInstance(this.chatbotinitmessage,false, "/assets/images/monkey.png"));
+              this.messageList.push(new OneMessageInstance(this.argsmesssages[0],false, "/assets/images/monkey.png"));
+            }
+            else{
+               this.messageList.push(new OneMessageInstance(this.chatbotinitmessage,false, "/assets/images/monkey.png"));
+            }
           setTimeout(()=>
           {
           this.scrollToBottom();
@@ -101,8 +109,7 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
     }
     else
     {
-       this.messageList.push(new OneMessageInstance('Please enter argument number '+(this.argsCounter+1),false,
-      "/assets/images/monkey.png"));
+      this.messageList.push(new OneMessageInstance(this.argsmesssages[this.argsCounter],false, "/assets/images/monkey.png"));
     }
     //
     //this.messageInputObj["value"] = '';
@@ -120,25 +127,5 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
       .nativeElement.querySelector('.msg-container-base');
     scrollPane.scrollTop = scrollPane.scrollHeight;
   }
-/*
-  castTypeOf(inputType:string,value:any)
-  {
-      switch(inputType)
-      {
-        case "str":
-        {
-            return <string>value;
-        }
-         case "integer":
-        {
-            return <number>value;
-        }
-        default:
-        {
-          this.isCurrectType=false;
-          return <any>value;
-        }
-      }
-  }
-  */
+
 }

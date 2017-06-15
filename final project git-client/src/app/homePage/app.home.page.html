@@ -1,5 +1,5 @@
 
-<body class="index-page" style="overflow-y: scroll;">
+<body class="index-page" style="overflow-y: scroll;">	
 
 <!-- Navbar will come here -->
 <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
@@ -22,8 +22,8 @@
 			</div>
 			<div class="logo-container" style="position: absolute;top:10px">
 	                <div class="logo">
-	                    <img src="/assets/images/monkey.png" alt="Creative Tim Logo" data-placement="bottom"
-						rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>"
+	                    <img src="/assets/images/monkey.png" alt="Creative Tim Logo" data-placement="bottom" 
+						rel="tooltip" title="<b>Material Kit</b> was Designed & Coded with care by the staff from <b>Creative Tim</b>" 
 						data-html="true">
 	                </div>
 	                <div class="brand">
@@ -42,55 +42,59 @@
 	                <h2>Our courses</h2>
 	            </div>
 
-
+							
 		<md-card class="card-accent md-card-main-page " *ngFor="let course of allCourses;let i =index">
-		<h4 style="text-align: center;">{{course.title}}</h4>
+		<h4 style="text-align: center;">{{course.title}}</h4>	
 				<md-tab-group style="height: 180px; overflow-y: auto;">
   				<md-tab label="General">{{course.general}}</md-tab>
   				<md-tab label="Syllabus">
-						{{course.syllabus}}F
+						{{course.syllabus}}
 			  </md-tab>
 				</md-tab-group>
 			<md-card-actions style="margin-left: auto;">
-     <button id="goToPythonCourse"  md-raised-button (click)="enterCourse(course.currLang,course.courseApp,i)" color="primary">
+     <button #submitButton  md-raised-button (click)="enterCourse(course.currLang,course.courseApp,i)" color="primary">
             Start here!
           </button>
 		  	<br>
 			</md-card-actions>
 			</md-card>
-
+			
 		</div>
 	</div>
-
-
-
+		
     <div class="section section-download">
-	        <div class="container">
-	            <div class="row text-center">
-	                <div class="col-md-8 col-md-offset-2">
-	                    <h2>Do you love this UI Kit?</h2>
-	                    <h4>Cause if you do, it can be yours for FREE. Hit the button below to navigate to Creative Tim where you can find the kit. Start a new project or give an old Bootstrap project a new look!</h4>
-	                </div>
-	                <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
-	                    <a href="http://www.creative-tim.com/product/material-kit" class="btn btn-primary btn-lg">
-							<i class="material-icons">cloud_download</i> Free Download
-						</a>
-	                </div>
-				</div>
-
+				<div class="row text-center" >
+					<h2>The Team</h2>
+						<br/>
+							<br/>
+				<div class="col-sm-2" style="margin-left: 4%;" >
+	                        <h4 style="text-align: center;">Gabi Giladov</h4>
+	                        <img src="/assets/images/gabi.jpg" alt="Raised Image" class="img-circle img-raised img-responsive">
+							<br/>
+							 <h4 style="text-align: center;">Front-end developer</h4>
+	            </div>
+					<div class="col-sm-2 col-sm-offset-1">
+	                         <h4 style="text-align: center;">Tomer Segal</h4>
+	                        <img src="/assets/images/tomer.jpg" alt="Raised Image" class="img-circle img-raised img-responsive">
+											<br/>
+							 <h4 style="text-align: center;">Back-end developer</h4>
+	            </div>
+					<div class="col-sm-2 col-sm-offset-1">
+	                        <h4 style="text-align: center;">Lior Negri</h4>
+	                        <img src="/assets/images/lior.jpg" alt="Raised Image" class="img-circle img-raised img-responsive">
+											<br/>
+							 <h4 style="text-align: center;">Back-end developer</h4>
+	            </div>
+					<div class="col-sm-2 col-sm-offset-1">
+	                        <h4 style="text-align: center;">Asaf Suisa</h4>
+	                        <img src="/assets/images/asaf.jpg" alt="Raised Image" class="img-circle img-raised img-responsive">
+											<br/>
+							 <h4 style="text-align: center;">Front-end developer</h4>
+	            </div>
+				  </div>
 				<br><br>
 
-				<div class="row text-center">
-					<div class="col-md-8 col-md-offset-2">
-	                    <h2>Want more?</h2>
-	                    <h4>We've just launched <a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" target="_blank">Material Kit PRO</a>. It has a huge number of components, sections and example pages. Start Your Development With A Badass Bootstrap UI Kit inspired by Material Design.</h4>
-	                </div>
-					<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">
-						<a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" class="btn btn-upgrade btn-lg" target="_blank">
-							<i class="material-icons">unarchive</i> Upgrade to PRO
-						</a>
-					</div>
-	            </div>
+			
 
 	            <div class="row sharing-area text-center">
 	                    <h3>Thank you for supporting us!</h3>
@@ -112,38 +116,14 @@
 	                    </a>
 	            </div>
 	        </div>
-	    </div>
+	   
 
 
 </div>
     <footer class="footer">
 	    <div class="container">
-	        <nav class="pull-left">
-	            <ul>
-					<li>
-						<a href="http://www.creative-tim.com">
-							Creative Tim
-						</a>
-					</li>
-					<li>
-						<a href="http://presentation.creative-tim.com">
-						   About Us
-						</a>
-					</li>
-					<li>
-						<a href="http://blog.creative-tim.com">
-						   Blog
-						</a>
-					</li>
-					<li>
-						<a href="http://www.creative-tim.com/license">
-							Licenses
-						</a>
-					</li>
-	            </ul>
-	        </nav>
 	        <div class="copyright pull-right">
-	            &copy; 2016, made with <i class="material-icons">favorite</i> by Creative Tim for a better web.
+	            &copy; 2017, made by Ben-Gurion University and Code Monkey. 
 	        </div>
 	    </div>
 	</footer>

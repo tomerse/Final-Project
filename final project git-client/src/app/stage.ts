@@ -16,6 +16,8 @@ export class stage {
 
   argstype:string[];
 
+  argsmesssages:string[];
+
 
   constructor(){
     this.id ='1';
@@ -26,7 +28,7 @@ export class stage {
     this.code= ' '
     this.argstype=[];
     this.numofargs=0;
-
+    this.argsmesssages=[];
   }
 
 

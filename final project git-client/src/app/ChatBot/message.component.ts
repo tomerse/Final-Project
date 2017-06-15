@@ -32,8 +32,10 @@ export class OneMessageInstance
 
 
     <div class="messages" [ngClass]="{'msg-sent': !incoming, 'msg-receive': incoming}">
-      <p>{{message.contant}}</p>
-    </div>
+      <div *ngFor="let oneP of message.contant.split('\\n')">
+        <div [innerHTML]="oneP"></div>
+      </div> 
+    </div> 
     <div class="avatar" *ngIf="message.incoming">
       <img src="{{message.srcImg}}">
     </div>

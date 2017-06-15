@@ -46,7 +46,7 @@ export class Course
 
 })
 export class courseComponent implements OnInit,AfterContentInit{
-  links = ['sdasd','asdaasadasdsadsdassdsad','sadasdsda'];
+  links = [];
    isDarkTheme: boolean = true;
     @ViewChild('editor') editor;
     currCourse:Course= new Course('','','','','');
@@ -82,6 +82,8 @@ export class courseComponent implements OnInit,AfterContentInit{
           {
             console.log(response);
             this.links = response;
+            this.stage.lastLevelId = this.links.length;
+            console.log('last level'+ this.links.length);
           }
 
         );
@@ -95,12 +97,13 @@ export class courseComponent implements OnInit,AfterContentInit{
  onActivate(event){
     this.editor = event['editor'];
     this.stage = event;
-        console.log('sdsadsadads');
-    console.log(event);
     this.stage.lastLevelId = this.links.length;
+    console.log('last level'+ this.links.length); 
+    console.log('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv'); 
+    
  }
 changeToDarkTheme()
-  {
+  { 
     if (this.isDarkTheme)
     {
       this.editor.theme ='eclipse';

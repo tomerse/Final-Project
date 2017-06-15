@@ -10,6 +10,10 @@ export class DialogCompilationComponent {
     title;
     content;
     error;
+    moreInfo;
 
-  constructor(public dialogRef: MdDialogRef<DialogCompilationComponent>) {}
+  constructor(public dialogRef: MdDialogRef<DialogCompilationComponent>) {
+
+  }
 }
+ 

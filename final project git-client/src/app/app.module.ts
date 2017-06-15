@@ -21,6 +21,7 @@ import {HomePageComponent} from './homePage/app.home.page';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouteReuseStrategy } from '@angular/router';
 import { CookieModule } from 'ngx-cookie';
+import { SimpleTimer } from 'ng2-simple-timer';
 import 'hammerjs';
 @NgModule({
   declarations: [
@@ -29,16 +30,17 @@ import 'hammerjs';
     ChatBotComponent,
     ChatMessageComponent,
     DialogCompilationComponent,
-    stageComponent,
+    stageComponent, 
     courseComponent,
    HomePageComponent
+   
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AceEditorModule ,
     HttpModule,
-    JsonpModule,
+    JsonpModule, 
     FlexLayoutModule,
     MaterialModule.forRoot(),
     CookieModule.forRoot(),
@@ -47,7 +49,7 @@ import 'hammerjs';
     RouterModule.forRoot(appRootRoutingList),
    //RouterModule.forChild(appCourseRoutingList)
   ],
-  providers: [{provide: LocationStrategy, useClass:HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass:HashLocationStrategy},SimpleTimer],
   entryComponents: [DialogCompilationComponent],
   bootstrap: [AppComponent]
 })

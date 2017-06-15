@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
  import {CourseStageSevice} from  './app.course-stage-service';
 //import 'ace-builds/src-min/ace';
 import { CookieService } from 'ngx-cookie';
+import {SimpleTimer} from 'ng2-simple-timer';
 
 @Component({
   selector: 'stage-selector', 
@@ -19,6 +20,10 @@ import { CookieService } from 'ngx-cookie';
 
 })
 export class stageComponent implements OnInit,AfterContentInit,OnDestroy{
+//Statistics
+secondCounter:number=0;
+timer0Id: string;
+
   currLang;
   courseApp;
   subscription: Subscription;
@@ -46,7 +51,7 @@ export class stageComponent implements OnInit,AfterContentInit,OnDestroy{
   cookieName:string;
 
   constructor(private stagePageService: StagePageService,public dialog: MdDialog,route:ActivatedRoute,router:Router,
-  private courseStageSevice :CourseStageSevice,private _cookieService:CookieService)
+  private courseStageSevice :CourseStageSevice,private _cookieService:CookieService,private st: SimpleTimer)
   {
     this.activeRoute = route;
     this.currRouter = router;
@@ -57,13 +62,15 @@ export class stageComponent implements OnInit,AfterContentInit,OnDestroy{
  
   }
 
-    openDialog(statuscode:number,error?:string) {
+    openDialog(statuscode:number,caption:string,generic_message:string,error?:string,moreInfo?:string) {
     let config = new MdDialogConfig();
     let dialogRef = this.dialog.open(DialogCompilationComponent,config);
-    dialogRef.componentInstance.title = this.allCompilationStatus.allStatus[statuscode].title;
-    error = error || "\n";
-    dialogRef.componentInstance.content = this.allCompilationStatus.allStatus[statuscode].content;
-     dialogRef.componentInstance.error=error;
+    dialogRef.componentInstance.title = caption;
+    dialogRef.componentInstance.content = generic_message; 
+    error = error || null;
+    dialogRef.componentInstance.error=error;
+    moreInfo = moreInfo || null;
+    dialogRef.componentInstance.moreInfo=moreInfo;
     }
 
   changeToDarkTheme()
@@ -81,6 +88,8 @@ export class stageComponent implements OnInit,AfterContentInit,OnDestroy{
 
   ngOnInit()
   {
+    this.st.newTimer('1sec',1);
+    	this.subscribeTimer0();
     this.sub = this.activeRoute.params.subscribe (params =>
      {
         this.stageIdfromRouting = params['id'];
@@ -116,18 +125,9 @@ export class stageComponent implements OnInit,AfterContentInit,OnDestroy{
       let stageIdfromRoutingCasting = parseInt(this.stageIdfromRouting)-1;
        this.moveNextLevel(stageIdfromRoutingCasting.toString());
     }
+    this.secondCounter =0;
+  
 
-   
-    console.log('cookie1');
-    
-    
-
-   // this._cookieService.put('test6', 'test1');
-  //  let cookie =this._cookieService.get('test7');
-     console.log(cookie);
-    //this._cookieService.put('test5', 'test1',{ path: '/#/course/python/chatbot/',domain:'localhost' });
-    
-    console.log('cookie2');
   } 
 
   ngAfterContentInit() {
@@ -145,11 +145,12 @@ export class stageComponent implements OnInit,AfterContentInit,OnDestroy{
     this.stagePageService.submitYourCode(this.currStage.id,this.writtenCode,this.currLang,this.courseApp).subscribe(
       response =>
       {
+        console.log('stage last' + this.lastLevelId);
           //// add enable edit
         if (response["status"]=='compilation error')
         {
           this.complilationCurrStatus = 'compilation error';
-          this.openDialog(2,response["error"]);
+          this.openDialog(2,response["caption"],response["generic_message"],response["error"],response["more_info"]);
           this.chatbotIsOn =false;
           
         }
@@ -157,7 +158,7 @@ export class stageComponent implements OnInit,AfterContentInit,OnDestroy{
          if (response["status"]=='success')
          {
           this.complilationCurrStatus = 'success';
-          this.openDialog(0);
+           this.openDialog(0,response["caption"],response["generic_message"],null,response["more_info"]);
           this.chatbotIsOn =true;
           this.successLevel = true;
            this.editor.readonly=true;
@@ -171,21 +172,21 @@ export class stageComponent implements OnInit,AfterContentInit,OnDestroy{
              d.setTime(d.getTime() + 1 * 24 * 60 * 60 * 1000);
             if(this.isLastLevel)
             {
-              console.log('hhhhhhhhhhhhhhhhhhhhhhhhhhhh');
+        
               console.log(parseInt(this.currStage.id));
                 this._cookieService.put(this.cookieName, (parseInt(this.currStage.id)).toString(),
                 {domain:'finalprojectcm.herokuapp.com', expires: d });
             }
            else
            {
-             console.log('bbbbbbbbbbbbbbbbbbbbbbbbbbbbb');
+   
              this._cookieService.put(this.cookieName, (parseInt(this.currStage.id)+1).toString(),
                 {domain:'finalprojectcm.herokuapp.com', expires: d });
            }
 
         }
         else{ //unit tests failed
-               this.openDialog(1,response["error"]);
+              this.openDialog(1,response["caption"],response["generic_message"],response["error"],response["more_info"]);
                this.chatbotIsOn =true; 
         }
         console.log("Success Response " + JSON.stringify(response));
@@ -211,6 +212,7 @@ export class stageComponent implements OnInit,AfterContentInit,OnDestroy{
           this.currStage.argstype=response["argstype"];
           this.currStage.numofargs=parseInt(response["numofargs"]);
           this.chatbotinitmessage=response["chatbotinitmessage"];
+          this.currStage.argsmesssages=response["argsmesssages"];
           this.chatbotIsOn=false; 
           this.successLevel=false;
           this.currStage.code= response["code"] ;
@@ -224,6 +226,7 @@ export class stageComponent implements OnInit,AfterContentInit,OnDestroy{
       }); 
          setTimeout(()=> {
             this._isCollapsedContent = true;
+             this.secondCounter =0;
          });
         
 
@@ -269,5 +272,24 @@ export class stageComponent implements OnInit,AfterContentInit,OnDestroy{
     // prevent memory leak when component destroyed
     this.subscription.unsubscribe();
   }
+
+  	timer0callback() {
+		this.secondCounter++;
+	}
+
+  subscribeTimer0() {
+		if (this.timer0Id) {
+			// Unsubscribe if timer Id is defined
+			this.st.unsubscribe(this.timer0Id);
+			this.timer0Id = undefined;
+			console.log('timer 0 Unsubscribed.');
+		} else {
+			// Subscribe if timer Id is undefined
+			this.timer0Id = this.st.subscribe('1sec', e => this.timer0callback());
+			console.log('timer 0 Subscribed.');
+		}
+		console.log(this.st.getSubscription());
+	}
+
 
 }
