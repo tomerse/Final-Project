@@ -68,7 +68,7 @@
     </hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! &lt;font color="blue">Insert a message and boolean value:&lt;/font></chatbotinitmessage>
-    <chatbotoutputmessage>&lt;b> %s &lt;/b></chatbotoutputmessage>
+    <chatbotoutputmessage>The result is: %s</chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage>Insert the message:</argmessage>
@@ -79,7 +79,7 @@
       <arg>
         <argmessage>Insert a boolean value:</argmessage>
         <argtypes>
-          <type>bool</type>
+          <type>str</type>
         </argtypes>
       </arg>
     </argstypes>
