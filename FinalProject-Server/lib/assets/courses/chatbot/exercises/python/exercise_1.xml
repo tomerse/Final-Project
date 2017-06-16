@@ -64,7 +64,7 @@ and open the template in the editor.
 		&lt;/p>
 	  </hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! &lt;font color="blue">What is your name?&lt;/font></chatbotinitmessage>
+    <chatbotinitmessage>Hello! I'm MonkeyBot!&#xA; &lt;font color="blue">What is your name?&lt;/font></chatbotinitmessage>
     <chatbotoutputmessage>Your name is: &lt;font color="red">&lt;b> %s &lt;/b>&lt;/font></chatbotoutputmessage>
     <argstypes>
       <arg>
