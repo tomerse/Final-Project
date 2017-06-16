@@ -1,7 +1,8 @@
 require 'compilers/java_compiler'
 class ChatbotJavaCodeHandler < ChatbotCodeHandler
 
-  JAVANAME = "#{Rails.root}/lib/java_code.java"
+  JAVACOMP = "#{Rails.root}/lib/java_code.java"
+  JAVARUN = "#{Rails.root}/lib/Simple"
 
 
   #@brief execute_code - put code in file with relevant extension (per language) and run it
@@ -9,8 +10,8 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   #@param args_list - string contains list of arguments for execution command
   #@return output of the code
   def execute_code(generated_code, args_list)
-    File.open(JAVANAME, 'w'){|f| f.write generated_code}
-    output = execute_file(JAVANAME, args_list)
+    File.open(JAVARUN, 'w'){|f| f.write generated_code}
+    output = execute_file(JAVARUN, args_list)
     return output
   end
 
@@ -29,8 +30,8 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   #@param generated_code - code ready for compilation
   #@return code compilation result and path to compiled file
   def compile_code(generated_code)
-    File.open(JAVANAME, 'w'){|f| f.write generated_code}
-    (comp_res, file_to_run) = compile_file(JAVANAME)
+    File.open(JAVACOMP, 'w'){|f| f.write generated_code}
+    (comp_res, file_to_run) = compile_file(JAVACOMP)
     comp_res = parse_compilation_error(comp_res)
     return [comp_res, file_to_run]
   end
@@ -41,7 +42,7 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   def compile_file(file_to_run)
     compiler = JavaCompiler.new
     comp_res = compiler.compile_file(file_to_run)
-    return [comp_res, file_to_run]
+    return [comp_res, JAVARUN]
   end
 
   #@brief parse_compilation_error
@@ -50,21 +51,7 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   #NOT_MANDATORY
   def parse_compilation_error(error)
     parsed_error = error
-    if (error <=> "") != 0
-      #Syntax Error - remove the file name
-      if (error.split(" ")[0] <=> "File" ) == 0
-        parsed_error = error.split(",")[1,]
-      else
-        #Indentation Error - remove the file name
-        if (error.split("(")[1] <=> "" ) != 0
-          parsed_error = error.split("(")[0] + "("
-          parenthesis = error.split("(")[1]
-          parenthesis_no_file_name = parenthesis.split(", ")[1]
-          parsed_error += parenthesis_no_file_name
-        end
-      end
 
-    end
     return parsed_error
   end
 
@@ -75,12 +62,6 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   def parse_runtime_error(output)
     is_err = false
     final_out = output
-    #NameError
-    name_error = output.split("NameError:")[1]
-    if name_error != nil and (name_error <=> "") != 0
-      is_err = true
-      final_out = name_error
-    end
     return is_err, final_out
   end
 
@@ -90,10 +71,15 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   #@return - the function name
   def get_func_name(code)
     func_name = ""
-    parsed_code = code.split(/\W+/)
-    if (parsed_code[0] <=> "static") == 0
-      func_name = parsed_code[1]
+    paranthesis_index = code.index('(')
+    i=1
+    char = code[paranthesis_index-i]
+    while char != ' '
+      func_name += char
+      i = i+1
+      char = code[paranthesis_index-i]
     end
+    func_name.reverse!
     return func_name
   end
 
@@ -107,14 +93,16 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   def generate_code(input_code, func_name, num_of_args, args_types)
     # generate arguments list code
     args_list_code = generate_args_list_code(num_of_args)
+    # class name
+    generated_code = "class Simple{\n"
     # client's code
-    generated_code = input_code + "\n\n"
+    generated_code += input_code + "\n\n"
     # import libraries
-    generated_code += "import sys\n\n"
+    #generated_code += "import sys\n\n"
     # main function - parse arguments and call the user function
     generated_code += generate_main_func_code(func_name, num_of_args, args_list_code, args_types)
     # call to main
-    generated_code += "\nif __name__ == \"__main__\":\n\tmain()"
+    generated_code += "\n}"
     return generated_code
   end
 
@@ -127,20 +115,20 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   #@return - code of main function
   def generate_main_func_code(func_name, num_of_args, args_list_code, args_types)
     # start of main function
-    caller_func_code = "def main():\n\t"
+    caller_func_code = "public static void main(String args[]){\n"
     if num_of_args == 0
       # call to function without params
       caller_func_code += func_name + "()\n"
     else
       # get input length
-      caller_func_code += "num_of_args = len(sys.argv)\n\t"
+      caller_func_code += "int num_of_args = args.length;\n\t"
       # preparing list of arguments
-      caller_func_code += "params = [None] * (num_of_args - 1)"
+      #caller_func_code += "params = [None] * (num_of_args - 1)"
       # parse all arguments
-      args_parsing_code = parse_args(args_types)
-      caller_func_code += args_parsing_code
+      #args_parsing_code = parse_args(args_types)
+      #caller_func_code += args_parsing_code
       # call to function with params
-      caller_func_code += "\t" + func_name + "(" + args_list_code + ")\n"
+      caller_func_code += func_name + "(" + args_list_code + ");\n}"
     end
     return caller_func_code
   end
@@ -155,29 +143,8 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
     # for every argument
     for i in 0..num_of_args-1
       arg = args_types[i]
-      # for every possible type of the argument
-      num_of_possible_types = arg.length
-      indentation_str = "\n"
-      for j in 0..num_of_possible_types-2
-        for k in 0..j
-          indentation_str += "\t"
-        end
-        parsing_code += indentation_str + "try:"
-        parsing_code += indentation_str + "\t" + "params[" + i.to_s() + "] = " + arg[j] + "(sys.argv[" + (i+1).to_s() +"])"
-        parsing_code += indentation_str
-        if j<num_of_possible_types-1
-          parsing_code += "except:"
-        else
-          parsing_code += "try:"
-        end
-      end
-      indentation_str += "\t"
-      parsing_code += indentation_str
+      parsing_code += arg.to_s" params[" + i.to_s() + "]"
 
-      parsing_code += "try:"
-      parsing_code += indentation_str + "\t" + "params[" + i.to_s() + "] = " + arg[num_of_possible_types-1] + "(sys.argv[" + (i+1).to_s() +"])"
-      parsing_code += indentation_str + "except:"
-      parsing_code += indentation_str + "\t" + "params[" + i.to_s() + "] = " + "str"+ "(sys.argv[" + (i+1).to_s() +"])\n"
     end
     return parsing_code
   end
@@ -188,9 +155,9 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   #@param num_of_args - number of arguments for func_name
   #@return - string of arguments in correct types
   def generate_args_list_code(num_of_args)
-    params_list_str = "params[0]"
+    params_list_str = "args[0]"
     for i in 1..num_of_args-1
-      params_list_str += ", " "params[" + i.to_s + "]"
+      params_list_str += ", " "args[" + i.to_s + "]"
     end
     return params_list_str
   end

@@ -8,6 +8,7 @@ class CourseFactory
 
   #Programming Languages
   PYTHON = 'python'
+  JAVA = 'java'
 
   # Exercise configuration files path
   EXERCISES_FOLDER = 'exercises'
@@ -42,6 +43,10 @@ class CourseFactory
         #check programming language for chatbot course
         if language_name == PYTHON
           return ChatbotPythonCodeHandler.new(language_name, exercise_reader)
+        else
+          if language_name == JAVA
+            return ChatbotJavaCodeHandler.new(language_name, exercise_reader)
+          end
         end
         raise ArgumentError, 'Undefined language_name = ' + language_name
     end

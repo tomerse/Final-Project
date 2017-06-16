@@ -15,13 +15,11 @@ and open the template in the editor.
       For example, to print to the screen the phrase Hello World!.&lt;font color="red"> Write &lt;/font> down the expression print &lt;b>"Hello World!"&lt;/b>.
 	    &lt;p>&lt;img src="/assets/images/monkey.png">&lt;/p>
     </instructions>
-    <code>class test
-      {
-        public static void printName(String name)
-        {
-            System.out.println(#enter your code here);
-        }
-      }
+    <code>public static void printName(String name)
+{
+  System.out.println(#enter your code here);
+  return;
+}
     </code>
     <tasks>
       <task>
@@ -74,7 +72,9 @@ and open the template in the editor.
         </argtypes>
       </arg>
     </argstypes>
-    <test_failed_info>test failed </test_failed_info>
-    <success_info>success </success_info>
+    <test_failed_info>test failed - Use the chatbot on the lower right corner of the screen to check your code.</test_failed_info>
+    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/l4q7TIW8nEZYOJUf6/giphy.gif" height="200" width="250">&lt;/p>
+      \n Use the chatbot on the lower right corner of the screen to check your code.
+    </success_info>
   </exercise>
 </root>
