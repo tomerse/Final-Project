@@ -10,9 +10,9 @@
     </instructions>
     <code>def logicOps(var):
       my_bool = #enter you code here1
-      OR = #enter you code here2
+      OR = my_bool #enter you code here2
       print #enter you code here4
-      AND = #enter you code here3
+      AND = my_bool #enter you code here3
       print #enter you code here4
       return
     </code>
@@ -62,7 +62,7 @@
       <arg>
         <argmessage></argmessage>
         <argtypes>
-          <type>bool</type>
+          <type>str</type>
         </argtypes>
       </arg>
     </argstypes>
