@@ -8,7 +8,6 @@
     &lt;br>In addition, Python allows us to comment out a section of multiple lines by putting '&lt;font color="blue">&lt;b> """ &lt;/b>&lt;/font>' at the beginning and the end of the section.&lt;br>   
     </instructions>
     <code>def printNameWithComment(name):
-      print #enter your code here
       """
       enter
       your
