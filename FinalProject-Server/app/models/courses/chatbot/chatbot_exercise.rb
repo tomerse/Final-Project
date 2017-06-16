@@ -1,12 +1,13 @@
 class ChatbotExercise
 
-  attr_accessor :id,:topic,:instructions,:tasks,:hints,:code,
+  attr_accessor :id,:topic,:instructions, :generaltask, :tasks,:hints,:code,
                 :chatbotinitmessage, :chatbotoutputmessage, :argsmesssages, :numofargs,
                 :comp_error_info, :test_failed_info, :success_info
     def initialize(params=[])
       @id = params["id"]
       @topic = params["topic"]
       @instructions = params["instructions"]
+      @generaltask = params["generaltask"]
       @tasks = params["tasks"]
       @hints = params["hints"]
       @code = params["code"]
