@@ -10,7 +10,7 @@ and open the template in the editor.
   <exercise>
     <id>4</id>
     <topic>Variables</topic>
-    <instructions>Creating applications, games, and web pages all involve storing and working with different types of data. We are using variables to store the data and be able to access it in future.&lt;br>Every variable has a name and value. Assignment to the variable done by &lt;font color="blue">&lt;b>'='&lt;/b>&lt;/font>.&lt;br>For example:&lt;br>
+    <instructions>Creating applications, games, and web pages all involve storing and working with different types of data. We are using variables to store the data and be able to access it in future.&lt;br>Every variable has a name and value. Assignment to the variable done by &lt;font color="green">&lt;b>'='&lt;/b>&lt;/font>.&lt;br>For example:&lt;br>
     &lt;p>&lt;img src="/assets/images/s4_instructions.png">&lt;/p>
       &lt;br>The variable &lt;b>'num'&lt;/b> now stores the number &lt;b>5&lt;/b>.
       &lt;br>The variable &lt;b>'string'&lt;/b> now stores the number &lt;b>'Hello World'&lt;/b>.
@@ -24,7 +24,7 @@ and open the template in the editor.
     </code>
     <tasks>
       <task>
-        <content>Set the variable my_number equal to the value of variable: var..</content>
+        <content>Set the variable my_number equal to the value of variable: var.</content>
       </task>
       <task>
         <content>Print the variable my_number.</content>
@@ -57,7 +57,7 @@ and open the template in the editor.
       </task>
     </tasks>
     <hints>
-      <hint>Write the variable name on the left side of assignment operator &lt;font color="blue">&lt;b>'='&lt;/b>&lt;/font>, and the value on the right.
+      <hint>Write the variable name on the left side of assignment operator &lt;font color="green">&lt;b>'='&lt;/b>&lt;/font>, and the value on the right.
       </hint>
     <hint>Follow the instructions:
     &lt;p>
@@ -66,7 +66,7 @@ and open the template in the editor.
     </hint>
     </hints>
     <chatbotinitmessage>Hi! Let's see if your variables assigned correcly!&#xAPlease insert a number:</chatbotinitmessage>
-    <chatbotoutputmessage>Your number and string values are: &lt;b> %s &lt;/b></chatbotoutputmessage>
+    <chatbotoutputmessage>Your number and string values are: %s </chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage></argmessage>

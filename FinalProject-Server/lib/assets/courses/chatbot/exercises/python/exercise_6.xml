@@ -57,7 +57,7 @@
     </hint>
     </hints>
     <chatbotinitmessage>Hi! Let's see if you succeeded!&#xA</chatbotinitmessage>
-    <chatbotoutputmessage>Your two boolean values are: &lt;b> %s &lt;/b></chatbotoutputmessage>
+    <chatbotoutputmessage>Your two boolean values are: %s</chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage></argmessage>

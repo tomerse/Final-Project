@@ -4,8 +4,8 @@
   <exercise>
     <id>3</id>
     <topic>Multi Line Comments</topic>
-    <instructions>In the previous exercise we learned how to use single line comments. What if we want to comment out multiple lines?&lt;br>One way is to start &lt;u>every&lt;/u> line with a &lt;font color="blue">&lt;b>'#'&lt;/b>&lt;/font>.
-    &lt;br>In addition, Python allows us to comment out a section of multiple lines by putting '&lt;font color="blue">&lt;b> """ &lt;/b>&lt;/font>' at the beginning and the end of the section.&lt;br>   
+    <instructions>In the previous exercise we learned how to use single line comments. What if we want to comment out multiple lines?&lt;br>One way is to start &lt;u>every&lt;/u> line with a &lt;font color="green">&lt;b>'#'&lt;/b>&lt;/font>.
+    &lt;br>In addition, Python allows us to comment out a section of multiple lines by putting '&lt;font color="green">&lt;b> """ &lt;/b>&lt;/font>' at the beginning and the end of the section.&lt;br>   
     </instructions>
     <code>def printNameWithComment(name):
       """
@@ -59,7 +59,8 @@
       </task>
     </tasks>
     <hints>
-      <hint>Replace predefined comment between '&lt;font color="blue">&lt;b> """ &lt;/b>&lt;/font>' with your comment.</hint>
+      <hint>Replace predefined comment between '&lt;font color="green">&lt;b> """ &lt;/b>&lt;/font>' with your comment.
+      </hint>
       <hint>You should print the variable "name", using the "print" command. Type this in to get the right answer:
     &lt;p>
       &lt;img src="/assets/images/s1_hints_1.png">

@@ -57,7 +57,7 @@
       <hint>Remember to capitalize True</hint>
     </hints>
     <chatbotinitmessage>Hi! Let's see if you are a logic master!&#xA</chatbotinitmessage>
-    <chatbotoutputmessage>Your operations results are: &lt;b> %s &lt;/b></chatbotoutputmessage>
+    <chatbotoutputmessage>Your operations results are: %s</chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage></argmessage>

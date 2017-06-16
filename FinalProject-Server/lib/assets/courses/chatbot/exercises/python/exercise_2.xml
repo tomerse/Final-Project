@@ -7,7 +7,7 @@
     <instructions>Another important element in a programming language is the use of comments.
       A comment helps the developer to document his implementation.
       A commented code should be clear and maintainable.
-      &lt;br>In Python we use &lt;font color="blue">&lt;b>'#'&lt;/b>&lt;/font> at the beginning of a line, in order to comment out a single line of code.
+      &lt;br>In Python we use &lt;font color="green">&lt;b>'#'&lt;/b>&lt;/font> at the beginning of a line, in order to comment out a single line of code.
     </instructions>
     <code>def printNameWithComment(name):
       #enter your comment here
