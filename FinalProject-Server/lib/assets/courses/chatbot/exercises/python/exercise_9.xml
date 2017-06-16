@@ -7,7 +7,7 @@
     <instructions>Like the if statement, &lt;b>while loop&lt;/b> statement executes the code inside of it if the condition is &lt;font color="green">True&lt;/font>.
     &lt;br>The while loop will continue to execute as long as the condition is true.
     &lt;br>
-    &lt;p>&lt;img src="/assets/images/s9_instructions.png">&lt;/p>
+    &lt;p>&lt;img src="/assets/images/s9_instructions.jpg">&lt;/p>
     </instructions>
     <code>def printMultiMessage(message):
       num = 1
@@ -49,12 +49,12 @@
     <hints>
       <hint>Make sure the condition is right:
     &lt;p>
-      &lt;img src="/assets/images/s9_hints_1.png">
+      &lt;img src="/assets/images/s9_hints_1.jpg">
     &lt;/p>
     </hint>
     <hint>Make sure to increase the value of 'num' by 1:
     &lt;p>
-      &lt;img src="/assets/images/s9_hints_2.png">
+      &lt;img src="/assets/images/s9_hints_2.jpg">
     &lt;/p>
     </hint>
     </hints>
