@@ -10,7 +10,7 @@
     <code>def summary(message):
       # Add your comment
       print 'First Part Summary'
-      bool condition = 
+      condition = 
       num = 1
       while num &lt;= : # Fill in the condition
         if :
@@ -69,11 +69,11 @@
         &lt;/p>
     </hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! &lt;font color="blue">Insert a message and boolean value:&lt;/font></chatbotinitmessage>
+    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! &lt;font color="blue">Insert a message:&lt;/font></chatbotinitmessage>
     <chatbotoutputmessage>The result is: %s</chatbotoutputmessage>
     <argstypes>
       <arg>
-        <argmessage>Insert the message:</argmessage>
+        <argmessage></argmessage>
         <argtypes>
           <type>str</type>
         </argtypes>
