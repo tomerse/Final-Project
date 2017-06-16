@@ -10,8 +10,10 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   #@param args_list - string contains list of arguments for execution command
   #@return output of the code
   def execute_code(generated_code, args_list)
-    File.open(JAVARUN, 'w'){|f| f.write generated_code}
-    output = execute_file(JAVARUN, args_list)
+    #File.open(JAVARUN, 'w'){|f| f.write generated_code}
+    #output = execute_file(JAVARUN, args_list)
+    comp_res, file_to_run = compile_code(generated_code)
+    output = execute_file(file_to_run, args_list)
     return output
   end
 
