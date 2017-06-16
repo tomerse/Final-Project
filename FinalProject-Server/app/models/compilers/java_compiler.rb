@@ -27,11 +27,14 @@ class JavaCompiler
   #@return running result
   def run_file(filepath, arg_list, timeout)
     code_res = 'process timeout error'
+    file_name = filepath.split('/').last
+    filepath = filepath.chomp(file_name)
     begin
       start_time = Time.now
       Timeout.timeout(timeout) do
         # 2>&1 means redirecting stderr to stdout (to catch exceptions from Python code as well)
-        code_res = `java #{filepath} #{arg_list} 2>&1`
+        #code_res = `java #{filepath} #{arg_list} 2>&1`
+        code_res = `java -cp #{filepath} #{file_name} #{arg_list} 2>&1`
         break if Time.now < start_time + timeout
       end
     rescue => ex
