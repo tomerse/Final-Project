@@ -22,6 +22,7 @@ and open the template in the editor.
 }
     </code>
     <tasks>
+      <generaltask>Implement the function 'printName' by completing the following tasks:</generaltask>
       <task>
         <content>Print the variable "name"</content>
         <tests>
