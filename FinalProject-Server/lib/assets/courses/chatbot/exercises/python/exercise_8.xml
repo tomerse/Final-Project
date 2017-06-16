@@ -58,7 +58,7 @@
     <hints>
       <hint>The grade should be bigger or equal than 56 to pass the exam:
       &lt;p>
-      &lt;img src="/assets/images/s8_hints_1.png">
+      &lt;img src="/assets/images/s8_hints_1.jpg">
       &lt;/p>
       </hint>
       <hint>If the grade is smaller(&lt;) than 56, you failed the exam.</hint>
