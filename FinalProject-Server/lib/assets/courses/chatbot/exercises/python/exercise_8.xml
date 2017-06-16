@@ -26,7 +26,7 @@
         <content>Print 'Passed. Exelent!' only if the grade is bigger or equal to 56.</content>
       </task>
       <task>
-        <content>Print 'Fail. You need to improve' only if if the grade is smaller than 56.</content>
+        <content>Print 'Fail. You need to improve' only if the grade is smaller than 56.</content>
       <tests>
           <test>
             <inputs>
