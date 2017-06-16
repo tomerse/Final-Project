@@ -11,7 +11,7 @@
       # Add your comment
       print 'First Part Summary'
       num = 1
-      while num <= :  # Fill in the condition
+      while num &lt;= :  # Fill in the condition
         if :
             print # Print the message
         num = # Num increment
@@ -53,20 +53,18 @@
       </task>
     </tasks>
     <hints>
-      <hint>Make sure the loop condition is right:
-    &lt;p>
-      &lt;img src="/assets/images/s9_hints_1.png">
-    &lt;/p>
-    </hint>
-    <hint>Make sure the if condition is right:
-    &lt;p>
-      &lt;img src="/assets/images/s10_hints_1.png">
-    &lt;/p>
-    </hint>
-    <hint>Make sure to increase the value of 'num' by 1:
-    &lt;p>
-      &lt;img src="/assets/images/s9_hints_1.png">
-    &lt;/p>
+      <hint>Make sure the loop condition is right:&lt;p>
+        &lt;img src="/assets/images/s9_hints_1.png">
+        &lt;/p>
+      </hint>
+      <hint>Make sure the if condition is right:&lt;p>
+        &lt;img src="/assets/images/s10_hints_1.png">
+        &lt;/p>
+      </hint>
+      <hint>Make sure to increase the value of 'num' by 1:
+        &lt;p>
+        &lt;img src="/assets/images/s9_hints_1.png">
+        &lt;/p>
     </hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! &lt;font color="blue">Insert a message and boolean value:&lt;/font></chatbotinitmessage>

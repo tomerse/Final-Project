@@ -60,7 +60,7 @@
     <chatbotoutputmessage>Your two boolean values are: %s</chatbotoutputmessage>
     <argstypes>
       <arg>
-        <argmessage></argmessage>
+        <argmessage>Insert 'True' or 'False':</argmessage>
         <argtypes>
           <type>bool</type>
         </argtypes>
