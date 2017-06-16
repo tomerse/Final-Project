@@ -62,7 +62,7 @@
       <arg>
         <argmessage>Insert 'True' or 'False':</argmessage>
         <argtypes>
-          <type>bool</type>
+          <type>str</type>
         </argtypes>
       </arg>
     </argstypes>
