@@ -10,7 +10,7 @@ and open the template in the editor.
   <exercise>
     <id>4</id>
     <topic>Variables</topic>
-    <instructions>Creating applications, games, and web pages all involve storing and working with different types of data. We are using variables to store the data and be able to access it in future.&lt;br>Every variable has a name and value. Assignment to the variable done by &lt;font color="green">&lt;b>'='&lt;/b>&lt;/font>.&lt;br>For example:&lt;br>
+    <instructions>Creating applications, games, and web pages all involve storing and working with different types of data. We are using variables to store the data and be able to access it in future.&lt;br>Every variable has a name and value. Assignment to the variable done by the &lt;font color="green">&lt;b>'='&lt;/b>&lt;/font>.&lt;br>For example:&lt;br>
     &lt;p>&lt;img src="/assets/images/s4_instructions.png">&lt;/p>
       &lt;br>The variable &lt;b>'num'&lt;/b> now stores the number &lt;b>5&lt;/b>.
       &lt;br>The variable &lt;b>'string'&lt;/b> now stores the number &lt;b>'Hello World'&lt;/b>.

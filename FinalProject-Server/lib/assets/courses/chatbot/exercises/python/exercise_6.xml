@@ -6,7 +6,7 @@
     <topic>Booleans</topic>
     <instructions>In addition to numbers and strings, there are another types of data we use in programming. One of them is called a &lt;b>boolean&lt;/b>. &lt;br>A boolean have two values: &lt;font color="green">&lt;b>True&lt;/b>&lt;/font> or &lt;font color="red">&lt;b>False&lt;/b>&lt;/font>. &lt;br>You can use variables to store booleans like this:
       &lt;br>
-    &lt;p>&lt;img src="/assets/images/s6_instructions.png">&lt;/p>
+    &lt;p>&lt;img src="/assets/images/s6_instructions.jpg">&lt;/p>
     </instructions>
     <code>def useBooleans(var):
       my_bool = #enter you code here1
