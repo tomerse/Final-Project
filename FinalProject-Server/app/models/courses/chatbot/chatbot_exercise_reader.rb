@@ -28,6 +28,7 @@ class ChatbotExerciseReader < ExerciseReader
     topic = Xml.get_element(exercise_file,'topic')
     instructions = Xml.get_element(exercise_file,'instructions')
     code = Xml.get_element(exercise_file,'code')
+    generaltask = Xml.get_element(exercise_file,'generaltask')
     tasks = Xml.get_elements(exercise_file, 'tasks//task','content') #['task1','task2']
     hints = Xml.get_elements(exercise_file,'exercise','hints') #['hint1','hint2']
     chatbotinitmessage = Xml.get_element(exercise_file,'chatbotinitmessage')
@@ -37,7 +38,7 @@ class ChatbotExerciseReader < ExerciseReader
     args_messages = Xml.get_elements(exercise_file, 'argstypes//arg','argmessage') #['argmessage1','argmessage2']
     test_failed_info = Xml.get_element(exercise_file, 'test_failed_info')
     success_info = Xml.get_element(exercise_file, 'success_info')
-    params = Hash["id"=>id, "topic"=>topic, "instructions"=>instructions, "code"=>code,
+    params = Hash["id"=>id, "topic"=>topic, "instructions"=>instructions, "code"=>code, "generaltask"=>generaltask,
                 "tasks"=>tasks.flatten, "hints"=>hints.flatten, "chatbotinitmessage"=>chatbotinitmessage,
                   "chatbotoutputmessage"=>chatbotoutputmessage, "argsmesssages" => args_messages.flatten,
                   "numofargs"=>numofargs, "test_failed_info"=>test_failed_info, "success_info"=>success_info]
