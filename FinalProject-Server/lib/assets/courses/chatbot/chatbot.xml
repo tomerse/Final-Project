@@ -19,7 +19,7 @@ and open the template in the editor.
     </comp_error>
     <test_failed>
       <caption>Task Not Completed</caption>
-      <generic_message>Your code is almost correct! Let me help you with a little clue.</generic_message>
+      <generic_message>Your code is almost correct! Let me help you with a little clue:</generic_message>
       <specific_message></specific_message>
     </test_failed>
   </check_exercise>
