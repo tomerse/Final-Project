@@ -10,8 +10,9 @@
     <code>def summary(message, bool_var):
       # Add your comment
       print 'First Part Summary'
+      bool result = 
       num = 1
-      while num &lt;= :  # Fill in the condition
+      while num &lt;= : # Fill in the condition
         if :
             print # Print the message
         num = # Num increment
@@ -20,6 +21,9 @@
     <tasks>
       <task>
         <content>Write a single-line comment on line 1 to describe your implementation.</content>
+      </task>
+      <task>
+        <content>Set the variable result equal to the value of 'bool_var'.</content>
       </task>
       <task>
         <content>Fill in the condition so the code will be executed as long as 'num' is smaller or equal to 3.</content>
