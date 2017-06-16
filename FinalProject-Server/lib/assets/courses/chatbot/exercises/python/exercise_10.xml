@@ -7,10 +7,10 @@
     <instructions>During first part of the course we have learned about:&lt;br>
     Comments, Variables, Operators, Conditions and Loops. 
     </instructions>
-    <code>def summary(message, bool_var):
+    <code>def summary(message):
       # Add your comment
       print 'First Part Summary'
-      bool result = 
+      bool condition = 
       num = 1
       while num &lt;= : # Fill in the condition
         if :
@@ -23,13 +23,13 @@
         <content>Write a single-line comment on line 1 to describe your implementation.</content>
       </task>
       <task>
-        <content>Set the variable result equal to the value of 'bool_var'.</content>
+        <content>Set the variable 'condition' to be True.</content>
       </task>
       <task>
         <content>Fill in the condition so the code will be executed as long as 'num' is smaller or equal to 3.</content>
       </task>
       <task>
-        <content>Print the variable 'message' every loop iteration only if 'bool_var' is True.</content>
+        <content>Print the variable 'message' every loop iteration only if 'condition' is True.</content>
       </task>
       <task>
         <content>Increase the value of 'num' to avoid infinite loop.</content>
@@ -37,7 +37,6 @@
           <test>
             <inputs>
               <input_value>Test</input_value>
-              <input_value>True</input_value>
             </inputs>
             <output>First Part Summary&#xA;Test&#xA;Test&#xA;Test&#xA;</output>
             <failure>Make sure to increase the value of 'num' by 1.</failure>
@@ -45,9 +44,8 @@
           <test>
             <inputs>
               <input_value>MoreTest</input_value>
-              <input_value>False</input_value>
             </inputs>
-            <output>First Part Summary&#xA;</output>
+            <output>First Part Summary&#xA;MoreTest&#xA;MoreTest&#xA;MoreTest&#xA;</output>
             <failure>Make sure the condition of while loop is right.</failure>
           </test>
         </tests>
@@ -67,7 +65,7 @@
       </hint>
       <hint>Make sure to increase the value of 'num' by 1:
         &lt;p>
-        &lt;img src="/assets/images/s9_hints_1.png">
+        &lt;img src="/assets/images/s9_hints_2.png">
         &lt;/p>
     </hint>
     </hints>
@@ -76,12 +74,6 @@
     <argstypes>
       <arg>
         <argmessage>Insert the message:</argmessage>
-        <argtypes>
-          <type>str</type>
-        </argtypes>
-      </arg>
-      <arg>
-        <argmessage>Insert a boolean value:</argmessage>
         <argtypes>
           <type>str</type>
         </argtypes>
