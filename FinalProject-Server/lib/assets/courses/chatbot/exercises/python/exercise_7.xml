@@ -5,8 +5,7 @@
     <id>7</id>
     <topic>Logical Operators</topic>
     <instructions>Two or more relations can be logically joined using the logical operators &lt;b>AND&lt;/b> and &lt;b>OR&lt;/b>. 
-      &lt;br>The ampersand &lt;font color="red">&lt;b>'&'&lt;/b>&lt;/font> symbol is a valid substitute for the logical operator AND. 
-      &lt;br>The vertical bar &lt;font color="red">&lt;b>'|'&lt;/b>&lt;/font> is a valid substitute for the logical operator OR. 
+      &lt;br>The words &lt;font color="green">&lt;b>'and', 'or'&lt;/b>&lt;/font> are used as operators.
       &lt;br>For 'AND' - both relations must be true for the complex expression to be true. For 'OR' - if either relation is true, the complex expression is true.
     </instructions>
     <code>def logicOps(var):
@@ -22,13 +21,13 @@
         <content>Set the variable my_bool equal to the value: True.</content>
       </task>
       <task>
-        <content>Combine the given argument 'var' with 'my_bool' by OR( | ) operator.</content>
+        <content>Combine the given argument 'var' with 'my_bool' by or operator.</content>
       </task>
       <task>
         <content>Print the variable: OR.</content>
       <tests>
       <task>
-        <content>Combine the given argument 'var' with 'my_bool' by AND( & ) operator.</content>
+        <content>Combine the given argument 'var' with 'my_bool' by and operator.</content>
       </task>
       <task>
         <content>Print the variable: AND.</content>
@@ -54,7 +53,8 @@
       </task>
     </tasks>
     <hints>
-      <hint>Remember to capitalize True</hint>
+      <hint>Remember to capitalize True.</hint>
+      <hint>Type the operators in lowcase.</hint>
     </hints>
     <chatbotinitmessage>Hi! Let's see if you are a logic master!&#xA</chatbotinitmessage>
     <chatbotoutputmessage>Your operations results are: %s</chatbotoutputmessage>
