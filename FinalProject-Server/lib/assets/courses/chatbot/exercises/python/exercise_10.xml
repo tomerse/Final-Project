@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+  <exercise>
+    <id>10</id>
+    <topic>Summary</topic>
+    <instructions>During first part of the course we have learned about:&lt;br>
+    Comments, Variables, Operators, Conditions and Loops. 
+    </instructions>
+    <code>def summary(message, bool_var):
+      # Add your comment
+      print 'First Part Summary'
+      num = 1
+      while num <= :  # Fill in the condition
+        if :
+            print # Print the message
+        num = # Num increment
+      return
+    </code>
+    <tasks>
+      <task>
+        <content>Write a single-line comment on line 1 to describe your implementation.</content>
+      </task>
+      <task>
+        <content>Fill in the condition so the code will be executed as long as 'num' is smaller or equal to 3.</content>
+      </task>
+      <task>
+        <content>Print the variable 'message' every loop iteration only if 'bool_var' is True.</content>
+      </task>
+      <task>
+        <content>Increase the value of 'num' to avoid infinite loop.</content>
+      <tests>
+          <test>
+            <inputs>
+              <input_value>Test</input_value>
+              <input_value>True</input_value>
+            </inputs>
+            <output>First Part Summary&#xA;Test&#xA;Test&#xA;Test&#xA;</output>
+            <failure>Make sure to increase the value of 'num' by 1.</failure>
+          </test>
+          <test>
+            <inputs>
+              <input_value>MoreTest</input_value>
+              <input_value>False</input_value>
+            </inputs>
+            <output>First Part Summary&#xA;</output>
+            <failure>Make sure the condition of while loop is right.</failure>
+          </test>
+        </tests>
+      </task>
+      <task>
+        <content>Click the submit button.</content>
+      </task>
+    </tasks>
+    <hints>
+      <hint>Make sure the loop condition is right:
+    &lt;p>
+      &lt;img src="/assets/images/s9_hints_1.png">
+    &lt;/p>
+    </hint>
+    <hint>Make sure the if condition is right:
+    &lt;p>
+      &lt;img src="/assets/images/s10_hints_1.png">
+    &lt;/p>
+    </hint>
+    <hint>Make sure to increase the value of 'num' by 1:
+    &lt;p>
+      &lt;img src="/assets/images/s9_hints_1.png">
+    &lt;/p>
+    </hint>
+    </hints>
+    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! &lt;font color="blue">Insert a message and boolean value:&lt;/font></chatbotinitmessage>
+    <chatbotoutputmessage>&lt;b> %s &lt;/b></chatbotoutputmessage>
+    <argstypes>
+      <arg>
+        <argmessage>Insert the message:</argmessage>
+        <argtypes>
+          <type>str</type>
+        </argtypes>
+      </arg>
+      <arg>
+        <argmessage>Insert a boolean value:</argmessage>
+        <argtypes>
+          <type>bool</type>
+        </argtypes>
+      </arg>
+    </argstypes>
+     <test_failed_info>Learn more about python loops: &lt;a href="https://www.tutorialspoint.com/python/python_loops.htm" target="_blank">Click here&lt;/a>. 
+    \n Use the chatbot on the lower right corner of the screen to check your code.
+    </test_failed_info>
+    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/dsKnRuALlWsZG/giphy.gif" height="200" width="250" align="middle">&lt;/p> 
+  </success_info>
+  </exercise>
+</root>

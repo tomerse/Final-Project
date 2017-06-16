@@ -3,14 +3,11 @@
 <root>
   <exercise>
     <id>3</id>
-    <topic>Multi Lines comments</topic>
-    <instructions>In the previous exercise we learned how to use single line comments.
-      So what if we want to comment out multiple lines?
-      One way is to start every line with a '#'.
-      In addition, Python allows us to comment out a section of multiple lines by putting ' """ '
-      at the beginning and the end of the section.
+    <topic>Multi Line Comments</topic>
+    <instructions>In the previous exercise we learned how to use single line comments. What if we want to comment out multiple lines?&lt;br>One way is to start &lt;u>every&lt;/u> line with a &lt;font color="blue">&lt;b>'#'&lt;/b>&lt;/font>.
+    &lt;br>In addition, Python allows us to comment out a section of multiple lines by putting '&lt;font color="blue">&lt;b> """ &lt;/b>&lt;/font>' at the beginning and the end of the section.&lt;br>   
     </instructions>
-    <code>def printName(name):
+    <code>def printNameWithComment(name):
       print #enter your code here
       """
       enter
@@ -18,11 +15,15 @@
       comments
       here
       """
+      print #enter your code here
       return
     </code>
     <tasks>
       <task>
-        <content>Add comments between the '"""' '"""'</content>
+        <content>Add a multi line comments to describe your implementation.</content>
+      </task>
+      <task>
+        <content>Print the variable: name.</content>
         <tests>
           <test>
             <inputs>
@@ -55,14 +56,19 @@
         </tests>
       </task>
       <task>
-        <content>Click the submit button</content>
+        <content>Click the submit button.</content>
       </task>
     </tasks>
     <hints>
-      <hint>Use ' """ ' at the beginning and the end of the section you want to comment out</hint>
+      <hint>Replace predefined comment between '&lt;font color="blue">&lt;b> """ &lt;/b>&lt;/font>' with your comment.</hint>
+      <hint>You should print the variable "name", using the "print" command. Type this in to get the right answer:
+    &lt;p>
+      &lt;img src="/assets/images/s1_hints_1.png">
+    &lt;/p>
+    </hint>
     </hints>
-    <chatbotinitmessage>Hi! Let's see if your multi lines comment affects your code!&#xAWhat is your name?</chatbotinitmessage>
-    <chatbotoutputmessage>Your name is: %s</chatbotoutputmessage>
+    <chatbotinitmessage>Hi! Let's see if your multi line comments affect your code!&#xA&lt;font color="blue">What is your name?&lt;/font></chatbotinitmessage>
+    <chatbotoutputmessage>Your name is: &lt;font color="red">&lt;b> %s &lt;/b>&lt;/font></chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage></argmessage>
@@ -71,7 +77,8 @@
         </argtypes>
       </arg>
     </argstypes>
-    <test_failed_info>test failed </test_failed_info>
-    <success_info>success </success_info>
+    <test_failed_info>Use the chatbot on the lower right corner of the screen to check your code.</test_failed_info>
+    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/xTdy8n1oLK2clXista/giphy.gif" height="200" width="250">&lt;/p>
+  </success_info>
   </exercise>
 </root>

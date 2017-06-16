@@ -10,7 +10,7 @@ and open the template in the editor.
   <exercise>
     <id>1</id>
     <topic>Printing</topic>
-    <instructions>To get information about program variables, study them further or to display a message to the user on the screen we use the action &lt;u>"Print"&lt;/u>.
+    <instructions>To display a message on the screen we use the action &lt;u>"Print"&lt;/u>.
       Using the above action will be using the phrase in quotes printed followed by an expression that wants to print.
       For example, to print to the screen the phrase Hello World!.&lt;font color="red">&lt;b> Write down&lt;/b> &lt;/font> the expression print &lt;b>"Hello World!"&lt;/b>:
 	    &lt;p>&lt;img src="/assets/images/s1_instructions.png">&lt;/p>
@@ -58,7 +58,7 @@ and open the template in the editor.
       </task>
     </tasks>
     <hints>
-      <hint>You should print the variable "name", using the "print" command. Type this in to get the right answer:
+    <hint>You should print the variable "name", using the "print" command. Type this in to get the right answer:
 		&lt;p>
 			&lt;img src="/assets/images/s1_hints_1.png">
 		&lt;/p>
@@ -74,7 +74,7 @@ and open the template in the editor.
         </argtypes>
       </arg>
     </argstypes>
-    <test_failed_info>test failed - Use the chatbot on the lower right corner of the screen to check your code.</test_failed_info>
+    <test_failed_info>Use the chatbot on the lower right corner of the screen to check your code.</test_failed_info>
     <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/l4q7TIW8nEZYOJUf6/giphy.gif" height="200" width="250">&lt;/p>
 	\n Use the chatbot on the lower right corner of the screen to check your code.
 	</success_info>

@@ -4,12 +4,12 @@
   <exercise>
     <id>5</id>
     <topic>Operators</topic>
-    <instructions>After defining variables in the previous exercise, we will learn how to use them in the aplication. We can add, subtract, multiply and divide numbers with math operators like '+', '-', '*' and '/'.
+    <instructions>After defining variables in the previous exercise, we will learn how to use them in the aplication. We can add, subtract, multiply and divide numbers with math operators like: &lt;br>&lt;font color="blue">&lt;b>'+', '-', '*' and '/'&lt;/b>&lt;/font>.
 	 &lt;p>&lt;img src="https://media.giphy.com/media/h12hzyHiCNGRG/giphy.gif" height="200" width="250">&lt;/p>
 	 &lt;br/>
 	In example, to multiply variable 'a' with 'b': result = a * b.
     </instructions>
-    <code>def defineVars(a, b):
+    <code>def useOperators(a, b):
       sum = #enter you code here1
       print #enter you code here2
       result = #enter you code here3
@@ -56,15 +56,17 @@
         </tests>
       </task>
       <task>
-        <content>Click the submit button</content>
+        <content>Click the submit button.</content>
       </task>
     </tasks>
     <hints>
-      <hint>To culc sum of two variables use the expression: a + b</hint>
-      <hint>To culc multiply between two variables use the expression: a * b</hint>
+      <hint>To calculate sum of two variables, use the expression: &lt;font color="blue">&lt;b>a + b&lt;/b>&lt;/font>.
+      </hint>
+      <hint>To calculate multiply between two variables use the expression: &lt;font color="blue">&lt;b>a * b&lt;/b>&lt;/font>
+      </hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Insert 2 numbers</chatbotinitmessage>
-    <chatbotoutputmessage>Your sum and multiply results are: %s</chatbotoutputmessage>
+    <chatbotinitmessage>Hi! Let's see if you succeeded!&#xA</chatbotinitmessage>
+    <chatbotoutputmessage>Your sum and multiply results are: &lt;b> %s &lt;/b></chatbotoutputmessage>
    <argstypes>
       <arg>
         <argmessage>Insert value for a (first variable)</argmessage>

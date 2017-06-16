@@ -4,9 +4,12 @@
   <exercise>
     <id>7</id>
     <topic>Logical Operators</topic>
-    <instructions>Two or more relations can be logically joined using the logical operators AND and OR. Logical operators combine relations according to the following rules - The ampersand ( & ) symbol is a valid substitute for the logical operator AND. The vertical bar ( | ) is a valid substitute for the logical operator OR. For 'AND' - both relations must be true for the complex expression to be true. For 'OR' - if either relation is true, the complex expression is true.
+    <instructions>Two or more relations can be logically joined using the logical operators &lt;b>AND&lt;/b> and &lt;b>OR&lt;/b>. 
+      &lt;br>The ampersand &lt;font color="red">&lt;b>'&'&lt;/b>&lt;/font> symbol is a valid substitute for the logical operator AND. 
+      &lt;br>The vertical bar &lt;font color="red">&lt;b>'|'&lt;/b>&lt;/font> is a valid substitute for the logical operator OR. 
+      &lt;br>For 'AND' - both relations must be true for the complex expression to be true. For 'OR' - if either relation is true, the complex expression is true.
     </instructions>
-    <code>def defineVars(var):
+    <code>def logicOps(var):
       my_bool = #enter you code here1
       OR = #enter you code here2
       print #enter you code here4
@@ -16,54 +19,56 @@
     </code>
     <tasks>
       <task>
-        <content>Set the variable my_bool equal to the value True.</content>
+        <content>Set the variable my_bool equal to the value: True.</content>
       </task>
       <task>
-        <content>Combine the given argument 'var' with 'my_bool' by OR operator</content>
+        <content>Combine the given argument 'var' with 'my_bool' by OR( | ) operator.</content>
       </task>
       <task>
-        <content>Print the result of OR</content>
+        <content>Print the variable: OR.</content>
       <tests>
       <task>
-        <content>Combine the given argument 'var' with 'my_bool' by AND operator</content>
+        <content>Combine the given argument 'var' with 'my_bool' by AND( & ) operator.</content>
       </task>
       <task>
-        <content>Print the result of AND</content>
+        <content>Print the variable: AND.</content>
       <tests>
           <test>
             <inputs>
               <input_value>False</input_value>
             </inputs>
             <output>True&#xA;False&#xA;</output>
-            <failure>OR = var | my_bool</failure>
+            <failure>What would be the output for 'False'?</failure>
           </test>
           <test>
             <inputs>
               <input_value>True</input_value>
             </inputs>
             <output>True&#xA;True&#xA;</output>
-            <failure>AND = var & my_bool</failure>
+            <failure>What would be the output for 'True'?</failure>
           </test>
         </tests>
       </task>
       <task>
-        <content>Click the submit button</content>
+        <content>Click the submit button.</content>
       </task>
     </tasks>
     <hints>
       <hint>Remember to capitalize True</hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Choose - True or False</chatbotinitmessage>
-    <chatbotoutputmessage>Your output is: %s</chatbotoutputmessage>
+    <chatbotinitmessage>Hi! Let's see if you are a logic master!&#xA</chatbotinitmessage>
+    <chatbotoutputmessage>Your operations results are: &lt;b> %s &lt;/b></chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage></argmessage>
         <argtypes>
-          <type>boolean</type>
+          <type>bool</type>
         </argtypes>
       </arg>
     </argstypes>
-    <test_failed_info>test failed </test_failed_info>
-    <success_info>success </success_info>
+    <test_failed_info>Learn more about logical and conditional operators: &lt;a href="https://www.tutorialspoint.com//teradata/teradata_logical_and_conditional_operators.htm" target="_blank">Click here&lt;/a>. 
+  \n Use the chatbot on the lower right corner of the screen to check your code.
+    </test_failed_info>
+    <success_info></success_info>
   </exercise>
 </root>

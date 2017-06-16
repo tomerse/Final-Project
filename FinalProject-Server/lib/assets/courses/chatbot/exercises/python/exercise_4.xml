@@ -10,12 +10,12 @@ and open the template in the editor.
   <exercise>
     <id>4</id>
     <topic>Variables</topic>
-    <instructions>Creating applications, games, and web pages all involve storing and working with different types of data. We are using variables to store the data and be able to access it in future. Every variable has a name and value. Assignment to the variable done by '='.
-      For example:
-      var = 5
-      The variable 'var' now stores the number 5.
+    <instructions>Creating applications, games, and web pages all involve storing and working with different types of data. We are using variables to store the data and be able to access it in future.&lt;br>Every variable has a name and value. Assignment to the variable done by &lt;font color="blue">&lt;b>'='&lt;/b>&lt;/font>.&lt;br>For example:&lt;br>
+    &lt;p>&lt;img src="/assets/images/s4_instructions.png">&lt;/p>
+      &lt;br>The variable &lt;b>'num'&lt;/b> now stores the number &lt;b>5&lt;/b>.
+      &lt;br>The variable &lt;b>'string'&lt;/b> now stores the number &lt;b>'Hello World'&lt;/b>.
     </instructions>
-    <code>def defineVars(var1, var2):
+    <code>def defineVars(var):
       my_number = #enter you code here1
       print #enter you code here2
       my_string = #enter you code here3
@@ -24,54 +24,61 @@ and open the template in the editor.
     </code>
     <tasks>
       <task>
-        <content>Set the variable my_number equal to the value 3.</content>
+        <content>Set the variable my_number equal to the value of variable: var..</content>
       </task>
       <task>
-        <content>Print the variable my_number</content>
+        <content>Print the variable my_number.</content>
       </task>
       <task>
-        <content>Set the variable my_string equal to the value 'HelloWorld'.</content>
+        <content>Set the variable my_string equal to the value 'Hello World!'.</content>
       </task>
       <task>
-        <content>Print the variable my_string</content>
+        <content>Print the variable my_string.</content>
         <tests>
           <test>
             <inputs>
               <input_value>3</input_value>
-              <input_value>HelloWorld</input_value>
             </inputs>
-            <output>3&#xA;HelloWorld&#xA;</output>
-            <failure>check my_number == 3 and my_string == HelloWorld</failure>
+            <output>3&#xA;Hello World!&#xA;</output>
+            <failure>Make sure both variables are assigned a value.</failure>
+          </test>
+        </tests>
+        <test>
+            <inputs>
+              <input_value>7</input_value>
+            </inputs>
+            <output>7&#xA;Hello World!&#xA;</output>
+            <failure>Make sure both variables are assigned a value.</failure>
           </test>
         </tests>
       </task>
       <task>
-        <content>Click the submit button</content>
+        <content>Click the submit button.</content>
       </task>
     </tasks>
     <hints>
-      <hint>Write the variable name on the left side of operator =, and the value on the right</hint>
-      <hint>First option: explicitly set the value to the variable (example: my_number = 3)</hint>
-      <hint>Second option: set the value of another variable (example: my_number = var1)</hint>
+      <hint>Write the variable name on the left side of assignment operator &lt;font color="blue">&lt;b>'='&lt;/b>&lt;/font>, and the value on the right.
+      </hint>
+    <hint>Follow the instructions:
+    &lt;p>
+      &lt;img src="/assets/images/s4_instructions.png">
+    &lt;/p>
+    </hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Ready to go?</chatbotinitmessage>
-    <chatbotoutputmessage>Your two variables are: %s</chatbotoutputmessage>
+    <chatbotinitmessage>Hi! Let's see if your variables assigned correcly!&#xAPlease insert a number:</chatbotinitmessage>
+    <chatbotoutputmessage>Your number and string values are: &lt;b> %s &lt;/b></chatbotoutputmessage>
     <argstypes>
       <arg>
-        <argmessage>Insert your first variable</argmessage>
+        <argmessage></argmessage>
         <argtypes>
           <type>int</type>
           <type>float</type>
         </argtypes>
       </arg>
-      <arg>
-        <argmessage>Insert your second variable</argmessage>
-        <argtypes>
-          <type>str</type>
-        </argtypes>
-      </arg>
     </argstypes>
-    <test_failed_info>test failed </test_failed_info>
-    <success_info>success </success_info>
+    <test_failed_info>Learn more about python variable types: &lt;a href="https://www.tutorialspoint.com/python/python_variable_types.htm" target="_blank">Click here&lt;/a>. 
+  \n Use the chatbot on the lower right corner of the screen to check your code.
+    </test_failed_info>
+    <success_info></success_info>
   </exercise>
 </root>

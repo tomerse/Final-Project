@@ -4,21 +4,21 @@
   <exercise>
     <id>9</id>
     <topic>Loops</topic>
-    <instructions>Like the if statement, while loop statement executes the code inside of it if the condition is true. The while loop will continue to execute as long as the condition is true. 
-      "while loop_condition:
-        code (==> will execute as long as condition is true)
-        loop_condition = False"
+    <instructions>Like the if statement, &lt;b>while loop&lt;/b> statement executes the code inside of it if the condition is &lt;font color="blue">True&lt;/font>.
+    &lt;br>The while loop will continue to execute as long as the condition is true.
+    &lt;br>
+    &lt;p>&lt;img src="/assets/images/s9_instructions.png">&lt;/p>
     </instructions>
-    <code>def printTen(message):
+    <code>def printMultiMessage(message):
       num = 1
-      while :  # Fill in the condition
-          # Code
-          # Num increment
+      while num : # Fill in the condition
+          print # Code
+          num = # Num Increment
       return
     </code>
     <tasks>
       <task>
-        <content>Fill in the condition so the code will be executed until 'num' is equal to 3.</content>
+        <content>Fill in the condition so the code will be executed as long as 'num' is smaller or equal to 3.</content>
       </task>
       <task>
         <content>Print the variable 'message' every loop iteration.</content>
@@ -31,27 +31,36 @@
               <input_value>Test</input_value>
             </inputs>
             <output>Test&#xA;Test&#xA;Test&#xA;</output>
-            <failure>Make sure to increase the value of 'num' by 1 => num = num + 1.</failure>
+            <failure>Make sure to increase the value of 'num' by 1.</failure>
           </test>
           <test>
             <inputs>
               <input_value>MoreTest</input_value>
             </inputs>
             <output>MoreTest&#xA;MoreTest&#xA;MoreTest&#xA;</output>
-            <failure>Make sure the condition is right = > num <= 3.</failure>
+            <failure>Make sure the condition of while loop is right.</failure>
           </test>
         </tests>
       </task>
       <task>
-        <content>Click the submit button</content>
+        <content>Click the submit button.</content>
       </task>
     </tasks>
     <hints>
-      <hint>Make sure to increase the value of 'num' by 1 => num = num + 1.</hint>
-      <hint>Make sure the condition is right = > num <= 3.</hint>
+      <hint>Make sure the condition is right:
+    &lt;p>
+      &lt;img src="/assets/images/s9_hints_1.png">
+    &lt;/p>
+    </hint>
+    <hint>Make sure to increase the value of 'num' by 1:
+    &lt;p>
+      &lt;img src="/assets/images/s9_hints_1.png">
+    &lt;/p>
+    </hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! What is your message?</chatbotinitmessage>
-    <chatbotoutputmessage>Your result is: %s</chatbotoutputmessage>
+    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! &lt;font color="blue">What is your message for me?&lt;/font></chatbotinitmessage>
+    <chatbotoutputmessage>&lt;b> %s &lt;/b>&lt;p >&lt;img src="https://media.giphy.com/media/l0Iy5cuJkQKsDfFCM/giphy.gif" height="150" width="220">&lt;/p>
+    </chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage></argmessage>
@@ -60,7 +69,10 @@
         </argtypes>
       </arg>
     </argstypes>
-    <test_failed_info>test failed </test_failed_info>
-    <success_info>success </success_info>
+    <test_failed_info>Learn more about python loops: &lt;a href="https://www.tutorialspoint.com/python/python_loops.htm" target="_blank">Click here&lt;/a>. 
+    \n Use the chatbot on the lower right corner of the screen to check your code.
+    </test_failed_info>
+    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/3o7abGQa0aRJUurpII/giphy.gif" height="200" width="250" align="middle">&lt;/p> 
+  </success_info>
   </exercise>
 </root>

@@ -4,11 +4,11 @@
   <exercise>
     <id>6</id>
     <topic>Booleans</topic>
-    <instructions>In addition to numbers and strings, there are another types of data we use in programming. One if them is called a boolean. A boolean have two values - True or False. You can use variables to store booleans like this:
-    	a = True
-    	b = False
+    <instructions>In addition to numbers and strings, there are another types of data we use in programming. One of them is called a &lt;b>boolean&lt;/b>. &lt;br>A boolean have two values: &lt;font color="green">&lt;b>True&lt;/b>&lt;/font> or &lt;font color="red">&lt;b>False&lt;/b>&lt;/font>. &lt;br>You can use variables to store booleans like this:
+      &lt;br>
+    &lt;p>&lt;img src="/assets/images/s6_instructions.png">&lt;/p>
     </instructions>
-    <code>def defineVars(var):
+    <code>def useBooleans(var):
       my_bool = #enter you code here1
       print #enter you code here2
       result = #enter you code here3
@@ -33,35 +33,43 @@
               <input_value>False</input_value>
             </inputs>
             <output>True&#xA;False&#xA;</output>
-            <failure>Your code should be: "my_bool = True"</failure>
+            <failure>What would be the output for 'False'?</failure>
           </test>
             <test>
             <inputs>
               <input_value>True</input_value>
             </inputs>
             <output>True&#xA;True&#xA;</output>
-            <failure>Your code should be: "result = var"</failure>
+            <failure>What would be the output for 'True'?</failure>
           </test>
         </tests>
       </task>
       <task>
-        <content>Click the submit button</content>
+        <content>Click the submit button.</content>
       </task>
     </tasks>
-   <hints>
-      <hint>Remember to capitalize True</hint>
+    <hints>
+      <hint>Remember to capitalize 'True'.</hint>
+      <hint>Follow the instructions:
+    &lt;p>
+      &lt;img src="/assets/images/s6_instructions.png">
+    &lt;/p>
+    </hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Choose - True or False</chatbotinitmessage>
-    <chatbotoutputmessage>Your output is: %s</chatbotoutputmessage>
+    <chatbotinitmessage>Hi! Let's see if you succeeded!&#xA</chatbotinitmessage>
+    <chatbotoutputmessage>Your two boolean values are: &lt;b> %s &lt;/b></chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage></argmessage>
         <argtypes>
-          <type>boolean</type>
+          <type>bool</type>
         </argtypes>
       </arg>
     </argstypes>
-    <test_failed_info>test failed </test_failed_info>
-    <success_info>success </success_info>
+    <test_failed_info>Learn more about python variable types: &lt;a href="https://www.tutorialspoint.com/python/python_variable_types.htm" target="_blank">Click here&lt;/a>. 
+  \n Use the chatbot on the lower right corner of the screen to check your code.
+    </test_failed_info>
+    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/lnlAifQdenMxW/giphy.gif" height="200" width="250">&lt;/p>
+  </success_info>
   </exercise>
 </root>

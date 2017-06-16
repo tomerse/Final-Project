@@ -3,23 +3,23 @@
 <root>
   <exercise>
     <id>2</id>
-    <topic>Single line comments</topic>
+    <topic>Single Line Comments</topic>
     <instructions>Another important element in a programming language is the use of comments.
       A comment helps the developer to document his implementation.
       A commented code should be clear and maintainable.
-      In Python we use '#' at the beginning of a line, in order to comment out a single line of code.
+      &lt;br>In Python we use &lt;font color="blue">&lt;b>'#'&lt;/b>&lt;/font> at the beginning of a line, in order to comment out a single line of code.
     </instructions>
-    <code>def printName(name):
+    <code>def printNameWithComment(name):
       #enter your comment here
       print #enter your code here
       return
     </code>
     <tasks>
       <task>
-        <content>Add a comment which explains your code</content>
+        <content>Add a comment to describe your implementation.</content>
       </task>
       <task>
-        <content>Print the variable "name"</content>
+        <content>Print the variable: name.</content>
         <tests>
           <test>
             <inputs>
@@ -52,15 +52,19 @@
         </tests>
       </task>
       <task>
-        <content>Click the submit button</content>
+        <content>Click the submit button.</content>
       </task>
     </tasks>
     <hints>
-      <hint>Replace "enter your comment here" with your comment</hint>
-      <hint>You should print the variable "name", using the "print" command</hint>
+      <hint>Replace predefined comment in the second line with your comment.</hint>
+      <hint>You should print the variable "name", using the "print" command. Type this in to get the right answer:
+    &lt;p>
+      &lt;img src="/assets/images/s1_hints_1.png">
+    &lt;/p>
+    </hint>
     </hints>
-    <chatbotinitmessage>Hi! Let's see if your single line comment affects your code!&#xAWhat is your name?</chatbotinitmessage>
-    <chatbotoutputmessage>Your name is: %s</chatbotoutputmessage>
+    <chatbotinitmessage>Hi! Let's see if your single line comment affects your code!&#xA&lt;font color="blue">What is your name?&lt;/font></chatbotinitmessage>
+    <chatbotoutputmessage>Your name is: &lt;font color="red">&lt;b> %s &lt;/b>&lt;/font></chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage></argmessage>
@@ -69,7 +73,8 @@
         </argtypes>
       </arg>
     </argstypes>
-    <test_failed_info>test failed </test_failed_info>
-    <success_info>success </success_info>
+    <test_failed_info>Use the chatbot on the lower right corner of the screen to check your code.</test_failed_info>
+    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/xTdy8n1oLK2clXista/giphy.gif" height="200" width="250">&lt;/p>
+  </success_info>
   </exercise>
 </root>

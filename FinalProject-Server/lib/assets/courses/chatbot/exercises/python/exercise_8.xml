@@ -11,10 +11,10 @@
 		&nbsp &nbsp &nbsp &nbsp	code &lt;font color="green">(==>will execute only if condition is false) &lt;/font>
     </instructions>
     <code>def examResult(grade):
-    #enter your code here1
-    #enter your code here2
+    print #enter your code here1
+    if grade : #enter your code here2
        print 'Passed. Exelent!'
-    #enter your code here3
+    if grade : #enter your code here3
        print 'Fail. You need to improve'
     return
     </code>
@@ -56,13 +56,17 @@
       </task>
     </tasks>
     <hints>
-      <hint>The grade should be bigger(>)or equal(=) than 56 to pass the exam.</hint>
+      <hint>The grade should be bigger or equal than 56 to pass the exam:
+      &lt;p>
+      &lt;img src="/assets/images/s8_hints_1.png">
+      &lt;/p>
+      </hint>
       <hint>If the grade is smaller(&lt;) than 56, you failed the exam.</hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! Insert the grade of the exam</chatbotinitmessage>
+    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! &lt;font color="blue">What is your grade?&lt;/font></chatbotinitmessage>
     <chatbotoutputmessage>Your result is: %s
 	&lt;p >&lt;img src="https://media.giphy.com/media/yDP4kcs5USS40/giphy.gif" height="150" width="220">&lt;/p>
-	</chatbotoutputmessage>
+	  </chatbotoutputmessage>
     <argstypes>
       <arg>
         <argmessage></argmessage>
@@ -72,10 +76,10 @@
         </argtypes>
       </arg>
     </argstypes>
-    <test_failed_info>Learn more about python arithmetic operators: &lt;a href="https://www.tutorialspoint.com/python/python_if_else.htm" target="_blank" align="middle">Click here&lt;/a>. 
-	\n Use the chatbot on the lower right corner of the screen to check your code.</test_failed_info>
+    <test_failed_info>Learn more about logical and conditional operators: &lt;a href="https://www.tutorialspoint.com//teradata/teradata_logical_and_conditional_operators.htm" target="_blank">Click here&lt;/a>. 
+  \n Use the chatbot on the lower right corner of the screen to check your code.
+    </test_failed_info>
     <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/l41lUjUgLLwWrz20w/giphy.gif" height="200" width="250" align="middle">&lt;/p> 
-	\n Use the chatbot on the lower right corner of the screen to check your code.
 	</success_info>
   </exercise>
 </root>
