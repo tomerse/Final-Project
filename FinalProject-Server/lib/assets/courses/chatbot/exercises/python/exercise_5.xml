@@ -7,7 +7,7 @@
     <instructions>After defining variables in the previous exercise, we will learn how to use them in the aplication. We can add, subtract, multiply and divide numbers with math operators like: &lt;br>&lt;font color="green">&lt;b>'+', '-', '*' and '/'&lt;/b>&lt;/font>.
 	 &lt;p>&lt;img src="https://media.giphy.com/media/h12hzyHiCNGRG/giphy.gif" height="200" width="250">&lt;/p>
 	 &lt;br/>
-	In example, to multiply variable 'a' with 'b': result = a * b.
+	For example, to multiply variable 'a' with 'b': result = a * b.
     </instructions>
     <code>def useOperators(a, b):
       sum = #enter you code here1
@@ -17,6 +17,7 @@
       return
     </code>
     <tasks>
+      <generaltask>Implement the function 'useOperators', that printing operation results, by completing the following tasks:</generaltask>
       <task>
         <content>Set the variable 'sum' equal to sum of 'a' and 'b'.</content>
       </task>
