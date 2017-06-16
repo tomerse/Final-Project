@@ -23,6 +23,7 @@ and open the template in the editor.
       return
     </code>
     <tasks>
+      <generaltask>Implement the function 'defineVars' by completing the following tasks:</generaltask>
       <task>
         <content>Set the variable my_number equal to the value of variable: var.</content>
       </task>

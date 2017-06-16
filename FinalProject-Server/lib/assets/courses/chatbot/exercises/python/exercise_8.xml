@@ -19,6 +19,7 @@
     return
     </code>
     <tasks>
+      <generaltask>Implement the function 'examResult' by completing the following tasks:</generaltask>
       <task>
         <content>Print the variable 'grade' in the first line.</content>
       </task>
