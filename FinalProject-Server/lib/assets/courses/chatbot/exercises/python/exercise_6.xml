@@ -18,18 +18,18 @@
     <tasks>
       <generaltask>Implement the function '&lt;b>useBooleans&lt;/b>' by completing the following tasks:</generaltask>
       <task>
-        <content>Set the variable &lt;font color="CornflowerBlue">my_bool&lt;font> equal to the value &lt;font color="yellow">True&lt;/font>.
+        <content>Set the variable &lt;font color="CornflowerBlue">my_bool&lt;/font> equal to the value &lt;font color="yellow">True&lt;/font>.
         </content>
       </task>
       <task>
-        <content>Print the variable &lt;font color="CornflowerBlue">my_bool&lt;font>.</content>
+        <content>Print the variable &lt;font color="CornflowerBlue">my_bool&lt;/font>.</content>
       </task>
       <task>
-        <content>Set the variable &lt;font color="CornflowerBlue">result&lt;font> equal to the value of: &lt;font color="CornflowerBlue">var&lt;font>.
+        <content>Set the variable &lt;font color="CornflowerBlue">result&lt;/font> equal to the value of: &lt;font color="CornflowerBlue">var&lt;/font>.
         </content>
       </task>
       <task>
-        <content>Print the variable &lt;font color="CornflowerBlue">result&lt;font>.</content>
+        <content>Print the variable &lt;font color="CornflowerBlue">result&lt;/font>.</content>
         <tests>
           <test>
             <inputs>

@@ -22,7 +22,7 @@ and open the template in the editor.
     <tasks>
       <generaltask>Implement the function '&lt;b>printName&lt;/b>' by completing the following tasks:</generaltask>
       <task>
-        <content>Print the variable: &lt;font color="CornflowerBlue">name&lt;font>.</content>
+        <content>Print the variable: &lt;font color="CornflowerBlue">name&lt;/font>.</content>
         <tests>
           <test>
             <inputs>
@@ -59,7 +59,7 @@ and open the template in the editor.
       </task>
     </tasks>
     <hints>
-    <hint>You should print the variable &lt;font color="CornflowerBlue">name&lt;font>, using the 'print' command. Type this in to get the right answer:
+    <hint>You should print the variable &lt;font color="CornflowerBlue">name&lt;/font> using the 'print' command. Type this in to get the right answer:
 		&lt;p>
 			&lt;img src="/assets/images/s1_hints_1.png">
 		&lt;/p>

@@ -25,17 +25,17 @@ and open the template in the editor.
     <tasks>
       <generaltask>Implement the function '&lt;b>defineVars&lt;/b>' by completing the following tasks:</generaltask>
       <task>
-        <content>Set the variable &lt;font color="CornflowerBlue">my_number&lt;font> equal to the value of variable: &lt;font color="CornflowerBlue">var&lt;font>.
+        <content>Set the variable &lt;font color="CornflowerBlue">my_number&lt;/font> equal to the value of variable: &lt;font color="CornflowerBlue">var&lt;/font>.
         </content>
       </task>
       <task>
-        <content>Print the variable &lt;font color="CornflowerBlue">my_number&lt;font>.</content>
+        <content>Print the variable &lt;font color="CornflowerBlue">my_number&lt;/font>.</content>
       </task>
       <task>
-        <content>Set the variable &lt;font color="CornflowerBlue">my_string&lt;font> equal to the value &lt;font color="yellow">'Hello World!'&lt;/font>.</content>
+        <content>Set the variable &lt;font color="CornflowerBlue">my_string&lt;/font> equal to the value &lt;font color="yellow">'Hello World!'&lt;/font>.</content>
       </task>
       <task>
-        <content>Print the variable &lt;font color="CornflowerBlue">my_string&lt;font>.</content>
+        <content>Print the variable &lt;font color="CornflowerBlue">my_string&lt;/font>.</content>
         <tests>
           <test>
             <inputs>

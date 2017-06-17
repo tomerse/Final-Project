@@ -21,14 +21,14 @@
     <tasks>
       <generaltask>Implement the function '&lt;b>examResult&lt;/b>' by completing the following tasks:</generaltask>
       <task>
-        <content>Print the variable &lt;font color="CornflowerBlue">grade&lt;font> in the first line.</content>
+        <content>Print the variable &lt;font color="CornflowerBlue">grade&lt;/font> in the first line.</content>
       </task>
       <task>
-      <content>Print &lt;font color="yellow">'Passed. Excellent!'&lt;font> only if the grade is bigger or equal to &lt;font color="red">56&lt;font>.
+      <content>Print &lt;font color="yellow">'Passed. Excellent!'&lt;/font> only if the grade is bigger or equal to &lt;font color="red">56&lt;/font>.
         </content>
       </task>
       <task>
-        <content>Print &lt;font color="yellow">'Failed. You need to improve'&lt;font> only if the grade is smaller than &lt;font color="red">56&lt;font>.</content>
+        <content>Print &lt;font color="yellow">'Failed. You need to improve'&lt;/font> only if the grade is smaller than &lt;font color="red">56&lt;/font>.</content>
       <tests>
           <test>
             <inputs>
@@ -58,12 +58,12 @@
       </task>
     </tasks>
     <hints>
-      <hint>The grade should be bigger or equal than &lt;font color="red">56&lt;font> to pass the exam:
+      <hint>The grade should be bigger or equal than &lt;font color="red">56&lt;/font> to pass the exam:
       &lt;p>
       &lt;img src="/assets/images/s8_hints_1.jpg">
       &lt;/p>
       </hint>
-      <hint>If the grade is smaller(&lt;) than &lt;font color="red">56&lt;font>, you failed the exam.</hint>
+      <hint>If the grade is smaller(&lt;) than &lt;font color="red">56&lt;/font>, you failed the exam.</hint>
     </hints>
     <chatbotinitmessage>Hi! I'm MonkeyBot!&#xA; &lt;font color="blue">What is your grade?&lt;/font></chatbotinitmessage>
     <chatbotoutputmessage>Your result is: %s
