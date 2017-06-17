@@ -19,21 +19,23 @@
       return
     </code>
     <tasks>
-      <generaltask>Implement the function 'summary' by completing the following tasks:</generaltask>
+      <generaltask>Implement the function '&lt;b>summary&lt;/b>' by completing the following tasks:</generaltask>
       <task>
         <content>Write a single-line comment on line 2 to describe your implementation.</content>
       </task>
       <task>
-        <content>Set the variable 'condition' to be True.</content>
+        <content>Set the variable &lt;font color="CornflowerBlue">condition&lt;/font> to be &lt;font color="yellow">True&lt;/font>.
+        </content>
       </task>
       <task>
-        <content>Fill in the condition so the code will be executed as long as 'num' is smaller or equal to 3.</content>
+        <content>Fill in the condition so the code will be executed as long as &lt;font color="CornflowerBlue">num&lt;/font> is smaller or equal to &lt;font color="red">3&lt;/font>.
+        </content>
       </task>
       <task>
-        <content>Print the variable 'message' every loop iteration only if 'condition' is True.</content>
+        <content>Print the variable &lt;font color="CornflowerBlue">message&lt;/font> every loop iteration only if &lt;font color="CornflowerBlue">condition&lt;/font> is &lt;font color="yellow">True&lt;/font>.</content>
       </task>
       <task>
-        <content>Increase the value of 'num' to avoid infinite loop.</content>
+        <content>Increase the value of &lt;font color="CornflowerBlue">num&lt;/font> to avoid infinite loop.</content>
       <tests>
           <test>
             <inputs>
@@ -64,7 +66,7 @@
         &lt;img src="/assets/images/s10_hints_1.jpg">
         &lt;/p>
       </hint>
-      <hint>Make sure to increase the value of 'num' by 1:
+      <hint>Make sure to increase the value of &lt;font color="CornflowerBlue">num&lt;/font> by 1:
         &lt;p>
         &lt;img src="/assets/images/s9_hints_2.jpg">
         &lt;/p>
