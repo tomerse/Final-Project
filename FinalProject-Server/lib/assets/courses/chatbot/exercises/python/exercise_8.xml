@@ -13,7 +13,7 @@
     <code>def examResult(grade):
     print #enter your code here1
     if grade : #enter your code here2
-       print 'Passed. Exellent!'
+       print 'Passed. Excellent!'
     if grade : #enter your code here3
        print 'Failed. You need to improve'
     return
@@ -24,7 +24,7 @@
         <content>Print the variable 'grade' in the first line.</content>
       </task>
       <task>
-        <content>Print 'Passed. Exellent!' only if the grade is bigger or equal to 56.</content>
+        <content>Print 'Passed. Excellent!' only if the grade is bigger or equal to 56.</content>
       </task>
       <task>
         <content>Print 'Failed. You need to improve' only if the grade is smaller than 56.</content>
@@ -33,14 +33,14 @@
             <inputs>
               <input_value>80</input_value>
             </inputs>
-            <output>80&#xA;Passed. Exellent!&#xA;</output>
+            <output>80&#xA;Passed. Excellent!&#xA;</output>
             <failure>The grade should be bigger(>) than 56 to pass the exam.</failure>
           </test>
           <test>
             <inputs>
               <input_value>56</input_value>
             </inputs>
-            <output>56&#xA;Passed. Exellent!&#xA;</output>
+            <output>56&#xA;Passed. Excellent!&#xA;</output>
             <failure>The grade can be equal(=) to 56 in order to pass the exam.</failure>
           </test>
           <test>
@@ -64,7 +64,7 @@
       </hint>
       <hint>If the grade is smaller(&lt;) than 56, you failed the exam.</hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! &lt;font color="blue">What is your grade?&lt;/font></chatbotinitmessage>
+    <chatbotinitmessage>Hello! I'm MonkeyBot!&#xA; &lt;font color="blue">What is your grade?&lt;/font></chatbotinitmessage>
     <chatbotoutputmessage>Your result is: %s
 	&lt;p >&lt;img src="https://media.giphy.com/media/yDP4kcs5USS40/giphy.gif" height="150" width="220">&lt;/p>
 	  </chatbotoutputmessage>
