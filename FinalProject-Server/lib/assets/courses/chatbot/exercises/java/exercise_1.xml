@@ -15,14 +15,14 @@ and open the template in the editor.
       For example, to print to the screen the phrase Hello World!.&lt;font color="red"> Write &lt;/font> down the expression print &lt;b>"Hello World!"&lt;/b>.
 	    &lt;p>&lt;img src="/assets/images/monkey.png">&lt;/p>
     </instructions>
-    <code>public static void printName(String name)
+    <code>public static void PrintName(String name)
 {
   System.out.println(/*enter your code here*/);
   return;
 }
     </code>
     <tasks>
-      <generaltask>Implement the function 'printName' by completing the following tasks:</generaltask>
+      <generaltask>Implement the function 'PrintName' by completing the following tasks:</generaltask>
       <task>
         <content>Print the variable "name"</content>
         <tests>
@@ -63,7 +63,7 @@ and open the template in the editor.
     <hints>
       <hint>You should print the variable "name", using the "print" command</hint>
     </hints>
-    <chatbotinitmessage>Hello!&#xA;I'm MonkeyBot! What is your name?</chatbotinitmessage>
+    <chatbotinitmessage>Hello! I'm MonkeyBot!&#xA;What is your name?</chatbotinitmessage>
     <chatbotoutputmessage>Your name is: %s</chatbotoutputmessage>
     <argstypes>
       <arg>
