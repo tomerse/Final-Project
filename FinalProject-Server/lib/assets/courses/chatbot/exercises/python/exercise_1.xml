@@ -10,9 +10,9 @@ and open the template in the editor.
   <exercise>
     <id>1</id>
     <topic>Printing</topic>
-    <instructions>To display a message on the screen we use the action &lt;u>"Print"&lt;/u>.
+    <instructions>To display a message on the screen we use the action "&lt;font color="purple">&lt;b>print&lt;/b>/font>".
       Using the above action will be using the phrase in quotes printed followed by an expression that wants to print.
-      For example, to print to the screen the phrase Hello World!.&lt;font color="red">&lt;b> Write down&lt;/b> &lt;/font> the expression print &lt;b>"Hello World!"&lt;/b>:
+      For example, to print to the screen the phrase "Hello World!" write down the expression &lt;font color="purple">&lt;b>print&lt;/b>/font> &lt;font color="yellow">&lt;b>"Hello World!"&lt;/b>/font>:
 	    &lt;p>&lt;img src="/assets/images/s1_instructions.png">&lt;/p>
     </instructions>
     <code>def printName(name):
@@ -20,7 +20,7 @@ and open the template in the editor.
     return
     </code>
     <tasks>
-      <generaltask>Implement the function 'printName' by completing the following tasks:</generaltask>
+      <generaltask>Implement the function '&lt;b>printName&lt;/b>' by completing the following tasks:</generaltask>
       <task>
         <content>Print the variable: name.</content>
         <tests>
