@@ -61,7 +61,7 @@
     <chatbotoutputmessage>Your operations results are: %s</chatbotoutputmessage>
     <argstypes>
       <arg>
-        <argmessage></argmessage>
+        <argmessage>Insert 'True' or 'False':</argmessage>
         <argtypes>
           <type>str</type>
         </argtypes>
