@@ -13,7 +13,7 @@ and open the template in the editor.
       <syllabus>Introduction, variables, logic expressions, conditions, loops</syllabus>
       <currlang>python</currlang>
       <courseapp>chatbot</courseapp>
-      <logo>&lt;img src="/assets/images/python_logo.png" height="100" width="100"></logo>
+      <logo>&lt;img src="/assets/images/python_logo.png" height="50" width="50"></logo>
     </course>
     <course>
       <title>Java Chatbot</title>
@@ -21,7 +21,7 @@ and open the template in the editor.
       <syllabus>Introduction, variables, logic expressions, conditions, loops</syllabus>
       <currlang>java</currlang>
       <courseapp>chatbot</courseapp>
-      <logo>&lt;img src="/assets/images/java_logo.png" height="100" width="100"></logo>
+      <logo>&lt;img src="/assets/images/java_logo.png" height="50" width="50"></logo>
     </course>
   </courses>
 </root>
