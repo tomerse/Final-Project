@@ -21,7 +21,7 @@
     <tasks>
       <generaltask>Implement the function 'summary' by completing the following tasks:</generaltask>
       <task>
-        <content>Write a single-line comment on line 1 to describe your implementation.</content>
+        <content>Write a single-line comment on line 2 to describe your implementation.</content>
       </task>
       <task>
         <content>Set the variable 'condition' to be True.</content>
