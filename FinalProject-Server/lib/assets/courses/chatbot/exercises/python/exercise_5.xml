@@ -7,7 +7,8 @@
     <instructions>Previous exercise taught us to define variables.\nNow we are going to learn how to use variables with simple mathematical operators.\nWe can add, subtract, multiply and divide numbers with mathematical operators like: &lt;br>&lt;font color="green">&lt;b>'+', '-', '*' and '/'&lt;/b>&lt;/font>.
 	 &lt;p>&lt;img src="https://media.giphy.com/media/h12hzyHiCNGRG/giphy.gif" height="200" width="250">&lt;/p>
 	 &lt;br/>
-	For example, to multiply variable 'a' with 'b': result = a * b.
+	For example, to multiply variable &lt;font color="CornflowerBlue">a&lt;font> with &lt;font color="CornflowerBlue">b&lt;font>:  
+  \nresult = a * b.
     </instructions>
     <code>def useOperators(a, b):
       sum = #enter you code here1
@@ -19,16 +20,16 @@
     <tasks>
       <generaltask>Implement the function '&lt;b>useOperators&lt;/b>', that printing operation results, by completing the following tasks:</generaltask>
       <task>
-        <content>Set the variable 'sum' to be equal to the sum of 'a' and 'b'.</content>
+        <content>Set the variable &lt;font color="CornflowerBlue">sum&lt;font> to be equal to the sum of &lt;font color="CornflowerBlue">a&lt;font> and &lt;font color="CornflowerBlue">b&lt;font>.</content>
       </task>
       <task>
-        <content>Print the value of the variable 'sum'.</content>
+        <content>Print the value of the variable &lt;font color="CornflowerBlue">sum&lt;font>.</content>
       </task>
       <task>
-        <content>Set 'multi' to be multiplication of 'a' and 'sum'.</content>
+        <content>Set &lt;font color="CornflowerBlue">multi&lt;font> to be multiplication of &lt;font color="CornflowerBlue">a&lt;font> and &lt;font color="CornflowerBlue">sum&lt;font>.</content>
       </task>
       <task>
-        <content>Print the value of the variable 'multi'.</content>
+        <content>Print the value of the variable &lt;font color="CornflowerBlue">multi&lt;font>.</content>
       <tests>
           <test>
             <inputs>

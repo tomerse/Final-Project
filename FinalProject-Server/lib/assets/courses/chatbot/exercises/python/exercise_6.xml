@@ -4,7 +4,7 @@
   <exercise>
     <id>6</id>
     <topic>Booleans</topic>
-    <instructions>In addition to numbers and strings, there are another types of data we use in programming. One of them is called a &lt;b>boolean&lt;/b>. &lt;br>A boolean have two values: &lt;font color="green">&lt;b>True&lt;/b>&lt;/font> or &lt;font color="red">&lt;b>False&lt;/b>&lt;/font>. &lt;br>You can use variables to store booleans like this:
+    <instructions>In addition to numbers and strings, there are another types of data we use in programming. One of them is called a &lt;b>boolean&lt;/b>. &lt;br>A boolean have two values: &lt;font color="yellow">&lt;b>True&lt;/b>&lt;/font> or &lt;font color="yellow">&lt;b>False&lt;/b>&lt;/font>. &lt;br>You can use variables to store booleans like this:
       &lt;br>
     &lt;p>&lt;img src="/assets/images/s6_instructions.jpg">&lt;/p>
     </instructions>
@@ -18,16 +18,18 @@
     <tasks>
       <generaltask>Implement the function '&lt;b>useBooleans&lt;/b>' by completing the following tasks:</generaltask>
       <task>
-        <content>Set the variable my_bool equal to the value True.</content>
+        <content>Set the variable &lt;font color="CornflowerBlue">my_bool&lt;font> equal to the value &lt;font color="yellow">True&lt;/font>.
+        </content>
       </task>
       <task>
-        <content>Print the variable my_bool.</content>
+        <content>Print the variable &lt;font color="CornflowerBlue">my_bool&lt;font>.</content>
       </task>
       <task>
-        <content>Set the variable result equal to the value of 'var'.</content>
+        <content>Set the variable &lt;font color="CornflowerBlue">result&lt;font> equal to the value of: &lt;font color="CornflowerBlue">var&lt;font>.
+        </content>
       </task>
       <task>
-        <content>Print the variable result.</content>
+        <content>Print the variable &lt;font color="CornflowerBlue">result&lt;font>.</content>
         <tests>
           <test>
             <inputs>
@@ -50,7 +52,7 @@
       </task>
     </tasks>
     <hints>
-      <hint>Remember to capitalize 'True'.</hint>
+      <hint>Remember to capitalize &lt;font color="yellow">&lt;b>True&lt;/b>&lt;/font>.</hint>
       <hint>Follow the instructions:
     &lt;p>
       &lt;img src="/assets/images/s6_instructions.jpg">

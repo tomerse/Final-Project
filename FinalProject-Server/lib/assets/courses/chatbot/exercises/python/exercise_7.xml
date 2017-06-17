@@ -19,19 +19,19 @@
     <tasks>
       <generaltask>Implement the function '&lt;b>logicOps&lt;/b>' by completing the following tasks:</generaltask>
       <task>
-        <content>Set the variable my_bool equal to the value: True.</content>
+        <content>Set the variable &lt;font color="CornflowerBlue">my_bool&lt;font> equal to the value: &lt;font color="yellow">True&lt;font>.</content>
       </task>
       <task>
-        <content>Combine the given argument 'var' with 'my_bool' by or operator.</content>
+        <content>Combine the given argument &lt;font color="CornflowerBlue">var&lt;font> with &lt;font color="CornflowerBlue">my_bool&lt;font> by or operator.</content>
       </task>
       <task>
-        <content>Print the variable: OR.</content>
+        <content>Print the variable: &lt;font color="CornflowerBlue">OR&lt;font>.</content>
       <tests>
       <task>
-        <content>Combine the given argument 'var' with 'my_bool' by and operator.</content>
+        <content>Combine the given argument &lt;font color="CornflowerBlue">var&lt;font> with &lt;font color="CornflowerBlue">my_bool&lt;font> by and operator.</content>
       </task>
       <task>
-        <content>Print the variable: AND.</content>
+        <content>Print the variable: &lt;font color="CornflowerBlue">AND&lt;font>.</content>
       <tests>
           <test>
             <inputs>
@@ -54,10 +54,10 @@
       </task>
     </tasks>
     <hints>
-      <hint>Remember to capitalize True.</hint>
+      <hint>Remember to capitalize &lt;font color="yellow">True&lt;font>.</hint>
       <hint>Type the operators in lowcase.</hint>
     </hints>
-    <chatbotinitmessage>Hi! Let's see if you are a logic master!&#xA;Insert 'True' or 'False':</chatbotinitmessage>
+    <chatbotinitmessage>Hi! Let's see if you are a logic master!&#xA;Insert &lt;font color="yellow">True&lt;font> or &lt;font color="yellow">False&lt;font>:</chatbotinitmessage>
     <chatbotoutputmessage>Your operations results are: %s</chatbotoutputmessage>
     <argstypes>
       <arg>

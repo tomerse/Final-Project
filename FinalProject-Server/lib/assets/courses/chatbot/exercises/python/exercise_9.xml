@@ -5,7 +5,7 @@
     <id>9</id>
     <topic>Loops</topic>
     <instructions>Like the if statement, &lt;b>while loop&lt;/b> statement executes the code inside of it if the condition is &lt;font color="green">True&lt;/font>.
-    &lt;br>The while loop will continue to execute as long as the condition is true.
+    &lt;br>The while loop will continue to execute as long as the condition is &lt;font color="yellow">True&lt;font>.
     &lt;br>
     &lt;p>&lt;img src="/assets/images/s9_instructions.jpg">&lt;/p>
     </instructions>
@@ -19,13 +19,13 @@
     <tasks>
       <generaltask>Implement the function '&lt;b>printMultiMessage&lt;/b>' by completing the following tasks:</generaltask>
       <task>
-        <content>Fill in the condition so the code will be executed as long as 'num' is smaller or equal to 3.</content>
+        <content>Fill in the condition so the code will be executed as long as &lt;font color="CornflowerBlue">num&lt;font> is smaller or equal to &lt;font color="red">3&lt;font>.</content>
       </task>
       <task>
-        <content>Print the variable 'message' every loop iteration.</content>
+        <content>Print the variable &lt;font color="CornflowerBlue">message&lt;font> every loop iteration.</content>
       </task>
       <task>
-        <content>Increase the value of 'num' to avoid infinite loop.</content>
+        <content>Increase the value of &lt;font color="CornflowerBlue">num&lt;font> to avoid infinite loop.</content>
       <tests>
           <test>
             <inputs>
@@ -53,7 +53,7 @@
       &lt;img src="/assets/images/s9_hints_1.jpg">
     &lt;/p>
     </hint>
-    <hint>Make sure to increase the value of 'num' by 1:
+    <hint>Make sure to increase the value of &lt;font color="CornflowerBlue">num&lt;font> by 1:
     &lt;p>
       &lt;img src="/assets/images/s9_hints_2.jpg">
     &lt;/p>
