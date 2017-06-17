@@ -19,7 +19,7 @@
       return
     </code>
     <tasks>
-      <generaltask>Implement the function 'summary' by completing the following tasks:</generaltask>
+      <generaltask>Implement the function '&lt;b>summary&lt;/b>' by completing the following tasks:</generaltask>
       <task>
         <content>Write a single-line comment on line 2 to describe your implementation.</content>
       </task>

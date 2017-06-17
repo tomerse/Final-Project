@@ -18,7 +18,7 @@
       return
     </code>
     <tasks>
-      <generaltask>Implement the function 'printNameWithComment' by completing the following tasks:</generaltask>
+      <generaltask>Implement the function '&lt;b>printNameWithComment&lt;/b>' by completing the following tasks:</generaltask>
       <task>
         <content>Add a multi line comments to describe your implementation.</content>
       </task>

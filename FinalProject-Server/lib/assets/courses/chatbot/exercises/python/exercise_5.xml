@@ -17,7 +17,7 @@
       return
     </code>
     <tasks>
-      <generaltask>Implement the function 'useOperators', that printing operation results, by completing the following tasks:</generaltask>
+      <generaltask>Implement the function '&lt;b>useOperators&lt;/b>', that printing operation results, by completing the following tasks:</generaltask>
       <task>
         <content>Set the variable 'sum' to be equal to the sum of 'a' and 'b'.</content>
       </task>

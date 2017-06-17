@@ -17,7 +17,7 @@
       return
     </code>
     <tasks>
-      <generaltask>Implement the function 'printMultiMessage' by completing the following tasks:</generaltask>
+      <generaltask>Implement the function '&lt;b>printMultiMessage&lt;/b>' by completing the following tasks:</generaltask>
       <task>
         <content>Fill in the condition so the code will be executed as long as 'num' is smaller or equal to 3.</content>
       </task>
