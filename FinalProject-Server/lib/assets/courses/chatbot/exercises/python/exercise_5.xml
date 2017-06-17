@@ -4,7 +4,7 @@
   <exercise>
     <id>5</id>
     <topic>Operators</topic>
-    <instructions>Previous exercise taught us to define variables.&#xA;Now we are going to learn how to use variables with simple mathematical operators.&#xA;We can add, subtract, multiply and divide numbers with mathematical operators like: &lt;br>&lt;font color="green">&lt;b>'+', '-', '*' and '/'&lt;/b>&lt;/font>.
+    <instructions>Previous exercise taught us to define variables.\nNow we are going to learn how to use variables with simple mathematical operators.\nWe can add, subtract, multiply and divide numbers with mathematical operators like: &lt;br>&lt;font color="green">&lt;b>'+', '-', '*' and '/'&lt;/b>&lt;/font>.
 	 &lt;p>&lt;img src="https://media.giphy.com/media/h12hzyHiCNGRG/giphy.gif" height="200" width="250">&lt;/p>
 	 &lt;br/>
 	For example, to multiply variable 'a' with 'b': result = a * b.
