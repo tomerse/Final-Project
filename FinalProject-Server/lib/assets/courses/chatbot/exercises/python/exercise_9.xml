@@ -32,14 +32,14 @@
               <input_value>Test</input_value>
             </inputs>
             <output>Test&#xA;Test&#xA;Test&#xA;</output>
-            <failure>Make sure to increase the value of 'num' by 1.</failure>
+            <failure>Check your condition and make sure to increase the value of 'num' by 1.</failure>
           </test>
           <test>
             <inputs>
               <input_value>MoreTest</input_value>
             </inputs>
             <output>MoreTest&#xA;MoreTest&#xA;MoreTest&#xA;</output>
-            <failure>Make sure the condition of while loop is right.</failure>
+            <failure>Mheck your condition and make sure to increase the value of 'num' by 1.</failure>
           </test>
         </tests>
       </task>
@@ -59,8 +59,8 @@
     &lt;/p>
     </hint>
     </hints>
-    <chatbotinitmessage>Hello! I'm MonkeyBot!&#xA; &lt;font color="blue">What is your message for me?&lt;/font></chatbotinitmessage>
-    <chatbotoutputmessage>The result is: %s &lt;p >&lt;img src="https://media.giphy.com/media/l0Iy5cuJkQKsDfFCM/giphy.gif" height="90" width="110">&lt;/p>
+    <chatbotinitmessage>Hi! I'm MonkeyBot!&#xA; &lt;font color="blue">What is your message for me?&lt;/font></chatbotinitmessage>
+    <chatbotoutputmessage>The result is: %s &lt;p >&lt;img src="https://media.giphy.com/media/l0Iy5cuJkQKsDfFCM/giphy.gif" height="100" width="110">&lt;/p>
     </chatbotoutputmessage>
     <argstypes>
       <arg>

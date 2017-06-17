@@ -57,11 +57,11 @@
     &lt;/p>
     </hint>
     </hints>
-    <chatbotinitmessage>Hi! Let's see if you succeeded!&#xA</chatbotinitmessage>
+    <chatbotinitmessage>Hi! Let's see if you succeeded!&#xA;Insert 'True' or 'False':</chatbotinitmessage>
     <chatbotoutputmessage>Your two boolean values are: %s</chatbotoutputmessage>
     <argstypes>
       <arg>
-        <argmessage>Insert 'True' or 'False':</argmessage>
+        <argmessage></argmessage>
         <argtypes>
           <type>str</type>
         </argtypes>

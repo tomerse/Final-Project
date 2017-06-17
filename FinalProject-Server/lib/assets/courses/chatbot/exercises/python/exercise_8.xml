@@ -64,9 +64,9 @@
       </hint>
       <hint>If the grade is smaller(&lt;) than 56, you failed the exam.</hint>
     </hints>
-    <chatbotinitmessage>Hello! I'm MonkeyBot!&#xA; &lt;font color="blue">What is your grade?&lt;/font></chatbotinitmessage>
+    <chatbotinitmessage>Hi! I'm MonkeyBot!&#xA; &lt;font color="blue">What is your grade?&lt;/font></chatbotinitmessage>
     <chatbotoutputmessage>Your result is: %s
-	&lt;p >&lt;img src="https://media.giphy.com/media/yDP4kcs5USS40/giphy.gif" height="90" width="110">&lt;/p>
+	&lt;p >&lt;img src="https://media.giphy.com/media/yDP4kcs5USS40/giphy.gif" height="100" width="110">&lt;/p>
 	  </chatbotoutputmessage>
     <argstypes>
       <arg>

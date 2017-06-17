@@ -12,7 +12,7 @@
     <code>def useOperators(a, b):
       sum = #enter you code here1
       print #enter you code here2
-      result = #enter you code here3
+      multi = #enter you code here3
       print #enter you code here4
       return
     </code>
@@ -25,10 +25,10 @@
         <content>Print the value of the variable 'sum'.</content>
       </task>
       <task>
-        <content>Set 'result' to be multiplication of 'a' and 'sum'.</content>
+        <content>Set 'multi' to be multiplication of 'a' and 'sum'.</content>
       </task>
       <task>
-        <content>Print the value of the variable 'result'.</content>
+        <content>Print the value of the variable 'multi'.</content>
       <tests>
           <test>
             <inputs>
@@ -36,7 +36,7 @@
               <input_value>1</input_value>
             </inputs>
             <output>4&#xA;12&#xA;</output>
-            <failure>Sum of 'a' and 'b' is incorrect.</failure>
+            <failure>What would be the output for 3 and 1?</failure>
           </test>
           <test>
             <inputs>
@@ -44,7 +44,7 @@
               <input_value>0</input_value>
             </inputs>
             <output>10&#xA;100&#xA;</output>
-            <failure>Multiplication of 'a' and 'sum' is incorrect.</failure>
+            <failure>What would be the output for 10 and 0?</failure>
           </test>
           <test>
             <inputs>
@@ -52,7 +52,7 @@
               <input_value>5</input_value>
             </inputs>
             <output>12&#xA;84&#xA;</output>
-            <failure>Multiplication of 'a' and 'sum' is incorrect.</failure>
+            <failure>What would be the output for 7 and 5?</failure>
           </test>
         </tests>
       </task>
