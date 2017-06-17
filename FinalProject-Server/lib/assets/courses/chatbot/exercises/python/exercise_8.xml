@@ -66,7 +66,7 @@
     </hints>
     <chatbotinitmessage>Hello! I'm MonkeyBot!&#xA; &lt;font color="blue">What is your grade?&lt;/font></chatbotinitmessage>
     <chatbotoutputmessage>Your result is: %s
-	&lt;p >&lt;img src="https://media.giphy.com/media/yDP4kcs5USS40/giphy.gif" height="150" width="220">&lt;/p>
+	&lt;p >&lt;img src="https://media.giphy.com/media/yDP4kcs5USS40/giphy.gif" height="75" width="110">&lt;/p>
 	  </chatbotoutputmessage>
     <argstypes>
       <arg>

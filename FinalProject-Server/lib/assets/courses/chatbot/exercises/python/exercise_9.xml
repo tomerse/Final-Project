@@ -60,7 +60,7 @@
     </hint>
     </hints>
     <chatbotinitmessage>Hello!&#xAI'm MonkeyBot! &lt;font color="blue">What is your message for me?&lt;/font></chatbotinitmessage>
-    <chatbotoutputmessage>The result is: %s &lt;p >&lt;img src="https://media.giphy.com/media/l0Iy5cuJkQKsDfFCM/giphy.gif" height="150" width="220">&lt;/p>
+    <chatbotoutputmessage>The result is: %s &lt;p >&lt;img src="https://media.giphy.com/media/l0Iy5cuJkQKsDfFCM/giphy.gif" height="75" width="110">&lt;/p>
     </chatbotoutputmessage>
     <argstypes>
       <arg>
