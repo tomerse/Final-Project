@@ -14,7 +14,7 @@
     print #enter your code here1
     if grade : #enter your code here2
        print 'Passed. Excellent!'
-    if grade : #enter your code here3
+    else : #enter your code here3
        print 'Failed. You need to improve'
     return
     </code>
