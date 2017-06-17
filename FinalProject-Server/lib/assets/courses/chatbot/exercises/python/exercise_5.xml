@@ -4,7 +4,7 @@
   <exercise>
     <id>5</id>
     <topic>Operators</topic>
-    <instructions>After defining variables in the previous exercise, we will learn how to use them in the aplication. We can add, subtract, multiply and divide numbers with math operators like: &lt;br>&lt;font color="green">&lt;b>'+', '-', '*' and '/'&lt;/b>&lt;/font>.
+    <instructions>Previous exercise taught us to define variables.&#xA;Now we are going to learn how to use variables with simple mathematical operators.&#xA;We can add, subtract, multiply and divide numbers with mathematical operators like: &lt;br>&lt;font color="green">&lt;b>'+', '-', '*' and '/'&lt;/b>&lt;/font>.
 	 &lt;p>&lt;img src="https://media.giphy.com/media/h12hzyHiCNGRG/giphy.gif" height="200" width="250">&lt;/p>
 	 &lt;br/>
 	For example, to multiply variable 'a' with 'b': result = a * b.
@@ -19,13 +19,13 @@
     <tasks>
       <generaltask>Implement the function 'useOperators', that printing operation results, by completing the following tasks:</generaltask>
       <task>
-        <content>Set the variable 'sum' equal to sum of 'a' and 'b'.</content>
+        <content>Set the variable 'sum' to be equal to the sum of 'a' and 'b'.</content>
       </task>
       <task>
         <content>Print the value of the variable 'sum'.</content>
       </task>
       <task>
-        <content>Set 'result' to be multiply between 'a' and 'sum'.</content>
+        <content>Set 'result' to be multiplication of 'a' and 'sum'.</content>
       </task>
       <task>
         <content>Print the value of the variable 'result'.</content>
@@ -44,7 +44,7 @@
               <input_value>0</input_value>
             </inputs>
             <output>10&#xA;100&#xA;</output>
-            <failure>Multiply between 'a' and 'sum' is incorrect.</failure>
+            <failure>Multiplication of 'a' and 'sum' is incorrect.</failure>
           </test>
           <test>
             <inputs>
@@ -52,7 +52,7 @@
               <input_value>5</input_value>
             </inputs>
             <output>12&#xA;84&#xA;</output>
-            <failure>Multiply between 'a' and 'sum' is incorrect.</failure>
+            <failure>Multiplication of 'a' and 'sum' is incorrect.</failure>
           </test>
         </tests>
       </task>
@@ -63,7 +63,7 @@
     <hints>
       <hint>To calculate sum of two variables, use the expression: &lt;font color="green">&lt;b>a + b&lt;/b>&lt;/font>.
       </hint>
-      <hint>To calculate multiply between two variables use the expression: &lt;font color="green">&lt;b>a * b&lt;/b>&lt;/font>
+      <hint>To calculate multiplication of two variables use the expression: &lt;font color="green">&lt;b>a * b&lt;/b>&lt;/font>
       </hint>
     </hints>
     <chatbotinitmessage>Hi! Let's see if you succeeded!&#xA</chatbotinitmessage>
