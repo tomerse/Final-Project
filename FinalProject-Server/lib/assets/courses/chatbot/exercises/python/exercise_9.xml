@@ -32,14 +32,14 @@
               <input_value>Test</input_value>
             </inputs>
             <output>Test&#xA;Test&#xA;Test&#xA;</output>
-            <failure>Make sure to increase the value of 'num' by 1.</failure>
+            <failure>Check your condition and make sure to increase the value of 'num' by 1.</failure>
           </test>
           <test>
             <inputs>
               <input_value>MoreTest</input_value>
             </inputs>
             <output>MoreTest&#xA;MoreTest&#xA;MoreTest&#xA;</output>
-            <failure>Make sure the condition of while loop is right.</failure>
+            <failure>Mheck your condition and make sure to increase the value of 'num' by 1.</failure>
           </test>
         </tests>
       </task>
