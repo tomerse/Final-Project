@@ -63,12 +63,13 @@ class CourseFactory
     syllabuses  = Xml.get_elements(file,'courses//course','syllabus')
     currLangs  = Xml.get_elements(file,'courses//course','currlang')
     courseApps  = Xml.get_elements(file,'courses//course','courseapp')
+    logos  = Xml.get_elements(file,'courses//course','logo')
     #build every course as object
     num_of_courses = titles.length
     if (not titles.flatten.empty?) and (num_of_courses == generals.length) and (num_of_courses  == syllabuses.length) and (num_of_courses == currLangs.length) and (num_of_courses == courseApps.length)
       for i in 0..num_of_courses-1
         params = Hash["title"=>titles[i][0], "general"=>generals[i][0], "syllabus"=>syllabuses[i][0], "currLang"=>currLangs[i][0],
-                      "courseApp"=>courseApps[i][0]]
+                      "courseApp"=>courseApps[i][0], "logo"=>logos[i][0]]
         course = Course.new(params)
         courses.push(course)
       end
