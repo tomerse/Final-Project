@@ -13,9 +13,9 @@
     <code>def examResult(grade):
     print #enter your code here1
     if grade : #enter your code here2
-       print 'Passed. Exelent!'
+       print 'Passed. Exellent!'
     if grade : #enter your code here3
-       print 'Fail. You need to improve'
+       print 'Failed. You need to improve'
     return
     </code>
     <tasks>
@@ -24,30 +24,30 @@
         <content>Print the variable 'grade' in the first line.</content>
       </task>
       <task>
-        <content>Print 'Passed. Exelent!' only if the grade is bigger or equal to 56.</content>
+        <content>Print 'Passed. Exellent!' only if the grade is bigger or equal to 56.</content>
       </task>
       <task>
-        <content>Print 'Fail. You need to improve' only if the grade is smaller than 56.</content>
+        <content>Print 'Failed. You need to improve' only if the grade is smaller than 56.</content>
       <tests>
           <test>
             <inputs>
               <input_value>80</input_value>
             </inputs>
-            <output>80&#xA;Passed. Exelent!&#xA;</output>
+            <output>80&#xA;Passed. Exellent!&#xA;</output>
             <failure>The grade should be bigger(>) than 56 to pass the exam.</failure>
           </test>
           <test>
             <inputs>
               <input_value>56</input_value>
             </inputs>
-            <output>56&#xA;Passed. Exelent!&#xA;</output>
+            <output>56&#xA;Passed. Exellent!&#xA;</output>
             <failure>The grade can be equal(=) to 56 in order to pass the exam.</failure>
           </test>
           <test>
             <inputs>
               <input_value>20</input_value>
             </inputs>
-            <output>20&#xA;Fail. You need to improve&#xA;</output>
+            <output>20&#xA;Failed. You need to improve&#xA;</output>
             <failure>If the grade is smaller(&lt;) than 56, you failed the exam.</failure>
           </test>
         </tests>
