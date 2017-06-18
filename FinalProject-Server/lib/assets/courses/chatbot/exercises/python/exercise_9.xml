@@ -5,7 +5,7 @@
     <id>9</id>
     <topic>Loops</topic>
     <instructions>Like the if statement, &lt;b>while loop&lt;/b> statement executes the code inside of it if the condition is &lt;font color="green">True&lt;/font>.
-    &lt;br>The while loop will continue to execute as long as the condition is &lt;font color="yellow">True&lt;/font>.
+    &lt;br>The while loop will continue to execute as long as the condition is &lt;font color="DarkOrange">True&lt;/font>.
     &lt;br>
     &lt;p>&lt;img src="/assets/images/s9_instructions.jpg">&lt;/p>
     </instructions>

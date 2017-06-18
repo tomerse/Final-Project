@@ -24,11 +24,11 @@
         <content>Print the variable &lt;font color="CornflowerBlue">grade&lt;/font> in the first line.</content>
       </task>
       <task>
-      <content>Print &lt;font color="yellow">'Passed. Excellent!'&lt;/font> only if the grade is bigger or equal to &lt;font color="red">56&lt;/font>.
+      <content>Print &lt;font color="DarkOrange">'Passed. Excellent!'&lt;/font> only if the grade is bigger or equal to &lt;font color="red">56&lt;/font>.
         </content>
       </task>
       <task>
-        <content>Print &lt;font color="yellow">'Failed. You need to improve'&lt;/font> only if the grade is smaller than &lt;font color="red">56&lt;/font>.</content>
+        <content>Print &lt;font color="DarkOrange">'Failed. You need to improve'&lt;/font> only if the grade is smaller than &lt;font color="red">56&lt;/font>.</content>
       <tests>
           <test>
             <inputs>
