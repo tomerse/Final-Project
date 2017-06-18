@@ -24,7 +24,7 @@
         <content>Write a single-line comment on line 2 to describe your implementation.</content>
       </task>
       <task>
-        <content>Set the variable &lt;font color="CornflowerBlue">condition&lt;/font> to be &lt;font color="yellow">True&lt;/font>.
+        <content>Set the variable &lt;font color="CornflowerBlue">condition&lt;/font> to be &lt;font color="DarkOrange">True&lt;/font>.
         </content>
       </task>
       <task>
@@ -32,7 +32,7 @@
         </content>
       </task>
       <task>
-        <content>Print the variable &lt;font color="CornflowerBlue">message&lt;/font> every loop iteration only if &lt;font color="CornflowerBlue">condition&lt;/font> is &lt;font color="yellow">True&lt;/font>.</content>
+        <content>Print the variable &lt;font color="CornflowerBlue">message&lt;/font> every loop iteration only if &lt;font color="CornflowerBlue">condition&lt;/font> is &lt;font color="DarkOrange">True&lt;/font>.</content>
       </task>
       <task>
         <content>Increase the value of &lt;font color="CornflowerBlue">num&lt;/font> to avoid infinite loop.</content>

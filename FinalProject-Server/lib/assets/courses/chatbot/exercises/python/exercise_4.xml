@@ -12,8 +12,8 @@ and open the template in the editor.
     <topic>Variables</topic>
     <instructions>Creating applications, games, and web pages all involve storing and working with different types of data. We use variable to store the data which allows us to access it in the future.&lt;br>Every variable has a name and value. Assignment to the variable done by the &lt;font color="green">&lt;b>'='&lt;/b>&lt;/font> operator.&lt;br>For example:&lt;br>
     &lt;p>&lt;img src="/assets/images/s4_instructions.jpg">&lt;/p>
-      &lt;br>The variable &lt;font color="CornflowerBlue">&lt;b>num&lt;/b>&lt;/font> now stores the number &lt;font color="yellow">&lt;b>5&lt;/b>&lt;/font>.
-      &lt;br>The variable &lt;font color="CornflowerBlue">&lt;b>string&lt;/b>&lt;/font> now stores the number &lt;font color="yellow">&lt;b>'Hello World'&lt;/b>&lt;/font>.
+      &lt;br>The variable &lt;font color="CornflowerBlue">&lt;b>num&lt;/b>&lt;/font> now stores the number &lt;font color="DarkOrange">&lt;b>5&lt;/b>&lt;/font>.
+      &lt;br>The variable &lt;font color="CornflowerBlue">&lt;b>string&lt;/b>&lt;/font> now stores the number &lt;font color="DarkOrange">&lt;b>'Hello World'&lt;/b>&lt;/font>.
     </instructions>
     <code>def defineVars(var):
       my_number = #enter you code here1
@@ -32,7 +32,7 @@ and open the template in the editor.
         <content>Print the variable &lt;font color="CornflowerBlue">my_number&lt;/font>.</content>
       </task>
       <task>
-        <content>Set the variable &lt;font color="CornflowerBlue">my_string&lt;/font> equal to the value &lt;font color="yellow">'Hello World!'&lt;/font>.</content>
+        <content>Set the variable &lt;font color="CornflowerBlue">my_string&lt;/font> equal to the value &lt;font color="DarkOrange">'Hello World!'&lt;/font>.</content>
       </task>
       <task>
         <content>Print the variable &lt;font color="CornflowerBlue">my_string&lt;/font>.</content>
