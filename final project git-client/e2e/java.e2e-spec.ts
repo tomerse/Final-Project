@@ -1,18 +1,18 @@
-// import { CoursePage } from './course.po';
+// import { JavaCoursePage } from './java.po';
 //
-// describe('Python Course', function() {
-//   let page: CoursePage;
+// describe('Java Course', function() {
+//   let page: JavaCoursePage;
 //
 //   beforeEach(() => {
-//     page = new CoursePage();
+//     page = new JavaCoursePage();
 //   });
 //
-//     it('Should display correct title', function () {
-//       page.ignoreSynch();
-//       page.navigateTo();
-//       expect(page.getTitle()).toEqual('Monkey-Bot');
-//       page.enableSynch();
-//     });
+//   it('Should display correct title', function () {
+//     page.ignoreSynch();
+//     page.navigateTo();
+//     expect(page.getTitle()).toEqual('Monkey-Bot');
+//     page.enableSynch();
+//   });
 //
 //   it('First stage topic', function () {
 //     page.ignoreSynch();
