@@ -29,7 +29,7 @@ and open the template in the editor.
               <input_value>Hello</input_value>
             </inputs>
             <output>Hello&#xA;</output>
-            <failure>For the input "Hello" the expected output should be "Hello".
+            <failure>For the input "Hello" the expected output should be "Hello".\n
 			Enter the input "Hello" and check if the chatbot's output meets the expected output.			
 			</failure>
           </test>
