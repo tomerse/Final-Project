@@ -20,7 +20,7 @@ export class Course
 
   courseApp:string;
   currLang:string;
-
+  logo:any;
 
 
   constructor(currTitle:string,currGeneral:string,currsyllabus:any,courseApp:string,currLang:string )
@@ -33,7 +33,7 @@ export class Course
       this.courseApp=courseApp;
   }
 
-}
+} 
 
 
 
@@ -64,7 +64,7 @@ export class courseComponent implements OnInit,AfterContentInit{
     this.activeRoute = route;
      courseStageSevice.missionConfirmed$.subscribe(
       indexid => {
-        console.log('subbbbbbb');
+
         this.selectedIndex =indexid ;
       });
   }
@@ -72,18 +72,18 @@ export class courseComponent implements OnInit,AfterContentInit{
  ngOnInit(){
      this.sub = this.activeRoute.params.subscribe (params =>
      {
-       console.log("ddddddddddddddddddddddd");
+
         this.currCourse.currLang = params['currLang'];
         this.currCourse.courseApp =params['courseApp']; 
        // this.conf = new Configuration(this.currCourse.currLang,this.currCourse.courseApp);
-       console.log("kkkkkkkkkkkkkkkkkkkk");
+   
         this.coursePageService.getAllExcrsisesData(this.currCourse.currLang,this.currCourse.courseApp).subscribe(
           response =>
           {
-            console.log(response);
+
             this.links = response;
             this.stage.lastLevelId = this.links.length;
-            console.log('last level'+ this.links.length);
+
           }
 
         );
@@ -98,8 +98,7 @@ export class courseComponent implements OnInit,AfterContentInit{
     this.editor = event['editor'];
     this.stage = event;
     this.stage.lastLevelId = this.links.length;
-    console.log('last level'+ this.links.length); 
-    console.log('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv'); 
+
     
  }
 changeToDarkTheme()
@@ -118,12 +117,9 @@ changeToDarkTheme()
 
   moveStage(i:number)
   {
-      console.log(i);
+
      this.stage.moveNextLevel(i.toString());
-           console.log("dddssssddddsss");
-     console.log(this.selectedIndex);
-           console.log("ddddssssdddsss");
-               this.selectedIndex = i;
+     this.selectedIndex = i;
         setTimeout(()=>
     {
        this.sidenav.close();

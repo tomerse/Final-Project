@@ -9,7 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "monkey.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -31,7 +31,9 @@
 		"../node_modules/ace-builds/src-min/ace.js",
         "../node_modules/ace-builds/src-min/theme-tomorrow_night.js",
         "../node_modules/ace-builds/src-min/mode-python.js",
-        "../node_modules/ace-builds/src-min/theme-eclipse.js"
+        "../node_modules/ace-builds/src-min/theme-eclipse.js",
+		"../node_modules/ace-builds/src-min/mode-java.js",
+		"../node_modules/ace-builds/src-min/ext-language_tools.js"
 	  ],
       "environmentSource": "environments/environment.ts",
       "environments": {

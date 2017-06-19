@@ -13,12 +13,12 @@ import { Component , ViewChild , Output , Input ,EventEmitter } from '@angular/c
        [readOnly]="readonly"
        [autoUpdateContent]="true"
        (textChanged)="onChange($event)"
-       style="min-height:400px; width:550px;overflow: auto;"></div>
+       style="min-height:400px; width:700px;overflow: auto;"></div>
   `
 })
 export class MyComponent {
   theme = 'tomorrow_night';
-  options:any = {maxLines: 20, printMargin: false,fontSize:"13pt", autoScrollEditorIntoView: true};
+  options:any = {maxLines: 20, printMargin: false,fontSize:"13pt", autoScrollEditorIntoView: true,enableBasicAutocompletion: true};
   readonly:any = false;
 
   @ViewChild('editor') editor;
@@ -48,8 +48,7 @@ export class MyComponent {
   }
 
   onChange(code) {
-    console.log("tryyyy");
-    console.log("new code", code);
     this.currStatus.emit(code);
+    this.text=code; 
   }
 }

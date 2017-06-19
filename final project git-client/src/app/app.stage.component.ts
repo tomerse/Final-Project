@@ -6,8 +6,7 @@ import {MdDialog, MdDialogRef,MdDialogConfig} from '@angular/material';
 import {DialogCompilationComponent} from  './Dialog/dialog.component';
 import {dialogStatus} from './Dialog/dialogStatus';
 import { Subscription } from 'rxjs/Subscription';
- import {CourseStageSevice} from  './app.course-stage-service';
-//import 'ace-builds/src-min/ace';
+import {CourseStageSevice} from  './app.course-stage-service';
 import { CookieService } from 'ngx-cookie';
 import {SimpleTimer} from 'ng2-simple-timer';
 
@@ -57,7 +56,7 @@ timer0Id: string;
     this.currRouter = router;
     this.subscription = courseStageSevice.missionAnnounced$.subscribe(
       mission => {
-          console.log('misson');
+
     });
  
   }
@@ -145,7 +144,6 @@ timer0Id: string;
     this.stagePageService.submitYourCode(this.currStage.id,this.writtenCode,this.currLang,this.courseApp).subscribe(
       response =>
       {
-        console.log('stage last' + this.lastLevelId);
           //// add enable edit
         if (response["status"]=='compilation error')
         {
@@ -173,7 +171,6 @@ timer0Id: string;
             if(this.isLastLevel)
             {
         
-              console.log(parseInt(this.currStage.id));
                 this._cookieService.put(this.cookieName, (parseInt(this.currStage.id)).toString(),
                 {domain:'finalprojectcm.herokuapp.com', expires: d });
             }
@@ -189,14 +186,14 @@ timer0Id: string;
               this.openDialog(1,response["caption"],response["generic_message"],response["error"],response["more_info"]);
                this.chatbotIsOn =true; 
         }
-        console.log("Success Response " + JSON.stringify(response));
+
       }
     );
   }
 
   moveNextLevel(id:string)
   {
-    console.log('moving next stage');
+
     let id2 = parseInt(id) +1;
      //this.currStage.code='Loading...';
     this.stagePageService.getInitalDataForStage(( parseInt(id) +1).toString(),
@@ -207,6 +204,7 @@ timer0Id: string;
           this.currStage.id = response["id"];
           this.currStage.topic= response["topic"];
           this.currStage.instructions = '<p>'+response["instructions"] +'</p>';
+          this.currStage.generalTask= '<p>'+response["generaltask"] +'</p>';
           this.currStage.tasks =response["tasks"] ;
           this.currStage.hints= response["hints"];
           this.currStage.argstype=response["argstype"];
@@ -238,15 +236,15 @@ timer0Id: string;
 
   changeEditorEdit()
   {
-    console.log('sdasdasdsa');
+
     if (this.title == 'app works!')
     {
-      console.log('check2');
+
       this.editor.changeReadOnlyModeToTrue();
     }
     else
     {
-      console.log('check1');
+
       this.editor.changeReadOnlyModeToFalse();
     }
   }
@@ -262,8 +260,6 @@ timer0Id: string;
   scrollToBottom()
   {
     let out = this.introObj.nativeElement;
-    console.log(out.scrollTop);
-    console.log(out.scrollHeight);
     out.scrollTop = out.scrollHeight;
   }
 
@@ -282,14 +278,17 @@ timer0Id: string;
 			// Unsubscribe if timer Id is defined
 			this.st.unsubscribe(this.timer0Id);
 			this.timer0Id = undefined;
-			console.log('timer 0 Unsubscribed.');
 		} else {
 			// Subscribe if timer Id is undefined
 			this.timer0Id = this.st.subscribe('1sec', e => this.timer0callback());
-			console.log('timer 0 Subscribed.');
 		}
-		console.log(this.st.getSubscription());
 	}
+
+  resetCode()
+  {
+    let t= this.currStage.code;
+    this.editor.text=t.toString();
+  }
 
 
 }

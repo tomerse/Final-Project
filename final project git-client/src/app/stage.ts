@@ -18,6 +18,7 @@ export class stage {
 
   argsmesssages:string[];
 
+  generalTask:string;
 
   constructor(){
     this.id ='1';

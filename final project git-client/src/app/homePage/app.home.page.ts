@@ -16,18 +16,14 @@ export class HomePageComponent implements OnInit {
   allCourses:Course[] = new Array<Course>();
   currRouter:Router;
   constructor(private router: Router,private homePageService:HomePageService) {
-   // this.allCourses.push(new Course('python','checkGeneral','sdsadsadsaasdsadad','chatbot','python'));
-    //this.allCourses.push(new Course('python','checkGeneral','sdsadsadsaasdsadad','chatbot','python'));
     this.currRouter = router;
   }
 
   ngOnInit(){
-    console.log('sddsasadsadddd');
     this.homePageService.getAllCoursesData().subscribe(
       response=> 
       { 
         this.allCourses =response;
-        console.log( this.allCourses);
       }
     );
 
