@@ -38,7 +38,8 @@
               <input_value>1</input_value>
             </inputs>
             <output>4&#xA;12&#xA;</output>
-            <failure>What would be the output for 3 and 1?</failure>
+            <failure>For the input &lt;font color="DarkOrange">&lt;b>3 1&lt;/b>&lt;/font> the expected output should be &lt;font color="CornflowerBlue">&lt;b>4 12&lt;/b>&lt;/font>.\n
+			Enter the input &lt;font color="DarkOrange">&lt;b>3 1&lt;/b>&lt;/font> and check if the chatbot's output meets the expected output.</failure>
           </test>
           <test>
             <inputs>
@@ -46,7 +47,8 @@
               <input_value>0</input_value>
             </inputs>
             <output>10&#xA;100&#xA;</output>
-            <failure>What would be the output for 10 and 0?</failure>
+            <failure>For the input &lt;font color="DarkOrange">&lt;b>10 0&lt;/b>&lt;/font> the expected output should be &lt;font color="CornflowerBlue">&lt;b>10 100&lt;/b>&lt;/font>.\n
+			Enter the input &lt;font color="DarkOrange">&lt;b>10 0&lt;/b>&lt;/font> and check if the chatbot's output meets the expected output.</failure>
           </test>
           <test>
             <inputs>
@@ -54,7 +56,8 @@
               <input_value>5</input_value>
             </inputs>
             <output>12&#xA;84&#xA;</output>
-            <failure>What would be the output for 7 and 5?</failure>
+            <failure>For the input &lt;font color="DarkOrange">&lt;b>7 5&lt;/b>&lt;/font> the expected output should be &lt;font color="CornflowerBlue">&lt;b>12 84&lt;/b>&lt;/font>.\n
+			Enter the input &lt;font color="DarkOrange">&lt;b>7 5&lt;/b>&lt;/font> and check if the chatbot's output meets the expected output.</failure>
           </test>
         </tests>
       </task>

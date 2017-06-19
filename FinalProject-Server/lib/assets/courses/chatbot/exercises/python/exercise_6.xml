@@ -36,14 +36,16 @@
               <input_value>False</input_value>
             </inputs>
             <output>True&#xA;False&#xA;</output>
-            <failure>What would be the output for 'False'?</failure>
+            <failure>For the input &lt;font color="DarkOrange">&lt;b>False&lt;/b>&lt;/font> the expected output should be &lt;font color="CornflowerBlue">&lt;b>True False&lt;/b>&lt;/font>.\n
+			Enter the input &lt;font color="DarkOrange">&lt;b>False&lt;/b>&lt;/font> and check if the chatbot's output meets the expected output.</failure>
           </test>
             <test>
             <inputs>
               <input_value>True</input_value>
             </inputs>
             <output>True&#xA;True&#xA;</output>
-            <failure>What would be the output for 'True'?</failure>
+            <failure>For the input &lt;font color="DarkOrange">&lt;b>True&lt;/b>&lt;/font> the expected output should be &lt;font color="CornflowerBlue">&lt;b>True True&lt;/b>&lt;/font>.\n
+			Enter the input &lt;font color="DarkOrange">&lt;b>True&lt;/b>&lt;/font> and check if the chatbot's output meets the expected output.</failure>
           </test>
         </tests>
       </task>
