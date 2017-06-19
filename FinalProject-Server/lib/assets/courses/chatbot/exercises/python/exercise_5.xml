@@ -11,11 +11,11 @@
   \nresult = a * b.
     </instructions>
     <code>def useOperators(a, b):
-      sum = #enter you code here1
-      print #enter you code here2
-      multi = #enter you code here3
-      print #enter you code here4
-      return
+    sum = #enter you code here1
+    print #enter you code here2
+    multi = #enter you code here3
+    print #enter you code here4
+    return
     </code>
     <tasks>
       <generaltask>Implement the function '&lt;b>useOperators&lt;/b>', that printing operation results, by completing the following tasks:</generaltask>

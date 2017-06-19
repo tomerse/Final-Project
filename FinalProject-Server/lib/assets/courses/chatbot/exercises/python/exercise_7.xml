@@ -9,12 +9,12 @@
       &lt;br>For 'AND' - both relations must be true for the complex expression to be true. For 'OR' - if either relation is true, the complex expression is true.
     </instructions>
     <code>def logicOps(var):
-      my_bool = #enter you code here1
-      OR = my_bool #enter you code here2
-      print #enter you code here4
-      AND = my_bool #enter you code here3
-      print #enter you code here4
-      return
+    my_bool = #enter you code here1
+    OR = my_bool #enter you code here2
+    print #enter you code here4
+    AND = my_bool #enter you code here3
+    print #enter you code here4
+    return
     </code>
     <tasks>
       <generaltask>Implement the function '&lt;b>logicOps&lt;/b>' by completing the following tasks:</generaltask>

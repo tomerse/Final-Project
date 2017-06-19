@@ -9,11 +9,11 @@
     &lt;p>&lt;img src="/assets/images/s6_instructions.jpg">&lt;/p>
     </instructions>
     <code>def useBooleans(var):
-      my_bool = #enter you code here1
-      print #enter you code here2
-      result = #enter you code here3
-      print #enter you code here4
-      return
+    my_bool = #enter you code here1
+    print #enter you code here2
+    result = #enter you code here3
+    print #enter you code here4
+    return
     </code>
     <tasks>
       <generaltask>Implement the function '&lt;b>useBooleans&lt;/b>' by completing the following tasks:</generaltask>

@@ -16,11 +16,11 @@ and open the template in the editor.
       &lt;br>The variable &lt;font color="CornflowerBlue">&lt;b>string&lt;/b>&lt;/font> now stores the number &lt;font color="DarkOrange">&lt;b>'Hello World'&lt;/b>&lt;/font>.
     </instructions>
     <code>def defineVars(var):
-      my_number = #enter you code here1
-      print #enter you code here2
-      my_string = #enter you code here3
-      print #enter you code here4
-      return
+    my_number = #enter you code here1
+    print #enter you code here2
+    my_string = #enter you code here3
+    print #enter you code here4
+    return
     </code>
     <tasks>
       <generaltask>Implement the function '&lt;b>defineVars&lt;/b>' by completing the following tasks:</generaltask>

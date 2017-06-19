@@ -10,9 +10,9 @@
       &lt;br>In Python we use &lt;font color="green">&lt;b>'#'&lt;/b>&lt;/font> at the beginning of a line, in order to comment out a single line of code.
     </instructions>
     <code>def printNameWithComment(name):
-      #enter your comment here
-      print #enter your code here
-      return
+    #enter your comment here
+    print #enter your code here
+    return
     </code>
     <tasks>
       <generaltask>Implement the function '&lt;b>printNameWithComment&lt;/b>' by completing the following tasks:</generaltask>
