@@ -29,7 +29,9 @@ and open the template in the editor.
               <input_value>Hello</input_value>
             </inputs>
             <output>Hello&#xA;</output>
-            <failure>What would be the output for "Hello"?</failure>
+            <failure>For the input "Hello" the expected output should be "Hello".
+			Enter the input "Hello" and check if the chatbot's output meets the expected output.			
+			</failure>
           </test>
           <test>
             <inputs>
@@ -75,7 +77,7 @@ and open the template in the editor.
         </argtypes>
       </arg>
     </argstypes>
-    <test_failed_info>Use the chatbot on the lower right corner of the screen to check your code.</test_failed_info>
+    <test_failed_info>You can find the chatbot on the lower right corner of the screen.</test_failed_info>
     <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/l4q7TIW8nEZYOJUf6/giphy.gif" height="200" width="250">&lt;/p>
 	\n Use the chatbot on the lower right corner of the screen to check your code.
 	</success_info>
