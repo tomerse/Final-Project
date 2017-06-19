@@ -29,8 +29,8 @@ and open the template in the editor.
               <input_value>Hello</input_value>
             </inputs>
             <output>Hello&#xA;</output>
-            <failure>For the input "Hello" the expected output should be "Hello".\n
-			Enter the input "Hello" and check if the chatbot's output meets the expected output.			
+            <failure>For the input &lt;font color="DarkOrange">&lt;b>"Hello"&lt;/b>&lt;/font> the expected output should be &lt;font color="CornflowerBlue">&lt;b>"Hello"&lt;/b>&lt;/font>.\n
+			Enter the input &lt;font color="DarkOrange">&lt;b>"Hello"lt;/b>&lt;/font> and check if the chatbot's output meets the expected output.			
 			</failure>
           </test>
           <test>
@@ -38,21 +38,24 @@ and open the template in the editor.
               <input_value>World</input_value>
             </inputs>
             <output>World&#xA;</output>
-            <failure>What would be the output for "World"?</failure>
+            <failure>For the input "World" the expected output should be "World".\n
+			Enter the input "World" and check if the chatbot's output meets the expected output.</failure>
           </test>
           <test>
             <inputs>
               <input_value>a b</input_value>
             </inputs>
             <output>a b&#xA;</output>
-            <failure>What would be the output for "a b"?</failure>
+            <failure>For the input "a b" the expected output should be "a b".\n
+			Enter the input "a b" and check if the chatbot's output meets the expected output.</failure>
           </test>
           <test>
             <inputs>
               <input_value>123</input_value>
             </inputs>
             <output>123&#xA;</output>
-            <failure>What would be the output for "123"?</failure>
+            <failure>For the input "123" the expected output should be "123".\n
+			Enter the input "123" and check if the chatbot's output meets the expected output.</failure>
           </test>
         </tests>
       </task>
