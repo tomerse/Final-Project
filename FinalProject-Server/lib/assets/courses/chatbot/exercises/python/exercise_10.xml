@@ -8,15 +8,15 @@
     Comments, Variables, Operators, Conditions and Loops. 
     </instructions>
     <code>def summary(message):
-      # Add your comment
-      print 'First Part Summary'
-      condition = 
-      num = 1
-      while num &lt;= : # Fill in the condition
-        if :
-            print # Print the message
-        num = # Num increment
-      return
+    # Add your comment
+    print 'First Part Summary'
+    condition = 
+    num = 1
+    while num &lt;= : # Fill in the condition
+      if :
+          print # Print the message
+      num = # Num increment
+    return
     </code>
     <tasks>
       <generaltask>Implement the function '&lt;b>summary&lt;/b>' by completing the following tasks:</generaltask>

@@ -10,11 +10,11 @@
     &lt;p>&lt;img src="/assets/images/s9_instructions.jpg">&lt;/p>
     </instructions>
     <code>def printMultiMessage(message):
-      num = 1
-      while num : # Fill in the condition
-          print # Code
-          num = # Num Increment
-      return
+    num = 1
+    while num : # Fill in the condition
+        print # Code
+        num = # Num Increment
+    return
     </code>
     <tasks>
       <generaltask>Implement the function '&lt;b>printMultiMessage&lt;/b>' by completing the following tasks:</generaltask>

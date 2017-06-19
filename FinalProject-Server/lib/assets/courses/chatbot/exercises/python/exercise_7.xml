@@ -9,12 +9,12 @@
       &lt;br>For 'AND' - both relations must be true for the complex expression to be true. For 'OR' - if either relation is true, the complex expression is true.
     </instructions>
     <code>def logicOps(var):
-      my_bool = #enter you code here1
-      OR = my_bool #enter you code here2
-      print #enter you code here4
-      AND = my_bool #enter you code here3
-      print #enter you code here4
-      return
+    my_bool = #enter you code here1
+    OR = my_bool #enter you code here2
+    print #enter you code here4
+    AND = my_bool #enter you code here3
+    print #enter you code here4
+    return
     </code>
     <tasks>
       <generaltask>Implement the function '&lt;b>logicOps&lt;/b>' by completing the following tasks:</generaltask>
@@ -38,14 +38,16 @@
               <input_value>False</input_value>
             </inputs>
             <output>True&#xA;False&#xA;</output>
-            <failure>What would be the output for 'False'?</failure>
+            <failure>For the input &lt;font color="DarkOrange">&lt;b>False&lt;/b>&lt;/font> the expected output should be &lt;font color="CornflowerBlue">&lt;b>True False&lt;/b>&lt;/font>.\n
+			Enter the input &lt;font color="DarkOrange">&lt;b>False&lt;/b>&lt;/font> and check if the chatbot's output meets the expected output.</failure>
           </test>
           <test>
             <inputs>
               <input_value>True</input_value>
             </inputs>
             <output>True&#xA;True&#xA;</output>
-            <failure>What would be the output for 'True'?</failure>
+            <failure>For the input &lt;font color="DarkOrange">&lt;b>True&lt;/b>&lt;/font> the expected output should be &lt;font color="CornflowerBlue">&lt;b>True True&lt;/b>&lt;/font>.\n
+			Enter the input &lt;font color="DarkOrange">&lt;b>True&lt;/b>&lt;/font> and check if the chatbot's output meets the expected output.</failure>
           </test>
         </tests>
       </task>
