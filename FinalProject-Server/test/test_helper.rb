@@ -48,11 +48,19 @@ class ActiveSupport::TestCase
     COURSE_REQ_URL = "#{APP_URL}/#/course/${prog_lang}/${course_name}/stage/${stage_id}"
     COMP_REQ_URL = "#{APP_URL}/courses/${prog_lang}/${course_name}/${stage_id}/compile"
     RUN_REQ_URL = "#{APP_URL}/courses/${prog_lang}/${course_name}/${stage_id}/run"
-    NUM_OF_USERS = 50
+    NUM_OF_USERS = 500
+    TIME_TO_SLEEP = 0.0030
 
-  def print_test_name test_case
+  def print_test_name(test_case)
     print "\n"
     print "Test case: #{test_case}\n"
+  end
+
+  def print_performance_summary(test_case,succ, failures)
+    print "Summary for: #{test_case}\n"
+    print "Total NO. Requests: #{succ + failures}\n"
+    print "Total NO. Successful Requests: #{succ}\n"
+    print "Total NO. failed Requests: #{failures}\n"
   end
   # ***** PerformanceTests Section *****
 
