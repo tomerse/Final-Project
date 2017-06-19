@@ -67,7 +67,7 @@
   
     <div fxFlex="25" style="position: absolute;bottom: 0;">
         <md-card class="card-accent md-card-flat" >
-          <button style="margin-right: inherit;" #submitButton  
+          <button id="submitCodeButton" style="margin-right: inherit;" #submitButton
           md-raised-button md-tooltip="Click here to submit your code!" (click)="submit()" color="primary" [disabled]="successLevel">
             Submit your code!
           </button>
@@ -76,7 +76,7 @@
           color="primary" [disabled]="successLevel">
            Reset code
           </button>
-          <button style="margin-right: inherit;" #nextStageButton
+          <button id="nextStageButton" style="margin-right: inherit;" #nextStageButton
           md-raised-button md-tooltip="Click here to move next level!" (click)="moveNextLevel(currStage.id)" 
           color="primary" [disabled]="!successLevel  || isLastLevel">
            Start next lesson

@@ -17,18 +17,18 @@ export class MainPage {
   }
 
   getCoursesContainer() {
-   return element(by.css('.card-accent md-card-main-page'));
+   return element.all(by.id('mainPageClass'));
   }
 
-  getCourseTitle() {
-    return element.all(by.css('h4'));
+  getCourseTitle(CourseNum:number) {
+    return this.getCoursesContainer().get(CourseNum).element(by.css('h4'));
   }
 
   getTitle() {
     return browser.getTitle();
   }
 
-  getCourseButton() {
-    return element.all(by.id('goToPythonCourse'));
+  getCourseButton(CourseNum:number) {
+    return this.getCoursesContainer().get(CourseNum).element(by.id('goToPythonCourse'));
   }
 }
