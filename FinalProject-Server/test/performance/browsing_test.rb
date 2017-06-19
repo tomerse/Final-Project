@@ -70,9 +70,7 @@ class BrowsingTest < ActiveSupport::TestCase
   def test_compile_request
     print_test_name self.method_name
     url = COMP_REQ_URL
-    stage_id = 1
-    url = url.sub('${prog_lang}',PROGLANGUAGE).sub('${course_name}',COURSEFOLDER).sub('${stage_id}',stage_id.to_s)
-    uri = URI(url)
+    url = url.sub('${prog_lang}',PROGLANGUAGE).sub('${course_name}',COURSEFOLDER)
     responses =[]
     users_threads = []
     input = read_test_input COMP_SUCC_INPUT
@@ -82,6 +80,9 @@ class BrowsingTest < ActiveSupport::TestCase
       NUM_OF_USERS.times do
         bm.report("user_#{i}:") do
           users_threads << Thread.new{
+            stage_id = 1 + Random.rand(2)
+            url = url.sub('${stage_id}',stage_id.to_s)
+            uri = URI(url)
             req = HTTP::Post.new uri
             req.body = body
             req.content_type = 'application/json'
@@ -104,9 +105,7 @@ class BrowsingTest < ActiveSupport::TestCase
   def test_run_code_request
     print_test_name self.method_name
     url = RUN_REQ_URL
-    stage_id = 1
-    url = url.sub('${prog_lang}',PROGLANGUAGE).sub('${course_name}',COURSEFOLDER).sub('${stage_id}',stage_id.to_s)
-    uri = URI(url)
+    url = url.sub('${prog_lang}',PROGLANGUAGE).sub('${course_name}',COURSEFOLDER)
     responses =[]
     users_threads = []
     input = read_test_input COMP_SUCC_INPUT
@@ -116,6 +115,9 @@ class BrowsingTest < ActiveSupport::TestCase
       NUM_OF_USERS.times do
         bm.report("user_#{i}:") do
           users_threads << Thread.new{
+            stage_id = 1 + Random.rand(2)
+            url = url.sub('${stage_id}',stage_id.to_s)
+            uri = URI(url)
             req = HTTP::Post.new uri
             req.body = body
             req.content_type = 'application/json'
