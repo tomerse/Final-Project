@@ -32,14 +32,14 @@
               </div>
             </div>
             <div class="panel-body msg-container-base">
-              <chat-message
+              <chat-message id="chatbotMessage"
                    *ngFor="let message of messageList"
                    [message]="message">
               </chat-message>
             </div>
             <div class="panel-footer">
               <div class="input-group">
-                <input type="text" 
+                <input id="chatbotInput" type="text"
                        class="chat-input"
                        placeholder="Write your message here..."
                        (keydown.enter)="sendMessage($event)"
@@ -55,5 +55,5 @@
         </div>
       </div>
     </div>
-  
+
 

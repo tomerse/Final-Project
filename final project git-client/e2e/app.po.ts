@@ -27,7 +27,9 @@ export class MainPage {
   getTitle() {
     return browser.getTitle();
   }
-
+  sleep(ms: number) {
+    browser.sleep(ms);
+  }
   getCourseButton(CourseNum:number) {
     return this.getCoursesContainer().get(CourseNum).element(by.id('goToPythonCourse'));
   }
