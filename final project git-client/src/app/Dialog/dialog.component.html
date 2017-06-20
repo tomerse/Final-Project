@@ -1,20 +1,20 @@
 <h1 id="sendCodeDialog" md-dialog-title>{{title}}</h1>
 <div md-dialog-content>
-
-   <div *ngFor="let content_var of content.split('\\n')">
+ 
+   <div *ngFor="let content_var of content?.split('\\n')">
       <div [innerHTML]="content_var"></div>
-  </div>
+  </div> 
    <br/>
     <div *ngIf="error">
-    <div *ngFor="let error_var of error.split('\\n')">
+    <div *ngFor="let error_var of error?.split('\\n')">
        <div [innerHTML]="error_var"></div>
-    </div>
+    </div> 
     <br/>
     </div>
     <div *ngIf="moreInfo">
-      <div *ngFor="let moreInfo_var of moreInfo.split('\\n')">
+      <div *ngFor="let moreInfo_var of moreInfo?.split('\\n')">  
         <div [innerHTML]="moreInfo_var"></div>
-      </div>
+      </div> 
       <br/>
     </div>
 </div>

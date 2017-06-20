@@ -18,14 +18,14 @@
   </md-sidenav>
 
   <md-toolbar color="primary" style="position: fixed;z-index: 200;">
-    <button id="courseList" class="app-icon-button" (click)="sidenav.toggle()">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
       <i class="material-icons app-toolbar-menu">menu</i>
     </button>
 
    {{currCourse.currLang.toUpperCase()}}-BOT
 
     <span class="app-toolbar-filler"></span>
-    <button id="changeTheme" md-button (click)="changeToDarkTheme()">TOGGLE DARK THEME</button>
+    <button md-button (click)="changeToDarkTheme()">TOGGLE DARK THEME</button>
     <a md-icon-button routerLink="/home"  md-tooltip="home">
       <md-icon>home</md-icon>
     </a>

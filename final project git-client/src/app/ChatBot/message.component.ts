@@ -32,7 +32,7 @@ export class OneMessageInstance
 
 
     <div class="messages" [ngClass]="{'msg-sent': !incoming, 'msg-receive': incoming}">
-      <div *ngFor="let oneP of message.contant.split('\\n')">
+      <div *ngFor="let oneP of message.contant?.split('\\n')">
         <div [innerHTML]="oneP"></div>
       </div> 
     </div> 

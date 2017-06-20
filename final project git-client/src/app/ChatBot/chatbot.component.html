@@ -44,9 +44,9 @@
                        placeholder="Write your message here..."
                        (keydown.enter)="sendMessage($event)"
                        [(ngModel)]="draftMessage.contant" />
-                <span class="input-group-btn">
+                <span class="input-group-btn"> 
                   <button class="btn-chat"
-                     (click)="sendMessage($event)"
+                     (click)="sendMessage($event)" [disabled]="buttonDisabled"
                      >Send</button>
                 </span>
               </div>
@@ -55,5 +55,5 @@
         </div>
       </div>
     </div>
-
+  
 

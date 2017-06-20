@@ -42,6 +42,7 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
 
   messageList: OneMessageInstance[] = [];
   draftMessage: OneMessageInstance;
+  buttonDisabled:boolean=false;
   CurrArgsValue:any[]=new Array<any>();
   @ViewChild("angularcb1") messageInputObj: ElementRef;
   @ViewChild("chatbotBody") chatbotBody: ElementRef;
@@ -78,7 +79,7 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
   }
  
   sendMessage(event: any) {
- 
+    this.buttonDisabled=true;
     this.messageList.push(new OneMessageInstance(this.draftMessage.contant,true, "/assets/images/male-avatar-1.png"));                            
   //  var type = this.castTypeOf(this.argstype[this.argsCounter],this.draftMessage.contant);
    this.CurrArgsValue[this.argsCounter]=this.draftMessage.contant;
@@ -89,8 +90,9 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
       .subscribe(
       response =>
       {
-      this.messageList.push(new OneMessageInstance(response["result"],false,
-      "/assets/images/monkey.png"));
+        if (response["result"]){
+      this.messageList.push(new OneMessageInstance(response["result"],false,"/assets/images/monkey.png"));
+        }
       this.CurrArgsValue=new Array<any>();
       this.argsCounter=0;
       if (this.numofargs !=1)
@@ -104,12 +106,15 @@ export class ChatBotComponent implements OnInit,AfterContentInit {
           setTimeout(()=>
           {
           this.scrollToBottom();
+          this.buttonDisabled=false;
           },5);
       });
     }
     else
     {
+      if(this.argsmesssages[this.argsCounter]){
       this.messageList.push(new OneMessageInstance(this.argsmesssages[this.argsCounter],false, "/assets/images/monkey.png"));
+      }
     }
     //
     //this.messageInputObj["value"] = '';
