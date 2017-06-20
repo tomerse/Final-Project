@@ -52,7 +52,7 @@ class ChatbotJavaCodeHandler < ChatbotCodeHandler
   #return compilation error as string without unnecessary data
   #NOT_MANDATORY
   def parse_compilation_error(error)
-    parsed_error = error
+    parsed_error = "8888888" +error
 
     return parsed_error
   end
