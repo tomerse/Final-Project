@@ -12,6 +12,7 @@ describe('US4 - Get Hints', function() {
     page.ignoreSynch();
     expect(page.getHintsList().getText()).toEqual('');
     page.getHintsButton().click();
+    page.sleep(500);
     expect(page.getHintsList().getText()).toContain('check_circle');
     page.enableSynch();
   });
@@ -21,6 +22,7 @@ describe('US4 - Get Hints', function() {
     page.ignoreSynch();
     expect(page.getHintsList().getText()).toEqual('');
     page.getHintsButton().click();
+    page.sleep(500);
     expect(page.getHintsList().getText()).toContain('check_circle');
     page.enableSynch();
   });
@@ -30,6 +32,7 @@ describe('US4 - Get Hints', function() {
     page.ignoreSynch();
     expect(page.getHintsList().getText()).toEqual('');
     page.getHintsButton().click();
+    page.sleep(500);
     expect(page.getHintsList().getText()).toContain('check_circle');
     page.enableSynch();
   });
@@ -39,6 +42,7 @@ describe('US4 - Get Hints', function() {
     page.ignoreSynch();
     expect(page.getHintsList().getText()).toEqual('');
     page.getHintsButton().click();
+    page.sleep(500);
     expect(page.getHintsList().getText()).toContain('check_circle');
     page.enableSynch();
   });
@@ -48,6 +52,7 @@ describe('US4 - Get Hints', function() {
     page.ignoreSynch();
     expect(page.getHintsList().getText()).toEqual('');
     page.getHintsButton().click();
+    page.sleep(500);
     expect(page.getHintsList().getText()).toContain('check_circle');
     page.enableSynch();
   });
@@ -66,6 +71,7 @@ describe('US4 - Get Hints', function() {
     page.ignoreSynch();
     expect(page.getHintsList().getText()).toEqual('');
     page.getHintsButton().click();
+    page.sleep(500);
     expect(page.getHintsList().getText()).toContain('check_circle');
     page.enableSynch();
   });
@@ -84,6 +90,7 @@ describe('US4 - Get Hints', function() {
     page.ignoreSynch();
     expect(page.getHintsList().getText()).toEqual('');
     page.getHintsButton().click();
+    page.sleep(500);
     expect(page.getHintsList().getText()).toContain('check_circle');
     page.enableSynch();
   });
@@ -93,6 +100,7 @@ describe('US4 - Get Hints', function() {
     page.ignoreSynch();
     expect(page.getHintsList().getText()).toEqual('');
     page.getHintsButton().click();
+    page.sleep(500);
     expect(page.getHintsList().getText()).toContain('check_circle');
     page.enableSynch();
   });
