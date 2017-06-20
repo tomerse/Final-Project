@@ -7,31 +7,31 @@ class PythonCompilerTest < ActiveSupport::TestCase
   Tsummary = TestsSummary.new NUMOFTESTS
 
   test "" do
-    Tlog.execTestSuite TESTSUITE
+    UTlog.execTestSuite TESTSUITE
   end
 
   def test_run_file_run_success
-    Tlog.execUt 'PythonCompiler.run_file run success'
+    UTlog.execUt 'PythonCompiler.run_file run success'
     args = 'suisa'
     begin
       exp = "suisa\n"
       act = PythonCompiler.run_file(PYCOMP_SUCC_INPUT, args)
       ans = act == exp
       if ans
-        Tlog.pass
+        UTlog.pass
         Tsummary.passInc
       else
-        Tlog.fail
+        UTlog.fail
         Tsummary.addFailure
       end
     rescue => ex
-      Tlog.errorFail "Exception: #{ex.message}"
+      UTlog.errorFail "Exception: #{ex.message}"
       Tsummary.addFailure
     end
   end
 
   def test_run_file_runtime_err
-    Tlog.execUt 'PythonCompiler.run_file runtime error'
+    UTlog.execUt 'PythonCompiler.run_file runtime error'
     args = 'suisa'
     begin
       exp ="#{args[0]}
@@ -47,20 +47,20 @@ ZeroDivisionError: integer division or modulo by zero
       act = PythonCompiler.run_file(PYCOMP_RUNTIME_ERR_INPUT, args)
       ans = act == exp
       if ans
-        Tlog.pass
+        UTlog.pass
         Tsummary.passInc
       else
-        Tlog.fail
+        UTlog.fail
         Tsummary.addFailure
       end
     rescue => ex
-      Tlog.errorFail "Exception: #{ex.message}"
+      UTlog.errorFail "Exception: #{ex.message}"
       Tsummary.addFailure
     end
   end
 
   def test_run_file_inValid_args
-    Tlog.execUt 'PythonCompiler.run_file inValid args'
+    UTlog.execUt 'PythonCompiler.run_file inValid args'
     begin
       exp = "Traceback (most recent call last):
   File \"/home/liorneg/Final-Project-server-local_13.3/FinalProject-Server/test/unit/compilers_tests_inputs/ex_1/pycomp_success.py\", line 15, in <module>
@@ -72,41 +72,41 @@ IndexError: list index out of range
       act = PythonCompiler.run_file(PYCOMP_SUCC_INPUT, nil)
       ans = act == exp
       if ans
-        Tlog.pass
+        UTlog.pass
         Tsummary.passInc
       else
-        Tlog.fail
+        UTlog.fail
         Tsummary.addFailure
       end
     rescue => ex
-      Tlog.errorFail "Exception: #{ex.message}"
+      UTlog.errorFail "Exception: #{ex.message}"
       Tsummary.addFailure
     end
   end
 
   def test_run_file_infinite_loop
-    Tlog.execUt 'PythonCompiler.run_file infinite loop'
+    UTlog.execUt 'PythonCompiler.run_file infinite loop'
     args = 'suisa'
     begin
       exp = "process timeout error"
       act = PythonCompiler.run_file(PYCOMP_INFINITE_LOOP, args)
       ans = act == exp
       if ans
-        Tlog.pass
+        UTlog.pass
         Tsummary.passInc
       else
-        Tlog.fail
+        UTlog.fail
         Tsummary.addFailure
       end
     rescue => ex
-      Tlog.errorFail "Exception: #{ex.message}"
+      UTlog.errorFail "Exception: #{ex.message}"
       Tsummary.addFailure
     end
   end
 
   test "zzz" do
     summary = Tsummary.summary
-    Tlog.execTestSuiteSummary TESTSUITE, summary
+    UTlog.execTestSuiteSummary TESTSUITE, summary
   end
 
 end

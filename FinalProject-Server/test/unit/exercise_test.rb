@@ -8,76 +8,76 @@ class ExerciseTest < ActiveSupport::TestCase
   Tsummary = TestsSummary.new NUMOFTESTS
 
   test "" do
-    Tlog.execTestSuite(TESTSUITE)
+    UTlog.execTestSuite(TESTSUITE)
   end
 
 
   test "ChatbotExerciseReader.build_exercise valid inputs" do
-     Tlog.execUt('ChatbotExerciseReader.build_exercise  valid inputs')
+     UTlog.execUt('ChatbotExerciseReader.build_exercise  valid inputs')
      begin
        exercise_reader = CourseFactory.get_exercise_reader(COURSEFOLDER)
        exercise_file = CourseFactory.get_exercise_file(COURSEFOLDER, PROGLANGUAGE, 1)
        exercise = exercise_reader.build_exercise(exercise_file)
        ans = assert_not_nil(exercise)
        if ans
-         Tlog.pass
+         UTlog.pass
          Tsummary.passInc
        else
-         Tlog.fail
+         UTlog.fail
          Tsummary.addFailure
        end
      rescue => ex
-       Tlog.errorFail("Exception: #{ex.message}")
+       UTlog.errorFail("Exception: #{ex.message}")
        Tsummary.addFailure
      end
    end
 
 
    test "ChatbotExerciseReader.build_exercise  inValid xmlFile" do
-     Tlog.execUt('ChatbotExerciseReader.build_exercise  inValid xmlFile')
+     UTlog.execUt('ChatbotExerciseReader.build_exercise  inValid xmlFile')
      begin
        exercise_reader = CourseFactory.get_exercise_reader(COURSEFOLDER)
        exercise_file = CourseFactory.get_exercise_file(COURSEFOLDER, PROGLANGUAGE, nil)
        exercise = exercise_reader.build_exercise(exercise_file)
-       Tlog.fail
+       UTlog.fail
        Tsummary.addFailure
      rescue => ex
-       Tlog.pass
+       UTlog.pass
        Tsummary.passInc
      end
    end
 
    test "ChatbotExerciseReader.build_exercise inValid progLang" do
-     Tlog.execUt('ChatbotExerciseReader.build_exercise  inValid progLang')
+     UTlog.execUt('ChatbotExerciseReader.build_exercise  inValid progLang')
      begin
        exercise_reader = CourseFactory.get_exercise_reader(COURSEFOLDER)
        exercise_file = CourseFactory.get_exercise_file(COURSEFOLDER, nil, 1)
        exercise = exercise_reader.build_exercise(exercise_file)
-       Tlog.fail
+       UTlog.fail
        Tsummary.addFailure
      rescue => ex
-       Tlog.pass
+       UTlog.pass
        Tsummary.passInc
      end
    end
 
    test "ChatbotExerciseReader.build_exercise inValid courseName" do
-     Tlog.execUt('ChatbotExerciseReader.build_exercise inValid courseName')
+     UTlog.execUt('ChatbotExerciseReader.build_exercise inValid courseName')
      begin
        exercise_reader = CourseFactory.get_exercise_reader(COURSEFOLDER)
        exercise_file = CourseFactory.get_exercise_file(nil, PROGLANGUAGE, 1)
        exercise = exercise_reader.build_exercise(exercise_file)
-       Tlog.fail
+       UTlog.fail
        Tsummary.addFailure
      rescue => ex
-       Tlog.pass
+       UTlog.pass
        Tsummary.passInc
      end
    end
 
   test "zzz" do
     summary = Tsummary.summary
-    Tlog.execTestSuiteSummary TESTSUITE, summary
+    UTlog.execTestSuiteSummary TESTSUITE, summary
   end
 
 end
