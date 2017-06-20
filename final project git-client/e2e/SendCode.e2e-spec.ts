@@ -20,7 +20,7 @@ describe('US2 - Send Code', function() {
     page.enableSynch();
   });
 
-  it('Test Failed - send wrong code', function () {
+  it('Compilation error', function () {
     page.navigateTo(10);
     page.sleep(1000);
     page.ignoreSynch();
