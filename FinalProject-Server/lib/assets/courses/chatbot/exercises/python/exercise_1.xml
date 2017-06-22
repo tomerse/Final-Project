@@ -81,7 +81,7 @@ and open the template in the editor.
       </arg>
     </argstypes>
     <test_failed_info>You can find the chatbot on the lower right corner of the screen.</test_failed_info>
-    <success_info>&lt;p>&lt;img src="https://media.giphy.com/media/l4q7TIW8nEZYOJUf6/giphy.gif" height="200" width="250">&lt;/p>
+    <success_info>&lt;p style="justify-content: center;display: flex;">&lt;img src="https://media.giphy.com/media/l4q7TIW8nEZYOJUf6/giphy.gif" height="200" width="250">&lt;/p>
 	\n Use the chatbot on the lower right corner of the screen to check your code.
 	</success_info>
   </exercise>
